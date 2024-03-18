@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 
-const GradientText = ({ text }) => {
+const TextTitle = ({ text }) => {
   return (
     <Typography
     variant="h4"
@@ -20,4 +20,4 @@ const GradientText = ({ text }) => {
   );
 };
 
-export default GradientText;
+export default TextTitle;
