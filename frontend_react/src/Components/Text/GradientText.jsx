@@ -6,7 +6,7 @@ const GradientText = ({ text }) => {
     <Typography
       sx={{
         display: 'inline-block',
-        fontSize: { xs: '64px', md: '86px' ,lg: '128px' },
+        fontSize: '6.5vw',
         fontWeight: '900',
         fontFamily: 'Roboto Condensed, sans-serif',
         textTransform: 'uppercase',
@@ -14,7 +14,7 @@ const GradientText = ({ text }) => {
         backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
         WebkitBackgroundClip: 'text',
         color: 'transparent',
-        lineHeight: '1.0',
+        lineHeight: '0.8',
       }}
     >
       {text}

@@ -88,7 +88,7 @@ const Navbar = () => {
                   variant="contained"
                   color="primary"
                   size="medium"
-                  sx={{ fontWeight: 'bold', minWidth: '100px', fontFamily: 'Trebuchet MS', marginRight: 2, backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', color: '#fff', borderRadius: '25px', textTransform: 'none' }}
+                  sx={{ fontWeight: 'bold', minWidth: '100px', fontFamily: 'IBM Plex Sans', marginRight: 2, backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', color: '#fff', borderRadius: '25px', textTransform: 'none' }}
               >
                  Sign In
               </Button>

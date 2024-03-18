@@ -1,41 +1,122 @@
 import React from 'react';
 import { Typography, Link, Box, Button } from '@mui/material';
+import GradientText from '../Text/TextTitle';
+import { Block, Height } from '@mui/icons-material';
+import FooterMenu from './FooterMenu';
 
 const Footer = () => {
   return (
-    <Box sx={{ display: 'flex' , fontFamily: 'Roboto Condensed, sans-serif', backgroundColor: '#222831'}}>
-        <Box sx={{ flex: 1, padding: '20px'}}>
-            <Typography sx={{ marginLeft: 4, fontFamily: 'Roboto Condensed, sans-serif', marginTop: 1, fontSize: '32px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0px', color: '#EEEEEE' }}>
+    <Box sx={{ fontFamily: 'Roboto Condensed, sans-serif', backgroundColor: '#000'}}>
+        <Box
+        sx={{
+            display: 'flex',
+            justifyContent: 'space-between', 
+            alignItems: 'center', 
+            padding: '20px',
+            marginLeft: '20px',
+            marginRight: '20px',
+            paddingRight: '4px' 
+        }}
+        >
+            <Box>
+                <Typography
+                sx={{
+                    fontWeight: '900',
+                    fontFamily: 'Montserrat, sans-serif',
+                    textTransform: 'uppercase',
+                    letterSpacing: 'wider',
+                    backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+                    WebkitBackgroundClip: 'text',
+                    color: 'transparent',
+                    fontSize: '4vw',
+                    maxWidth: 'fit-content',
+                    lineHeight: '1.0',
+                }}
+                >
                 TRVLO
-            </Typography>
-            <Typography sx={{ marginLeft: 4, fontFamily: 'Roboto Condensed, sans-serif', fontSize: '32px', fontWeight: 'bold', textTransform: 'none', letterSpacing: '0px', color: '#0077c2', width: 300, lineHeight: '1.0'}}>
-                Discover The Shades of The World
-            </Typography>
+                </Typography>
+
+                <Typography
+                sx={{
+                    fontWeight: '900',
+                    fontFamily: 'Montserrat, sans-serif',
+                    textTransform: 'uppercase',
+                    letterSpacing: 'wider',
+                    backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+                    WebkitBackgroundClip: 'text',
+                    color: 'transparent',
+                    fontSize: '3vw',
+                    maxWidth: '25vw',
+                    lineHeight: '1.0',
+                    paddingRight: '2vw',
+                }}
+                >
+                Create your own stories
+                <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    sx={{
+                    backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+                    borderRadius: 10,
+                    fontWeight: '900',
+                    fontsize: '3vw',
+                    fontFamily: 'Montserrat, sans-serif',
+                    marginTop: '20px',
+                    width: '15vw',
+                    height: '3vw',
+                    }}
+                >
+                    Join Now
+                </Button>
+                </Typography>
+            </Box>
+
+            <Box>
+            </Box>
+
+            <Box
+            sx={{
+                display: 'flex',
+                marginLeft: '25px',
+                paddingBottom: '20px',
+            }}
+            >
+            <FooterMenu
+            title="DISCOVER"
+            buttons={[
+                'Destinations',
+                'Categories',
+                'Planning',
+                'Articles & Stories',
+                'Challenges',
+                'Social'
+            ]}
+            />
+
+            <FooterMenu
+            title="LEARN"
+            buttons={[
+                'Destinations',
+                'Categories',
+                'Planning',
+                'Articles & Stories',
+                'Challenges',
+                'Social'
+            ]}
+            />
+
+            <FooterMenu
+            title="CONNECT"
+            buttons={[
+                'Contact',
+                'Newsletter',
+                'Social',
+            ]}
+            />
         </Box>
-        <Box sx={{ flex: 1, padding: '20px', textAlign: 'right', maxWidth: '740px', minWidth: '740px'}}>
-        <Box>
-            <Button color="inherit" sx={{ fontWeight: 'bold', fontSize: '20px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 10, color: '#EEEEEE', '&:hover': { color: '#0077C2' }, textTransform: 'none' }}>
-                Destinations
-            </Button>
-            <Button color="inherit" sx={{ fontWeight: 'bold', fontSize: '20px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 10, color: '#EEEEEE', '&:hover': { color: '#0077C2' }, textTransform: 'none' }}>
-                Planning
-            </Button>
-            <Button color="inherit" sx={{ fontWeight: 'bold', fontSize: '20px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 10, color: '#EEEEEE', '&:hover': { color: '#0077C2' }, textTransform: 'none' }}>
-                Challenges
-            </Button>
-            <Button color="inherit" sx={{ fontWeight: 'bold', fontSize: '20px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 10, color: '#EEEEEE', '&:hover': { color: '#0077C2' }, textTransform: 'none' }}>
-                Social
-            </Button>
         </Box>
-        <Box sx={{marginLeft: 4,  marginTop: 1, textAlign:'left'}}>
-            <Typography sx={{fontFamily: 'Roboto Condensed, sans-serif', fontSize: '32px', fontWeight: 'bold', textTransform: 'none', letterSpacing: '0px', color: '#0077c2', width: 300, lineHeight: '1.0', textAlign: 'left'}}>
-                Join Now And Start Your Adventure!
-            </Typography>
-            <Button variant="contained" color="primary" size="medium" sx={{ fontWeight: 'bold', fontFamily: 'Trebuchet MS', marginTop: 1, backgroundColor: '#0077C2', color: '#fff', borderRadius: '25px' , textTransform: 'none'}}>
-                Create Account
-            </Button>  
-        </Box>
-        </Box>
+
     </Box>
   );
 };

@@ -21,10 +21,10 @@ function Hero() {
       <GradientText text="Welcome To TRVLO" />
       <Typography sx={{  
         display: 'inline-block',
-        fontSize: { xs: '64px', md: '86px' ,lg: '168px' },
+        fontSize: '5vw',
         fontWeight: '900',
-        fontFamily: 'Reenie Beanie, cursive',
-        color: '#e5e5e5',
+        fontFamily: 'Poppins',
+        color: '#fff',
         letterSpacing: 'wider',
         lineHeight: '0.0',
         marginBottom: 20,

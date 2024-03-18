@@ -12,7 +12,7 @@ const GradientText = ({ text }) => {
         backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
         WebkitBackgroundClip: 'text',
         color: 'transparent',
-        maxWidth: '150px',
+        maxWidth: 'fit-content',
       }}
     >
       {text}
