@@ -61,10 +61,10 @@ function LoginPage() {
                 }}>
                     <Box>
                         <Typography variant="h4" component="h1" sx={{ fontFamily: 'Poppins', fontWeight: 'bold' }}>
-                        Welcome To TRVLO
+                            Welcome To TRVLO
                         </Typography>
                         <Typography component="h2" variant="h5"  sx={{ fontFamily: 'Poppins', fontWeight: 'bold', marginBottom: 4 }}>
-                        Log in
+                            Log in
                         </Typography>
                         <Box component="form" noValidate sx={{ mt: 1 }}>
                         <TextField
@@ -91,14 +91,20 @@ function LoginPage() {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            sx={{ mt: 3, mb: 2, fontFamily: 'Poppins', fontWeight: 'bold', }}
-                            
+                            sx={{ mt: 3, mb: 2, fontFamily: 'Poppins', fontWeight: 'bold', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' }}   
                         >
                             Continue
                         </Button>
                         </Box>
                         <Typography>
-                        <Link component={RouterLink} to="/signup" variant="body2" sx={{textTransform: 'none', fontFamily: 'Poppins', fontWeight: 'bold',}}>
+                        <Link component={RouterLink} to="/signup" variant="body2" 
+                            sx={{
+                                textTransform: 'none', 
+                                fontFamily: 'Poppins', fontWeight: 'bold',
+                                backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+                                WebkitBackgroundClip: 'text',
+                                color: 'transparent',
+                            }}>
                             Don't have an account? Sign Up
                         </Link>
                         </Typography>

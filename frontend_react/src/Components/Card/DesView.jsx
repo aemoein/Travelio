@@ -20,7 +20,7 @@ const DesView = ({ destinations }) => {
             }}>
             Editor's choice
         </Typography>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', }}>
             <Typography
                 align="left"
                 sx={{

@@ -21,9 +21,9 @@ function Hero() {
       <GradientText text="Welcome To TRVLO" />
       <Typography sx={{  
         display: 'inline-block',
-        fontSize: '5vw',
+        fontSize: '8.5vw',
         fontWeight: '900',
-        fontFamily: 'Poppins',
+        fontFamily: 'reenie beanie',
         color: '#fff',
         letterSpacing: 'wider',
         lineHeight: '0.0',

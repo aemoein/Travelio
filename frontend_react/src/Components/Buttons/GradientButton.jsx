@@ -12,10 +12,11 @@ const GradientButton = ({ text }) => {
         borderRadius: 10,
         textTransform: 'none',
         fontWeight: '900',
+        fontSize: '1vw',
         backgroundColor: 'transparent',
         padding: '10px 20px',
         transition: 'background-image 0.8s, color 0.2s',
-        maxHeight: '48px',
+        maxHeight: '2.5vw',
         marginRight: '0.7vw',
         '&:hover': {
             backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
