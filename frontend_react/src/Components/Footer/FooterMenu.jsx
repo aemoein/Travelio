@@ -7,7 +7,7 @@ const FooterMenu = ({ title, buttons }) => {
   return (
     <Box sx={{ marginRight: '20px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
         <Typography sx={{
-            color: '#404040',
+            color: '#666666',
             fontFamily: 'Montserrat, sans-serif',
             fontWeight: '900',
             marginLeft: '8px',
@@ -21,7 +21,7 @@ const FooterMenu = ({ title, buttons }) => {
         <Button key={index} sx={{
             color: '#d3d3d3',
             fontFamily: 'Montserrat, sans-serif',
-            fontWeight: '400',
+            fontWeight: '600',
             letterSpacing: 'large',
             fontSize: '1.2vw',
             lineHeight: '1.1',

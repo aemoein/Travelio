@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, TextField, Typography, Container, CssBaseline, Box, Link } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom'; // Import useNavigate
 import GradientText from '../../Components/Text/GradientText';
 
 // Theme definition
@@ -17,6 +17,39 @@ const theme = createTheme({
 });
 
 function SignUpPage() {
+  const [formData, setFormData] = useState({
+    email: '',
+    username: '',
+    firstName: '',
+    lastName: '',
+    password: '',
+    confirmPassword: ''
+  });
+  const [error, setError] = useState('');
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Mocking successful signup for demonstration
+      // Replace with actual signup logic using axios
+      const { username } = formData;
+      console.log('User signed up successfully:', username);
+      navigate(`/signUpInfo/${username}`); // Redirect to "/signUpInfo/{username}"
+    } catch (error) {
+      console.error('Error signing up:', error); // Handle signup error
+      setError('An error occurred during signup');
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -68,7 +101,7 @@ function SignUpPage() {
               </Typography>
 
               {/* Sign Up Form */}
-              <Box component="form" noValidate sx={{ mt: 1 }}>
+              <form onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                 <TextField
                   margin="normal"
                   required
@@ -78,53 +111,65 @@ function SignUpPage() {
                   name="email"
                   autoComplete="email"
                   autoFocus
+                  value={formData.email}
+                  onChange={handleChange}
                 />
                 <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="username"
-                    label="Username"
-                    name="username"
-                    autoComplete="username"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="username"
+                  label="Username"
+                  name="username"
+                  autoComplete="username"
+                  value={formData.username}
+                  onChange={handleChange}
                 />
                 <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="firstName"
-                    label="First Name"
-                    name="firstName"
-                    autoComplete="given-name"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="First Name"
+                  name="firstName"
+                  autoComplete="given-name"
+                  value={formData.firstName}
+                  onChange={handleChange}
                 />
                 <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="lastName"
-                    label="Last Name"
-                    name="lastName"
-                    autoComplete="family-name"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="lastName"
+                  label="Last Name"
+                  name="lastName"
+                  autoComplete="family-name"
+                  value={formData.lastName}
+                  onChange={handleChange}
                 />
                 <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
-                    autoComplete="new-password"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                  value={formData.password}
+                  onChange={handleChange}
                 />
                 <TextField
-                    margin="normal"
-                    required
-                    fullWidth
-                    name="confirmPassword"
-                    label="Confirm Password"
-                    type="password"
-                    id="confirmPassword"
-                    autoComplete="new-password"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="confirmPassword"
+                  label="Confirm Password"
+                  type="password"
+                  id="confirmPassword"
+                  autoComplete="new-password"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
                 />
 
                 {/* Terms and Conditions Checkbox */}
@@ -134,8 +179,6 @@ function SignUpPage() {
                     I agree to the <Link component={RouterLink} to="/termsAndConditions" color="primary">Terms and Conditions</Link>
                   </label>
                 </Box>
-
-                {/* Continue Button */}
                 <Button
                   type="submit"
                   fullWidth
@@ -144,7 +187,7 @@ function SignUpPage() {
                 >
                   Continue
                 </Button>
-              </Box>
+              </form>
 
               {/* Login Link */}
               <Typography>
