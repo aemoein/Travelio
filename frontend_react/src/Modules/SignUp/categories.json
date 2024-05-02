@@ -1,0 +1,165 @@
+{
+    "genres": [
+      {
+        "genre": "Historical",
+        "description": "Destinations rich in historical significance, such as ancient ruins, medieval towns, and UNESCO World Heritage sites.",
+        "imageUrl": "https://media.restless.co.uk/uploads/2021/04/28_of_the_best_historical_sites_to_visit_in_the_uk_hero.jpg",
+        "destinations": [
+          {"cityName": "Rome"},
+          {"cityName": "Machu Picchu"},
+          {"cityName": "Cairo"}
+        ]
+      },
+      {
+        "genre": "Cultural",
+        "description": "Places renowned for their cultural heritage, including art, music, dance, cuisine, and local traditions.",
+        "imageUrl": "https://a.cdn-hotels.com/gdcs/production150/d1191/a7ebecc7-3174-4ad7-b00d-4d71366f76fd.jpg",
+        "destinations": [
+          {"cityName": "Kyoto"},
+          {"cityName": "Istanbul"},
+          {"cityName": "Marrakech"}
+        ]
+      },
+      {
+        "genre": "Natural",
+        "description": "Locations celebrated for their natural beauty, such as national parks, beaches, mountains, and scenic landscapes.",
+        "imageUrl": "https://i.natgeofe.com/n/f14f6c30-8d11-4e33-a5e9-05f1b50bdde3/yosemite-national-park-california_16x9.jpg?w=1200",
+        "destinations": [
+          {"cityName": "Banff National Park"},
+          {"cityName": "Great Barrier Reef"},
+          {"cityName": "Yosemite National Park"}
+        ]
+      },
+      {
+        "genre": "Adventure",
+        "description": "Destinations offering adventurous activities like hiking, trekking, rock climbing, white-water rafting, safari, or extreme sports.",
+        "imageUrl": "https://www.ulumresorts.com/app/uploads/2023/05/shutterstock_226321666-scaled-e1683298175324.jpg",
+        "destinations": [
+          {"cityName": "Queenstown"},
+          {"cityName": "Interlaken"},
+          {"cityName": "Moab"}
+        ]
+      },
+      {
+        "genre": "Urban",
+        "description": "Vibrant cities known for their modern amenities, architecture, nightlife, shopping, dining, and entertainment options.",
+        "imageUrl": "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/Japan/Tokyo/Tokyo-guide-lead-image.jpg",
+        "destinations": [
+          {"cityName": "New York City"},
+          {"cityName": "Tokyo"},
+          {"cityName": "Paris"}
+        ]
+      },
+      {
+        "genre": "Beach",
+        "description": "Coastal areas with sandy beaches, clear waters, and opportunities for swimming, sunbathing, snorkeling, diving, or water sports.",
+        "imageUrl": "https://images.squarespace-cdn.com/content/v1/62b16ffb12207f187a6cd209/ca013f3e-f958-494d-9946-28bbfec3c1c2/playa-northcoast-beach.jpg?format=2500w",
+        "destinations": [
+          {"cityName": "Maldives"},
+          {"cityName": "Maui"},
+          {"cityName": "Phuket"}
+        ]
+      },
+      {
+        "genre": "Ecotourism",
+        "description": "Places dedicated to preserving and experiencing natural ecosystems, promoting sustainability and conservation efforts.",
+        "imageUrl": "https://ecotourism.org/wp-content/uploads/2019/07/ecotourismsolutiontoovertourism.jpg",
+        "destinations": [
+          {"cityName": "Costa Rica"},
+          {"cityName": "Galápagos Islands"},
+          {"cityName": "Norwegian Fjords"}
+        ]
+      },
+      {
+        "genre": "Wellness",
+        "description": "Retreats focused on health, relaxation, and rejuvenation, offering spa treatments, yoga, meditation, and wellness activities.",
+        "imageUrl": "https://sedonamagoretreat.org/wp-content/uploads/2022/09/SM-header-wellness.jpg",
+        "destinations": [
+          {"cityName": "Bali"},
+          {"cityName": "Sedona"},
+          {"cityName": "Kerala"}
+        ]
+      },
+      {
+        "genre": "Culinary",
+        "description": "Destinations renowned for their food and drink culture, including street food, local markets, cooking classes, and gastronomic experiences.",
+        "imageUrl": "https://fortwoplz.com/wp-content/uploads/2019/07/Les-Trois-Domes-Michelin-Restaurant-Lyon-France-2-640x427.jpg",
+        "destinations": [
+          {"cityName": "Bangkok"},
+          {"cityName": "Lyon"},
+          {"cityName": "Oaxaca"}
+        ]
+      },
+      {
+        "genre": "Religious",
+        "description": "Sites of religious significance, such as pilgrimage destinations, temples, churches, mosques, and sacred landmarks.",
+        "imageUrl": "x",
+        "destinations": [
+          {"cityName": "Jerusalem"},
+          {"cityName": "Varanasi"},
+          {"cityName": "Mecca"}
+        ]
+      },
+      {
+        "genre": "Off-the-Beaten-Path",
+        "description": "Remote or less-visited destinations offering unique cultural experiences, untouched landscapes, and authentic encounters with locals.",
+        "imageUrl": "https://i.natgeofe.com/n/9b84995f-962d-4ac7-84f8-897e065860fc/vagar-island-faroe-islands-denmark_16x9.jpg?w=1200",
+        "destinations": [
+          {"cityName": "Bhutan"},
+          {"cityName": "Faroe Islands"},
+          {"cityName": "Mongolia"}
+        ]
+      },
+      {
+        "genre": "Family-Friendly",
+        "description": "Destinations suitable for family vacations, with attractions and activities catering to all age groups, such as theme parks, zoos, and family resorts.",
+        "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/6426fcf382f9dcd275217d97/The-castle-At-Disneyland-Paris/960x0.jpg?format=jpg&width=960",
+        "destinations": [
+          {"cityName": "Orlando"},
+          {"cityName": "Gold Coast"},
+          {"cityName": "Copenhagen"}
+        ]
+      },
+      {
+        "genre": "Luxury",
+        "description": "High-end destinations offering luxury accommodations, fine dining, exclusive experiences, and personalized services.",
+        "imageUrl": "https://a.cdn-hotels.com/gdcs/production18/d1838/041ae6b1-0a88-4c22-a648-53a22dd4a006.jpg",
+        "destinations": [
+          {"cityName": "Maldives"},
+          {"cityName": "Santorini"},
+          {"cityName": "Dubai"}
+        ]
+      },
+      {
+        "genre": "Budget",
+        "description": "Affordable destinations with budget-friendly accommodations, dining options, and free or low-cost attractions.",
+        "imageUrl": "https://i.guim.co.uk/img/media/bf48c81421313e74475763bd7dcbe9ac6735de97/388_666_6112_3668/master/6112.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=82a620182f39342739d1401ab488ff44",
+        "destinations": [
+          {"cityName": "Bangkok"},
+          {"cityName": "Budapest"},
+          {"cityName": "Lisbon"}
+        ]
+      },
+      {
+        "genre": "Educational",
+        "description": "Destinations where travelers can learn about specific subjects, such as history, science, art, or culture, through museums, galleries, workshops, and guided tours.",
+        "imageUrl": "https://www.oxfordscholastica.com/wp-content/uploads/2023/07/cambridge-college.jpg",
+        "destinations": [
+          {"cityName": "Athens"},
+          {"cityName": "Washington, D.C."},
+          {"cityName": "Florence"}
+        ]
+      },
+      {
+        "genre": "Wildlife",
+        "description": "Places where travelers can experience wildlife in their natural habitats, observe animals, and learn about conservation efforts.",
+        "imageUrl": "https://wildlifesafaritanzania.com/wp-content/uploads/2020/09/7-Days-Tanzania-Wildlife-Safari-750x450.jpg",
+        "destinations": [
+          {"cityName": "Kruger National Park"},
+          {"cityName": "Galápagos Islands"},
+          {"cityName": "Yellowstone National Park"}
+        ]
+      }
+    ]
+  }
+  
