@@ -3,6 +3,13 @@ import { Typography, Button, Box } from '@mui/material';
 import GradientText from '../Text/GradientText';
 
 function Hero() {
+  const handleGetStartedClick = () => {
+    window.scrollTo({
+      top: window.innerHeight*0.95,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <Box
       sx={{
@@ -31,7 +38,11 @@ function Hero() {
       }}>
         create your own stories
       </Typography>
-      <Button variant="contained" color="primary" size="large"
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        onClick={handleGetStartedClick} // Call the function when the button is clicked
         sx={{
             backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
             borderRadius: 10,

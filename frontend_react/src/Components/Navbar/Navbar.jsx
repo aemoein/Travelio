@@ -27,12 +27,14 @@ const Navbar = () => {
   return (
       <AppBar position="fixed" sx={{ backgroundColor: '#f2f2f2', zIndex: 1000, top: 0 }}>
         <Toolbar>
-            <TextTitle text="TRVLO"/>
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <TextTitle text="TRVLO"/>
+            </Link>
             <Box sx={{width:1500,}}></Box>
             <Button
                 color="inherit"
                 onClick={handleMenuOpen}
-                sx={{  fontWeight: 'bold', fontSize: '16px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 2, borderRadius: 2, color: '#000', '&:hover': {  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', }, textTransform: 'none' }}
+                sx={{  fontWeight: 'bold', fontSize: '16px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 3, borderRadius: 2, color: '#000', '&:hover': {  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', }, textTransform: 'none' }}
             >
                 Articles
             </Button>
@@ -71,7 +73,7 @@ const Navbar = () => {
             <MenuItem onClick={handleMenuClose}>Article 3</MenuItem>
             <MenuItem onClick={handleMenuClose}>More Articles</MenuItem>
             </Menu>
-            <Button color="inherit" sx={{ fontWeight: 'bold', fontSize: '16px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 3, color: '#000', '&:hover': {  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', }, textTransform: 'none' }}>
+            <Button color="inherit" sx={{ width: 'fit-content', fontWeight: 'bold', fontSize: '16px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 3, color: '#000', '&:hover': {  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', }, textTransform: 'none' }}>
                 Destinations
             </Button>
             <Button color="inherit" sx={{ fontWeight: 'bold', fontSize: '16px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 3, color: '#000', '&:hover': {  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', }, textTransform: 'none' }}>
@@ -80,7 +82,7 @@ const Navbar = () => {
             <Button color="inherit" sx={{ fontWeight: 'bold', fontSize: '16px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 3, color: '#000', '&:hover': {  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', }, textTransform: 'none' }}>
                 Challenges
             </Button>
-            <Button color="inherit" sx={{ fontWeight: 'bold', fontSize: '16px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 3, color: '#000', '&:hover': {  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', }, textTransform: 'none' }}>
+            <Button color="inherit" sx={{ width: 'fit-content', padding: 0, fontWeight: 'bold', fontSize: '16px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 3, color: '#000', '&:hover': {  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', }, textTransform: 'none' }}>
                 Social
             </Button>
             <Link to="/signin" style={{ textDecoration: 'none' }}>
