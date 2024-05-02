@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Button, TextField, Typography, Container, CssBaseline, Box, Link } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link as RouterLink, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import GradientText from '../../Components/Text/GradientText';
 
-// Theme definition
 const theme = createTheme({
   palette: {
     primary: {
@@ -26,7 +25,7 @@ function SignUpPage() {
     confirmPassword: ''
   });
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,17 +38,28 @@ function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Mocking successful signup for demonstration
-      // Replace with actual signup logic using axios
+      const response = await fetch('http://localhost:3001/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message);
+      }
+
       const { username } = formData;
       console.log('User signed up successfully:', username);
-      navigate(`/signUpInfo/${username}`); // Redirect to "/signUpInfo/{username}"
+      navigate(`/signUpInfo/${username}`);
     } catch (error) {
-      console.error('Error signing up:', error); // Handle signup error
+      console.error('Error signing up:', error);
       setError('An error occurred during signup');
     }
-  };
-
+  };  
+  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -62,7 +72,7 @@ function SignUpPage() {
           justifyContent: 'space-between',
         }}
       >
-        {/* Left Side Content */}
+
         <Box sx={{ paddingLeft: '15vw' }}>
           <GradientText text='TRVLO' />
           <Typography align="left" sx={{
@@ -80,7 +90,6 @@ function SignUpPage() {
           </Typography>
         </Box>
 
-        {/* Right Side Content */}
         <Box sx={{ minWidth: '40vw', paddingRight: '15vw' }}>
           <Container component="main" maxWidth="xs" sx={{
             backgroundColor: 'white',
@@ -90,17 +99,14 @@ function SignUpPage() {
             textAlign: 'center',
           }}>
             <Box>
-              {/* Title */}
               <Typography variant="h4" component="h1" sx={{ fontFamily: 'Poppins', fontWeight: 'bold' }}>
                 Welcome To TRVLO
               </Typography>
 
-              {/* Sign Up Title */}
               <Typography component="h2" variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: 'bold', marginBottom: 4 }}>
                 Sign Up
               </Typography>
 
-              {/* Sign Up Form */}
               <form onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                 <TextField
                   margin="normal"
@@ -172,7 +178,6 @@ function SignUpPage() {
                   onChange={handleChange}
                 />
 
-                {/* Terms and Conditions Checkbox */}
                 <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'left', fontFamily: 'Poppins' }}>
                   <input type="checkbox" id="terms" name="terms" />
                   <label htmlFor="terms" sx={{ ml: 2 }}>
@@ -189,9 +194,8 @@ function SignUpPage() {
                 </Button>
               </form>
 
-              {/* Login Link */}
               <Typography>
-                <Link component={RouterLink} to="/login" variant="body2"
+                <Link component={RouterLink} to="/signin" variant="body2"
                   sx={{
                     textTransform: 'none',
                     fontFamily: 'Poppins',
