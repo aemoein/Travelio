@@ -6,6 +6,7 @@ import {
   Popover,
   Typography
 } from '@mui/material';
+import { Padding } from '@mui/icons-material';
 
 const UserIcon = ({ profilePic, username, firstName }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -19,12 +20,10 @@ const UserIcon = ({ profilePic, username, firstName }) => {
   };
 
   const visitProfile = () => {
-    // Placeholder function for visiting user profile
     console.log("Visiting user profile");
   };
 
   const signOut = () => {
-    // Placeholder function for signing out
     console.log("Signing out");
   };
 
@@ -41,21 +40,25 @@ const UserIcon = ({ profilePic, username, firstName }) => {
         onClose={handleClose}
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'left',
+          horizontal: 'right',
         }}
         transformOrigin={{
           vertical: 'top',
           horizontal: 'left',
         }}
+       sx = {{
+        marginTop: '10px',
+        Padding: '10px',
+       }}
       >
         <Box p={2}>
-          <Typography variant="h6">{username}</Typography>
+          <Typography variant="h6" align="center" sx={{fontFamily: 'Poppins', fontWeight: '600'}}>{username}</Typography>
           <Avatar alt={username} src={profilePic} sx={{ width: 100, height: 100, margin: 'auto', marginTop: 2 }} />
-          <Typography variant="body1" align="center">Hi, {firstName}!</Typography>
-          <Box mt={2} display="flex" justifyContent="center">
-            <Button variant="contained" color="primary" onClick={visitProfile}>Visit Profile</Button>
-            <Button variant="outlined" color="primary" onClick={signOut} sx={{ marginLeft: 1 }}>Sign Out</Button>
-          </Box>
+          <Typography variant="body1" align="center" sx={{marginTop: '10px', fontFamily: 'Poppins'}}>Hi, {firstName}!</Typography>
+          
+            <Button variant="contained" color="primary" onClick={visitProfile} sx={{fontFamily: 'Poppins', fontWeight: '600', width: '100%', marginTop: 1, borderRadius: 5}}>Visit Profile</Button>
+            <Button variant="outlined" color="primary" onClick={signOut} sx={{fontFamily: 'Poppins', fontWeight: '600', width: '100%', marginTop: 1, borderRadius: 5}}>Sign Out</Button>
+
         </Box>
       </Popover>
     </div>

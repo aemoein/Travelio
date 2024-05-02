@@ -112,7 +112,7 @@ app.post('/signup', async (req, res) => {
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     const uploadPath = './ProfilePics';
-    fs.mkdirSync(uploadPath, { recursive: true }); // Ensure the directory exists
+    fs.mkdirSync(uploadPath, { recursive: true });
     cb(null, uploadPath);
   },
   filename: function (req, file, cb) {
@@ -217,8 +217,6 @@ app.get('/checkLoggedIn', requireAuth, async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
-
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
