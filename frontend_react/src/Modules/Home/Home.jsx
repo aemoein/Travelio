@@ -14,14 +14,13 @@ import ArticleCard2 from '../../Components/Card/ArticleCard2';
 const Home = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userData, setUserData] = useState(null);
-  
-    useEffect(() => {
-      const checkLoggedIn = async () => {
+
+    const checkLoggedIn = async () => {
         try {
             const response = await axios.get('http://localhost:3001/checkLoggedIn', { withCredentials: true });
-
+    
             if (response.status === 200) {
-                const data = await response.json();
+                const data = response.data;
                 setIsLoggedIn(true);
                 setUserData(data);
                 console.log('user is logged in');
@@ -29,8 +28,9 @@ const Home = () => {
         } catch (error) {
           console.error('Error checking if user is logged in:', error);
         }
-      };
+    };
   
+    useEffect(() => {
       checkLoggedIn();
     }, []);
   
@@ -41,7 +41,7 @@ const Home = () => {
       </style>
 
       <Box sx={{ backgroundColor: '#EEEEEE' }}>
-        <Navbar sx={{ position: 'fixed', width: '100%', zIndex: 1000 }} />
+        <Navbar isLoggedIn={isLoggedIn} sx={{ position: 'fixed', width: '100%', zIndex: 1000 }} />
         <Box sx={{ height: '64px' }} />
         <Hero />
         <DesView

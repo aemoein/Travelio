@@ -3,7 +3,7 @@ import { Button, TextField, Typography, Container, CssBaseline, Box, Link } from
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import GradientText from '../../Components/Text/GradientText';
-import axios from 'axios'; // Import axios for making HTTP requests
+import axios from 'axios';
 
 const theme = createTheme({
   palette: {
@@ -35,13 +35,17 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/login', formData);
-      console.log(response.data.message);
-      alert(response.data.message);
+        const response = await axios.post('http://localhost:3001/login', formData, {
+            withCredentials: true
+        });
+        console.log(response.data.message);
+
+        if (response.data.message === 'Login successful') {
+            navigate(`/`);
+        }
     } catch (error) {
-      console.error('Error:', error.response.data.message); 
-      alert('Error: username or password wrong');
-      
+        console.error('Error:', error.response.data.message); 
+        alert('Error: username or password wrong');
     }
   };
 

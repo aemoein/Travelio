@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import {
   AppBar,
   Toolbar,
@@ -10,11 +10,38 @@ import {
   Box,
 } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import TextTitle from '../Text/TextTitle';
+import UserIcon from './UserIcon';
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState(null);
+
+  const checkLoggedIn = async () => {
+      try {
+          const response = await axios.get('http://localhost:3001/checkLoggedIn', { withCredentials: true });
+  
+          if (response.status === 200) {
+              const data = response.data;
+              setIsLoggedIn(true);
+              setUserData(data);
+              console.log('user is logged in');
+          }
+      } catch (error) {
+        console.error('Error checking if user is logged in:', error);
+      }
+  };
+
+  useEffect(() => {
+    checkLoggedIn();
+  }, []);
+
+  useEffect(() => {
+    console.log(userData);
+  }, [userData]);
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -85,16 +112,25 @@ const Navbar = () => {
             <Button color="inherit" sx={{ width: 'fit-content', padding: 0, fontWeight: 'bold', fontSize: '16px', fontFamily: 'Roboto Condensed, sans-serif', marginRight: 3, color: '#000', '&:hover': {  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', }, textTransform: 'none' }}>
                 Social
             </Button>
-            <Link to="/signin" style={{ textDecoration: 'none' }}>
-              <Button
-                  variant="contained"
-                  color="primary"
-                  size="medium"
-                  sx={{ fontWeight: 'bold', minWidth: '100px', fontFamily: 'IBM Plex Sans', marginRight: 2, backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', color: '#fff', borderRadius: '25px', textTransform: 'none' }}
-              >
-                 Sign In
-              </Button>
-            </Link>
+
+            {isLoggedIn ? (
+                <UserIcon 
+                    profilePic={userData.user.profilePicUrl}
+                    username={userData.user.username}
+                    firstName={userData.user.firstName}
+                />
+            ) : (
+                <Link to="/signin" style={{ textDecoration: 'none' }}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        size="medium"
+                        sx={{ fontWeight: 'bold', minWidth: '100px', fontFamily: 'IBM Plex Sans', marginRight: 2, backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', color: '#fff', borderRadius: '25px', textTransform: 'none' }}
+                    >
+                        Sign In
+                    </Button>
+                </Link>
+            )}
         </Toolbar>
       </AppBar>
   );

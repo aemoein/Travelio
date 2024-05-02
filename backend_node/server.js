@@ -10,23 +10,31 @@ const fs = require('fs');
 const session = require('express-session');
 
 const app = express();
+app.use(express.static('public'));
 const PORT = process.env.PORT || 3001;
 
-app.use(bodyParser.json());
-app.use(cors());
-
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'your-secret-key',
+  secret: process.env.SESSION_SECRET || '1234567',
   resave: false,
   saveUninitialized: true,
   cookie: {
-    secure: true,
+    secure: false,
     maxAge: 1000 * 60 * 60 * 24,
     httpOnly: true
   }
 }));
 
+app.use(bodyParser.json());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
+
+app.use("/ProfilePics", express.static("ProfilePics"));
+
 const requireAuth = (req, res, next) => {
+  console.log('SessionId At Home: '+req.sessionID);
+  console.log('UserId At Home: '+req.session.userId);
   if (!req.session.userId) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
@@ -34,7 +42,7 @@ const requireAuth = (req, res, next) => {
 };
 
 const mongoURI = "mongodb+srv://aemoein:VXszeraoKlzG0P2a@cluster0-trvlo.b3pdnw2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0-TRVLO";
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
@@ -55,6 +63,9 @@ app.post('/login', async (req, res) => {
     }
 
     req.session.userId = user._id;
+
+    console.log('SessionId: '+req.sessionID);
+    console.log('UserId: '+req.session.userId);
 
     res.status(200).json({ message: 'Login successful' });
   } catch (error) {
@@ -206,6 +217,8 @@ app.get('/checkLoggedIn', requireAuth, async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
