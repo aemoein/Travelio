@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { Button, TextField, Typography, Container, CssBaseline, Box } from '@mui/material';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
@@ -11,6 +12,28 @@ import ArticleCard from '../../Components/Card/ArticleCard';
 import ArticleCard2 from '../../Components/Card/ArticleCard2';
 
 const Home = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userData, setUserData] = useState(null);
+  
+    useEffect(() => {
+      const checkLoggedIn = async () => {
+        try {
+            const response = await axios.get('http://localhost:3001/checkLoggedIn', { withCredentials: true });
+
+            if (response.status === 200) {
+                const data = await response.json();
+                setIsLoggedIn(true);
+                setUserData(data);
+                console.log('user is logged in');
+            }
+        } catch (error) {
+          console.error('Error checking if user is logged in:', error);
+        }
+      };
+  
+      checkLoggedIn();
+    }, []);
+  
   return (
     <>
       <style>
