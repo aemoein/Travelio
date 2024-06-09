@@ -17,16 +17,27 @@ const Home = () => {
 
     const checkLoggedIn = async () => {
         try {
-            const response = await axios.get('http://localhost:3001/profile/checkLoggedIn', { withCredentials: true });
+            const token = localStorage.getItem('token');
+    
+            if (!token) {
+                return;
+            }
+    
+            const response = await axios.get('http://localhost:3001/profile/checkLoggedIn', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                },
+                withCredentials: true
+            });
     
             if (response.status === 200) {
                 const data = response.data;
                 setIsLoggedIn(true);
                 setUserData(data);
-                console.log('user is logged in');
+                console.log('User is logged in');
             }
         } catch (error) {
-          console.error('Error checking if user is logged in:', error);
+            console.error('Error checking if user is logged in:', error);
         }
     };
   

@@ -39,13 +39,13 @@ async function loginUser(username, password) {
             return { status: 400, message: 'Invalid username or password' };
         }
     
-        const token = jwt.sign({ userId: user._id, preferences: user.preferences }, config.jwtSecret);
+        const token = jwt.sign({ userId: user._id, email: user.email, username: user.username }, config.jwtSecret);
         return { status: 200, message: 'Login successful', token: token, userId: user._id };
     } catch (error) {
         console.error(error);
         return { status: 500, message: 'Internal server error' };
     }
-}  
+}
 
 async function userInformation(userId, userInfo, file) {
     try {
@@ -69,7 +69,7 @@ async function userInformation(userId, userInfo, file) {
     }
 }
 
-async function logout() {
+async function logout(req) {
     try {
         req.session.destroy();
         return { status: 200, message: 'Logout successful' };

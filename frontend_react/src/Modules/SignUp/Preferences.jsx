@@ -43,7 +43,7 @@ const PreferencePage = () => {
       console.log(response.data);
   
       if (response.data.message === 'User preferences updated successfully') {
-        navigate(`/`);
+        navigate(`/signin`);
       }
   
       setError('');

@@ -21,19 +21,33 @@ const Navbar = () => {
   const [userData, setUserData] = useState(null);
 
   const checkLoggedIn = async () => {
-      try {
-          const response = await axios.get('http://localhost:3001/profile/checkLoggedIn', { withCredentials: true });
-  
-          if (response.status === 200) {
-              const data = response.data;
-              setIsLoggedIn(true);
-              setUserData(data);
-              console.log('user is logged in');
-          }
-      } catch (error) {
+    try {
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            return;
+        }
+
+        const response = await axios.get('http://localhost:3001/profile/checkLoggedIn', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            withCredentials: true
+        });
+
+        if (response.status === 200) {
+            const data = response.data;
+            setIsLoggedIn(true);
+            setUserData(data);
+            console.log('User is logged in');
+            console.log("user pic link: ");
+            console.log(userData.profilePicUrl);
+            
+        }
+    } catch (error) {
         console.error('Error checking if user is logged in:', error);
-      }
-  };
+    }
+};
 
   useEffect(() => {
     checkLoggedIn();
@@ -115,10 +129,10 @@ const Navbar = () => {
 
             {isLoggedIn ? (
                 <UserIcon 
-                    profilePic={userData.user.profilePicUrl}
-                    username={userData.user.username}
-                    firstName={userData.user.firstName}
-                />
+                    profilePic={userData.profilePicUrl}
+                    username={userData.username}
+                    firstName={userData.firstName}
+                        />
             ) : (
                 <Link to="/signin" style={{ textDecoration: 'none' }}>
                     <Button

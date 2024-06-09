@@ -40,7 +40,7 @@ mkdir src/config
 cat <<EOT > .env
 # MongoDB URIs
 MONGO_URI_LOCAL=mongodb://localhost:27017/coursesdb
-MONGO_URI_REMOTE=mongodb+srv://ahmed33elsayed22:12345AE12@onlinebookingsystem.n4mwac5.mongodb.net/courses?retryWrites=true&w=majority&appName=OnlineBookingSystem
+MONGO_URI_REMOTE=mongodb+srv://aemoein:ae123%40ae@travelio.gb2iom0.mongodb.net/users?retryWrites=true&w=majority&appName=Travelio
 
 # Port for the server to listen on
 PORT=3002
@@ -65,18 +65,24 @@ EOT
 cat <<EOT > src/middleware/errorMiddleware.js
 // errorMiddleware.js
 const errorMiddleware = (err, req, res, next) => {
-    // Code for error handling middleware
+    console.error(err.stack);
+    res.status(500).json({ error: 'Internal server error' });
+    next();
 };
-
+  
 module.exports = errorMiddleware;
 EOT
 
 cat <<EOT > src/middleware/extractToken.js
 // extractToken.js
-const jwt = require('jsonwebtoken');
-
 const extractToken = (req, res, next) => {
-    // Code to extract JWT token from request
+    const authHeader = req.headers.authorization;
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+        const token = authHeader.split(' ')[1];
+        console.log('Token extracted:', token);
+        req.token = token;
+    }
+    next();
 };
 
 module.exports = extractToken;
@@ -101,7 +107,7 @@ module.exports = {
 EOT
 
 # Create a basic server.js file
-cat <<EOT > src/server.js
+cat <<EOT > server.js
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
@@ -112,9 +118,9 @@ const session = require('express-session');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const authMiddleware = require('./middleware/authMiddleware');
-const errorMiddleware = require('./middleware/errorMiddleware');
-const extractToken = require('./middleware/extractToken');
-const config = require('./config/config');
+const errorMiddleware = require('./src/middleware/errorMiddleware');
+const extractToken = require('./src/middleware/extractToken');
+const config = require('./src/config/config');
 
 // Load environment variables
 dotenv.config();
@@ -136,9 +142,9 @@ app.use(authMiddleware);
 app.use(errorMiddleware);
 
 // Connect to MongoDB
-mongoose.connect(config.mongoURIS, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
+mongoose.connect(config.mongoURI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
 
 // Define a simple route
 app.get('/', (req, res) => {

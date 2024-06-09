@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
 const session = require('express-session');
-const { verifyToken } = require('./src/middleware/authMiddleware');
+const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
@@ -18,7 +18,10 @@ dotenv.config({ path: path.join(process.cwd(), "..", ".env") });
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(session({
@@ -30,7 +33,7 @@ app.use(session({
 app.use(extractToken);
 app.use(errorMiddleware);
 
-app.use('/Assets/ProfilePics', express.static(path.join(__dirname, '../../assets/ProfilePics')));
+app.use('/Assets/ProfilePics', express.static('../../assets/ProfilePics'));
 
 console.log('MongoDB local URI:', config.mongoURIS);
 console.log('MongoDB remote URI:', config.mongoURI);
@@ -38,13 +41,13 @@ console.log('Server port:', config.port);
 console.log('JWT Secret Key:', config.jwtSecret);
 
 // Connect to MongoDB
-mongoose.connect(config.mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
-
+mongoose.connect(config.mongoURI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
+  
 //Routes
 app.use('/auth', authRoutes);
-app.use('/profile', verifyToken, profileRoutes);
+app.use('/profile', authMiddleware, profileRoutes);
 
 // Start the server
 const PORT = config.port;

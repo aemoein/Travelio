@@ -40,14 +40,18 @@ function LoginPage() {
         });
         console.log(response.data.message);
 
-        if (response.data.message === 'Login successful') {
+        if (response.status === 200 && response.data.token) {
+            // Save the token in local storage
+            localStorage.setItem('token', response.data.token);
+
+            // Redirect to the home page
             navigate(`/`);
         }
     } catch (error) {
         console.error('Error:', error.response.data.message); 
         alert('Error: username or password wrong');
     }
-  };
+};
 
   return (
     <ThemeProvider theme={theme}>

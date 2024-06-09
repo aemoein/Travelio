@@ -20,9 +20,9 @@ async function getUserProfile(userId) {
   }
 }
 
-async function checkLoggedIn(userId) {
+async function checkLoggedIn(req) {
   try {
-    const user = await User.findById(userId);
+    const user = await User.findById(req.user.userId);
 
     if (!user) {
       return { status: 404, message: 'User not found' };
@@ -34,6 +34,8 @@ async function checkLoggedIn(userId) {
     if (user.profilePic) {
       profilePicUrl = req.protocol + '://' + req.get('host') + '/' + user.profilePic;
     }
+
+    console.log(profilePicUrl)
 
     return { status: 200, user: { ...user.toObject(), profilePicUrl } };
   } catch (error) {
