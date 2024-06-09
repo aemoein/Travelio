@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const User = require('./models/User');
+const preferencesModel = require('./models/preferences');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
@@ -74,6 +75,18 @@ app.post('/login', async (req, res) => {
   }
 });
 
+app.post('/logout', (req, res) => {
+  try {
+    req.session.destroy();
+
+    res.status(200).json({ message: 'Logout successful' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
 app.post('/signup', async (req, res) => {
   const {
     username,
@@ -102,6 +115,14 @@ app.post('/signup', async (req, res) => {
 
     await newUser.save();
 
+    const user = await User.findOne({ username });
+
+    req.session.userId = user._id;
+    req.session.username = user.username
+
+    console.log('SessionId: '+req.sessionID);
+    console.log('UserId: '+req.session.userId);
+
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
     console.error(error);
@@ -117,7 +138,7 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const ext = path.extname(file.originalname);
-    cb(null, req.body.username + ext);
+    cb(null, req.session.username + ext);
   }
 });
 
@@ -125,7 +146,6 @@ const upload = multer({ storage: storage });
 
 app.post('/userInfoSignUp', upload.single('profilePic'), async (req, res) => {
   const {
-    username,
     location,
     birthday,
     bio,
@@ -133,8 +153,12 @@ app.post('/userInfoSignUp', upload.single('profilePic'), async (req, res) => {
     mobileNumber
   } = req.body;
 
+  console.log('SessionId info: '+req.sessionID);
+  console.log('UserId info: '+ req.session.userId);
+
+
   try {
-    const user = await User.findOne({ username });
+    const user = await User.findById(req.session.userId);
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
@@ -157,10 +181,13 @@ app.post('/userInfoSignUp', upload.single('profilePic'), async (req, res) => {
 });
 
 app.post('/setUserPreferences', async (req, res) => {
-  const { username, preferences } = req.body;
+  const { preferences } = req.body;
+
+  console.log('SessionId pref: '+req.sessionID);
+  console.log('UserId pref: '+ req.session.userId);
 
   try {
-    const user = await User.findOne({ username });
+    const user = await User.findById(req.session.userId);
 
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
@@ -216,6 +243,14 @@ app.get('/checkLoggedIn', requireAuth, async (req, res) => {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
   }
+});
+
+app.post('/quiz', (req, res) => {
+  const answers = req.body.answers;
+
+  const preferences = preferencesModel.generatePreferences(answers);
+
+  res.json({ preferences: preferences });
 });
 
 app.listen(PORT, () => {

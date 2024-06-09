@@ -4,7 +4,7 @@ import { Container, Typography, Button, Card, CardContent, Chip } from '@mui/mat
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import categoriesData from './categories.json';
+import categoriesData from '../../Components/Data/categories.json';
 import GenreCard from '../../Components/Card/GenreCard';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
@@ -13,7 +13,6 @@ const PreferencePage = () => {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [error, setError] = useState('');
   const [categories, setCategories] = useState(categoriesData.genres);
-  const { username } = useParams();
 
   const navigate = useNavigate();
 
@@ -29,34 +28,31 @@ const PreferencePage = () => {
   };
 
   const handleSavePreferences = async () => {
-    if (!username) {
-      setError('Username not provided.');
-      return;
-    }
-  
     if (selectedGenres.length === 0) {
       setError('Please select at least one preference.');
       return;
     }
   
     try {
-      const response = await axios.post(`http://localhost:3001/setUserPreferences`, {
-        username: username,
+      const response = await axios.post(`http://localhost:3001/auth/setUserPreferences`, {
         preferences: selectedGenres
+      }, {
+        withCredentials: true,
       });
   
       console.log(response.data);
-
+  
       if (response.data.message === 'User preferences updated successfully') {
-        navigate(`/signin`);
+        navigate(`/`);
       }
-
+  
       setError('');
     } catch (error) {
       console.error(error);
       setError('Error updating preferences. Please try again later.');
     }
-  };   
+  };
+  
   
   const theme = createTheme({
     typography: {
@@ -89,9 +85,9 @@ const PreferencePage = () => {
                 description={category.description}
                 imageUrl={category.imageUrl}
                 destinations={category.destinations}
-                width="47vw" // Specify width if needed
-                isSelected={selectedGenres.includes(category.genre)} // Pass whether it's selected
-                onToggleSelection={() => handleGenreClick(category.genre)} // Pass the handler
+                width="47vw" 
+                isSelected={selectedGenres.includes(category.genre)}
+                onToggleSelection={() => handleGenreClick(category.genre)}
             />
             ))}
         </div>

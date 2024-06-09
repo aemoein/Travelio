@@ -7,7 +7,6 @@ import GradientText from '../../Components/Text/GradientText';
 import CountriesData from '../../Components/Data/countries.json';
 
 function SignUpInfo() {
-  const { username } = useParams();
   const [formData, setFormData] = useState({
     location: '',
     birthday: '',
@@ -71,12 +70,12 @@ function SignUpInfo() {
     try {
       formData.mobileNumber = formData.dialingCode + formData.mobileNumber;
       const formDataToSend = new FormData();
-      formDataToSend.append('username', username); 
       for (const key in formData) {
         formDataToSend.append(key, formData[key]);
       }
-      console.log("Request being sent:", formDataToSend); // Log the request
-      const response = await axios.post('http://localhost:3001/userInfoSignUp', formDataToSend, {
+      console.log("Request being sent:", formDataToSend);
+      const response = await axios.post('http://localhost:3001/auth/userInfoSignUp', formDataToSend, {
+        withCredentials: true,
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -84,7 +83,7 @@ function SignUpInfo() {
       console.log(response.data);
       
       if (response.data.message === 'User information updated successfully') {
-        navigate(`/preferences/${username}`);
+        navigate(`/preferences/select`);
       }
     } catch (error) {
       console.error('Error updating user information:', error.response.data);

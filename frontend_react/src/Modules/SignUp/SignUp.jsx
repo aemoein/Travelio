@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, TextField, Typography, Container, CssBaseline, Box, Link } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import GradientText from '../../Components/Text/GradientText';
 
 const theme = createTheme({
@@ -38,27 +39,25 @@ function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/signup', {
-        method: 'POST',
+      const response = await axios.post('http://localhost:3001/auth/signup', formData, {
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
       });
   
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message);
+      if (!response.status === 201) {
+        throw new Error(response.data.message);
       }
-
+  
       const { username } = formData;
       console.log('User signed up successfully:', username);
-      navigate(`/signUpInfo/${username}`);
+      navigate(`/signUpInfo`);
     } catch (error) {
       console.error('Error signing up:', error);
       setError('An error occurred during signup');
     }
-  };  
+  };
   
   return (
     <ThemeProvider theme={theme}>

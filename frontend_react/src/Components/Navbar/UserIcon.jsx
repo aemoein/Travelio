@@ -6,10 +6,14 @@ import {
   Popover,
   Typography
 } from '@mui/material';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { Padding } from '@mui/icons-material';
 
 const UserIcon = ({ profilePic, username, firstName }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -20,13 +24,22 @@ const UserIcon = ({ profilePic, username, firstName }) => {
   };
 
   const visitProfile = () => {
-    console.log("Visiting user profile");
+    navigate(`/profile`);
   };
 
-  const signOut = () => {
-    console.log("Signing out");
-  };
-
+  const signOut = async () => {
+    try {
+      const response = await axios.post('http://localhost:3001/auth/logout', null, { withCredentials: true });
+      if (response.data.message === "Logout successful") {
+        window.location.reload();
+      } else {
+        console.log("Logout failed");
+      }
+    } catch (error) {
+      console.error("Error while signing out:", error);
+    }
+  };  
+  
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
@@ -52,13 +65,11 @@ const UserIcon = ({ profilePic, username, firstName }) => {
        }}
       >
         <Box p={2}>
-          <Typography variant="h6" align="center" sx={{fontFamily: 'Poppins', fontWeight: '600'}}>{username}</Typography>
-          <Avatar alt={username} src={profilePic} sx={{ width: 100, height: 100, margin: 'auto', marginTop: 2 }} />
-          <Typography variant="body1" align="center" sx={{marginTop: '10px', fontFamily: 'Poppins'}}>Hi, {firstName}!</Typography>
-          
+            <Typography variant="h6" align="center" sx={{fontFamily: 'Poppins', fontWeight: '600'}}>{username}</Typography>
+            <Avatar alt={username} src={profilePic} sx={{ width: 100, height: 100, margin: 'auto', marginTop: 2 }} />
+            <Typography variant="body1" align="center" sx={{marginTop: '10px', fontFamily: 'Poppins'}}>Hi, {firstName}!</Typography>
             <Button variant="contained" color="primary" onClick={visitProfile} sx={{fontFamily: 'Poppins', fontWeight: '600', width: '100%', marginTop: 1, borderRadius: 5}}>Visit Profile</Button>
             <Button variant="outlined" color="primary" onClick={signOut} sx={{fontFamily: 'Poppins', fontWeight: '600', width: '100%', marginTop: 1, borderRadius: 5}}>Sign Out</Button>
-
         </Box>
       </Popover>
     </div>

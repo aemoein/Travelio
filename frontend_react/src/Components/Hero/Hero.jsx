@@ -33,7 +33,7 @@ function Hero() {
         fontFamily: 'reenie beanie',
         color: '#fff',
         letterSpacing: 'wider',
-        lineHeight: '0.0',
+        lineHeight: '0.0', // remove later and test and vote
         marginBottom: 20,
       }}>
         create your own stories

@@ -35,7 +35,7 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post('http://localhost:3001/login', formData, {
+        const response = await axios.post('http://localhost:3001/auth/login', formData, {
             withCredentials: true
         });
         console.log(response.data.message);

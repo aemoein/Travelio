@@ -1,0 +1,196 @@
+{
+    "questions": [
+      {
+        "category": "Historical Exploration",
+        "question": "Do you enjoy immersing yourself in the rich history of destinations?",
+        "image": "https://afar.brightspotcdn.com/dims4/default/0ded4d7/2147483647/strip/true/crop/2050x1364+0+0/resize/1440x958!/format/webp/quality/90/?url=https%3A%2F%2Fafar-media-production-web.s3.us-west-2.amazonaws.com%2Fbrightspot%2F13%2Fc3%2F8e6a4215fd2216f86b1ac3f213ea%2Foriginal-great-wall-hung-chung-chih-shutterstock.jpg",
+        "options": [
+          {"option": "Love it", "value": "a"},
+          {"option": "Like it", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not a fan", "value": "d"},
+          {"option": "Dislike it", "value": "e"}
+        ]
+      },
+      {
+        "category": "Cultural Immersion",
+        "question": "Are you fascinated by diverse cultures, including art, music, and cuisine?",
+        "image": "https://a.cdn-hotels.com/gdcs/production150/d1191/a7ebecc7-3174-4ad7-b00d-4d71366f76fd.jpg",
+        "options": [
+          {"option": "Absolutely!", "value": "a"},
+          {"option": "Yes, to some extent", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not really", "value": "d"},
+          {"option": "Not at all", "value": "e"}
+        ]
+      },
+      {
+        "category": "Nature and Scenic Beauty",
+        "question": "Do you seek out natural wonders like national parks and scenic landscapes?",
+        "image": "https://afar.brightspotcdn.com/dims4/default/052010a/2147483647/strip/false/crop/1600x1200+0+0/resize/1486x1115!/quality/90/?url=https%3A%2F%2Fafar-media-production-web.s3.us-west-2.amazonaws.com%2Fbrightspot%2F94%2Ff2%2F6a3272737dbb52c5759f6db3c7f8%2Foriginal-shutterstock-695991625.jpg",
+        "options": [
+          {"option": "Always!", "value": "a"},
+          {"option": "Often", "value": "b"},
+          {"option": "Sometimes", "value": "c"},
+          {"option": "Rarely", "value": "d"},
+          {"option": "Never", "value": "e"}
+        ]
+      },
+      {
+        "category": "Adventure and Thrills",
+        "question": "Are you drawn to adventurous activities like hiking, trekking, and extreme sports?",
+        "image": "https://www.newzealand.com/assets/Operator-Database/img-1612224709-7722-18346-sel-20452d-summer-brand-campaign-web-banner-1920x1280-dining__aWxvdmVrZWxseQo_CropResizeWzE5MDAsMTAwMCw3NSwianBnIl0.jpg",
+        "options": [
+          {"option": "Can't get enough!", "value": "a"},
+          {"option": "Enjoy them", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not really my thing", "value": "d"},
+          {"option": "Avoid them", "value": "e"}
+        ]
+      },
+      {
+        "category": "Urban Exploration",
+        "question": "Do you prefer vibrant cities with modern amenities and bustling nightlife?",
+        "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/104000/104059-New-York.jpg",
+        "options": [
+          {"option": "Love the city life!", "value": "a"},
+          {"option": "Enjoy it", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Dislike it", "value": "e"}
+        ]
+      },
+      {
+        "category": "Beach Escapes",
+        "question": "Do you prefer coastal areas with sandy beaches and clear waters?",
+        "image": "https://media.architecturaldigest.com/photos/579fc989a065cffc07e86675/1:1/w_4911,h_4911,c_limit/beaches-with-clear-water-06-edit.jpg",
+        "options": [
+          {"option": "Absolutely!", "value": "a"},
+          {"option": "Yes, to some extent", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Not at all", "value": "e"}
+        ]
+      },
+      {
+        "category": "Ecotourism and Sustainability",
+        "question": "Are you interested in destinations dedicated to promoting sustainability and conservation efforts?",
+        "image": "https://cdn.tatlerasia.com/asiatatler/i/sg/2021/07/02124605-kampung-admiralty-pbh-077_cover_2000x1333.jpg",
+        "options": [
+          {"option": "Very interested!", "value": "a"},
+          {"option": "Interested", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Not interested", "value": "e"}
+        ]
+      },
+      {
+        "category": "Relaxation and Wellness",
+        "question": "Are you looking for destinations focused on relaxation and rejuvenation?",
+        "image": "https://sedonamagoretreat.org/wp-content/uploads/2022/09/SM-header-wellness.jpg",
+        "options": [
+          {"option": "Absolutely!", "value": "a"},
+          {"option": "Yes, that sounds nice", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not really", "value": "d"},
+          {"option": "Not interested", "value": "e"}
+        ]
+      },
+      {
+        "category": "Culinary Experiences",
+        "question": "Do you enjoy exploring local cuisines and food markets?",
+        "image": "https://assets.vogue.com/photos/618e7c4badd0a25be01d750e/master/w_2560%2Cc_limit/GettyImages-1222654885.jpg",
+        "options": [
+          {"option": "Love it!", "value": "a"},
+          {"option": "Like it", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Dislike it", "value": "e"}
+        ]
+      },
+      {
+        "category": "Sports and Outdoor Activities",
+        "question": "Are you interested in destinations offering opportunities for sports and outdoor adventures?",
+        "image": "https://www.telegraph.co.uk/content/dam/Travel/ski/Resorts/verbier-credit-raphaelsurmont_040422.jpg",
+        "options": [
+          {"option": "Love it!", "value": "a"},
+          {"option": "Enjoy it", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Not interested", "value": "e"}
+        ]
+      },
+      {
+        "category": "Off-the-Beaten-Path Adventures",
+        "question": "Do you prefer exploring remote or less-visited destinations?",
+        "image": "https://i.natgeofe.com/n/9b84995f-962d-4ac7-84f8-897e065860fc/vagar-island-faroe-islands-denmark_16x9.jpg?w=1200",
+        "options": [
+          {"option": "Love the adventure!", "value": "a"},
+          {"option": "Enjoy it", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Prefer popular destinations", "value": "e"}
+        ]
+      },
+      {
+        "category": "Family-Friendly Destinations",
+        "question": "Are you traveling with family and looking for suitable destinations?",
+        "image": "https://www.hollywoodreporter.com/wp-content/uploads/2022/09/Walt-Disney-World-Celebration-Castle-GettyImages-611910256-H-2022.jpg?w=1296",
+        "options": [
+          {"option": "Yes, family comes first!", "value": "a"},
+          {"option": "Sure, family-friendly options are great", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Traveling solo or with adults", "value": "e"}
+        ]
+      },
+      {
+        "category": "Luxury Getaways",
+        "question": "Do you prefer high-end destinations with luxury accommodations and personalized services?",
+        "image": "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Asia/Malaysia/Langkawi/the-datai-langkawi-prod.jpg",
+        "options": [
+          {"option": "Absolutely!", "value": "a"},
+          {"option": "Yes, to some extent", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Not interested", "value": "e"}
+        ]
+      },
+      {
+        "category": "Budget-Friendly Destinations",
+        "question": "Are you looking for affordable travel options with budget-friendly accommodations and attractions?",
+        "image": "https://media.cntraveller.com/photos/64624a3b26c5568e6cd76d8a/4:3/w_2664,h_1998,c_limit/lisbon-GettyImages-1401359847.jpg",
+        "options": [
+          {"option": "Yes, definitely!", "value": "a"},
+          {"option": "Sure, budget travel sounds good", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Prefer luxury", "value": "e"}
+        ]
+      },
+      {
+        "category": "Educational Travel",
+        "question": "Do you enjoy learning about specific subjects through museums, galleries, and guided tours?",
+        "image": "https://www.oxfordscholastica.com/wp-content/uploads/2023/07/cambridge-college.jpg",
+        "options": [
+          {"option": "Love it!", "value": "a"},
+          {"option": "Like it", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Dislike it", "value": "e"}
+        ]
+      },
+      {
+        "category": "Wildlife and Nature Conservation",
+        "question": "Are you interested in wildlife experiences and conservation efforts?",
+        "image": "https://wildlifesafaritanzania.com/wp-content/uploads/2020/09/7-Days-Tanzania-Wildlife-Safari-750x450.jpg",
+        "options": [
+          {"option": "Very interested!", "value": "a"},
+          {"option": "Interested", "value": "b"},
+          {"option": "Neutral", "value": "c"},
+          {"option": "Not particularly", "value": "d"},
+          {"option": "Not interested", "value": "e"}
+        ]
+      }
+    ]
+  }  

@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const checkLoggedIn = async () => {
       try {
-          const response = await axios.get('http://localhost:3001/checkLoggedIn', { withCredentials: true });
+          const response = await axios.get('http://localhost:3001/profile/checkLoggedIn', { withCredentials: true });
   
           if (response.status === 200) {
               const data = response.data;
