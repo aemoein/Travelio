@@ -14,7 +14,7 @@ const authMiddleware = (req, res, next) => {
       
       console.log('Token:', token);
       console.log('decoded:', decoded);
-      console.log('User ID:', req.user.id);
+      console.log('User ID:', req.user.userId);
       console.log('email:', req.user.email);
       console.log('username:', req.user.username);
 

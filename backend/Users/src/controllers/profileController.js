@@ -2,7 +2,7 @@
 const profileService = require('../services/profileService');
 
 async function getProfile(req, res) {
-  const result = await profileService.getUserProfile(req.user.id);
+  const result = await profileService.getUserProfile(req.user.userId);
   res.status(result.status).json(result.user);
 }
 
@@ -11,15 +11,7 @@ async function checkLoggedIn(req, res) {
   res.status(result.status).json(result.user);
 }
 
-async function updateProfile(req, res) {
-  const userId = req.user.id;
-  const updatedData = req.body;
-  const result = await profileService.updateProfile(userId, updatedData);
-  res.status(result.status).json(result.user);
-}
-
 module.exports = {
   getProfile,
   checkLoggedIn,
-  updateProfile,
 };

@@ -22,7 +22,7 @@ async function getUserProfile(userId) {
 
 async function checkLoggedIn(req) {
   try {
-    const user = await User.findById(req.user.id);
+    const user = await User.findById(req.user.userId);
 
     if (!user) {
       return { status: 404, message: 'User not found' };
@@ -44,23 +44,7 @@ async function checkLoggedIn(req) {
   }
 }
 
-async function updateProfile(userId, updatedData) {
-  try {
-    const user = await User.findByIdAndUpdate(userId, updatedData, { new: true });
-
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-
-    return { status: 200, user: user };
-  } catch (error) {
-    console.error(error);
-    return { status: 500, message: 'Internal server error' };
-  }
-}
-
 module.exports = {
   getUserProfile,
   checkLoggedIn,
-  updateProfile,
 };

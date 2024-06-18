@@ -39,8 +39,8 @@ async function loginUser(username, password) {
             return { status: 400, message: 'Invalid username or password' };
         }
     
-        const token = jwt.sign({ id: user._id, email: user.email, username: user.username }, config.jwtSecret);
-        return { status: 200, message: 'Login successful', token: token, id: user._id };
+        const token = jwt.sign({ userId: user._id, email: user.email, username: user.username }, config.jwtSecret);
+        return { status: 200, message: 'Login successful', token: token, userId: user._id };
     } catch (error) {
         console.error(error);
         return { status: 500, message: 'Internal server error' };

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Button, TextField, Typography, Container, CssBaseline, Box } from '@mui/material';
-import Navbar from '../../Components/Navbar/Navbar2.tsx';
+import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import Hero from '../../Components/Hero/Hero';
 import DesView from '../../Components/Card/DesView';
