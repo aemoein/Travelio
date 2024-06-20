@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const authMiddleware = require('./../middleware/authMiddleware');//`${__dirname}/middleware/authMiddleware`
+const authMiddleware = require('./src/middleware/authMiddleware');//`${__dirname}/middleware/authMiddleware`
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
@@ -32,9 +32,14 @@ app.use(authMiddleware);
 app.use(errorMiddleware);
 
 // Connect to MongoDB
-mongoose.connect(config.mongoURI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
+const DB = process.env.MONGO_URI_REMOTE;
+mongoose.connect(DB).then(()=> {
+    console.log('DB connection successfully');
+}).catch(err => {
+    console.log(err);
+    console.log('DB connection failed');
+    process.exit(1);
+});
 
 // Define a simple route
 app.get('/', (req, res) => {
