@@ -1,13 +1,13 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const ArticleCard = ({ imageUrl, category, title, date, summary, width }) => {
+const ArticleCard = ({ imageUrl, category, title, date, summary, width, height }) => {
   return (
     <Box
       sx={{
         position: 'relative',
         width: width ? width : '27vw',
-        height: '27vw',
+        height: height ? height : '27vw',
         borderRadius: '10px',
         overflow: 'hidden',
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
