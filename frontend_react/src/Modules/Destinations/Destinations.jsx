@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Box, Button, Grid, Typography, TextField, Select, MenuItem } from '@mui/material';
 import DestinationCard from '../../Components/Card/DestinationCard';
+import DesCard from '../../Components/Card/DesCard';
 import Navbar from '../../Components/Navbar/Navbar';
 
 const Destinations = () => {
@@ -57,11 +58,11 @@ const Destinations = () => {
     };
 
     return (
-        <>
+        <Box sx={{maxWidth: '85vw', margin: 'auto'}}>
             <Navbar />
             <Box sx={{ height: 50 }} />
             <Box sx={{ padding: 4 }}>
-                <Typography variant="h4" gutterBottom sx={{ ml: 1.7, fontFamily: 'Poppins', fontWeight: '600' }}>
+                <Typography variant="h4" gutterBottom sx={{ ml: '1.6vw', fontFamily: 'Poppins', fontWeight: '600' }}>
                     Destinations
                 </Typography>
                 <TextField
@@ -70,16 +71,18 @@ const Destinations = () => {
                     fullWidth
                     value={searchTerm}
                     onChange={handleSearchChange}
-                    sx={{ mb: 2 }}
+                    InputProps={{ sx: { borderRadius: '40px' } }} // Applying borderRadius to InputProps
+                    InputLabelProps={{ sx: { pl: 1.7 } }} // Adding internal padding (left margin) to the label
+                    sx={{ mb: 2, width: '83vw', ml: '0.8vw' }} // Adjusting other TextField styles separately
                 />
-                <Box display="flex" alignItems="center" justifyContent="center">
+                <Box display="flex" alignItems="center" justifyContent="center" sx={{ width: '83vw', ml: '0.8vw' }}>
                     <Select
                         value={selectedRegion}
                         onChange={handleRegionChange}
                         variant="outlined"
                         fullWidth
                         displayEmpty
-                        sx={{ mb: 2, mr: 2 }}
+                        sx={{ mb: 2, mr: 2, borderRadius: '40px', '& .MuiSelect-select': { paddingLeft: '1.7em', }, }}
                     >
                         <MenuItem value="">All Regions</MenuItem>
                         <MenuItem value="North America">North America</MenuItem>
@@ -109,7 +112,7 @@ const Destinations = () => {
                         variant="outlined"
                         fullWidth
                         displayEmpty
-                        sx={{ mb: 2 }}
+                        sx={{ mb: 2, borderRadius: '40px', '& .MuiSelect-select': { paddingLeft: '1.7em', }, }}
                     >
                         <MenuItem value="">All Continents</MenuItem>
                         <MenuItem value="North America">North America</MenuItem>
@@ -121,15 +124,15 @@ const Destinations = () => {
                         <MenuItem value="Antarctica">Antarctica</MenuItem>
                     </Select>
                 </Box>
-                <Grid container spacing={4}>
+                <Grid container justifyContent="center" spacing={4} sx={{width: '85vw'}}>
                     {currentDestinations.map((destination, index) => (
-                        <Grid item xs={4} sm={4} md={4} lg={4} key={index}>
-                            <DestinationCard
-                                country={destination.region}
-                                city={destination.name}
-                                imageUrl={destination.picture}
-                            />
-                        </Grid>
+                    <Grid item xs={4} sm={4} md={4} lg={4} key={index}>
+                        <DesCard
+                        country={destination.region}
+                        city={destination.name}
+                        imageUrl={destination.picture}
+                        />
+                    </Grid>
                     ))}
                 </Grid>
                 <Box
@@ -182,7 +185,7 @@ const Destinations = () => {
                     </Button>
                 </Box>
             </Box>
-        </>
+        </Box>
     );
 };
 
