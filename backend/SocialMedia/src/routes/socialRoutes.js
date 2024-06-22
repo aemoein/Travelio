@@ -4,13 +4,13 @@ const router = express();
 const socialController = require('./../controllers/socialController');
 
 //create social profile
-router.post('/:id',socialController.createSocialProfile);
+router.post('/create',socialController.createSocialProfile);
 
 //get All social profiles
-router.get('/social-profile',socialController.getAllSocialProfiles);
+router.get('/social-profiles',socialController.getAllSocialProfiles);
 
 //get social profile by id
-router.get('/social-profile/:id',socialController.getSocialProfileById);
+router.get('/social-profile/:id',socialController.getSocialProfile);
 
 //delete social profile
 router.delete('/social-profile/:id',socialController.deleteSocialProfile);
