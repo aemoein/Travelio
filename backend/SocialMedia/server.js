@@ -33,6 +33,8 @@ app.use(extractToken);
 //app.use(authMiddleware);
 app.use(errorMiddleware);
 
+app.use('/social');
+
 // Connect to MongoDB
 const DB_URL = process.env.MONGO_URI_REMOTE;
 mongoose.connect(DB_URL).then(()=> {
