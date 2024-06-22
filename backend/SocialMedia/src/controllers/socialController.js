@@ -1,19 +1,18 @@
-const fs = require('fs');
-const socialProfile = reuire('../models/socialModel');
+const socialProfile = require('../models/socialModel');
 
 //create a social profile
 exports.createSocialProfile = async (req, res) => {
     try{
         //check if the user is already created a social profile
-        const socialProfile = await SocialProfile.findOne({ userId: req.body.userId });
-        if (socialProfile) {
+        const currentSocialProfile = await socialProfile.findOne({ userId: req.body.userId });
+        if (currentSocialProfile) {
             res.status(400).json({
                 status: 'fail',
                 message: 'Social Profile already exists'
             });
         }
         //create a new social profile
-        const newSocialProfile = await socialProfile.create(req.body);
+        const newSocialProfile = await socialProfile.create({ userId: req.body.userId });
         res.status(201).json({
             status:'success',
             data: newSocialProfile,
@@ -22,7 +21,7 @@ exports.createSocialProfile = async (req, res) => {
     }catch(err){
         res.status(500).json({
             status: 'fail',
-            message: err
+            message: err.message
         });
     }
 };
