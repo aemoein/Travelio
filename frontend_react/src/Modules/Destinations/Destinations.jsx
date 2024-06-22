@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Box, Button, Grid, Typography, TextField, Select, MenuItem } from '@mui/material';
 import DestinationCard from '../../Components/Card/DestinationCard';
+import DestinationHero from '../../Components/Hero/DestinationHero';
 import DesCard from '../../Components/Card/DesCard';
 import Navbar from '../../Components/Navbar/Navbar';
 
@@ -58,9 +59,11 @@ const Destinations = () => {
     };
 
     return (
-        <Box sx={{maxWidth: '85vw', margin: 'auto'}}>
-            <Navbar />
-            <Box sx={{ height: 50 }} />
+        <>
+        <Navbar />
+        <Box sx={{ height: 50 }} />
+        <DestinationHero />
+        <Box sx={{maxWidth: '85vw', margin: 'auto', ml: '5vw'}}>
             <Box sx={{ padding: 4 }}>
                 <Typography variant="h4" gutterBottom sx={{ ml: '1.6vw', fontFamily: 'Poppins', fontWeight: '600' }}>
                     Destinations
@@ -186,6 +189,7 @@ const Destinations = () => {
                 </Box>
             </Box>
         </Box>
+        </>
     );
 };
 
