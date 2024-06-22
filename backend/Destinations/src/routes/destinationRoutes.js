@@ -1,8 +1,8 @@
 const express = require('express');
-const { fetchDestinations } = require('../controllers/destinationsController');
+const destinationsController = require('../controllers/destinationsController');
 
 const router = express.Router();
 
-router.get('/destinations', fetchDestinations);
+router.get('/destinations', destinationsController.fetchDestinations);
 
 module.exports = router;

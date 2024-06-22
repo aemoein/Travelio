@@ -160,9 +160,11 @@ const Navbar = () => {
           </Box>
           <MenuItem onClick={handleMenuClose} sx={{padding: 1, mt: 1, mb: 0, fontFamily: 'Poppins', fontWeight: 600}}>More Articles</MenuItem>
         </Menu>
-        <Button color="inherit" sx={buttonStyles}>
-          Destinations
-        </Button>
+        <Link to="/destinations" style={{ textDecoration: 'none' }}>
+          <Button color="inherit" sx={buttonStyles}>
+            Destinations
+          </Button>
+        </Link>
         <Button color="inherit" sx={buttonStyles}>
           Planning
         </Button>

@@ -1,7 +1,7 @@
 [
     {
       "name": "United States",
-      "picture": "x",
+      "picture": "https://roads.porsche.com/wp-content/uploads/2022/11/us-route-66-mother-road-scaled.jpg.fallback.jpg",
       "description": "The United States of America is a country primarily located in North America.",
       "population": 331002651,
       "language": "English",
@@ -19,7 +19,7 @@
     },
     {
       "name": "Canada",
-      "picture": "x",
+      "picture": "https://www.internationalcitizens.com/wp-content/uploads/2022/09/iStock-1178852373.jpg",
       "description": "Canada is the second largest country by land area.",
       "population": 37742154,
       "language": "English, French",
@@ -37,7 +37,7 @@
     },
     {
       "name": "Mexico",
-      "picture": "x",
+      "picture": "https://cdn.mos.cms.futurecdn.net/dXVL6xpUyWzLiEd9CAyGtS-1200-80.jpg",
       "description": "Mexico is known for its rich cultural heritage and diverse landscapes.",
       "population": 128932753,
       "language": "Spanish",
@@ -55,7 +55,7 @@
     },
     {
       "name": "Guatemala",
-      "picture": "x",
+      "picture": "https://content.r9cdn.net/rimg/dimg/6f/d5/a11de2dc-city-43889-162df482d9d.jpg?width=1366&height=768&xhint=1422&yhint=2033&crop=true",
       "description": "Guatemala is known for its Mayan history and vibrant culture.",
       "population": 17915568,
       "language": "Spanish",

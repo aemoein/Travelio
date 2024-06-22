@@ -10,6 +10,7 @@ import PreferenceSelector from './Modules/SignUp/PreferenceSelector'
 import RecommendedPreferences from './Modules/SignUp/RecPrefrences'
 import Profile from './Modules/Profile/Profile';
 import Quiz from './Modules/Quiz/Quiz';
+import Destinations from './Modules/Destinations/Destinations';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/preferences/recommended" element={<RecommendedPreferences />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/destinations" element={<Destinations />} />
         </Routes>
     </Router>
   );

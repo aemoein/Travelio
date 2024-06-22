@@ -117,7 +117,7 @@ const morgan = require('morgan');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const authMiddleware = require('./middleware/authMiddleware');
+const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
@@ -138,7 +138,6 @@ app.use(session({
     cookie: { secure: false } // Use secure: true in production with HTTPS
 }));
 app.use(extractToken);
-app.use(authMiddleware);
 app.use(errorMiddleware);
 
 // Connect to MongoDB

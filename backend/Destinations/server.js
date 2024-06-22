@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const authMiddleware = require('./middleware/authMiddleware');
+const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const destinationRoutes = require('./src/routes/destinationRoutes')
@@ -27,7 +27,6 @@ app.use(session({
     cookie: { secure: false }
 }));
 app.use(extractToken);
-app.use(authMiddleware);
 app.use(errorMiddleware);
 
 mongoose.connect(config.mongoURI)
