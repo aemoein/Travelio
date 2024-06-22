@@ -3,4 +3,7 @@ const router = express();
 
 const socialController = require('./../controllers/socialController');
 
-router.route('/')
+router.post('/follow', socialController.follwoUser);
+router.post('/unfollow',socialController.unfollowUser);
+
+module.exports = router;

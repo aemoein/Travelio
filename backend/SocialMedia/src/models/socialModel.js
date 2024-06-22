@@ -10,19 +10,22 @@ const socialProfileSchema = new mongoose.Schema({
         type:[{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
-          }]
+          }],
+          default:[]
     },
-    following: {
+    followings: {
         type:[{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
-          }]
+          }],
+          default:[]
     },
     saved:{
         type:[{
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Post'
-          }]
+          }],
+          default:[]
     }
 });
 

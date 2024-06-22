@@ -7,7 +7,7 @@ module.exports = {
     mongoURI: process.env.MONGO_URI_REMOTE,
 
     // Port for the server to listen on
-    port: process.env.PORT || 3001,
+    port: process.env.PORT || 3002,
 
     // JWT Secret Key
     jwtSecret: process.env.JWT_SECRET

@@ -7,7 +7,8 @@ const morgan = require('morgan');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const authMiddleware = require('./src/middleware/authMiddleware');//`${__dirname}/middleware/authMiddleware`
+const helmet = require('helmet');
+const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
@@ -27,13 +28,14 @@ app.use(session({
     saveUninitialized: true,
     cookie: { secure: false } // Use secure: true in production with HTTPS
 }));
+app.use(helmet());
 app.use(extractToken);
-app.use(authMiddleware);
+//app.use(authMiddleware);
 app.use(errorMiddleware);
 
 // Connect to MongoDB
-const DB = process.env.MONGO_URI_REMOTE;
-mongoose.connect(DB).then(()=> {
+const DB_URL = process.env.MONGO_URI_REMOTE;
+mongoose.connect(DB_URL).then(()=> {
     console.log('DB connection successfully');
 }).catch(err => {
     console.log(err);
@@ -47,7 +49,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-const PORT = config.port;
+const PORT = config.port || 3002;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
