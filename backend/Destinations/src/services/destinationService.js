@@ -16,14 +16,32 @@ const loadDestinations = () => {
     }
 };
 
+// Function to get all destinations
+const getDestinations = (searchQuery = '') => {
+    if (searchQuery.trim() === '') {
+        return destinations;
+    } else {
+        return searchDestinations(searchQuery);
+    }
+};
+
+// Function to search destinations based on search query
+const searchDestinations = (searchQuery) => {
+    const normalizedQuery = searchQuery.trim().toLowerCase();
+    return destinations.filter(destination => {
+        // Customize this filtering logic based on your requirements
+        return (
+            destination.region.toLowerCase().includes(normalizedQuery) ||
+            destination.name.toLowerCase().includes(normalizedQuery)
+            // Add more fields if needed
+        );
+    });
+};
+
 // Call loadDestinations when the server starts
 loadDestinations();
 
-// Function to get the first destination
-const getDestinations = () => {
-    return destinations;
-};
-
 module.exports = {
-    getDestinations
+    getDestinations,
+    searchDestinations
 };
