@@ -1,3 +1,4 @@
+const axios = require('axios');
 const socialProfile = require('../models/socialModel');
 
 //create a social profile
@@ -29,7 +30,7 @@ exports.createSocialProfile = async (req, res) => {
 //get all social profiles
 exports.getAllSocialProfiles = async (req,res) =>{
     try{
-        const socialProfiles = await SocialProfile.find();
+        const socialProfiles = await socialProfile.find();
         res.status(200).json({
             status:'success',
             data: socialProfiles
@@ -45,8 +46,8 @@ exports.getAllSocialProfiles = async (req,res) =>{
 //get a social profile
 exports.getSocialProfile = async (req,res) => {
     try{
-        const socialProfile = await SocialProfile.findById(req.params.id);
-        if(!socialProfile){
+        const getSocialProfile = await socialProfile.findById(req.params.id);
+        if(!getSocialProfile){
             res.status(404).json({
                 status: 'fail',
                 message: 'Social Profile not found'
@@ -54,7 +55,7 @@ exports.getSocialProfile = async (req,res) => {
         }
         res.status(200).json({
             status:'success',
-            data: socialProfile
+            data: getSocialProfile
         });
     }catch(err){
         res.status(500).json({
@@ -67,8 +68,8 @@ exports.getSocialProfile = async (req,res) => {
 //delete a social profile
 exports.deleteSocialProfile = async (req,res) => {
     try{
-        const socialProfile = await SocialProfile.findById(req.params.id);
-        if(!socialProfile){
+        const delSocialProfile = await socialProfile.findById(req.params.id);
+        if(!delSocialProfile){
             res.status(404).json({
                 status: 'fail',
                 message: 'Social Profile not found'
@@ -91,8 +92,8 @@ exports.deleteSocialProfile = async (req,res) => {
 exports.follwoUser = async (req,res) => {
     const { currentUserId, targetUserId } = req.body;
     try {
-        const currentUserProfile = await SocialProfile.findOne({ userId: currentUserId });
-        const targetUserProfile = await SocialProfile.findOne({ userId: targetUserId });
+        const currentUserProfile = await socialProfile.findOne({ userId: currentUserId });
+        const targetUserProfile = await socialProfile.findOne({ userId: targetUserId });
         if (!currentUserProfile ||!targetUserProfile) {
             res.status(404).json({
                 status: 'fail',

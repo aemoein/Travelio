@@ -4,7 +4,7 @@ const router = express();
 const socialController = require('./../controllers/socialController');
 
 //create social profile
-router.post('/create',socialController.createSocialProfile);
+router.post('/create-profile',socialController.createSocialProfile);
 
 //get All social profiles
 router.get('/social-profiles',socialController.getAllSocialProfiles);
