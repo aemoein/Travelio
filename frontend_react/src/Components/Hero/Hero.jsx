@@ -33,7 +33,7 @@ function Hero() {
         fontFamily: 'reenie beanie',
         color: '#fff',
         letterSpacing: 'wider',
-        lineHeight: '0.0', // remove later and test and vote
+        lineHeight: '0.0',
         marginBottom: 20,
       }}>
         create your own stories
@@ -42,12 +42,12 @@ function Hero() {
         variant="contained"
         color="primary"
         size="large"
-        onClick={handleGetStartedClick} // Call the function when the button is clicked
+        onClick={handleGetStartedClick}
         sx={{
             backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
             borderRadius: 10,
-            fontWeight: '500',
-            fontFamily: 'Montserrat, sans-serif',
+            fontWeight: '700',
+            fontFamily: 'Poppins',
         }}
       >
         Get Started
