@@ -73,7 +73,7 @@
     },
     {
       "name": "Belize",
-      "picture": "x",
+      "picture": "https://i.natgeofe.com/n/318dbe1c-829a-400b-b52f-ed7f9a1f0ccb/GettyImages-451852-001-1.jpg",
       "description": "Belize is known for its beautiful Caribbean coastline and rich marine life.",
       "population": 397621,
       "language": "English",
@@ -91,7 +91,7 @@
     },
     {
       "name": "Honduras",
-      "picture": "x",
+      "picture": "https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_675,w_1200,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1681792387/041823-honduras-hero_xrzhx8",
       "description": "Honduras is known for its rich natural resources and ancient Mayan ruins.",
       "population": 9904607,
       "language": "Spanish",
@@ -109,7 +109,7 @@
     },
     {
       "name": "El Salvador",
-      "picture": "x",
+      "picture": "https://www.state.gov/wp-content/uploads/2023/07/shutterstock_189552479v2.jpg",
       "description": "El Salvador is the smallest and most densely populated country in Central America.",
       "population": 6486205,
       "language": "Spanish",
@@ -127,7 +127,7 @@
     },
     {
       "name": "Nicaragua",
-      "picture": "x",
+      "picture": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/88/bf/9c.jpg",
       "description": "Nicaragua is known for its dramatic terrain of lakes, volcanoes, and beaches.",
       "population": 6624554,
       "language": "Spanish",
@@ -145,7 +145,7 @@
     },
     {
       "name": "Costa Rica",
-      "picture": "x",
+      "picture": "https://assets-jpcust.jwpsrv.com/thumbnails/UUgsC1HS-720.jpg",
       "description": "Costa Rica is known for its beaches, volcanoes, and biodiversity.",
       "population": 5094118,
       "language": "Spanish",
@@ -163,7 +163,7 @@
     },
     {
       "name": "Panama",
-      "picture": "x",
+      "picture": "https://i.natgeofe.com/n/bd40e5a2-e085-4f1d-88a2-6504a8348690/GettyImages-1168257279_2x3.jpg",
       "description": "Panama is known for the Panama Canal that connects the Atlantic and Pacific Oceans.",
       "population": 4314768,
       "language": "Spanish",
@@ -181,7 +181,7 @@
     },
     {
       "name": "Cuba",
-      "picture": "x",
+      "picture": "https://services.travelsavers.com/AMGService.svc/REST/GetImage?ImageID=8f96c373-9224-e911-b4aa-782bcb66a2f2",
       "description": "Cuba is the largest island in the Caribbean known for its vibrant culture.",
       "population": 11326616,
       "language": "Spanish",
@@ -199,7 +199,7 @@
     },
     {
       "name": "Jamaica",
-      "picture": "x",
+      "picture": "https://www.resortsdaily.com/images/Sandals-Royal-Caribbean-Private-Island.jpg",
       "description": "Jamaica is known for its reggae music, white-sand beaches, and rich culture.",
       "population": 2961167,
       "language": "English",
