@@ -27,7 +27,7 @@ const Hero = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '30vh',
-        backgroundImage: 'url(https://www.prettywildworld.com/wp-content/uploads/2017/04/The-Most-Breathtaking-Natural-Wonders-in-North-America-Mendenhall-Glacier-Caves.jpg)',
+        backgroundImage: 'url(https://media.gq-magazine.co.uk/photos/5d13a9c2976fa37177f3b040/16:9/w_2560%2Cc_limit/hp-gq-6dec18_istock_.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

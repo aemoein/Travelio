@@ -98,6 +98,8 @@ const Destinations = () => {
         },
     };
 
+    //https://media.cntraveler.com/photos/5a99aa29b00933493b9a6d2d/16:9/w_1280,c_limit/Los-Angeles_GettyImages-518488084.jpg
+
     return (
         <>
             <Navbar />
@@ -105,7 +107,21 @@ const Destinations = () => {
             <DestinationHero />
             <Box sx={{ width: '80vw', margin: 'auto', justifyContent: 'center', display: 'flex', alignItems: 'center', pl: 6, pr: 6 }}>
                 <Box sx={{ padding: 4 }}>
-                    <Typography variant="h4" gutterBottom sx={{ ml: '1.6vw', fontFamily: 'Poppins', fontWeight: '600' }}>
+                    <Typography align="left" 
+                        sx={{ 
+                            ml: { xs: '1.6vw', sm: '1.6vw', md: '1.6vw', lg: '0.0vw'},
+                            fontFamily: 'Merriweather',
+                            fontWeight: '900',
+                            fontSize: 20,
+                            lineHeight: '1.2',
+                            width: 'fit-content',
+                            backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+                            WebkitBackgroundClip: 'text',
+                            color: 'transparent',
+                        }}>
+                        Explore
+                    </Typography>
+                    <Typography variant="h4" gutterBottom sx={{ ml: { xs: '1.6vw', sm: '1.6vw', md: '1.6vw', lg: '0.0vw'}, fontFamily: 'Poppins', fontWeight: '600' }}>
                         Destinations
                     </Typography>
                     <TextField
