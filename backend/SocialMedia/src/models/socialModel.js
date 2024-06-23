@@ -26,6 +26,13 @@ const socialProfileSchema = new mongoose.Schema({
             ref: 'Post'
           }],
           default:[]
+    },
+    blocked: {
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        }],
+        default: []
     }
 });
 
