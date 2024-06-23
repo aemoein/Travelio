@@ -16,7 +16,7 @@ router.get('/social-profile/:id',socialController.getSocialProfile);
 router.delete('/social-profile/:id',socialController.deleteSocialProfile);
 
 // 5- follow user 
-router.post('/follow', socialController.follwoUser);
+router.post('/follow', socialController.followUser);
 
 // 6- unfollow user
 router.post('/unfollow',socialController.unfollowUser);

@@ -88,8 +88,8 @@ exports.deleteSocialProfile = async (req,res) => {
     }
 };
 
-// 5- folow a user
-exports.follwoUser = async (req,res) => {
+// 5- follow a user
+exports.followUser = async (req,res) => {
     const { currentUserProfileId, targetUserProfileId } = req.body;
     try {
         const currentUserProfile = await socialProfile.findById(currentUserProfileId);
