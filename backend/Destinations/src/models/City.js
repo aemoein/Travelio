@@ -11,28 +11,32 @@ const foodSchema = new Schema({
 const restaurantSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  picture: { type: String, required: true }
+  picture: { type: String, required: true },
+  link: { type: String, required: false }
 });
 
 const hotelSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  picture: { type: String, required: true }
+  picture: { type: String, required: true },
+  link: { type: String, required: false }
 });
 
 const transportationSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  picture: { type: String, required: true }
+  picture: { type: String, required: true },
+  link: { type: String, required: false }
 });
 
 // Define main city schema
 const CitySchema = new Schema({
   cityName: { type: String, required: true },
   picture: { type: String, required: true },
+  hero: { type: String, required: true },
   description: { type: String, required: true },
   population: { type: Number, required: false },
-  country: { type: Schema.Types.ObjectId, ref: 'Country', required: true },
+  country: { type: String, required: true },
   region: { type: String, required: true },
   language: { type: String, required: true },
   currency: { type: String, required: true },
@@ -42,7 +46,8 @@ const CitySchema = new Schema({
   hotels: [hotelSchema],
   transportation: [transportationSchema],
   gallery: [{ type: String, required: false }],
+}, { 
+  indexes: [{ unique: true, fields: ['cityName', 'country', 'region'] }]
 });
 
-// Export the model
 module.exports = mongoose.model('City', CitySchema);

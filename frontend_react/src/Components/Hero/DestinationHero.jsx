@@ -13,7 +13,7 @@ const Hero = () => {
     const interval = setInterval(() => {
       setIsAnimating(true);
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000); // Change word every 2 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -27,7 +27,7 @@ const Hero = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '30vh',
-        backgroundImage: 'url(https://miro.medium.com/v2/resize:fit:1400/1*RAxRtjQtibKFEWiK1A-EFg.jpeg)',
+        backgroundImage: 'url(https://www.prettywildworld.com/wp-content/uploads/2017/04/The-Most-Breathtaking-Natural-Wonders-in-North-America-Mendenhall-Glacier-Caves.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -49,8 +49,8 @@ const Hero = () => {
             fontSize: '4rem',
             fontWeight: 'bold',
             fontFamily: 'Poppins',
-            color: '#fff', // White color for text to make it visible on the background
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', // Add some text shadow for better readability
+            color: '#fff', 
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
           }}
         >
           <AnimatePresence

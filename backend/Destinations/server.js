@@ -11,6 +11,7 @@ const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const destinationRoutes = require('./src/routes/destinationRoutes')
+const cityRoutes = require('./src/routes/cityRoutes')
 const config = require('./src/config/config');
 
 dotenv.config();
@@ -34,6 +35,7 @@ mongoose.connect(config.mongoURI)
   .catch(err => console.log(err));
 
 app.use('/', destinationRoutes);
+app.use('/city', cityRoutes);
 
 const PORT = config.port;
 app.listen(PORT, () => {

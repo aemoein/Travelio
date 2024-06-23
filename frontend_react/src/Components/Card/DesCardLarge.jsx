@@ -1,23 +1,23 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const DesCard = ({ country, city, imageUrl }) => {
+const DesCardLarge = ({ country, city, imageUrl }) => {
   return (
     <Box sx={{
-      width: '24vw',
+      width: '17vw',
       transition: 'transform 0.3s ease-in-out',
       '&:hover': {
         transform: 'scale(1.05)',
       }
     }}>
-      <Box sx={{ textAlign: 'center', ml: 0 }}>
+      <Box sx={{ textAlign: 'center' }}>
         <Box
           sx={{
             backgroundImage: `url(${imageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            width: '24vw',
-            height: '30vw', 
+            width: '17vw',
+            height: '21.25vw', 
             margin: '0 auto', 
             borderRadius: '5%', 
           }}
@@ -52,4 +52,4 @@ const DesCard = ({ country, city, imageUrl }) => {
   );
 };
 
-export default DesCard;
+export default DesCardLarge;

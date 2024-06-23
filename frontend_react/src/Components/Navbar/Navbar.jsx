@@ -68,7 +68,7 @@ const Navbar = () => {
         setUserData(data);
         console.log('User is logged in');
         console.log("user pic link: ");
-        console.log(data.profilePicUrl); // Use data directly from response
+        console.log(data.profilePicUrl);
       }
     } catch (error) {
       console.error('Error checking if user is logged in:', error);

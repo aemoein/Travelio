@@ -44,6 +44,9 @@ function LoginPage() {
             // Save the token in local storage
             localStorage.setItem('token', response.data.token);
 
+            // Set loggedin flag to true
+            localStorage.setItem('loggedin', 'true');
+
             // Redirect to the home page
             navigate(`/`);
         }
