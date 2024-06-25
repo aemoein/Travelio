@@ -100,8 +100,17 @@ exports.followUser = async (req,res) => {
                 message: 'User not found'
             });
         }
+
+        // Check if the user is blocked
+        if (currentUserProfile.blocked.includes(targetUserProfileId) || targetUserProfile.blocked.includes(currentUserProfileId)) {
+            return res.status(403).json({
+                status: 'fail',
+                message: 'You cannot follow this user'
+            });
+        }
+        
     if (!currentUserProfile.includes(targetUserProfile)) {
-        currentUserProfile.following.push(targetUserProfile);
+        currentUserProfile.followings.push(targetUserProfile);
         targetUserProfile.followers.push(currentUserProfile);
         await currentUserProfile.save();
         await targetUserProfile.save();
@@ -140,7 +149,7 @@ exports.unfollowUser = async (req,res) => {
             });
         }
         if (currentUserProfile.includes(targetUserProfile)) {
-            currentUserProfile.following.pull(targetUserProfile);
+            currentUserProfile.followings.pull(targetUserProfile);
             targetUserProfile.followers.pull(currentUserProfile);
             await currentUserProfile.save();
             await targetUserProfile.save();
