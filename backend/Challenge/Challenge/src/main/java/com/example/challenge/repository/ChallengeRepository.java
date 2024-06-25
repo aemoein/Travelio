@@ -9,6 +9,12 @@ import java.util.List;
 
 public interface ChallengeRepository extends MongoRepository<Challenge, String> {
 
-    @Query("{ 'type' : 'HUNTMAN' }")
-    List<Challenge> findHuntmanChallenges();
+    @Query("{ 'type' : 'HUNTMAN', 'city':?0 }")
+    List<Challenge> findHuntmanChallenges(String city);
+
+    @Query("{'type' :  'PHOTO', 'city' :  ?0}")
+    List<Challenge> findPhotoChallenges(String city);
+
+    @Query("{ 'type' : 'DARE', 'city' : ?0 }")
+    List<Challenge> findDareChallenges(String city);
 }

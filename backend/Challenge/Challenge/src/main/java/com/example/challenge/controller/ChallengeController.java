@@ -5,11 +5,10 @@ import com.example.challenge.service.ChallengeService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api/Challenge")
 @AllArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class ChallengeController {
     ChallengeService challengeService;
 
@@ -19,13 +18,13 @@ public class ChallengeController {
     }
 
     @GetMapping("/photochallenge")
-    public List<Challenge> photoChallenge() {
-        return challengeService.getPhotoChallenge();
+    public Challenge photoChallenge(@RequestParam String city) {
+        return challengeService.getPhotoChallenge(city);
     }
 
     @GetMapping("/darechallenge")
-    public String dareChallenge() {
-        return "Dare Challenge";
+    public Challenge dareChallenge(@RequestParam String city) {
+        return challengeService.getDareChallenge(city);
     }
 
     @PostMapping("/new")
