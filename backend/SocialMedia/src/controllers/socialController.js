@@ -44,58 +44,65 @@ exports.getAllSocialProfiles = async (req,res) =>{
 };
 
 // 3- get a social profile
-exports.getSocialProfile = async (req,res) => {
-    try{
+exports.getSocialProfile = async (req, res) => {
+    try {
         const getSocialProfile = await socialProfile.findById(req.params.id);
-        if(!getSocialProfile){
-            res.status(404).json({
+        if (!getSocialProfile) {
+            return res.status(404).json({
                 status: 'fail',
                 message: 'Social Profile not found'
             });
+        } else {
+            return res.status(200).json({
+                status: 'success',
+                data: getSocialProfile
+            });
         }
-        res.status(200).json({
-            status:'success',
-            data: getSocialProfile
-        });
-    }catch(err){
-        res.status(500).json({
+    } catch (err) {
+        return res.status(500).json({
             status: 'fail',
-            message: err
+            message: err.message
         });
     }
 };
+
 
 // 4- delete a social profile
-exports.deleteSocialProfile = async (req,res) => {
-    try{
+exports.deleteSocialProfile = async (req, res) => {
+    try {
         const delSocialProfile = await socialProfile.findById(req.params.id);
-        if(!delSocialProfile){
-            res.status(404).json({
+        if (!delSocialProfile) {
+            return res.status(404).json({
                 status: 'fail',
                 message: 'Social Profile not found'
             });
         }
-        await socialProfile.remove();
-        res.status(204).json({
-            status:'success',
+
+        await socialProfile.deleteOne({ _id: req.params.id });
+
+        return res.status(204).json({
+            status: 'success',
             message: 'Social Profile Deleted Successfully'
         });
-    }catch(err){
-        res.status(500).json({
+    } catch (err) {
+        return res.status(500).json({
             status: 'fail',
-            message: err
+            message: err.message
         });
     }
 };
 
+
+
 // 5- follow a user
-exports.followUser = async (req,res) => {
+exports.followUser = async (req, res) => {
     const { currentUserProfileId, targetUserProfileId } = req.body;
     try {
         const currentUserProfile = await socialProfile.findById(currentUserProfileId);
         const targetUserProfile = await socialProfile.findById(targetUserProfileId);
-        if (!currentUserProfile ||!targetUserProfile) {
-            res.status(404).json({
+        
+        if (!currentUserProfile || !targetUserProfile) {
+            return res.status(404).json({
                 status: 'fail',
                 message: 'User not found'
             });
@@ -105,70 +112,81 @@ exports.followUser = async (req,res) => {
         if (currentUserProfile.blocked.includes(targetUserProfileId) || targetUserProfile.blocked.includes(currentUserProfileId)) {
             return res.status(403).json({
                 status: 'fail',
-                message: 'You cannot follow this user'
+                message: 'You cannot follow this user, This user is blocked'
             });
         }
-        
-    if (!currentUserProfile.includes(targetUserProfile)) {
-        currentUserProfile.followings.push(targetUserProfile);
-        targetUserProfile.followers.push(currentUserProfile);
-        await currentUserProfile.save();
-        await targetUserProfile.save();
-        res.status(200).json({
-            status:'success',
-            data: {
-                currentUserProfile,
-                targetUserProfile
-            },
-            message: "Followed Successfully"
-        });
-    }else{
-        res.status(400).json({
+
+        // Check if the user is already followed
+        if (!currentUserProfile.followings.includes(targetUserProfileId)) {
+            currentUserProfile.followings.push(targetUserProfileId);
+            targetUserProfile.followers.push(currentUserProfileId);
+            await currentUserProfile.save();
+            await targetUserProfile.save();
+            return res.status(200).json({
+                status: 'success',
+                data: {
+                    currentUserProfile,
+                    targetUserProfile
+                },
+                message: "Followed Successfully"
+            });
+        } else {
+            return res.status(400).json({
+                status: 'fail',
+                message: 'Already Followed'
+            });
+        }
+    } catch (err) {
+        return res.status(500).json({
             status: 'fail',
-            message: 'Already Followed'
+            message: err.message
         });
-    };
-    }catch(err) {
-        res.status(500).json({
-            status: 'fail',
-            message: err
-        });
-    };
+    }
 };
 
+
 // 6- unfollow a user
-exports.unfollowUser = async (req,res) => {
-    const { currentUserId, targetUserId } = req.body;
-    try{
-        const currentUserProfile = await socialProfile.findById(currentUserId);
-        const targetUserProfile = await socialProfile.findById(targetUserId);
-        if (!currentUserProfile ||!targetUserProfile) {
-            res.status(404).json({
+exports.unfollowUser = async (req, res) => {
+    const { currentUserProfileId, targetUserProfileId } = req.body;
+    try {
+        const currentUserProfile = await socialProfile.findById(currentUserProfileId);
+        const targetUserProfile = await socialProfile.findById(targetUserProfileId);
+
+        if (!currentUserProfile || !targetUserProfile) {
+            return res.status(404).json({
                 status: 'fail',
                 message: 'User not found'
             });
         }
-        if (currentUserProfile.includes(targetUserProfile)) {
-            currentUserProfile.followings.pull(targetUserProfile);
-            targetUserProfile.followers.pull(currentUserProfile);
+
+        if (currentUserProfile.followings.includes(targetUserProfileId)) {
+            currentUserProfile.followings.pull(targetUserProfileId);
+            targetUserProfile.followers.pull(currentUserProfileId);
             await currentUserProfile.save();
             await targetUserProfile.save();
-            res.status(200).json({
-                status:'success',
+
+            return res.status(200).json({
+                status: 'success',
                 data: {
                     currentUserProfile,
                     targetUserProfile
                 },
                 message: "Unfollowed Successfully"
             });
+        } else {
+            return res.status(400).json({
+                status: 'fail',
+                message: 'Not Following'
+            });
         }
-    }catch{
-        res.status(500).json({
+    } catch (err) {
+        return res.status(500).json({
             status: 'fail',
-            message: err
+            message: err.message
         });
     }
 };
+
 
 // 7- List all followers of a user
 exports.listFollowers = async (req, res) => {
@@ -218,7 +236,7 @@ exports.listFollowings = async (req, res) => {
 exports.getFollower = async (req, res) => {
     const { userProfileId, followerProfileId } = req.body;
     try {
-        const userProfile = await socialProfile.findOne({ userProfileId });
+        const userProfile = await socialProfile.findOne({ _id: userProfileId });
 
         if (!userProfile) {
             return res.status(404).json({
@@ -234,7 +252,7 @@ exports.getFollower = async (req, res) => {
             });
         }
 
-        const followerProfile = await socialProfile.findOne({ id: followerId });
+        const followerProfile = await socialProfile.findOne({ _id: followerProfileId });
 
         if (!followerProfile) {
             return res.status(404).json({
@@ -256,9 +274,9 @@ exports.getFollower = async (req, res) => {
 
 // 10- Get a following
 exports.getFollowing = async (req, res) => {
-    const { userProfileId, followerProfileId } = req.body;
+    const { userProfileId, followingProfileId } = req.body;
     try {
-        const userProfile = await socialProfile.findOne({ userProfileId });
+        const userProfile = await socialProfile.findOne({ _id: userProfileId });
 
         if (!userProfile) {
             return res.status(404).json({
@@ -267,24 +285,24 @@ exports.getFollowing = async (req, res) => {
             });
         }
 
-        if (!userProfile.followings.includes(followerProfileId)) {
+        if (!userProfile.followings.includes(followingProfileId)) {
             return res.status(404).json({
                 status: 'fail',
-                message: 'Follower not found'
+                message: 'Following not found...'
             });
         }
 
-        const followerProfile = await socialProfile.findOne({ id: followerId });
+        const followingProfile = await socialProfile.findOne({ _id: followingProfileId });
 
-        if (!followerProfile) {
+        if (!followingProfile) {
             return res.status(404).json({
                 status: 'fail',
-                message: 'Follower profile not found'
+                message: 'Follower profile not found??'
             });
         }
         res.status(200).json({
             status: 'success',
-            data: followerProfile
+            data: followingProfile
         });
     } catch (err) {
         res.status(500).json({
@@ -308,9 +326,26 @@ exports.blockUser = async (req, res) => {
             });
         }
 
+        // Remove target user from current user's followings and vice versa
+        if (currentUserProfile.followings.includes(targetUserId)) {
+            currentUserProfile.followings.pull(targetUserId);
+        }
+        if (targetUserProfile.followers.includes(currentUserId)) {
+            targetUserProfile.followers.pull(currentUserId);
+        }
+
+        if (currentUserProfile.followers.includes(targetUserId)) {
+            currentUserProfile.followers.pull(targetUserId);
+        }
+        if (targetUserProfile.followings.includes(currentUserId)) {
+            targetUserProfile.followings.pull(currentUserId);
+        }
+
+        // Add target user to current user's blocked list if not already blocked
         if (!currentUserProfile.blocked.includes(targetUserId)) {
             currentUserProfile.blocked.push(targetUserId);
             await currentUserProfile.save();
+            await targetUserProfile.save();
             return res.status(200).json({
                 status: 'success',
                 data: currentUserProfile,
