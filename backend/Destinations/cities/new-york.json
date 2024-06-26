@@ -1,0 +1,151 @@
+[
+    {
+        "cityName": "New York",
+        "genre": [ "Cultural", "Urban", "Culinary", "Luxury" ],
+        "picture": "https://media.cntraveler.com/photos/65ce7f549e3c00aae46c3b29/4:3/w_1600%2Ch_1200%2Cc_limit/GettyImages-1401566574-2.jpg",
+        "hero": "x",
+        "description": "New York City, often simply called New York, is the largest city in the United States and a global hub for commerce, culture, and entertainment. Known for its iconic skyline, bustling streets, and diverse neighborhoods, NYC offers a mix of historical landmarks and modern attractions. Visitors can explore famous sites like the Statue of Liberty, Central Park, Times Square, and the Metropolitan Museum of Art. The city is also renowned for its Broadway theater scene, world-class dining, and vibrant nightlife.",
+        "population": 8419600,
+        "country": "United States",
+        "region": "New York",
+        "language": "English",
+        "currency": "US Dollar",
+        "timezone": "EST",
+        "foods": [
+            {
+                "name": "New York Pizza",
+                "description": "Thin-crust pizza with a wide variety of toppings, known for its large, foldable slices.",
+                "picture": "x"
+            },
+            {
+                "name": "Bagels and Lox",
+                "description": "Bagel topped with cream cheese and smoked salmon, often garnished with capers and onions.",
+                "picture": "x"
+            },
+            {
+                "name": "Hot Dogs",
+                "description": "Grilled or steamed sausage served in a sliced bun, commonly topped with mustard, ketchup, onions, and sauerkraut.",
+                "picture": "x"
+            },
+            {
+                "name": "Cheesecake",
+                "description": "Rich and creamy dessert made with a cream cheese filling and a graham cracker crust.",
+                "picture": "x"
+            },
+            {
+                "name": "Pastrami on Rye",
+                "description": "Sandwich with pastrami, mustard, and rye bread, often served with pickles.",
+                "picture": "x"
+            },
+            {
+                "name": "Black and White Cookie",
+                "description": "Soft, round cookie topped with half vanilla and half chocolate icing.",
+                "picture": "x"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Le Bernardin",
+                "description": "Michelin-starred restaurant offering exquisite seafood dishes.",
+                "picture": "x",
+                "link": "https://www.le-bernardin.com/"
+            },
+            {
+                "name": "Katz's Delicatessen",
+                "description": "Iconic deli known for its pastrami sandwiches and classic Jewish deli fare.",
+                "picture": "x",
+                "link": "https://www.katzsdelicatessen.com/"
+            },
+            {
+                "name": "Per Se",
+                "description": "Fine dining restaurant offering contemporary American cuisine with exceptional views of Central Park.",
+                "picture": "x",
+                "link": "https://www.thomaskeller.com/perseny"
+            },
+            {
+                "name": "Momofuku Noodle Bar",
+                "description": "Trendy spot serving creative Asian-inspired dishes and ramen.",
+                "picture": "x",
+                "link": "https://momofukunoodlebar.com/"
+            },
+            {
+                "name": "Peter Luger Steak House",
+                "description": "Legendary steakhouse known for its prime beef and classic American sides.",
+                "picture": "x",
+                "link": "https://peterluger.com/"
+            },
+            {
+                "name": "The Modern",
+                "description": "Contemporary American restaurant located in the Museum of Modern Art.",
+                "picture": "x",
+                "link": "https://www.themodernnyc.com/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "The Plaza Hotel",
+                "description": "Historic luxury hotel located at the corner of Central Park South and Fifth Avenue.",
+                "picture": "x",
+                "link": "https://www.theplazany.com/"
+            },
+            {
+                "name": "The St. Regis New York",
+                "description": "Five-star hotel known for its refined elegance and exceptional service.",
+                "picture": "x",
+                "link": "https://www.marriott.com/hotels/travel/nycxr-the-st-regis-new-york/"
+            },
+            {
+                "name": "The Ritz-Carlton New York, Central Park",
+                "description": "Luxury hotel offering stunning views of Central Park and upscale amenities.",
+                "picture": "x",
+                "link": "https://www.ritzcarlton.com/en/hotels/new-york/central-park"
+            },
+            {
+                "name": "The Peninsula New York",
+                "description": "Elegant hotel located on Fifth Avenue, featuring a rooftop bar and spa.",
+                "picture": "x",
+                "link": "https://www.peninsula.com/en/new-york"
+            },
+            {
+                "name": "Mandarin Oriental, New York",
+                "description": "Luxurious hotel with panoramic views of Manhattan and Central Park.",
+                "picture": "x",
+                "link": "https://www.mandarinoriental.com/new-york/manhattan/luxury-hotel"
+            },
+            {
+                "name": "The Langham, New York, Fifth Avenue",
+                "description": "Stylish hotel offering modern accommodations and excellent dining options.",
+                "picture": "x",
+                "link": "https://www.langhamhotels.com/en/the-langham/new-york/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "New York Subway",
+                "description": "Extensive and iconic subway system serving the five boroughs.",
+                "picture": "x",
+                "link": "https://new.mta.info/"
+            },
+            {
+                "name": "Yellow Cabs",
+                "description": "Famous yellow taxis that are a symbol of New York City.",
+                "picture": "x",
+                "link": "https://www1.nyc.gov/site/tlc/index.page"
+            },
+            {
+                "name": "MTA Buses",
+                "description": "Comprehensive bus network covering all boroughs.",
+                "picture": "x",
+                "link": "https://new.mta.info/bus"
+            }
+        ],
+        "gallery": [
+            "x",
+            "x",
+            "x",
+            "x",
+            "x",
+            "x"
+        ]
+    }
+]

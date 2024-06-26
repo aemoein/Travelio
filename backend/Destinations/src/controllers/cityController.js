@@ -69,11 +69,59 @@ const loadCityDataFromFile = async (req, res) => {
   }
 };
 
+async function addFood(req, res, next) {
+  const { cityId } = req.params;
+  const foodData = req.body;
+  try {
+    const updatedCity = await cityService.addFoodToCity(cityId, foodData);
+    res.json(updatedCity);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function addRestaurant(req, res, next) {
+  const { cityId } = req.params;
+  const restaurantData = req.body;
+  try {
+    const updatedCity = await cityService.addRestaurantToCity(cityId, restaurantData);
+    res.json(updatedCity);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function addHotel(req, res, next) {
+  const { cityId } = req.params;
+  const hotelData = req.body;
+  try {
+    const updatedCity = await cityService.addHotelToCity(cityId, hotelData);
+    res.json(updatedCity);
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function addTransportation(req, res, next) {
+  const { cityId } = req.params;
+  const transportationData = req.body;
+  try {
+    const updatedCity = await cityService.addTransportationToCity(cityId, transportationData);
+    res.json(updatedCity);
+  } catch (error) {
+    next(error);
+  }
+}
+
 module.exports = {
   getAllCities,
   getCityById,
   createCity,
   updateCity,
   deleteCity,
-  loadCityDataFromFile
+  loadCityDataFromFile,
+  addFood,
+  addRestaurant,
+  addHotel,
+  addTransportation,
 };

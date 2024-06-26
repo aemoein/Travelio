@@ -1,6 +1,7 @@
 [
     {
         "cityName": "Paris",
+        "genre": ["Historical", "Cultural", "Urban", "Culinary", "Luxury", "Educational"],
         "picture": "https://media.cntraveller.com/photos/6571a73edaeae38b15f3a22c/master/w_1600%2Cc_limit/Basilique_du_Sacre_Coeur_de_Montmartre_December23_GettyImages-1181774827.jpg",
         "hero": "https://media.cntraveler.com/photos/5d8cf7d5db6acf000833e6cc/1:1/w_1600%2Cc_limit/Eiffel-Tower_GettyImages-1060266626.jpg",
         "description": "Paris, the capital city of France, is one of the world's most popular tourist destinations. Known as the City of Light, Paris is famous for its stunning architecture, rich history, and art museums. Visitors can explore world-famous landmarks such as the Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral. Paris is also renowned for its cuisine, with a range of traditional French dishes and fine dining experiences available. Whether you're interested in art, history, culture, or food, Paris has something to offer everyone.",
