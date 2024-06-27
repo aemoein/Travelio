@@ -31,7 +31,7 @@ const transportationSchema = new Schema({
 
 // Define main city schema
 const CitySchema = new Schema({
-  cityName: { type: String, required: true },
+  name: { type: String, required: true },
   genre: [{ type: String, required: true }],
   picture: { type: String, required: true },
   hero: { type: String, required: true },

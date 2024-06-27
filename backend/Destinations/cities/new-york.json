@@ -1,9 +1,9 @@
 [
     {
-        "cityName": "New York",
+        "name": "New York",
         "genre": [ "Cultural", "Urban", "Culinary", "Luxury" ],
         "picture": "https://media.cntraveler.com/photos/65ce7f549e3c00aae46c3b29/4:3/w_1600%2Ch_1200%2Cc_limit/GettyImages-1401566574-2.jpg",
-        "hero": "x",
+        "hero": "https://storage.googleapis.com/pod_public/1300/169868.jpg",
         "description": "New York City, often simply called New York, is the largest city in the United States and a global hub for commerce, culture, and entertainment. Known for its iconic skyline, bustling streets, and diverse neighborhoods, NYC offers a mix of historical landmarks and modern attractions. Visitors can explore famous sites like the Statue of Liberty, Central Park, Times Square, and the Metropolitan Museum of Art. The city is also renowned for its Broadway theater scene, world-class dining, and vibrant nightlife.",
         "population": 8419600,
         "country": "United States",
@@ -15,69 +15,69 @@
             {
                 "name": "New York Pizza",
                 "description": "Thin-crust pizza with a wide variety of toppings, known for its large, foldable slices.",
-                "picture": "x"
+                "picture": "https://atsloanestable.com/wp-content/uploads/2023/06/new-york-style-pizza2.jpg"
             },
             {
                 "name": "Bagels and Lox",
                 "description": "Bagel topped with cream cheese and smoked salmon, often garnished with capers and onions.",
-                "picture": "x"
+                "picture": "https://hips.hearstapps.com/hmg-prod/images/bagelandlox-4-1647470138.jpg?crop=0.673xw:1.00xh;0.155xw,0&resize=1200:*"
             },
             {
                 "name": "Hot Dogs",
                 "description": "Grilled or steamed sausage served in a sliced bun, commonly topped with mustard, ketchup, onions, and sauerkraut.",
-                "picture": "x"
+                "picture": "https://www.seriouseats.com/thmb/QJZXQHDXBfTiUSKstQ1uskJc31g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SEA-best-grilled-hot-dogs-recipe-hero-02-9d245c0d43874a3da13a7228682b0dce.jpg"
             },
             {
                 "name": "Cheesecake",
                 "description": "Rich and creamy dessert made with a cream cheese filling and a graham cracker crust.",
-                "picture": "x"
+                "picture": "https://www.lifeloveandsugar.com/wp-content/uploads/2023/02/NY-Style-Cheesecake5E.jpg"
             },
             {
                 "name": "Pastrami on Rye",
                 "description": "Sandwich with pastrami, mustard, and rye bread, often served with pickles.",
-                "picture": "x"
+                "picture": "https://www.mushroomcouncil.com/wp-content/uploads/2021/09/peaches2peaches_HotPastramiwithMushrooms1-scaled.jpg"
             },
             {
                 "name": "Black and White Cookie",
                 "description": "Soft, round cookie topped with half vanilla and half chocolate icing.",
-                "picture": "x"
+                "picture": "https://sallysbakingaddiction.com/wp-content/uploads/2017/09/nyc-black-and-white-cookies-2.jpg"
             }
         ],
         "restaurants": [
             {
                 "name": "Le Bernardin",
                 "description": "Michelin-starred restaurant offering exquisite seafood dishes.",
-                "picture": "x",
+                "picture": "https://www.le-bernardin.com/content/slides/lb-gallery-main.jpg",
                 "link": "https://www.le-bernardin.com/"
             },
             {
                 "name": "Katz's Delicatessen",
                 "description": "Iconic deli known for its pastrami sandwiches and classic Jewish deli fare.",
-                "picture": "x",
+                "picture": "https://i.insider.com/62196038101faf0019294949?width=800&format=jpeg&auto=webp",
                 "link": "https://www.katzsdelicatessen.com/"
             },
             {
                 "name": "Per Se",
                 "description": "Fine dining restaurant offering contemporary American cuisine with exceptional views of Central Park.",
-                "picture": "x",
+                "picture": "https://www.travoodie.com/wp-content/uploads/2019/09/fullsizeoutput_12e4-e1567665918951-1140x641.jpeg",
                 "link": "https://www.thomaskeller.com/perseny"
             },
             {
                 "name": "Momofuku Noodle Bar",
                 "description": "Trendy spot serving creative Asian-inspired dishes and ramen.",
-                "picture": "x",
+                "picture": "https://blog.resy.com/wp-content/uploads/2018/11/jpg-2-2000x1125.jpg",
                 "link": "https://momofukunoodlebar.com/"
             },
             {
                 "name": "Peter Luger Steak House",
                 "description": "Legendary steakhouse known for its prime beef and classic American sides.",
-                "picture": "x",
+                "picture": "https://imageio.forbes.com/specials-images/imageserve/6564b1387b0430a07d767685/PeterLuger/960x0.jpg?format=jpg&width=960",
                 "link": "https://peterluger.com/"
             },
             {
                 "name": "The Modern",
                 "description": "Contemporary American restaurant located in the Museum of Modern Art.",
-                "picture": "x",
+                "picture": "https://secure.s.forbestravelguide.com/img/properties/the-modern/the-modern-bar-room.jpg",
                 "link": "https://www.themodernnyc.com/"
             }
         ],
@@ -85,31 +85,31 @@
             {
                 "name": "The Plaza Hotel",
                 "description": "Historic luxury hotel located at the corner of Central Park South and Fifth Avenue.",
-                "picture": "x",
+                "picture": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/496718760.jpg?k=608ceb5268219094ffb5f99c00dd1b869daf59485ca2ce071c49a9bd2feeba4f&o=&hp=1",
                 "link": "https://www.theplazany.com/"
             },
             {
                 "name": "The St. Regis New York",
                 "description": "Five-star hotel known for its refined elegance and exceptional service.",
-                "picture": "x",
+                "picture": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/486143900.jpg?k=1dc6b3c056bf97235eb2fff6583c9efcf5fc9c4853df42f6da18cd2bd4d4a629&o=&hp=1",
                 "link": "https://www.marriott.com/hotels/travel/nycxr-the-st-regis-new-york/"
             },
             {
                 "name": "The Ritz-Carlton New York, Central Park",
                 "description": "Luxury hotel offering stunning views of Central Park and upscale amenities.",
-                "picture": "x",
+                "picture": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/446598387.jpg?k=9870e791bd08baf5eacb485b653320a78d6557c59dc8c9f355e60ecf67940b00&o=&hp=1",
                 "link": "https://www.ritzcarlton.com/en/hotels/new-york/central-park"
             },
             {
                 "name": "The Peninsula New York",
                 "description": "Elegant hotel located on Fifth Avenue, featuring a rooftop bar and spa.",
-                "picture": "x",
+                "picture": "https://www.peninsula.com/en/-/media/images/new-york/new/202109-new-homepage/pny_hpexp_923x519.jpg?mw=905&hash=809AC774AC8071BFD3988B076074E1A9",
                 "link": "https://www.peninsula.com/en/new-york"
             },
             {
                 "name": "Mandarin Oriental, New York",
                 "description": "Luxurious hotel with panoramic views of Manhattan and Central Park.",
-                "picture": "x",
+                "picture": "https://media-cdn.tripadvisor.com/media/photo-s/2c/2f/1a/50/hotel-exterior.jpg",
                 "link": "https://www.mandarinoriental.com/new-york/manhattan/luxury-hotel"
             },
             {
@@ -123,29 +123,29 @@
             {
                 "name": "New York Subway",
                 "description": "Extensive and iconic subway system serving the five boroughs.",
-                "picture": "x",
+                "picture": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Bombardier_R62A_%E2%80%9C1%E2%80%9D_Train_arriving_into_207th_Street_-_November_2022.jpg",
                 "link": "https://new.mta.info/"
             },
             {
                 "name": "Yellow Cabs",
                 "description": "Famous yellow taxis that are a symbol of New York City.",
-                "picture": "x",
+                "picture": "https://compote.slate.com/images/2d7294e4-a457-4bfe-91ef-ee96095b999c.jpg",
                 "link": "https://www1.nyc.gov/site/tlc/index.page"
             },
             {
                 "name": "MTA Buses",
                 "description": "Comprehensive bus network covering all boroughs.",
-                "picture": "x",
+                "picture": "https://www.amny.com/wp-content/uploads/2022/06/DSCF5730-scaled.jpg",
                 "link": "https://new.mta.info/bus"
             }
         ],
         "gallery": [
-            "x",
-            "x",
-            "x",
-            "x",
-            "x",
-            "x"
+            "https://i.pinimg.com/736x/42/3a/d1/423ad1e24a3f8a31bde11d5f7110db8c.jpg",
+            "https://images.ctfassets.net/1aemqu6a6t65/46MJ6ER585Rwl3NraEIoGL/784c5eb5d87f576b5548b1a2255f08e7/tripadvisortimessquare_taggeryanceyiv_5912?w=1200&h=800&q=75",
+            "https://triptins.com/wp-content/uploads/2022/12/Things-to-do-around-the-Brooklyn-Bridge.jpeg.webp",
+            "https://assets.simpleviewinc.com/simpleview/image/upload/crm/newyorkstate/Facade_Met5th_62DB3BB2-193F-48A6-9FA62977A690DB11_306fa88b-c2be-fb5c-f679971ac40debdf.jpg",
+            "https://lp-cms-production.imgix.net/2020-09/shutterstockRF_519864937.jpg?fit=crop&ar=1%3A1&w=1200&auto=format&q=75",
+            "https://lik.com/cdn/shop/products/Peter-Lik-Central-Park-Spirit-Framed-Recess-Moun_1800x.jpg?v=1670363959"
         ]
     }
 ]

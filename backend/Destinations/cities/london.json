@@ -1,6 +1,6 @@
 [
     {
-        "cityName": "London",
+        "name": "London",
         "genre": ["Historical", "Cultural", "Urban", "Culinary", "Luxury", "Educational"],
         "picture": "https://wallpaper.forfun.com/fetch/d9/d98f809700d738e5c7e26606c002bf50.jpeg",
         "hero": "https://i.pinimg.com/originals/53/df/df/53dfdfe34a87c1e15b5579b77cb38d3b.jpg",
