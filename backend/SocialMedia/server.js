@@ -13,6 +13,7 @@ const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
 const socialRouter = require('./src/routes/socialRoutes');
+const postRouter = require('./src/routes/postRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -34,7 +35,9 @@ app.use(extractToken);
 //app.use(authMiddleware);
 app.use(errorMiddleware);
 
+//Routes
 app.use('/social',socialRouter);
+app.use('/posts', postRouter);
 
 // Connect to MongoDB
 const DB_URL = process.env.MONGO_URI_REMOTE;

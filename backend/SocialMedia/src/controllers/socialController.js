@@ -1,5 +1,5 @@
 const axios = require('axios');
-const socialProfile = require('../models/socialModel');
+const socialProfile = require('../models/socialProfileModel');
 
 // 1- create a social profile
 exports.createSocialProfile = async (req, res) => {
