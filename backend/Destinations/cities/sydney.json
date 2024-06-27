@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Sydney",
+        "genre": ["Urban", "Cultural", "Beach", "wellness"],
+        "picture": "http://localhost:3000/assets/Cities/Sydney/Home.jpg",
+        "hero": "http://localhost:3000/assets/Cities/Sydney/Hero.jpg",
+        "description": "Sydney, the capital city of New South Wales, Australia, is famous for its Sydney Opera House, with a distinctive sail-like design, and the Sydney Harbour Bridge, spanning the Sydney Harbour. Sydney is a cosmopolitan city known for its stunning beaches, such as Bondi and Manly. The city's vibrant cultural scene includes museums, art galleries, and theatres. Sydney also offers a diverse culinary experience, from fresh seafood to multicultural cuisine.",
+        "population": 5312163,
+        "country": "Australia",
+        "region": "New South Wales",
+        "language": "English",
+        "currency": "Australian Dollar",
+        "timezone": "AEST",
+        "foods": [
+            {
+                "name": "Sydney Rock Oysters",
+                "description": "Fresh oysters native to the waters around Sydney, served fresh with lemon.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Food/1.jpg"
+            },
+            {
+                "name": "Pavlova",
+                "description": "Meringue-based dessert topped with whipped cream and fresh fruits.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Food/2.jpg"
+            },
+            {
+                "name": "Meat Pie",
+                "description": "Traditional Australian pie filled with minced meat and gravy, often served with tomato sauce.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Food/3.jpg"
+            },
+            {
+                "name": "Fish and Chips",
+                "description": "Deep-fried fish fillets served with chips (French fries), often enjoyed by the waterfront.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Food/4.jpg"
+            },
+            {
+                "name": "Balmain Bugs",
+                "description": "Delicate seafood similar to lobster, often served grilled or in salads.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Food/5.jpg"
+            },
+            {
+                "name": "Lamington",
+                "description": "Sponge cake coated in chocolate and desiccated coconut, a classic Australian treat.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Food/6.jpg"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Quay",
+                "description": "Award-winning restaurant with stunning views of Sydney Harbour, offering modern Australian cuisine.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Restaurants/1.jpg",
+                "link": "https://www.quay.com.au/"
+            },
+            {
+                "name": "Bennelong Restaurant",
+                "description": "Fine dining restaurant located within the Sydney Opera House, serving contemporary Australian dishes.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Restaurants/2.jpg",
+                "link": "https://www.bennelong.com.au/"
+            },
+            {
+                "name": "Icebergs Dining Room and Bar",
+                "description": "Restaurant with panoramic views of Bondi Beach, known for its seafood and Italian-inspired dishes.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Restaurants/3.jpg",
+                "link": "https://idrb.com/"
+            },
+            {
+                "name": "Aria Restaurant",
+                "description": "Upscale dining overlooking Sydney Harbour Bridge, offering modern Australian cuisine.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Restaurants/4.jpg",
+                "link": "https://www.ariasydney.com.au/"
+            },
+            {
+                "name": "The Grounds of Alexandria",
+                "description": "Popular cafe and restaurant set in a former industrial precinct, known for its fresh and sustainable menu.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Restaurants/5.jpg",
+                "link": "https://thegrounds.com.au/"
+            },
+            {
+                "name": "Rockpool Bar & Grill",
+                "description": "Steakhouse offering premium beef and seafood dishes in a stylish setting.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Restaurants/6.jpg",
+                "link": "https://www.rockpoolbarandgrill.com.au/sydney/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Park Hyatt Sydney",
+                "description": "Luxury hotel located at Sydney Harbour, offering stunning views and elegant accommodations.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Hotels/1.jpg",
+                "link": "https://www.hyatt.com/en-US/hotel/australia/park-hyatt-sydney/sydph"
+            },
+            {
+                "name": "Four Seasons Hotel Sydney",
+                "description": "Iconic luxury hotel overlooking Sydney Harbour, offering spacious rooms and upscale amenities.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Hotels/2.jpg",
+                "link": "https://www.fourseasons.com/sydney/"
+            },
+            {
+                "name": "InterContinental Sydney",
+                "description": "Historic hotel located near Circular Quay, featuring elegant rooms and a rooftop terrace with panoramic views.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Hotels/3.jpg",
+                "link": "https://www.ihg.com/intercontinental/hotels/gb/en/sydney/sydha/hoteldetail"
+            },
+            {
+                "name": "The Langham Sydney",
+                "description": "Luxury hotel known for its timeless elegance and views of Sydney Harbour.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Hotels/4.jpg",
+                "link": "https://www.langhamhotels.com/en/the-langham/sydney/"
+            },
+            {
+                "name": "Shangri-La Hotel Sydney",
+                "description": "Five-star hotel offering panoramic views of Sydney Opera House and Harbour Bridge, with luxurious accommodations.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Hotels/5.jpg",
+                "link": "https://www.shangri-la.com/sydney/shangrila/"
+            },
+            {
+                "name": "Pier One Sydney Harbour",
+                "description": "Boutique hotel located at Walsh Bay, offering waterfront accommodations with views of Sydney Harbour Bridge.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Hotels/6.jpg",
+                "link": "https://www.pieronesydneyharbour.com.au/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "Sydney Trains",
+                "description": "Extensive suburban and intercity rail network connecting Sydney and its suburbs.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Transportation/1.jpg",
+                "link": "https://transportnsw.info/"
+            },
+            {
+                "name": "Sydney Buses",
+                "description": "Bus network covering Sydney and surrounding areas, including express and night services.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Transportation/2.jpg",
+                "link": "https://transportnsw.info/"
+            },
+            {
+                "name": "Sydney Ferries",
+                "description": "Ferry services operating on Sydney Harbour and Parramatta River, providing scenic transport options.",
+                "picture": "http://localhost:3000/assets/Cities/Sydney/Transportation/3.jpg",
+                "link": "https://transportnsw.info/"
+            }
+        ],
+        "gallery": [
+            "http://localhost:3000/assets/Cities/Sydney/Gallery/1.jpg",
+            "http://localhost:3000/assets/Cities/Sydney/Gallery/2.jpg",
+            "http://localhost:3000/assets/Cities/Sydney/Gallery/3.jpg",
+            "http://localhost:3000/assets/Cities/Sydney/Gallery/4.jpg",
+            "http://localhost:3000/assets/Cities/Sydney/Gallery/5.jpg",
+            "http://localhost:3000/assets/Cities/Sydney/Gallery/6.jpg"
+        ]
+    }
+]

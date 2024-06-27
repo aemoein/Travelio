@@ -49,6 +49,6 @@ const CitySchema = new Schema({
   gallery: [{ type: String }]
 });
 
-CitySchema.index({ cityName: 1, country: 1, region: 1 }, { unique: true });
+CitySchema.index({ name: 1, country: 1, region: 1 }, { unique: true });
 
 module.exports = mongoose.model('City', CitySchema);

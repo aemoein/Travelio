@@ -1,10 +1,10 @@
 [
     {
         "name": "Amsterdam",
-        "genre": ["Historical", "Cultural", "Urban", "Culinary", "Luxury", "Educational"],
-        "picture": "x",
-        "hero": "x",
-        "description": "Amsterdam, the capital city of the Netherlands, is known for its picturesque canals, historic buildings, and vibrant cultural scene. The city is famous for its artistic heritage, with notable museums such as the Van Gogh Museum and the Rijksmuseum. Visitors can explore charming neighborhoods like Jordaan, enjoy the lively atmosphere of the Red Light District, and experience the city's rich history by visiting Anne Frank House. Amsterdam is also renowned for its cycling culture and extensive network of bike paths.",
+        "genre": ["Cultural", "Urban", "Culinary", "Ecotourism"],
+        "picture": "http://localhost:3000/assets/Cities/Amsterdam/Home.jpg",
+        "hero": "http://localhost:3000/assets/Cities/Amsterdam/Hero.jpg",
+        "description": "Amsterdam, the capital city of the Netherlands, is known for its artistic heritage, elaborate canal system, and narrow houses with gabled facades, legacies of the city’s 17th-century Golden Age. Its Museum District houses the Van Gogh Museum, works by Rembrandt and Vermeer at the Rijksmuseum, and modern art at the Stedelijk. Cycling is key to the city's character, and there are numerous bike paths.",
         "population": 872680,
         "country": "Netherlands",
         "region": "North Holland",
@@ -14,138 +14,138 @@
         "foods": [
             {
                 "name": "Stroopwafel",
-                "description": "Thin waffle cookies filled with caramel syrup.",
-                "picture": "x"
-            },
-            {
-                "name": "Haring",
-                "description": "Raw herring fish, often served with onions and pickles.",
-                "picture": "x"
-            },
-            {
-                "name": "Poffertjes",
-                "description": "Mini Dutch pancakes served with butter and powdered sugar.",
-                "picture": "x"
+                "description": "Thin waffle cookies with caramel-like syrup filling.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Food/1.jpg"
             },
             {
                 "name": "Bitterballen",
-                "description": "Deep-fried meatballs served with mustard for dipping.",
-                "picture": "x"
+                "description": "Deep-fried balls filled with ragout, typically served with mustard.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Food/2.jpg"
             },
             {
-                "name": "Rijsttafel",
-                "description": "Indonesian-inspired meal with a variety of small dishes.",
-                "picture": "x"
+                "name": "Poffertjes",
+                "description": "Miniature fluffy pancakes, usually topped with powdered sugar and butter.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Food/3.jpg"
             },
             {
-                "name": "Appeltaart",
-                "description": "Traditional Dutch apple pie with a lattice crust.",
-                "picture": "x"
+                "name": "Haring",
+                "description": "Raw herring typically served with onions and pickles.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Food/4.jpg"
+            },
+            {
+                "name": "Patat",
+                "description": "Thick-cut fries served with a variety of sauces.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Food/5.jpg"
+            },
+            {
+                "name": "Pancakes",
+                "description": "Dutch-style pancakes with various sweet or savory toppings.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Food/6.jpg"
             }
         ],
         "restaurants": [
             {
+                "name": "Restaurant Vinkeles",
+                "description": "Fine dining restaurant housed in a former bakery, offering French-inspired cuisine.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Restaurants/1.jpg",
+                "link": "https://www.restaurantvinkeles.com/"
+            },
+            {
                 "name": "De Kas",
-                "description": "Farm-to-table restaurant located in a greenhouse.",
-                "picture": "x",
-                "link": "https://www.restaurantdekas.com/"
+                "description": "Restaurant set in a greenhouse serving seasonal dishes with ingredients from its own garden.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Restaurants/2.jpg",
+                "link": "https://www.restaurantdekas.nl/"
+            },
+            {
+                "name": "Bridges Dining",
+                "description": "Michelin-starred seafood restaurant overlooking Amsterdam's canals.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Restaurants/3.jpg",
+                "link": "https://www.bridgesrestaurant.nl/"
             },
             {
                 "name": "Ciel Bleu",
-                "description": "Two-Michelin-star restaurant offering French cuisine with a panoramic view.",
-                "picture": "x",
+                "description": "Two-Michelin-starred restaurant offering French cuisine with panoramic city views.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Restaurants/4.jpg",
                 "link": "https://www.cielbleu.nl/"
             },
             {
-                "name": "Restaurant Rijks",
-                "description": "Contemporary Dutch cuisine located in the Rijksmuseum.",
-                "picture": "x",
-                "link": "https://www.rijksrestaurant.nl/"
-            },
-            {
-                "name": "The Avocado Show",
-                "description": "Trendy spot specializing in avocado-based dishes.",
-                "picture": "x",
-                "link": "https://theavocadoshow.com/"
-            },
-            {
-                "name": "Daalder",
-                "description": "Creative and modern dishes served in a relaxed atmosphere.",
-                "picture": "x",
+                "name": "Restaurant Daalder",
+                "description": "Cosy restaurant serving creative French-inspired dishes with Dutch influences.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Restaurants/5.jpg",
                 "link": "https://www.daalderamsterdam.nl/"
             },
             {
-                "name": "Foodhallen",
-                "description": "Indoor food market with a variety of street food vendors.",
-                "picture": "x",
-                "link": "https://foodhallen.nl/"
+                "name": "Rijks",
+                "description": "Restaurant offering contemporary Dutch cuisine inside the Rijksmuseum.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Restaurants/6.jpg",
+                "link": "https://www.rijksrestaurant.nl/"
             }
         ],
         "hotels": [
             {
-                "name": "Hotel De L'Europe",
-                "description": "Luxury hotel with elegant accommodations and a riverside location.",
-                "picture": "x",
-                "link": "https://www.leurope.nl/"
+                "name": "W Amsterdam",
+                "description": "Luxury hotel located in the city center, offering stylish accommodations and rooftop views.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Hotels/1.jpg",
+                "link": "https://www.marriott.com/hotels/travel/amswh-w-amsterdam/"
+            },
+            {
+                "name": "Hotel Pulitzer Amsterdam",
+                "description": "Historic hotel comprised of 25 restored canal houses, offering elegant rooms and a garden courtyard.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Hotels/2.jpg",
+                "link": "https://www.pulitzeramsterdam.com/"
             },
             {
                 "name": "Conservatorium Hotel",
-                "description": "Five-star hotel offering modern amenities in a historic building.",
-                "picture": "x",
+                "description": "Luxury hotel set in a former music conservatory, featuring contemporary design and a spa.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Hotels/3.jpg",
                 "link": "https://www.conservatoriumhotel.com/"
             },
             {
-                "name": "Waldorf Astoria Amsterdam",
-                "description": "Elegant hotel with a canal-side setting and luxurious rooms.",
-                "picture": "x",
-                "link": "https://www.waldorfastoria.com/amsterdam"
+                "name": "Hotel TwentySeven",
+                "description": "Boutique hotel offering ultra-luxurious suites with personalized service in a central location.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Hotels/4.jpg",
+                "link": "https://www.hoteltwentyseven.com/"
             },
             {
                 "name": "The Dylan Amsterdam",
-                "description": "Boutique hotel known for its sophisticated design and excellent service.",
-                "picture": "x",
+                "description": "Chic boutique hotel set in a 17th-century building along the Keizersgracht canal.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Hotels/5.jpg",
                 "link": "https://www.dylanamsterdam.com/"
             },
             {
-                "name": "Andaz Amsterdam Prinsengracht",
-                "description": "Stylish hotel with modern decor and artistic touches.",
-                "picture": "x",
-                "link": "https://www.hyatt.com/en-US/hotel/netherlands/andaz-amsterdam-prinsengracht/amsta"
-            },
-            {
-                "name": "Pulitzer Amsterdam",
-                "description": "Historic hotel made up of 25 interconnected canal houses.",
-                "picture": "x",
-                "link": "https://www.pulitzeramsterdam.com/"
+                "name": "Hotel Okura Amsterdam",
+                "description": "Five-star hotel offering luxurious accommodations and multiple dining options, including a Michelin-starred restaurant.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Hotels/6.jpg",
+                "link": "https://www.okura.nl/"
             }
         ],
         "transportation": [
             {
-                "name": "Amsterdam Tram",
-                "description": "Extensive tram network connecting various parts of the city.",
-                "picture": "x",
-                "link": "https://www.gvb.nl/en/travellers/public-transport-amsterdam/tram"
+                "name": "Amsterdam Metro",
+                "description": "Rapid transit system serving parts of Amsterdam and its suburbs.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Transportation/1.jpg",
+                "link": "https://www.gvb.nl/"
             },
             {
-                "name": "Bicycles",
-                "description": "Popular mode of transport with numerous bike rental options and paths.",
-                "picture": "x",
-                "link": "https://www.iamsterdam.com/en/plan-your-trip/getting-around/rental/bikes"
+                "name": "Amsterdam Trams",
+                "description": "Tram network providing efficient transportation throughout Amsterdam.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Transportation/2.jpg",
+                "link": "https://www.gvb.nl/"
             },
             {
-                "name": "Canal Boats",
-                "description": "Scenic boat tours and water taxis navigating the city's canals.",
-                "picture": "x",
-                "link": "https://www.canal.nl/"
+                "name": "Amsterdam Buses",
+                "description": "Bus network covering the city and surrounding areas.",
+                "picture": "http://localhost:3000/assets/Cities/Amsterdam/Transportation/3.jpg",
+                "link": "https://www.gvb.nl/"
             }
         ],
         "gallery": [
-            "x",
-            "x",
-            "x",
-            "x",
-            "x",
-            "x"
+            "http://localhost:3000/assets/Cities/Amsterdam/Gallery/1.jpg",
+            "http://localhost:3000/assets/Cities/Amsterdam/Gallery/2.jpg",
+            "http://localhost:3000/assets/Cities/Amsterdam/Gallery/3.jpg",
+            "http://localhost:3000/assets/Cities/Amsterdam/Gallery/4.jpg",
+            "http://localhost:3000/assets/Cities/Amsterdam/Gallery/5.jpg",
+            "http://localhost:3000/assets/Cities/Amsterdam/Gallery/6.jpg"
         ]
     }
 ]

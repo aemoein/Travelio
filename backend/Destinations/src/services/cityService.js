@@ -14,9 +14,9 @@ const getCityById = async (id) => {
 
 // Create a new city with duplicate validation
 const createCity = async (cityData) => {
-  const { cityName, country, region } = cityData;
+  const { name, country, region } = cityData;
   
-  const existingCity = await City.findOne({ cityName, country, region });
+  const existingCity = await City.findOne({ name, country, region });
   if (existingCity) {
     throw new Error('City with the same name, country, and region already exists');
   }
@@ -40,7 +40,7 @@ const loadCityDataFromFile = async (name) => {
   try {
     console.log(`Loading cities from JSON file: ${name}`);
     name = name.toLowerCase().replace(' ', '-');
-    const filePath = path.join(__dirname, `../../cities/${name}.json`); // Using path.join for file path
+    const filePath = path.join(__dirname, `../../cities/${name}.json`);
     const data = fs.readFileSync(filePath, 'utf8');
     const cities = JSON.parse(data);
     for (let city of cities) {
@@ -111,7 +111,7 @@ async function addTransportationToCity(cityId, transportationData) {
   }
 }
 
-//loadCityDataFromFile('rome').then((result) => console.log(result.message)).catch((error) => console.error(error.message));
+loadCityDataFromFile('san francisco').then((result) => console.log(result.message)).catch((error) => console.error(error.message));
 
 module.exports = {
   getAllCities,

@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Los Angeles",
+        "genre": ["Urban", "Cultural", "Culinary", "Beach"],
+        "picture": "http://localhost:3000/assets/Cities/LosAngeles/Home.jpg",
+        "hero": "http://localhost:3000/assets/Cities/LosAngeles/Hero.jpg",
+        "description": "Los Angeles, often known simply as LA, is the largest city in California and the second-largest city in the United States. It is a global center for entertainment, culture, media, fashion, science, technology, and education. LA is famous for its Mediterranean climate, ethnic diversity, and sprawling metropolis. It is home to iconic landmarks like Hollywood, the entertainment industry, and beautiful beaches along the Pacific Ocean.",
+        "population": 3979576,
+        "country": "United States",
+        "region": "California",
+        "language": "English",
+        "currency": "US Dollar",
+        "timezone": "PST",
+        "foods": [
+            {
+                "name": "In-N-Out Burger",
+                "description": "Popular fast-food chain known for its fresh burgers, fries, and shakes.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Food/1.jpg"
+            },
+            {
+                "name": "Korean BBQ",
+                "description": "Grilled marinated meats served with side dishes like kimchi, a popular ethnic cuisine in LA.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Food/2.jpg"
+            },
+            {
+                "name": "Tacos",
+                "description": "Authentic Mexican street food with various fillings like carne asada or carnitas, widely available across LA.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Food/3.jpg"
+            },
+            {
+                "name": "Sushi",
+                "description": "Japanese cuisine featuring fresh sushi and sashimi, reflecting LA's diverse culinary scene.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Food/4.jpg"
+            },
+            {
+                "name": "Farmers Market Fare",
+                "description": "Fresh produce, gourmet foods, and local specialties at venues like the Original Farmers Market.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Food/5.jpg"
+            },
+            {
+                "name": "Food Trucks",
+                "description": "Mobile eateries offering a variety of cuisines, from gourmet burgers to ethnic delicacies, a staple of LA's street food culture.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Food/6.jpg"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Nobu Los Angeles",
+                "description": "Upscale Japanese restaurant known for its sushi and seafood dishes, with a chic atmosphere.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Restaurants/1.jpg",
+                "link": "https://www.noburestaurants.com/los-angeles/home/"
+            },
+            {
+                "name": "The Ivy",
+                "description": "Celebrity hotspot offering California cuisine in a stylish garden setting.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Restaurants/2.jpg",
+                "link": "https://www.theivyrestaurants.com/"
+            },
+            {
+                "name": "Sushi Park",
+                "description": "Intimate sushi bar known for its high-quality fish and omakase menu.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Restaurants/3.jpg",
+                "link": "https://www.sushipark.us/"
+            },
+            {
+                "name": "Guelaguetza",
+                "description": "Authentic Oaxacan restaurant known for its mole dishes and live music.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Restaurants/4.jpg",
+                "link": "https://ilovemole.com/"
+            },
+            {
+                "name": "Bottega Louie",
+                "description": "French-Italian restaurant and gourmet market known for its pastries and artisanal dishes.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Restaurants/5.jpg",
+                "link": "https://www.bottegalouie.com/"
+            },
+            {
+                "name": "Providence",
+                "description": "Michelin-starred seafood restaurant offering elegant dining and a tasting menu.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Restaurants/6.jpg",
+                "link": "https://www.providencela.com/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "The Beverly Hills Hotel",
+                "description": "Iconic luxury hotel known for its pink exterior and celebrity clientele.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Hotels/1.jpg",
+                "link": "https://www.dorchestercollection.com/en/los-angeles/the-beverly-hills-hotel/"
+            },
+            {
+                "name": "InterContinental Los Angeles Downtown",
+                "description": "Sky-rise hotel offering panoramic views of LA, with modern amenities and upscale dining.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Hotels/2.jpg",
+                "link": "https://www.ihg.com/intercontinental/hotels/us/en/los-angeles/laxhc/hoteldetail"
+            },
+            {
+                "name": "The Ritz-Carlton, Los Angeles",
+                "description": "Luxury hotel located in downtown LA, offering plush accommodations and a rooftop pool.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Hotels/3.jpg",
+                "link": "https://www.ritzcarlton.com/en/hotels/california/los-angeles"
+            },
+            {
+                "name": "The West Hollywood EDITION",
+                "description": "Stylish hotel featuring modern design and luxury amenities, located in West Hollywood.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Hotels/4.jpg",
+                "link": "https://www.editionhotels.com/los-angeles/"
+            },
+            {
+                "name": "The NoMad Hotel Los Angeles",
+                "description": "Chic hotel housed in a historic building, known for its eclectic decor and rooftop pool.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Hotels/5.jpg",
+                "link": "https://www.thenomadhotel.com/los-angeles/"
+            },
+            {
+                "name": "Hotel Bel-Air",
+                "description": "Luxury hotel nestled in 12 acres of gardens, offering privacy and elegance in the heart of LA.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Hotels/6.jpg",
+                "link": "https://www.dorchestercollection.com/en/los-angeles/hotel-bel-air/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "Los Angeles Metro",
+                "description": "Mass transit system serving Los Angeles County, with subway and light rail lines connecting major destinations.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Transportation/1.jpg",
+                "link": "https://www.metro.net/"
+            },
+            {
+                "name": "Metro Bus",
+                "description": "Extensive bus network covering Los Angeles and surrounding areas, operated by Metro.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Transportation/2.jpg",
+                "link": "https://www.metro.net/"
+            },
+            {
+                "name": "LA Union Station",
+                "description": "Historic transportation hub in downtown LA, serving Amtrak, Metrolink, and Metro services.",
+                "picture": "http://localhost:3000/assets/Cities/LosAngeles/Transportation/3.jpg",
+                "link": "https://www.unionstationla.com/"
+            }
+        ],
+        "gallery": [
+            "http://localhost:3000/assets/Cities/LosAngeles/Gallery/1.jpg",
+            "http://localhost:3000/assets/Cities/LosAngeles/Gallery/2.jpg",
+            "http://localhost:3000/assets/Cities/LosAngeles/Gallery/3.jpg",
+            "http://localhost:3000/assets/Cities/LosAngeles/Gallery/4.jpg",
+            "http://localhost:3000/assets/Cities/LosAngeles/Gallery/5.jpg",
+            "http://localhost:3000/assets/Cities/LosAngeles/Gallery/6.jpg"
+        ]
+    }
+]

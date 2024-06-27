@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Hong Kong",
+        "genre": ["Urban", "Cultural", "Culinary", "Luxury"],
+        "picture": "http://localhost:3000/assets/Cities/HongKong/Home.jpg",
+        "hero": "http://localhost:3000/assets/Cities/HongKong/Hero.jpg",
+        "description": "Hong Kong is a bustling city known for its skyscrapers, vibrant street markets, and lively food scene. Located on China's south coast, Hong Kong is a major port and financial hub with a skyline dominated by high-rises. The city is famous for its deep natural harbor, Victoria Harbour, and its dense urbanization. Visitors can explore cultural landmarks like Victoria Peak, the Tian Tan Buddha, and the bustling markets of Mong Kok and Temple Street. Hong Kong offers a diverse range of cuisine, from dim sum and Cantonese dishes to international flavors.",
+        "population": 7500000,
+        "country": "China",
+        "region": "Hong Kong",
+        "language": "Cantonese, English",
+        "currency": "Hong Kong Dollar",
+        "timezone": "HKT",
+        "foods": [
+            {
+                "name": "Dim Sum",
+                "description": "Traditional Cantonese meal of small dishes served with tea, including dumplings, buns, and rolls.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Food/1.jpg"
+            },
+            {
+                "name": "Roast Goose",
+                "description": "Crispy-skinned goose roasted to perfection, a popular Hong Kong specialty.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Food/2.jpg"
+            },
+            {
+                "name": "Won Ton Noodles",
+                "description": "Egg noodles served in a clear broth with wontons filled with shrimp or pork.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Food/3.jpg"
+            },
+            {
+                "name": "Pineapple Bun",
+                "description": "Sweet bun topped with a crusty layer resembling a pineapple, often served with butter.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Food/4.jpg"
+            },
+            {
+                "name": "Egg Tarts",
+                "description": "Flaky pastry filled with egg custard, a popular Hong Kong dessert.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Food/5.jpg"
+            },
+            {
+                "name": "Siu Mei",
+                "description": "Roasted meats like pork, duck, or chicken served with rice or noodles.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Food/6.jpg"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Tim Ho Wan",
+                "description": "Famed dim sum restaurant known for its affordable yet high-quality dishes, including BBQ pork buns and dumplings.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Restaurants/1.jpg",
+                "link": "https://www.timhowan.com/"
+            },
+            {
+                "name": "Yung Kee Restaurant",
+                "description": "Iconic restaurant specializing in roast goose and other Cantonese delicacies since 1942.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Restaurants/2.jpg",
+                "link": "http://www.yungkee.com.hk/"
+            },
+            {
+                "name": "Mak's Noodle",
+                "description": "Legendary noodle shop known for its wonton noodles served in a clear broth.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Restaurants/3.jpg",
+                "link": "https://www.maksnoodle.com/"
+            },
+            {
+                "name": "Kam Wah Cafe & Bakery",
+                "description": "Popular for its Pineapple Buns (bo lo bao) and Hong Kong-style milk tea.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Restaurants/4.jpg",
+                "link": "https://www.kamwah.com.hk/"
+            },
+            {
+                "name": "Tai Cheong Bakery",
+                "description": "Famous for its Egg Tarts (dan tat), a must-try dessert in Hong Kong.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Restaurants/5.jpg",
+                "link": "https://www.taoheung.com.hk/en/brand/tai-cheong-bakery/"
+            },
+            {
+                "name": "Joy Hing Roasted Meat",
+                "description": "Well-known for its Siu Mei (roast meats) served with rice or noodles.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Restaurants/6.jpg",
+                "link": "https://www.joyhing.com.hk/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "The Peninsula Hong Kong",
+                "description": "Iconic luxury hotel offering stunning views of Victoria Harbour and impeccable service.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Hotels/1.jpg",
+                "link": "https://www.peninsula.com/hongkong/en/default"
+            },
+            {
+                "name": "Four Seasons Hotel Hong Kong",
+                "description": "Luxury hotel located in the heart of Hong Kong's financial district, with spacious rooms and panoramic views.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Hotels/2.jpg",
+                "link": "https://www.fourseasons.com/hongkong/"
+            },
+            {
+                "name": "Mandarin Oriental Hong Kong",
+                "description": "Five-star hotel offering luxurious accommodations and superb dining options in the Central district.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Hotels/3.jpg",
+                "link": "https://www.mandarinoriental.com/hong-kong"
+            },
+            {
+                "name": "Island Shangri-La Hong Kong",
+                "description": "Luxury hotel in Admiralty offering elegant rooms, fine dining, and panoramic city views.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Hotels/4.jpg",
+                "link": "https://www.shangri-la.com/hongkong/islandshangrila/"
+            },
+            {
+                "name": "The Ritz-Carlton Hong Kong",
+                "description": "Luxury hotel located in the ICC building, offering spectacular views from the highest hotel in the world.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Hotels/5.jpg",
+                "link": "https://www.ritzcarlton.com/hongkong"
+            },
+            {
+                "name": "The Landmark Mandarin Oriental",
+                "description": "Contemporary luxury hotel in the heart of Central Hong Kong, known for its stylish accommodations and award-winning spa.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Hotels/6.jpg",
+                "link": "https://www.mandarinoriental.com/landmark"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "Hong Kong MTR",
+                "description": "Mass transit railway system serving Hong Kong, Kowloon, and the New Territories.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Transportation/1.jpg",
+                "link": "https://www.mtr.com.hk/en/homepage/"
+            },
+            {
+                "name": "Hong Kong Tramways",
+                "description": "Double-decker trams providing a scenic and historic way to travel around Hong Kong Island.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Transportation/2.jpg",
+                "link": "https://www.hktramways.com/en/"
+            },
+            {
+                "name": "Star Ferry",
+                "description": "Ferry service across Victoria Harbour, offering stunning views of Hong Kong's skyline.",
+                "picture": "http://localhost:3000/assets/Cities/HongKong/Transportation/3.jpg",
+                "link": "https://www.starferry.com.hk/en/"
+            }
+        ],
+        "gallery": [
+            "http://localhost:3000/assets/Cities/HongKong/Gallery/1.jpg",
+            "http://localhost:3000/assets/Cities/HongKong/Gallery/2.jpg",
+            "http://localhost:3000/assets/Cities/HongKong/Gallery/3.jpg",
+            "http://localhost:3000/assets/Cities/HongKong/Gallery/4.jpg",
+            "http://localhost:3000/assets/Cities/HongKong/Gallery/5.jpg",
+            "http://localhost:3000/assets/Cities/HongKong/Gallery/6.jpg"
+        ]
+    }
+]

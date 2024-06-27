@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Berlin",
+        "genre": ["Historical", "Cultural", "Artistic", "Modern", "Cosmopolitan", "Green"],
+        "picture": "http://localhost:3000/assets/Cities/Berlin/Home.jpg",
+        "hero": "http://localhost:3000/assets/Cities/Berlin/Hero.jpg",
+        "description": "Berlin, the capital city of Germany, is known for its turbulent history, vibrant arts scene, and modern architecture. The Brandenburg Gate and remnants of the Berlin Wall reflect the city's complex past. Its cultural institutions include the Berlin Philharmonic, Museum Island, and the East Side Gallery, a preserved stretch of the wall featuring street art. The city's nightlife and culinary scene are renowned, encompassing diverse cuisines and trendy bars.",
+        "population": 3669491,
+        "country": "Germany",
+        "region": "Berlin",
+        "language": "German",
+        "currency": "Euro",
+        "timezone": "CET",
+        "foods": [
+            {
+                "name": "Currywurst",
+                "description": "Grilled pork sausage served with curry ketchup and often with fries.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Food/1.jpg"
+            },
+            {
+                "name": "Berliner Pfannkuchen",
+                "description": "Traditional German doughnut filled with jam or custard and dusted with powdered sugar.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Food/2.jpg"
+            },
+            {
+                "name": "Schnitzel",
+                "description": "Breaded and fried meat, typically pork or veal, served with potatoes or salad.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Food/3.jpg"
+            },
+            {
+                "name": "Döner Kebab",
+                "description": "Turkish-style kebab with meat (usually lamb or chicken), salad, and sauce in flatbread.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Food/4.jpg"
+            },
+            {
+                "name": "Apfelstrudel",
+                "description": "Traditional German/Austrian dessert made with thinly stretched dough filled with apples, cinnamon, sugar, and raisins.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Food/5.jpg"
+            },
+            {
+                "name": "Kartoffelsalat",
+                "description": "Traditional German potato salad, often served warm with bacon and onions.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Food/6.jpg"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Facil",
+                "description": "Michelin-starred restaurant offering innovative cuisine with a focus on seasonal and regional ingredients.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Restaurants/1.jpg",
+                "link": "https://www.facil.de/"
+            },
+            {
+                "name": "Lutter & Wegner",
+                "description": "Historic restaurant known for its traditional German dishes and extensive wine list.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Restaurants/2.jpg",
+                "link": "https://www.l-w-berlin.de/"
+            },
+            {
+                "name": "Nobelhart & Schmutzig",
+                "description": "Innovative restaurant focusing on local, seasonal ingredients in a minimalist setting.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Restaurants/3.jpg",
+                "link": "https://www.nobelhartundschmutzig.com/"
+            },
+            {
+                "name": "Tim Raue",
+                "description": "Acclaimed restaurant offering modern Asian-inspired cuisine in a stylish ambiance.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Restaurants/4.jpg",
+                "link": "https://www.tim-raue.com/"
+            },
+            {
+                "name": "Rutz",
+                "description": "Michelin-starred restaurant known for its extensive wine selection and contemporary German cuisine.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Restaurants/5.jpg",
+                "link": "https://www.weinbar-rutz.de/"
+            },
+            {
+                "name": "Cookies Cream",
+                "description": "Vegetarian restaurant offering creative dishes in a chic, industrial-style setting.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Restaurants/6.jpg",
+                "link": "https://www.cookiescream.com/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Hotel Adlon Kempinski",
+                "description": "Iconic luxury hotel near the Brandenburg Gate, offering elegant rooms and suites with views of the city.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Hotels/1.jpg",
+                "link": "https://www.kempinski.com/en/berlin/hotel-adlon/"
+            },
+            {
+                "name": "The Ritz-Carlton, Berlin",
+                "description": "Luxury hotel featuring spacious accommodations, a rooftop terrace, and a wellness area.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Hotels/2.jpg",
+                "link": "https://www.ritzcarlton.com/en/hotels/germany/berlin/"
+            },
+            {
+                "name": "Hotel de Rome",
+                "description": "Historic luxury hotel located in a former bank building, featuring opulent rooms and a rooftop terrace.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Hotels/3.jpg",
+                "link": "https://www.roccofortehotels.com/hotels-and-resorts/hotel-de-rome/"
+            },
+            {
+                "name": "SO/ Berlin Das Stue",
+                "description": "Luxury hotel set in a historic building overlooking the Berlin Zoo, offering stylish accommodations and a Michelin-starred restaurant.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Hotels/4.jpg",
+                "link": "https://www.so-sofitel-berlin.com/"
+            },
+            {
+                "name": "Regent Berlin",
+                "description": "Elegant luxury hotel located near Gendarmenmarkt, featuring classic decor and a gourmet restaurant.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Hotels/5.jpg",
+                "link": "https://www.regenthotels.com/regent-berlin"
+            },
+            {
+                "name": "Hotel Zoo Berlin",
+                "description": "Chic boutique hotel offering stylish rooms and a trendy bar in a central location.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Hotels/6.jpg",
+                "link": "https://www.hotelzoo.de/en/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "Berlin U-Bahn",
+                "description": "Rapid transit system serving Berlin and its suburbs with several lines.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Transportation/1.jpg",
+                "link": "https://www.bvg.de/"
+            },
+            {
+                "name": "Berlin S-Bahn",
+                "description": "Suburban railway system connecting Berlin and surrounding areas.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Transportation/2.jpg",
+                "link": "https://www.bvg.de/"
+            },
+            {
+                "name": "Berlin Trams",
+                "description": "Tram network providing local transportation within Berlin.",
+                "picture": "http://localhost:3000/assets/Cities/Berlin/Transportation/3.jpg",
+                "link": "https://www.bvg.de/"
+            }
+        ],
+        "gallery": [
+            "http://localhost:3000/assets/Cities/Berlin/Gallery/1.jpg",
+            "http://localhost:3000/assets/Cities/Berlin/Gallery/2.jpg",
+            "http://localhost:3000/assets/Cities/Berlin/Gallery/3.jpg",
+            "http://localhost:3000/assets/Cities/Berlin/Gallery/4.jpg",
+            "http://localhost:3000/assets/Cities/Berlin/Gallery/5.jpg",
+            "http://localhost:3000/assets/Cities/Berlin/Gallery/6.jpg"
+        ]
+    }
+]

@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Barcelona",
+        "genre": ["Cultural", "Urban", "Beach", "Culinary"],
+        "picture": "http://localhost:3000/assets/Cities/Barcelona/Home.jpg",
+        "hero": "http://localhost:3000/assets/Cities/Barcelona/Hero.jpg",
+        "description": "Barcelona, the capital city of Catalonia, Spain, is famous for its art and architecture. The fantastical Sagrada Família church and other modernist landmarks designed by Antoni Gaudí dot the city. Museu Picasso and Fundació Joan Miró feature modern art by their namesakes. Barcelona is known for its vibrant street life, bustling markets, and sandy Mediterranean beaches like Barceloneta Beach. The city’s cuisine is renowned for its seafood, Catalan dishes, and tapas bars.",
+        "population": 1620343,
+        "country": "Spain",
+        "region": "Catalonia",
+        "language": "Spanish, Catalan",
+        "currency": "Euro",
+        "timezone": "CET",
+        "foods": [
+            {
+                "name": "Paella",
+                "description": "Traditional Spanish dish of rice, saffron, vegetables, and meat or seafood.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Food/1.jpg"
+            },
+            {
+                "name": "Tapas",
+                "description": "Small savory dishes, often served with drinks, showcasing Spanish flavors and ingredients.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Food/2.jpg"
+            },
+            {
+                "name": "Crema Catalana",
+                "description": "Traditional Catalan dessert similar to crème brûlée, flavored with cinnamon and lemon.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Food/3.jpg"
+            },
+            {
+                "name": "Botifarra amb mongetes",
+                "description": "Catalan sausage served with white beans, a hearty local specialty.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Food/4.jpg"
+            },
+            {
+                "name": "Pan con tomate",
+                "description": "Simple Catalan dish of bread rubbed with ripe tomatoes and drizzled with olive oil.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Food/5.jpg"
+            },
+            {
+                "name": "Churros con chocolate",
+                "description": "Fried dough pastry served with thick hot chocolate, a popular Spanish dessert.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Food/6.jpg"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Tickets",
+                "description": "Innovative tapas bar by renowned chef Albert Adrià, offering creative small plates and cocktails.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Restaurants/1.jpg",
+                "link": "https://www.ticketsbar.es/"
+            },
+            {
+                "name": "Disfrutar",
+                "description": "Michelin-starred restaurant known for its modern Catalan cuisine and inventive tasting menus.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Restaurants/2.jpg",
+                "link": "https://www.disfrutarbarcelona.com/"
+            },
+            {
+                "name": "Can Solé",
+                "description": "Historic seafood restaurant near Barceloneta Beach, serving traditional Catalan dishes since 1903.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Restaurants/3.jpg",
+                "link": "https://www.restaurantcansole.com/"
+            },
+            {
+                "name": "ABaC Restaurant",
+                "description": "Luxurious restaurant offering modern Mediterranean cuisine and an extensive wine list.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Restaurants/4.jpg",
+                "link": "https://www.abacrestaurant.com/"
+            },
+            {
+                "name": "Enigma",
+                "description": "Avant-garde dining experience by Michelin-starred chef Albert Adrià, known for its innovative tasting menu.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Restaurants/5.jpg",
+                "link": "https://enigmaconcept.es/"
+            },
+            {
+                "name": "Cervecería Catalana",
+                "description": "Popular tapas bar offering a wide selection of traditional and creative tapas dishes.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Restaurants/6.jpg",
+                "link": "https://www.cerveceriacatalana.com/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Hotel Arts Barcelona",
+                "description": "Luxury hotel with modern design, located near the beach and offering panoramic city views.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Hotels/1.jpg",
+                "link": "https://www.hotelartsbarcelona.com/"
+            },
+            {
+                "name": "Mandarin Oriental Barcelona",
+                "description": "Five-star hotel known for its elegant design, Michelin-starred dining, and luxurious spa.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Hotels/2.jpg",
+                "link": "https://www.mandarinoriental.com/barcelona/"
+            },
+            {
+                "name": "W Barcelona",
+                "description": "Iconic hotel located on the waterfront, offering stylish accommodations and panoramic views of the Mediterranean Sea.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Hotels/3.jpg",
+                "link": "https://www.marriott.com/hotels/travel/bcnwh-w-barcelona/"
+            },
+            {
+                "name": "Hotel The Serras",
+                "description": "Boutique hotel housed in a historic building overlooking Port Vell, offering modern luxury and a rooftop terrace.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Hotels/4.jpg",
+                "link": "https://www.hoteltheserrasbarcelona.com/"
+            },
+            {
+                "name": "Ohla Barcelona",
+                "description": "Luxury hotel located in the heart of Barcelona, known for its contemporary design and Michelin-starred dining.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Hotels/5.jpg",
+                "link": "https://www.ohlaboutiquehotels.com/en/"
+            },
+            {
+                "name": "Mercer Hotel Barcelona",
+                "description": "Chic boutique hotel set in a medieval palace in the Gothic Quarter, offering elegant rooms and a rooftop terrace.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Hotels/6.jpg",
+                "link": "https://www.mercerbarcelona.com/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "Barcelona Metro",
+                "description": "Rapid transit system serving Barcelona and its metropolitan area, with several lines connecting key locations.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Transportation/1.jpg",
+                "link": "https://www.tmb.cat/en/home"
+            },
+            {
+                "name": "Barcelona Bus",
+                "description": "Extensive bus network covering Barcelona and surrounding areas, operated by TMB.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Transportation/2.jpg",
+                "link": "https://www.tmb.cat/en/home"
+            },
+            {
+                "name": "Barcelona Tram",
+                "description": "Tram network providing local transportation within Barcelona, connecting various neighborhoods.",
+                "picture": "http://localhost:3000/assets/Cities/Barcelona/Transportation/3.jpg",
+                "link": "https://www.tram.cat/"
+            }
+        ],
+        "gallery": [
+            "http://localhost:3000/assets/Cities/Barcelona/Gallery/1.jpg",
+            "http://localhost:3000/assets/Cities/Barcelona/Gallery/2.jpg",
+            "http://localhost:3000/assets/Cities/Barcelona/Gallery/3.jpg",
+            "http://localhost:3000/assets/Cities/Barcelona/Gallery/4.jpg",
+            "http://localhost:3000/assets/Cities/Barcelona/Gallery/5.jpg",
+            "http://localhost:3000/assets/Cities/Barcelona/Gallery/6.jpg"
+        ]
+    }
+]
