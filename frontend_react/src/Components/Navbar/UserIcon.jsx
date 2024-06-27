@@ -32,7 +32,7 @@ const UserIcon = ({ profilePic, username, firstName }) => {
       const response = await axios.post('http://localhost:3001/auth/logout', null, { withCredentials: true });
       if (response.data.message === "Logout successful") {
         localStorage.removeItem('token');
-        window.location.reload();
+        navigate(`/`);
       } else {
         console.log("Logout failed");
       }

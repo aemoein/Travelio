@@ -12,4 +12,9 @@ router.delete('/cities/:id', cityController.deleteCity);
 // Route to load city data from JSON file
 router.post('/loadCities/:name', cityController.loadCityDataFromFile);
 
+router.post('/:cityId/food', cityController.addFood);
+router.post('/:cityId/restaurant', cityController.addRestaurant);
+router.post('/:cityId/hotel', cityController.addHotel);
+router.post('/:cityId/transportation', cityController.addTransportation);
+
 module.exports = router;

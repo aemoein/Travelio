@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Rome",
+        "genre": ["Historical", "Cultural", "Urban", "Culinary", "Luxury", "Educational"],
+        "picture": "../../Assets/Cities/Rome/Home.jpg",
+        "hero": "../../Assets/Cities/Rome/Hero.jpg",
+        "description": "Rome, the capital city of Italy, is renowned for its nearly 3,000 years of globally influential art, architecture, and culture. The city's ancient ruins, such as the Forum and the Colosseum, evoke the power of the former Roman Empire. Visitors can explore the Vatican City, home to the Roman Catholic Church, St. Peter’s Basilica, and the Vatican Museums, which house masterpieces such as Michelangelo’s Sistine Chapel frescoes. Rome also offers a vibrant culinary scene with traditional Italian dishes and bustling markets.",
+        "population": 2873000,
+        "country": "Italy",
+        "region": "Lazio",
+        "language": "Italian",
+        "currency": "Euro",
+        "timezone": "CET",
+        "foods": [
+            {
+                "name": "Pasta Carbonara",
+                "description": "Classic Roman pasta dish made with eggs, cheese, pancetta, and pepper.",
+                "picture": "../../Assets/Cities/Rome/Food/1.jpg"
+            },
+            {
+                "name": "Pizza al Taglio",
+                "description": "Square slices of pizza sold by weight, with various toppings.",
+                "picture": "../../Assets/Cities/Rome/Food/2.jpg"
+            },
+            {
+                "name": "Supplì",
+                "description": "Deep-fried rice balls filled with mozzarella.",
+                "picture": "../../Assets/Cities/Rome/Food/3.jpg"
+            },
+            {
+                "name": "Saltimbocca",
+                "description": "Veal wrapped with prosciutto and sage, cooked in wine and butter.",
+                "picture": "../../Assets/Cities/Rome/Food/4.jpg"
+            },
+            {
+                "name": "Gelato",
+                "description": "Italian-style ice cream available in a variety of flavors.",
+                "picture": "../../Assets/Cities/Rome/Food/5.jpg"
+            },
+            {
+                "name": "Tiramisu",
+                "description": "Coffee-flavored dessert made with ladyfingers, mascarpone cheese, and cocoa.",
+                "picture": "../../Assets/Cities/Rome/Food/6.jpg"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "La Pergola",
+                "description": "Three-Michelin-star restaurant offering gourmet Mediterranean cuisine.",
+                "picture": "../../Assets/Cities/Rome/Restaurants/1.jpg",
+                "link": "https://www.romecavalieri.com/lapergola/"
+            },
+            {
+                "name": "Roscioli",
+                "description": "Renowned deli and restaurant known for its traditional Italian dishes and wine selection.",
+                "picture": "../../Assets/Cities/Rome/Restaurants/2.jpg",
+                "link": "https://www.salumeriaroscioli.com/"
+            },
+            {
+                "name": "Armando al Pantheon",
+                "description": "Classic Roman trattoria located near the Pantheon, serving authentic dishes.",
+                "picture": "../../Assets/Cities/Rome/Restaurants/3.jpg",
+                "link": "https://www.armandoalpantheon.it/"
+            },
+            {
+                "name": "Osteria Quarantaquattro",
+                "description": "Cozy eatery offering a modern take on traditional Roman cuisine.",
+                "picture": "../../Assets/Cities/Rome/Restaurants/4.jpg",
+                "link": "https://www.osteriaquarantaquattro.com/"
+            },
+            {
+                "name": "Pizzarium",
+                "description": "Popular spot for pizza al taglio, known for its creative toppings and high-quality ingredients.",
+                "picture": "../../Assets/Cities/Rome/Restaurants/5.jpg",
+                "link": "http://www.bonci.it/"
+            },
+            {
+                "name": "Da Enzo al 29",
+                "description": "Charming trattoria in Trastevere offering traditional Roman dishes.",
+                "picture": "../../Assets/Cities/Rome/Restaurants/6.jpg",
+                "link": "https://www.daenzoal29.com/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Hotel Eden",
+                "description": "Luxury hotel with elegant rooms and a rooftop restaurant offering panoramic views.",
+                "picture": "../../Assets/Cities/Rome/Hotels/1.jpg",
+                "link": "https://www.dorchestercollection.com/en/rome/hotel-eden/"
+            },
+            {
+                "name": "The St. Regis Rome",
+                "description": "Opulent hotel known for its lavish interiors and exceptional service.",
+                "picture": "../../Assets/Cities/Rome/Hotels/2.jpg",
+                "link": "https://www.marriott.com/hotels/travel/romxr-the-st-regis-rome/"
+            },
+            {
+                "name": "Hotel de Russie",
+                "description": "Five-star hotel located near the Spanish Steps, featuring luxurious amenities and a beautiful garden.",
+                "picture": "../../Assets/Cities/Rome/Hotels/3.jpg",
+                "link": "https://www.roccofortehotels.com/hotels-and-resorts/hotel-de-russie/"
+            },
+            {
+                "name": "Rome Cavalieri, A Waldorf Astoria Hotel",
+                "description": "Lavish hotel set on a hilltop, offering stunning views of the city and an extensive art collection.",
+                "picture": "../../Assets/Cities/Rome/Hotels/4.jpg",
+                "link": "https://www.romecavalieri.com/"
+            },
+            {
+                "name": "Hassler Roma",
+                "description": "Historic hotel located at the top of the Spanish Steps, known for its elegance and refined service.",
+                "picture": "../../Assets/Cities/Rome/Hotels/5.jpg",
+                "link": "https://www.hotelhasslerroma.com/"
+            },
+            {
+                "name": "Palazzo Manfredi",
+                "description": "Boutique hotel with luxurious accommodations and direct views of the Colosseum.",
+                "picture": "../../Assets/Cities/Rome/Hotels/6.jpg",
+                "link": "https://www.palazzomanfredi.com/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "Rome Metro",
+                "description": "Rapid transit system serving the city, with three lines connecting major areas.",
+                "picture": "../../Assets/Cities/Rome/Transportation/1.jpg",
+                "link": "https://www.rome.net/metro"
+            },
+            {
+                "name": "Rome Buses",
+                "description": "Extensive bus network covering all parts of the city.",
+                "picture": "../../Assets/Cities/Rome/Transportation/2.jpg",
+                "link": "https://www.atac.roma.it/"
+            },
+            {
+                "name": "Trams in Rome",
+                "description": "Tram system providing efficient transport across the city.",
+                "picture": "../../Assets/Cities/Rome/Transportation/3.jpg",
+                "link": "https://www.rome.net/tram"
+            }
+        ],
+        "gallery": [
+            "../../Assets/Cities/Rome/Gallery/1.jpg",
+            "../../Assets/Cities/Rome/Gallery/2.jpg",
+            "../../Assets/Cities/Rome/Gallery/3.jpg",
+            "../../Assets/Cities/Rome/Gallery/4.jpg",
+            "../../Assets/Cities/Rome/Gallery/5.jpg",
+            "../../Assets/Cities/Rome/Gallery/6.jpg"
+        ]
+    }
+]

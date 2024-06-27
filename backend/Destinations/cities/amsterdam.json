@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Amsterdam",
+        "genre": ["Historical", "Cultural", "Urban", "Culinary", "Luxury", "Educational"],
+        "picture": "x",
+        "hero": "x",
+        "description": "Amsterdam, the capital city of the Netherlands, is known for its picturesque canals, historic buildings, and vibrant cultural scene. The city is famous for its artistic heritage, with notable museums such as the Van Gogh Museum and the Rijksmuseum. Visitors can explore charming neighborhoods like Jordaan, enjoy the lively atmosphere of the Red Light District, and experience the city's rich history by visiting Anne Frank House. Amsterdam is also renowned for its cycling culture and extensive network of bike paths.",
+        "population": 872680,
+        "country": "Netherlands",
+        "region": "North Holland",
+        "language": "Dutch",
+        "currency": "Euro",
+        "timezone": "CET",
+        "foods": [
+            {
+                "name": "Stroopwafel",
+                "description": "Thin waffle cookies filled with caramel syrup.",
+                "picture": "x"
+            },
+            {
+                "name": "Haring",
+                "description": "Raw herring fish, often served with onions and pickles.",
+                "picture": "x"
+            },
+            {
+                "name": "Poffertjes",
+                "description": "Mini Dutch pancakes served with butter and powdered sugar.",
+                "picture": "x"
+            },
+            {
+                "name": "Bitterballen",
+                "description": "Deep-fried meatballs served with mustard for dipping.",
+                "picture": "x"
+            },
+            {
+                "name": "Rijsttafel",
+                "description": "Indonesian-inspired meal with a variety of small dishes.",
+                "picture": "x"
+            },
+            {
+                "name": "Appeltaart",
+                "description": "Traditional Dutch apple pie with a lattice crust.",
+                "picture": "x"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "De Kas",
+                "description": "Farm-to-table restaurant located in a greenhouse.",
+                "picture": "x",
+                "link": "https://www.restaurantdekas.com/"
+            },
+            {
+                "name": "Ciel Bleu",
+                "description": "Two-Michelin-star restaurant offering French cuisine with a panoramic view.",
+                "picture": "x",
+                "link": "https://www.cielbleu.nl/"
+            },
+            {
+                "name": "Restaurant Rijks",
+                "description": "Contemporary Dutch cuisine located in the Rijksmuseum.",
+                "picture": "x",
+                "link": "https://www.rijksrestaurant.nl/"
+            },
+            {
+                "name": "The Avocado Show",
+                "description": "Trendy spot specializing in avocado-based dishes.",
+                "picture": "x",
+                "link": "https://theavocadoshow.com/"
+            },
+            {
+                "name": "Daalder",
+                "description": "Creative and modern dishes served in a relaxed atmosphere.",
+                "picture": "x",
+                "link": "https://www.daalderamsterdam.nl/"
+            },
+            {
+                "name": "Foodhallen",
+                "description": "Indoor food market with a variety of street food vendors.",
+                "picture": "x",
+                "link": "https://foodhallen.nl/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Hotel De L'Europe",
+                "description": "Luxury hotel with elegant accommodations and a riverside location.",
+                "picture": "x",
+                "link": "https://www.leurope.nl/"
+            },
+            {
+                "name": "Conservatorium Hotel",
+                "description": "Five-star hotel offering modern amenities in a historic building.",
+                "picture": "x",
+                "link": "https://www.conservatoriumhotel.com/"
+            },
+            {
+                "name": "Waldorf Astoria Amsterdam",
+                "description": "Elegant hotel with a canal-side setting and luxurious rooms.",
+                "picture": "x",
+                "link": "https://www.waldorfastoria.com/amsterdam"
+            },
+            {
+                "name": "The Dylan Amsterdam",
+                "description": "Boutique hotel known for its sophisticated design and excellent service.",
+                "picture": "x",
+                "link": "https://www.dylanamsterdam.com/"
+            },
+            {
+                "name": "Andaz Amsterdam Prinsengracht",
+                "description": "Stylish hotel with modern decor and artistic touches.",
+                "picture": "x",
+                "link": "https://www.hyatt.com/en-US/hotel/netherlands/andaz-amsterdam-prinsengracht/amsta"
+            },
+            {
+                "name": "Pulitzer Amsterdam",
+                "description": "Historic hotel made up of 25 interconnected canal houses.",
+                "picture": "x",
+                "link": "https://www.pulitzeramsterdam.com/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "Amsterdam Tram",
+                "description": "Extensive tram network connecting various parts of the city.",
+                "picture": "x",
+                "link": "https://www.gvb.nl/en/travellers/public-transport-amsterdam/tram"
+            },
+            {
+                "name": "Bicycles",
+                "description": "Popular mode of transport with numerous bike rental options and paths.",
+                "picture": "x",
+                "link": "https://www.iamsterdam.com/en/plan-your-trip/getting-around/rental/bikes"
+            },
+            {
+                "name": "Canal Boats",
+                "description": "Scenic boat tours and water taxis navigating the city's canals.",
+                "picture": "x",
+                "link": "https://www.canal.nl/"
+            }
+        ],
+        "gallery": [
+            "x",
+            "x",
+            "x",
+            "x",
+            "x",
+            "x"
+        ]
+    }
+]

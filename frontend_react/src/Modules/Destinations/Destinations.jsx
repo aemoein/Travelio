@@ -12,19 +12,30 @@ import KeyboardDoubleArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardDou
 import Footer from '../../Components/Footer/Footer';
 
 const Destinations = () => {
-    const [destinations, setDestinations] = useState([]);
+    const [countries, setCountries] = useState([]);
+    const [cities, setCities] = useState([]);
+    const [naturalAreas, setNaturalAreas] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedRegion, setSelectedRegion] = useState('');
     const [selectedContinent, setSelectedContinent] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState('countries');
     const destinationsPerPage = 12;
 
     useEffect(() => {
         const fetchDestinations = async () => {
             try {
-                const response = await axios.get('http://localhost:3002/destinations');
-                setDestinations(response.data);
-                console.log('Destinations:', destinations);
+                const responseCountries = await axios.get('http://localhost:3002/destinations');
+                const responseCities = await axios.get('http://localhost:3002/city/cities');
+                //const responseNatural = await axios.get('http://localhost:3002/natural');
+
+                console.log('Countries Response:', responseCountries.data);
+                console.log('Cities Response:', responseCities.data);
+                //console.log('Natural Areas Response:', responseNatural.data);
+
+                setCountries(responseCountries.data);
+                setCities(responseCities.data);
+                //setNaturalAreas(responseNatural.data);
             } catch (error) {
                 console.error('Error fetching destinations:', error);
             }
@@ -33,11 +44,31 @@ const Destinations = () => {
         fetchDestinations();
     }, []);
 
-    const filteredDestinations = destinations.filter(destination =>
-        destination.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-        (selectedRegion === '' || destination.region === selectedRegion) &&
-        (selectedContinent === '' || destination.continent === selectedContinent)
-    );
+    //console.log('Countries:', countries);
+    //console.log('Cities:', cities);
+    //console.log('Natural Areas:', naturalAreas);
+
+    let filteredDestinations = [];
+    if (selectedCategory === 'countries') {
+        filteredDestinations = countries.filter(country =>
+            country.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+            (selectedRegion === '' || country.region === selectedRegion) &&
+            (selectedContinent === '' || country.continent === selectedContinent)
+        );
+    } else if (selectedCategory === 'cities') {
+        filteredDestinations = cities.filter(city =>
+            city.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+            (selectedRegion === '' || city.region === selectedRegion)
+            // Add any additional filters specific to cities
+        );
+    } /*else if (selectedCategory === 'natural') {
+        filteredDestinations = naturalAreas.filter(natural =>
+            natural.name.toLowerCase().includes(searchTerm.toLowerCase())
+            // Add any additional filters specific to natural areas
+        );
+    }*/
+
+    console.log('Filtered Destinations:', filteredDestinations);
 
     const indexOfLastDestination = currentPage * destinationsPerPage;
     const indexOfFirstDestination = indexOfLastDestination - destinationsPerPage;
@@ -68,7 +99,7 @@ const Destinations = () => {
         margin: 1,
         borderRadius: 10,
         fontSize: '1.5vw',
-        font: 'Poppins',
+        fontFamily: 'Poppins',
         fontWeight: '700',
         border: currentPage === page ? '2px solid ' : '2px solid',
         backgroundImage: currentPage === page ? 'linear-gradient(to right, #6b778d, #ff6b6b)' : 'none',
@@ -80,6 +111,44 @@ const Destinations = () => {
             border: 'none',
         },
     });
+
+    const buttonStyles = {
+        ml: 2,
+        mb: 2,
+        width: '100%',
+        padding: '10px',
+        borderRadius: 10,
+        fontWeight: 'bold',
+        font: 'Poppins',
+        textTransform: 'capitalize',
+        backgroundColor: '#ffffff',
+        color: '#aaaaaa',
+        border: '1px solid #bbbbbb',
+        '&:hover': {
+            border: '2px solid',
+            backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+            color: 'white',
+            backgroundColor: 'transparent',
+        },
+    };
+
+    const activeButtonStyles = {
+        ...buttonStyles,
+        border: '2px solid',
+        backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+        color: 'white',
+        backgroundColor: 'transparent',
+        '&:hover': {
+            backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+            color: '#ffffff',
+            border: 'none',
+        },
+    };
+
+    const handleCategoryChange = (category) => {
+        setSelectedCategory(category);
+        setCurrentPage(1);
+    };
 
     const arrowButtonStyles = {
         color: '#A9A9A9',
@@ -124,6 +193,26 @@ const Destinations = () => {
                     <Typography variant="h4" gutterBottom sx={{ ml: { xs: '1.6vw', sm: '1.6vw', md: '1.6vw', lg: '0.0vw'}, fontFamily: 'Poppins', fontWeight: '600' }}>
                         Destinations
                     </Typography>
+                    <Box display="flex" alignItems="center" justifyContent="center" sx={{ width: { xs: '78vw', sm: '78vw', md: '79vw', lg: '77vw' }, ml: { xs: '-0.6vw', sm: '-0.6vw', md: '-0.6vw', lg: '-0.6vw' }}}>
+                    <Button
+                            sx={selectedCategory === 'countries' ? activeButtonStyles : buttonStyles}
+                            onClick={() => handleCategoryChange('countries')}
+                        >
+                            Countries
+                        </Button>
+                        <Button
+                            sx={selectedCategory === 'cities' ? activeButtonStyles : buttonStyles}
+                            onClick={() => handleCategoryChange('cities')}
+                        >
+                            Cities
+                        </Button>
+                        <Button
+                            sx={selectedCategory === 'natural' ? activeButtonStyles : buttonStyles}
+                            onClick={() => handleCategoryChange('natural')}
+                        >
+                            Natural
+                        </Button>
+                    </Box>
                     <TextField
                         label="Search destinations"
                         variant="outlined"

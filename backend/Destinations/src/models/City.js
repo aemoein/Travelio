@@ -12,30 +12,31 @@ const restaurantSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   picture: { type: String, required: true },
-  link: { type: String, required: false }
+  link: { type: String }
 });
 
 const hotelSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   picture: { type: String, required: true },
-  link: { type: String, required: false }
+  link: { type: String }
 });
 
 const transportationSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   picture: { type: String, required: true },
-  link: { type: String, required: false }
+  link: { type: String }
 });
 
 // Define main city schema
 const CitySchema = new Schema({
-  cityName: { type: String, required: true },
+  name: { type: String, required: true },
+  genre: [{ type: String, required: true }],
   picture: { type: String, required: true },
   hero: { type: String, required: true },
   description: { type: String, required: true },
-  population: { type: Number, required: false },
+  population: { type: Number, default: 0 },
   country: { type: String, required: true },
   region: { type: String, required: true },
   language: { type: String, required: true },
@@ -45,9 +46,9 @@ const CitySchema = new Schema({
   restaurants: [restaurantSchema],
   hotels: [hotelSchema],
   transportation: [transportationSchema],
-  gallery: [{ type: String, required: false }],
-}, { 
-  indexes: [{ unique: true, fields: ['cityName', 'country', 'region'] }]
+  gallery: [{ type: String }]
 });
+
+CitySchema.index({ cityName: 1, country: 1, region: 1 }, { unique: true });
 
 module.exports = mongoose.model('City', CitySchema);
