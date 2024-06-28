@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Chicago",
+        "genre": ["Historical", "Cultural", "Urban", "Culinary", "Luxury", "Educational"],
+        "picture": "http://localhost:3000/assets/Cities/Chicago/Home.jpg",
+        "hero": "http://localhost:3000/assets/Cities/Chicago/Hero.jpg",
+        "description": "Chicago, situated on Lake Michigan in Illinois, is among the largest cities in the U.S. It's known for its bold architecture, with a skyline punctuated by skyscrapers such as the iconic John Hancock Center, Willis Tower (formerly the Sears Tower), and the neo-Gothic Tribune Tower. The city is also renowned for its museums, including the Art Institute of Chicago with its noted Impressionist and Post-Impressionist works.",
+        "population": 2716000,
+        "country": "USA",
+        "region": "Illinois",
+        "language": "English",
+        "currency": "US Dollar",
+        "timezone": "CST",
+        "foods": [
+            {
+                "name": "Chicago-style Pizza",
+                "description": "A deep-dish pizza with a thick crust, lots of cheese, and chunky tomato sauce.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Food/1.jpg"
+            },
+            {
+                "name": "Chicago-style Hot Dog",
+                "description": "An all-beef frankfurter on a poppy seed bun, topped with mustard, relish, onions, tomatoes, pickles, and sport peppers.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Food/2.jpg"
+            },
+            {
+                "name": "Italian Beef Sandwich",
+                "description": "A sandwich of thinly sliced roast beef, simmered in a seasoned broth, and served on a long Italian-style roll.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Food/3.jpg"
+            },
+            {
+                "name": "Garrett Popcorn",
+                "description": "A Chicago staple known for its signature 'Garrett Mix' of caramel and cheese popcorn.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Food/4.jpg"
+            },
+            {
+                "name": "Polish Sausage",
+                "description": "Grilled or fried sausage served on a bun with mustard and grilled onions.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Food/5.jpg"
+            },
+            {
+                "name": "Rainbow Cone",
+                "description": "A unique ice cream cone featuring five flavors: chocolate, strawberry, Palmer House, pistachio, and orange sherbet.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Food/6.jpg"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Alinea",
+                "description": "A world-renowned restaurant offering an avant-garde tasting menu.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Restaurants/1.jpg",
+                "link": "https://www.alinearestaurant.com/"
+            },
+            {
+                "name": "Girl & the Goat",
+                "description": "A trendy restaurant serving creative, globally inspired dishes.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Restaurants/2.jpg",
+                "link": "https://girlandthegoat.com/"
+            },
+            {
+                "name": "Lou Malnati's Pizzeria",
+                "description": "Famous for its Chicago-style deep-dish pizza.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Restaurants/3.jpg",
+                "link": "https://www.loumalnatis.com/"
+            },
+            {
+                "name": "Portillo's",
+                "description": "A popular spot known for its Chicago-style hot dogs and Italian beef sandwiches.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Restaurants/4.jpg",
+                "link": "https://www.portillos.com/"
+            },
+            {
+                "name": "The Purple Pig",
+                "description": "A bustling eatery offering Mediterranean-inspired dishes with a focus on pork, seafood, and wine.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Restaurants/5.jpg",
+                "link": "https://thepurplepigchicago.com/"
+            },
+            {
+                "name": "Superdawg",
+                "description": "A classic drive-in serving Chicago-style hot dogs and burgers since 1948.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Restaurants/6.jpg",
+                "link": "https://www.superdawg.com/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "The Peninsula Chicago",
+                "description": "A luxury hotel known for its elegant rooms and exceptional service.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Hotels/1.jpg",
+                "link": "https://www.peninsula.com/en/chicago/5-star-luxury-hotel-magnificent-mile"
+            },
+            {
+                "name": "Waldorf Astoria Chicago",
+                "description": "An upscale hotel offering sophisticated accommodations and top-notch amenities.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Hotels/2.jpg",
+                "link": "https://www.hilton.com/en/hotels/chiwawa-waldorf-astoria-chicago/"
+            },
+            {
+                "name": "The Langham, Chicago",
+                "description": "A five-star hotel featuring luxurious rooms, fine dining, and stunning river views.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Hotels/3.jpg",
+                "link": "https://www.langhamhotels.com/en/the-langham/chicago/"
+            },
+            {
+                "name": "Four Seasons Hotel Chicago",
+                "description": "An elegant hotel with luxurious accommodations and exceptional service.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Hotels/4.jpg",
+                "link": "https://www.fourseasons.com/chicago/"
+            },
+            {
+                "name": "The Drake",
+                "description": "A historic hotel offering classic elegance and modern comforts.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Hotels/5.jpg",
+                "link": "https://www.thedrakehotel.com/"
+            },
+            {
+                "name": "The Gwen, a Luxury Collection Hotel, Michigan Avenue Chicago",
+                "description": "A stylish hotel with Art Deco-inspired design, located on the Magnificent Mile.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Hotels/6.jpg",
+                "link": "https://www.marriott.com/hotels/travel/chilc-the-gwen-a-luxury-collection-hotel-michigan-avenue-chicago/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "Chicago 'L'",
+                "description": "The rapid transit system serving the city and surrounding areas, known for its elevated tracks.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Transportation/1.jpg",
+                "link": "https://www.transitchicago.com/"
+            },
+            {
+                "name": "Chicago Buses",
+                "description": "An extensive bus network covering the entire city and suburbs.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Transportation/2.jpg",
+                "link": "https://www.transitchicago.com/bus/"
+            },
+            {
+                "name": "Divvy Bikes",
+                "description": "A bike-sharing system with stations throughout the city, offering an eco-friendly way to get around.",
+                "picture": "http://localhost:3000/assets/Cities/Chicago/Transportation/3.jpg",
+                "link": "https://www.divvybikes.com/"
+            }
+        ],
+        "gallery": [
+            "http://localhost:3000/assets/Cities/Chicago/Gallery/1.jpg",
+            "http://localhost:3000/assets/Cities/Chicago/Gallery/2.jpg",
+            "http://localhost:3000/assets/Cities/Chicago/Gallery/3.jpg",
+            "http://localhost:3000/assets/Cities/Chicago/Gallery/4.jpg",
+            "http://localhost:3000/assets/Cities/Chicago/Gallery/5.jpg",
+            "http://localhost:3000/assets/Cities/Chicago/Gallery/6.jpg"
+        ]
+    }
+]

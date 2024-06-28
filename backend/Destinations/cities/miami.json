@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Miami",
+        "genre": ["Beach", "Urban", "Cultural", "Nightlife", "Luxury", "Gastronomic"],
+        "picture": "http://localhost:3000/assets/Cities/Miami/Home.jpg",
+        "hero": "http://localhost:3000/assets/Cities/Miami/Hero.jpg",
+        "description": "Miami, a vibrant city in Florida, is known for its stunning beaches, diverse culture, and bustling nightlife. The city's Art Deco architecture, particularly in the South Beach area, adds a unique charm. Miami is a melting pot of cultures, reflected in its cuisine, festivals, and neighborhoods like Little Havana. The city also offers a wide range of recreational activities, from water sports to exploring the nearby Everglades National Park.",
+        "population": 454279,
+        "country": "United States",
+        "region": "Florida",
+        "language": "English, Spanish",
+        "currency": "US Dollar",
+        "timezone": "EST",
+        "foods": [
+            {
+                "name": "Cuban Sandwich",
+                "description": "A pressed sandwich made with ham, roasted pork, Swiss cheese, pickles, and mustard.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Food/1.jpg"
+            },
+            {
+                "name": "Stone Crab",
+                "description": "Fresh stone crab claws served with mustard sauce, a local delicacy.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Food/2.jpg"
+            },
+            {
+                "name": "Key Lime Pie",
+                "description": "A tart and creamy pie made with Key lime juice, sweetened condensed milk, and a graham cracker crust.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Food/3.jpg"
+            },
+            {
+                "name": "Mofongo",
+                "description": "A Puerto Rican dish made with fried plantains mashed with garlic and pork cracklings.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Food/4.jpg"
+            },
+            {
+                "name": "Arepas",
+                "description": "Venezuelan and Colombian cornmeal cakes filled with cheese, meats, or avocado.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Food/5.jpg"
+            },
+            {
+                "name": "Churrasco",
+                "description": "Grilled skirt steak served with chimichurri sauce.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Food/6.jpg"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "Joe's Stone Crab",
+                "description": "A historic restaurant famous for its stone crab claws and seafood.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Restaurants/1.jpg",
+                "link": "https://www.joesstonecrab.com/"
+            },
+            {
+                "name": "Versailles Restaurant",
+                "description": "A legendary Cuban restaurant known for its authentic cuisine and vibrant atmosphere.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Restaurants/2.jpg",
+                "link": "https://www.versaillesrestaurant.com/"
+            },
+            {
+                "name": "Zuma",
+                "description": "A high-end Japanese restaurant offering modern izakaya-style dining.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Restaurants/3.jpg",
+                "link": "https://zumarestaurant.com/locations/miami/"
+            },
+            {
+                "name": "KYU",
+                "description": "A trendy spot serving Asian-inspired barbecue and wood-fired dishes.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Restaurants/4.jpg",
+                "link": "https://www.kyurestaurants.com/"
+            },
+            {
+                "name": "La Mar by Gastón Acurio",
+                "description": "An upscale Peruvian restaurant featuring ceviche and other traditional dishes.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Restaurants/5.jpg",
+                "link": "https://www.mandarinoriental.com/miami/brickell-key/fine-dining/restaurants/peruvian-cuisine-la-mar"
+            },
+            {
+                "name": "STK Miami",
+                "description": "A modern steakhouse known for its high-energy atmosphere and quality cuts of meat.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Restaurants/6.jpg",
+                "link": "https://stksteakhouse.com/venues/miami/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Fontainebleau Miami Beach",
+                "description": "A luxury oceanfront resort featuring a spa, multiple pools, and vibrant nightlife.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Hotels/1.jpg",
+                "link": "https://www.fontainebleau.com/"
+            },
+            {
+                "name": "The Ritz-Carlton, South Beach",
+                "description": "An elegant hotel offering beachfront accommodations and upscale amenities.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Hotels/2.jpg",
+                "link": "https://www.ritzcarlton.com/en/hotels/miami/south-beach"
+            },
+            {
+                "name": "W South Beach",
+                "description": "A chic hotel known for its stylish rooms, ocean views, and vibrant nightlife scene.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Hotels/3.jpg",
+                "link": "https://www.marriott.com/hotels/travel/miaws-w-south-beach/"
+            },
+            {
+                "name": "Mandarin Oriental, Miami",
+                "description": "A luxury hotel on Brickell Key offering refined service and stunning views of Biscayne Bay.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Hotels/4.jpg",
+                "link": "https://www.mandarinoriental.com/miami/brickell-key/luxury-hotel"
+            },
+            {
+                "name": "1 Hotel South Beach",
+                "description": "An eco-friendly luxury hotel with a focus on sustainability and nature-inspired design.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Hotels/5.jpg",
+                "link": "https://www.1hotels.com/south-beach"
+            },
+            {
+                "name": "The Setai, Miami Beach",
+                "description": "A luxury hotel combining Asian-inspired design with beachfront elegance.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Hotels/6.jpg",
+                "link": "https://www.thesetaihotel.com/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "Miami Metrobus",
+                "description": "A comprehensive bus network serving Miami-Dade County and its suburbs.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Transportation/1.jpg",
+                "link": "https://www.miamidade.gov/global/transportation/metrobuses.page"
+            },
+            {
+                "name": "Metrorail",
+                "description": "A rapid transit system connecting downtown Miami with surrounding areas.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Transportation/2.jpg",
+                "link": "https://www.miamidade.gov/global/transportation/metrorail.page"
+            },
+            {
+                "name": "Metromover",
+                "description": "A free automated people mover system that serves the downtown Miami area.",
+                "picture": "http://localhost:3000/assets/Cities/Miami/Transportation/3.jpg",
+                "link": "https://www.miamidade.gov/global/transportation/metromover.page"
+            }
+        ],
+        "gallery": [
+            "http://localhost:3000/assets/Cities/Miami/Gallery/1.jpg",
+            "http://localhost:3000/assets/Cities/Miami/Gallery/2.jpg",
+            "http://localhost:3000/assets/Cities/Miami/Gallery/3.jpg",
+            "http://localhost:3000/assets/Cities/Miami/Gallery/4.jpg",
+            "http://localhost:3000/assets/Cities/Miami/Gallery/5.jpg",
+            "http://localhost:3000/assets/Cities/Miami/Gallery/6.jpg"
+        ]
+    }
+]

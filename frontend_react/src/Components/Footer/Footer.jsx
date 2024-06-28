@@ -54,7 +54,7 @@ const Footer = () => {
             }}
           >
             Create your own stories
-            {!isLoggedIn && ( // Display Join Now button only if not logged in
+            {!isLoggedIn && (
               <Button
                 variant="contained"
                 color="primary"

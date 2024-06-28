@@ -1,0 +1,151 @@
+[
+    {
+        "name": "São Paulo",
+        "genre": ["Historical", "Cultural", "Urban", "Culinary", "Luxury", "Educational"],
+        "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Home.jpg",
+        "hero": "http://localhost:3000/assets/Cities/SaoPaulo/Hero.jpg",
+        "description": "São Paulo, Brazil's vibrant financial center, is among the world's most populous cities, with numerous cultural institutions and a rich architectural tradition. The city is known for its diverse food scene, lively nightlife, and impressive skyscrapers. Landmarks such as the São Paulo Museum of Art, with its striking modern architecture, and the Ibirapuera Park, a vast green space with museums, performance spaces, and a planetarium, attract visitors from around the globe.",
+        "population": 12300000,
+        "country": "Brazil",
+        "region": "Southeast",
+        "language": "Portuguese",
+        "currency": "Brazilian Real",
+        "timezone": "BRT",
+        "foods": [
+            {
+                "name": "Feijoada",
+                "description": "A hearty black bean stew with various cuts of pork, served with rice, collard greens, and orange slices.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Food/1.jpg"
+            },
+            {
+                "name": "Coxinha",
+                "description": "A popular street food, these are deep-fried dough balls filled with shredded chicken and cream cheese.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Food/2.jpg"
+            },
+            {
+                "name": "Pão de Queijo",
+                "description": "Cheese bread rolls made from tapioca flour and cheese, crispy on the outside and soft on the inside.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Food/3.jpg"
+            },
+            {
+                "name": "Brigadeiro",
+                "description": "A beloved Brazilian dessert, these are chocolate truffles made with condensed milk, cocoa powder, butter, and chocolate sprinkles.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Food/4.jpg"
+            },
+            {
+                "name": "Pastel",
+                "description": "A deep-fried pastry filled with a variety of savory ingredients, such as cheese, meat, or heart of palm.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Food/5.jpg"
+            },
+            {
+                "name": "Açaí na Tigela",
+                "description": "A popular smoothie bowl made from frozen açaí berries, often topped with granola, banana, and other fruits.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Food/6.jpg"
+            }
+        ],
+        "restaurants": [
+            {
+                "name": "D.O.M.",
+                "description": "An internationally acclaimed restaurant offering innovative dishes inspired by Brazilian ingredients.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Restaurants/1.jpg",
+                "link": "https://domrestaurante.com.br/"
+            },
+            {
+                "name": "Maní",
+                "description": "A contemporary restaurant serving creative dishes that blend traditional Brazilian flavors with modern techniques.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Restaurants/2.jpg",
+                "link": "https://manimanioca.com.br/"
+            },
+            {
+                "name": "Figueira Rubaiyat",
+                "description": "A renowned steakhouse known for its high-quality meats and stunning setting under a century-old fig tree.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Restaurants/3.jpg",
+                "link": "https://rubaiyat.com.br/figueira/"
+            },
+            {
+                "name": "A Casa do Porco",
+                "description": "A popular eatery specializing in pork dishes, offering a unique take on Brazilian cuisine.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Restaurants/4.jpg",
+                "link": "https://acasadoporco.com.br/"
+            },
+            {
+                "name": "Skye Bar & Restaurant",
+                "description": "A chic rooftop restaurant and bar offering panoramic views of the city and a menu of international dishes.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Restaurants/5.jpg",
+                "link": "https://www.hotelunique.com.br/en/Skye"
+            },
+            {
+                "name": "Bovinus Churrascaria",
+                "description": "A traditional Brazilian steakhouse where servers bring a variety of grilled meats to your table.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Restaurants/6.jpg",
+                "link": "https://bovinus.com.br/"
+            }
+        ],
+        "hotels": [
+            {
+                "name": "Hotel Unique",
+                "description": "A luxury hotel known for its striking architecture, upscale amenities, and rooftop pool with stunning city views.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Hotels/1.jpg",
+                "link": "https://www.hotelunique.com.br/"
+            },
+            {
+                "name": "Tivoli Mofarrej São Paulo",
+                "description": "An elegant hotel offering luxurious accommodations and exceptional service in the heart of the city.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Hotels/2.jpg",
+                "link": "https://www.tivolihotels.com/en/tivoli-mofarrej-sao-paulo"
+            },
+            {
+                "name": "Palácio Tangará",
+                "description": "A five-star hotel set in a lush park, featuring luxurious rooms, fine dining, and a relaxing spa.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Hotels/3.jpg",
+                "link": "https://www.oetkercollection.com/hotels/palacio-tangara/"
+            },
+            {
+                "name": "Hilton São Paulo Morumbi",
+                "description": "A modern hotel with spacious rooms, excellent amenities, and convenient access to the city's financial district.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Hotels/4.jpg",
+                "link": "https://www.hilton.com/en/hotels/saomhhh-hilton-sao-paulo-morumbi/"
+            },
+            {
+                "name": "Emiliano São Paulo",
+                "description": "A boutique hotel offering personalized service, luxurious accommodations, and a prime location.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Hotels/5.jpg",
+                "link": "https://www.emiliano.com.br/"
+            },
+            {
+                "name": "Fasano São Paulo",
+                "description": "An elegant hotel known for its sophisticated atmosphere, high-end amenities, and exceptional dining.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Hotels/6.jpg",
+                "link": "https://www.fasano.com.br/"
+            }
+        ],
+        "transportation": [
+            {
+                "name": "São Paulo Metro",
+                "description": "The city's rapid transit system, offering efficient and reliable service across multiple lines.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Transportation/1.jpg",
+                "link": "http://www.metro.sp.gov.br/"
+            },
+            {
+                "name": "São Paulo Buses",
+                "description": "An extensive bus network providing comprehensive coverage of the city and suburbs.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Transportation/2.jpg",
+                "link": "http://www.sptrans.com.br/"
+            },
+            {
+                "name": "CPTM Trains",
+                "description": "A commuter rail system connecting São Paulo with surrounding municipalities.",
+                "picture": "http://localhost:3000/assets/Cities/SaoPaulo/Transportation/3.jpg",
+                "link": "http://www.cptm.sp.gov.br/"
+            }
+        ],
+        "gallery": [
+            "http://localhost:3000/assets/Cities/SaoPaulo/Gallery/1.jpg",
+            "http://localhost:3000/assets/Cities/SaoPaulo/Gallery/2.jpg",
+            "http://localhost:3000/assets/Cities/SaoPaulo/Gallery/3.jpg",
+            "http://localhost:3000/assets/Cities/SaoPaulo/Gallery/4.jpg",
+            "http://localhost:3000/assets/Cities/SaoPaulo/Gallery/5.jpg",
+            "http://localhost:3000/assets/Cities/SaoPaulo/Gallery/6.jpg"
+        ]
+    }
+]

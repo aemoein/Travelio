@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { Container, Typography, Button, ThemeProvider } from '@mui/material';
+import { Container, Typography, Button, ThemeProvider, Box } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import axios from 'axios';
 import GenreCard from '../../Components/Card/GenreCard2';
@@ -50,11 +50,11 @@ const RecommendedPreference = () => {
     return (
         <ThemeProvider theme={theme}>
             <Navbar />
-            <Container>
+            <Box sx={{maxWidth: "100vw", padding: "4vw"}}>
                 <Typography gutterBottom sx={{ marginTop: '70px', fontWeight: '700', fontSize: '50px', fontFamily: 'Poppins' }}>
                     Your Recommended Preferences
                 </Typography>
-                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                     {preferredGenres.map((category, index) => (
                         <GenreCard
                             key={index}
@@ -62,10 +62,10 @@ const RecommendedPreference = () => {
                             description={category.description}
                             imageUrl={category.imageUrl}
                             destinations={category.destinations}
-                            width="47vw"
+                            width="44vw"
                         />
                     ))}
-                </div>
+                </Box>
                 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
                     <Button
                         variant="contained"
@@ -83,7 +83,7 @@ const RecommendedPreference = () => {
                     </Button>
                 </div>
                 {error && <Typography variant="body2" color="error">{error}</Typography>}
-            </Container>
+            </Box>
             <Footer />
         </ThemeProvider>
     );

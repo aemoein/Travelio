@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
   nationality: { type: String, default: '' },
   mobileNumber: { type: String, default: '' }
 });
-
+// Add points and rank
 // Method to generate a JWT token
 userSchema.methods.generateAuthToken = function() {
   const token = jwt.sign(
