@@ -16,6 +16,11 @@ import Navbar from '../../Components/Navbar/Navbar';
 import Clock from '../../Components/Props/Clock';
 import Weather from '../../Components/Props/Weather';
 import FactText from '../../Components/Text/FactText';
+import GeneralInfo from '../../Components/Props/GeneralInfo';
+import ItemCard from '../../Components/Card/ItemCard';
+import ItemCardLg from '../../Components/Card/ItemsCardLg';
+import Footer from '../../Components/Footer/Footer';
+import Gallery from '../../Components/Gallery/Gallery';
 
 const City = () => {
   const { id } = useParams();
@@ -71,20 +76,150 @@ const CityPage = ({ city }) => {
             }}
         />
         <Box maxWidth="100vw" sx={{pl: "10vw", pr: "10vw"}}>
-          <Box>
-                <Typography sx={{fontFamily: "Poppins", fontWeight: "700", fontSize: '4vw',lineHeight: '1.0', mt: 2,}}>
+            <Box>
+                <Typography sx={{fontFamily: "Poppins", fontWeight: "700", fontSize: '7vw',lineHeight: '1.0', mt: 2,}}>
                     {city.name}
                 </Typography>
-                <Typography gutterBottom sx={{fontFamily: "Poppins", fontWeight: "700", fontSize: '1.5vw', lineHeight: '1.0'}}>
+                <Typography gutterBottom sx={{fontFamily: "Poppins", fontWeight: "700", fontSize: '3vw', lineHeight: '1.0'}}>
                     {city.region}, {city.country}
                 </Typography>
-                <Typography paragraph mt={2} sx={{fontFamily: "Poppins", fontWeight: "400", fontSize: '1.5vw' }}>
+                <Typography paragraph mt={2} sx={{fontFamily: "Poppins", fontWeight: "400", fontSize: '2vw' }}>
                     {city.description}
                 </Typography>
-          </Box>
-          <FactText city={city.name} population={city.population} />
-          <Clock city={city.name} country={city.country} />
-          <Grid container spacing={4}>
+            </Box>
+            <Box sx={{padding: 2, border: 'solid 2px #333333', borderRadius: '10px' }}>
+                <FactText city={city.name} population={city.population} />
+            </Box>
+            <Box mt={4} sx={{ display: 'flex'}}>
+                <Clock city={city.name} country={city.country}/>
+                <Weather cityName={city.name}/>
+                <GeneralInfo language={city.language} currency={city.currency}/>
+            </Box>
+  
+            <Box sx={{maxWidth: '82vw', mt: 4}}>
+                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
+                    Famous Foods
+                </Typography>
+                <Grid container spacing={4} sx={{maxWidth: '82vw'}}>
+                    {city.foods.map((food) => (
+                        <Grid item key={food._id} xs={12} sm={6} md={4} lg={3}>
+                            {window.innerWidth >= 1280 ? ( 
+                                <ItemCardLg
+                                    imageUrl={food.picture}
+                                    title={food.name}
+                                    description={food.description}
+                                    link={food.link}
+                                />  
+                            ):(
+                                <ItemCard
+                                    imageUrl={food.picture}
+                                    title={food.name}
+                                    description={food.description}
+                                    link={food.link}
+                                />
+                            )}
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+
+            <Box sx={{maxWidth: '82vw', mt: 4}}>
+                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
+                    Top Restaurants
+                </Typography>
+                <Grid container spacing={4} sx={{maxWidth: '82vw'}}>
+                    {city.restaurants.map((restaurant) => (
+                        <Grid item key={restaurant._id} xs={12} sm={6} md={4} lg={3}>
+                            {window.innerWidth >= 1280 ? ( 
+                                <ItemCardLg
+                                    imageUrl={restaurant.picture}
+                                    title={restaurant.name}
+                                    description={restaurant.description}
+                                    link={restaurant.link}
+                                />  
+                            ):(
+                                <ItemCard
+                                    imageUrl={restaurant.picture}
+                                    title={restaurant.name}
+                                    description={restaurant.description}
+                                    link={restaurant.link}
+                                />
+                            )}
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+
+            <Box sx={{maxWidth: '82vw', mt: 4}}>
+                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
+                    Best Hotels
+                </Typography>
+                <Grid container spacing={4} sx={{maxWidth: '82vw'}}>
+                    {city.hotels.map((hotel) => (
+                        <Grid item key={hotel._id} xs={12} sm={6} md={4} lg={3}>
+                            {window.innerWidth >= 1280 ? ( 
+                                <ItemCardLg
+                                    imageUrl={hotel.picture}
+                                    title={hotel.name}
+                                    description={hotel.description}
+                                    link={hotel.link}
+                                />  
+                            ):(
+                                <ItemCard
+                                    imageUrl={hotel.picture}
+                                    title={hotel.name}
+                                    description={hotel.description}
+                                    link={hotel.link}
+                                />
+                            )}
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+
+            <Box sx={{maxWidth: '82vw', mt: 4}}>
+                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
+                    Transportation
+                </Typography>
+                <Grid container spacing={4} sx={{maxWidth: '82vw'}}>
+                    {city.transportation.map((transport) => (
+                        <Grid item key={transport._id} xs={12} sm={6} md={4} lg={3}>
+                            {window.innerWidth >= 1280 ? ( 
+                                <ItemCardLg
+                                    imageUrl={transport.picture}
+                                    title={transport.name}
+                                    description={transport.description}
+                                    link={transport.link}
+                                />  
+                            ):(
+                                <ItemCard
+                                    imageUrl={transport.picture}
+                                    title={transport.name}
+                                    description={transport.description}
+                                    link={transport.link}
+                                />
+                            )}
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box>
+  
+            <Box sx={{mt: 4, mb: 4}}>
+                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
+                    Gallery
+                </Typography>
+                <Gallery images={city.gallery} />
+            </Box>
+      </Box>
+      <Footer/>
+      </>
+    );
+  };
+
+export default City;
+
+/*
+<Grid container spacing={4}>
               <Grid item xs={12} sm={6}>
               <Typography variant="h6" component="h2">
                   General Info
@@ -92,7 +227,6 @@ const CityPage = ({ city }) => {
               <Paper variant="outlined" p={2}>
                   <Typography>Language: {city.language}</Typography>
                   <Typography>Currency: {city.currency}</Typography>
-                  <Typography>Timezone: {city.timezone}</Typography>
               </Paper>
               </Grid>
   
@@ -107,149 +241,4 @@ const CityPage = ({ city }) => {
               </Paper>
               </Grid>
           </Grid>
-  
-          <Box mt={4}>
-              <Typography variant="h5" component="h2" gutterBottom>
-              Famous Foods
-              </Typography>
-              <Grid container spacing={4}>
-              {city.foods.map((food) => (
-                  <Grid item key={food._id} xs={12} sm={6} md={4}>
-                  <Card>
-                      <CardActionArea>
-                      <CardMedia
-                          component="img"
-                          height="140"
-                          image={food.picture}
-                          alt={food.name}
-                      />
-                      <CardContent>
-                          <Typography variant="h6" component="h3">
-                          {food.name}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                          {food.description}
-                          </Typography>
-                      </CardContent>
-                      </CardActionArea>
-                  </Card>
-                  </Grid>
-              ))}
-              </Grid>
-          </Box>
-  
-          <Box mt={4}>
-              <Typography variant="h5" component="h2" gutterBottom>
-              Top Restaurants
-              </Typography>
-              <Grid container spacing={4}>
-              {city.restaurants.map((restaurant) => (
-                  <Grid item key={restaurant._id} xs={12} sm={6} md={4}>
-                  <Card>
-                      <CardActionArea component="a" href={restaurant.link} target="_blank">
-                      <CardMedia
-                          component="img"
-                          height="140"
-                          image={restaurant.picture}
-                          alt={restaurant.name}
-                      />
-                      <CardContent>
-                          <Typography variant="h6" component="h3">
-                          {restaurant.name}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                          {restaurant.description}
-                          </Typography>
-                      </CardContent>
-                      </CardActionArea>
-                  </Card>
-                  </Grid>
-              ))}
-              </Grid>
-          </Box>
-  
-          <Box mt={4}>
-              <Typography variant="h5" component="h2" gutterBottom>
-              Best Hotels
-              </Typography>
-              <Grid container spacing={4}>
-              {city.hotels.map((hotel) => (
-                  <Grid item key={hotel._id} xs={12} sm={6} md={4}>
-                  <Card>
-                      <CardActionArea component="a" href={hotel.link} target="_blank">
-                      <CardMedia
-                          component="img"
-                          height="140"
-                          image={hotel.picture}
-                          alt={hotel.name}
-                      />
-                      <CardContent>
-                          <Typography variant="h6" component="h3">
-                          {hotel.name}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                          {hotel.description}
-                          </Typography>
-                      </CardContent>
-                      </CardActionArea>
-                  </Card>
-                  </Grid>
-              ))}
-              </Grid>
-          </Box>
-  
-          <Box mt={4}>
-              <Typography variant="h5" component="h2" gutterBottom>
-              Transportation
-              </Typography>
-              <Grid container spacing={4}>
-              {city.transportation.map((transport) => (
-                  <Grid item key={transport._id} xs={12} sm={6} md={4}>
-                  <Card>
-                      <CardActionArea component="a" href={transport.link} target="_blank">
-                      <CardMedia
-                          component="img"
-                          height="140"
-                          image={transport.picture}
-                          alt={transport.name}
-                      />
-                      <CardContent>
-                          <Typography variant="h6" component="h3">
-                          {transport.name}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                          {transport.description}
-                          </Typography>
-                      </CardContent>
-                      </CardActionArea>
-                  </Card>
-                  </Grid>
-              ))}
-              </Grid>
-          </Box>
-  
-          <Box mt={4}>
-              <Typography variant="h5" component="h2" gutterBottom>
-              Gallery
-              </Typography>
-              <Grid container spacing={4}>
-              {city.gallery.map((image, index) => (
-                  <Grid item key={index} xs={12} sm={6} md={4}>
-                  <Card>
-                      <CardMedia
-                      component="img"
-                      height="140"
-                      image={image}
-                      alt={`Gallery image ${index + 1}`}
-                      />
-                  </Card>
-                  </Grid>
-              ))}
-              </Grid>
-          </Box>
-      </Box>
-      </>
-    );
-  };
-
-export default City;
+*/

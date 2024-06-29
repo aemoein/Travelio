@@ -12,6 +12,7 @@ import Profile from './Modules/Profile/Profile';
 import Quiz from './Modules/Quiz/Quiz';
 import Destinations from './Modules/Destinations/Destinations';
 import City from './Modules/Destinations/City';
+import Itinerary from './Modules/Itinerary/Itinerary';
 
 const AssetImage = () => {
   const { '*': path } = useParams();
@@ -42,6 +43,7 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/city/:id" element={<City />} />
+        <Route path="/planning" element={<Itinerary />} />
         <Route path="/assets/*" element={<AssetImage />} />
       </Routes>
     </Router>

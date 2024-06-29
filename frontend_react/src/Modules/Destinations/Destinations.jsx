@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { Box, Button, Grid, Typography, TextField, Select, MenuItem } from '@mui/material';
 import DesCard from '../../Components/Card/DesCard';
 import DesCardLarge from '../../Components/Card/DesCardLarge';
@@ -21,6 +22,7 @@ const Destinations = () => {
     const [selectedContinent, setSelectedContinent] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('countries');
     const destinationsPerPage = 12;
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchDestinations = async () => {
@@ -44,10 +46,6 @@ const Destinations = () => {
         fetchDestinations();
     }, []);
 
-    //console.log('Countries:', countries);
-    //console.log('Cities:', cities);
-    //console.log('Natural Areas:', naturalAreas);
-
     let filteredDestinations = [];
     if (selectedCategory === 'countries') {
         filteredDestinations = countries.filter(country =>
@@ -59,16 +57,8 @@ const Destinations = () => {
         filteredDestinations = cities.filter(city =>
             city.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
             (selectedRegion === '' || city.region === selectedRegion)
-            // Add any additional filters specific to cities
         );
-    } /*else if (selectedCategory === 'natural') {
-        filteredDestinations = naturalAreas.filter(natural =>
-            natural.name.toLowerCase().includes(searchTerm.toLowerCase())
-            // Add any additional filters specific to natural areas
-        );
-    }*/
-
-    console.log('Filtered Destinations:', filteredDestinations);
+    }
 
     const indexOfLastDestination = currentPage * destinationsPerPage;
     const indexOfFirstDestination = indexOfLastDestination - destinationsPerPage;
@@ -92,6 +82,11 @@ const Destinations = () => {
 
     const handleContinentChange = (event) => {
         setSelectedContinent(event.target.value);
+        setCurrentPage(1);
+    };
+
+    const handleCategoryChange = (category) => {
+        setSelectedCategory(category);
         setCurrentPage(1);
     };
 
@@ -145,11 +140,6 @@ const Destinations = () => {
         },
     };
 
-    const handleCategoryChange = (category) => {
-        setSelectedCategory(category);
-        setCurrentPage(1);
-    };
-
     const arrowButtonStyles = {
         color: '#A9A9A9',
         font: 'Poppins',
@@ -167,7 +157,13 @@ const Destinations = () => {
         },
     };
 
-    //https://media.cntraveler.com/photos/5a99aa29b00933493b9a6d2d/16:9/w_1280,c_limit/Los-Angeles_GettyImages-518488084.jpg
+    const handleCardClick = (id, type) => {
+        if (type === 'country') {
+            navigate(`/country/${id}`);
+        } else if (type === 'city') {
+            navigate(`/city/${id}`);
+        }
+    };
 
     return (
         <>
@@ -194,7 +190,7 @@ const Destinations = () => {
                         Destinations
                     </Typography>
                     <Box display="flex" alignItems="center" justifyContent="center" sx={{ width: { xs: '78vw', sm: '78vw', md: '79vw', lg: '77vw' }, ml: { xs: '-0.6vw', sm: '-0.6vw', md: '-0.6vw', lg: '-0.6vw' }}}>
-                    <Button
+                        <Button
                             sx={selectedCategory === 'countries' ? activeButtonStyles : buttonStyles}
                             onClick={() => handleCategoryChange('countries')}
                         >
@@ -276,7 +272,6 @@ const Destinations = () => {
                         sx={{
                             display: 'flex',
                             justifyContent: 'center',
-                            //ml: '-2.1vw',
                         }}
                     >
                         <Grid container justifyContent="center" spacing={4} sx={{ width: '80vw' }}>
@@ -287,12 +282,14 @@ const Destinations = () => {
                                             country={destination.region}
                                             city={destination.name}
                                             imageUrl={destination.picture}
+                                            onClick={() => handleCardClick(destination._id, selectedCategory === 'countries' ? 'country' : 'city')}
                                         />
                                     ) : (
                                         <DesCard
                                             country={destination.region}
                                             city={destination.name}
                                             imageUrl={destination.picture}
+                                            onClick={() => handleCardClick(destination._id, selectedCategory === 'countries' ? 'country' : 'city')}
                                         />
                                     )}
                                 </Grid>

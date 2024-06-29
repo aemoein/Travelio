@@ -1,16 +1,19 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const DesCardLarge = ({ country, city, imageUrl }) => {
+const DesCardLarge = ({ country, city, imageUrl, onClick }) => {
   return (
-    <Box sx={{
-      width: '17vw',
-      transition: 'transform 0.3s ease-in-out',
-      '&:hover': {
-        transform: 'scale(1.05)',
-        cursor: 'pointer',
-      }
-    }}>
+    <Box 
+      sx={{
+        width: '17vw',
+        transition: 'transform 0.3s ease-in-out',
+        '&:hover': {
+          transform: 'scale(1.05)',
+          cursor: 'pointer',
+        }
+        }}
+        onClick={onClick}
+      >
       <Box sx={{ textAlign: 'center' }}>
         <Box
           sx={{

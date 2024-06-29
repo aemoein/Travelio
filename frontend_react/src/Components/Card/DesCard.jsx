@@ -1,16 +1,19 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const DesCard = ({ country, city, imageUrl }) => {
+const DesCard = ({ country, city, imageUrl, onClick }) => {
   return (
-    <Box sx={{
-      width: '24vw',
-      transition: 'transform 0.3s ease-in-out',
-      '&:hover': {
-        transform: 'scale(1.05)',
-        cursor: 'pointer',
-      }
-    }}>
+    <Box 
+      sx={{
+        width: '24vw',
+        transition: 'transform 0.3s ease-in-out',
+        '&:hover': {
+          transform: 'scale(1.05)',
+          cursor: 'pointer',
+        }
+      }}
+      onClick={onClick}
+    >
       <Box sx={{ textAlign: 'center', ml: 0 }}>
         <Box
           sx={{
@@ -23,7 +26,8 @@ const DesCard = ({ country, city, imageUrl }) => {
             borderRadius: '5%', 
           }}
         />
-        <Typography align="left" 
+        <Typography 
+          align="left" 
           sx={{ 
             marginTop: '10px',
             marginLeft: '1.0vw',
@@ -34,10 +38,12 @@ const DesCard = ({ country, city, imageUrl }) => {
             backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
-          }}>
+          }}
+        >
           {country}
         </Typography>
-        <Typography align="left" 
+        <Typography 
+          align="left" 
           sx={{ 
             marginBottom: '10px', 
             marginLeft: '1.0vw', 
@@ -45,7 +51,8 @@ const DesCard = ({ country, city, imageUrl }) => {
             fontFamily: 'Poppins',
             fontWeight: '900',
             fontSize: '2vw',
-          }}>
+          }}
+        >
           {city}
         </Typography>
       </Box>
