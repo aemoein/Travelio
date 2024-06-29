@@ -27,7 +27,7 @@ const Hero = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '30vh',
-        backgroundImage: 'url(https://media.gq-magazine.co.uk/photos/5d13a9c2976fa37177f3b040/16:9/w_2560%2Cc_limit/hp-gq-6dec18_istock_.jpg)',
+        backgroundImage: 'url(http://localhost:3000/assets/Pages/Destinations/Hero.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

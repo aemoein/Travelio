@@ -8,6 +8,7 @@ const DesCard = ({ country, city, imageUrl }) => {
       transition: 'transform 0.3s ease-in-out',
       '&:hover': {
         transform: 'scale(1.05)',
+        cursor: 'pointer',
       }
     }}>
       <Box sx={{ textAlign: 'center', ml: 0 }}>

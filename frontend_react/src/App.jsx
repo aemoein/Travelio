@@ -11,6 +11,7 @@ import RecommendedPreferences from './Modules/SignUp/RecPrefrences';
 import Profile from './Modules/Profile/Profile';
 import Quiz from './Modules/Quiz/Quiz';
 import Destinations from './Modules/Destinations/Destinations';
+import City from './Modules/Destinations/City';
 
 const AssetImage = () => {
   const { '*': path } = useParams();
@@ -40,6 +41,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/destinations" element={<Destinations />} />
+        <Route path="/city/:id" element={<City />} />
         <Route path="/assets/*" element={<AssetImage />} />
       </Routes>
     </Router>

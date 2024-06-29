@@ -13,6 +13,7 @@ const extractToken = require('./src/middleware/extractToken');
 const destinationRoutes = require('./src/routes/destinationRoutes')
 const cityRoutes = require('./src/routes/cityRoutes')
 const config = require('./src/config/config');
+const weatherRoutes = require('./src/routes/weatherRoutes');
 
 dotenv.config();
 
@@ -36,6 +37,7 @@ mongoose.connect(config.mongoURI)
 
 app.use('/', destinationRoutes);
 app.use('/city', cityRoutes);
+app.use('/weather', weatherRoutes);
 
 const PORT = config.port;
 app.listen(PORT, () => {
