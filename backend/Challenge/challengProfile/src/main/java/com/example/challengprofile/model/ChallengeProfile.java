@@ -23,4 +23,8 @@ public class ChallengeProfile {
     private String image;
     private List<String> Titles;
     private int numberOfSolvedChallenges;
+
+    public void setImage() {
+        this.image = this.image = "/images/ranks/" + rank.name() + ".png";;
+    }
 }

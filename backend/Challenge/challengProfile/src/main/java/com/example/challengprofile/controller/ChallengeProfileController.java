@@ -49,6 +49,11 @@ public class ChallengeProfileController {
     }
 
     //number of challenge solved
-    
+    @PutMapping("/solved")
+    public String addChallengeProfileSolved(@RequestParam String username) {
+        challengeProfileService.addChallengeProfileSolved(username);
+        return "Challenge profile has solved a new challenge";
+    }
+
 
 }

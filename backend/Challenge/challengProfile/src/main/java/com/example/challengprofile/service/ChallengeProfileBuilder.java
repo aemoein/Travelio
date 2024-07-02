@@ -9,7 +9,7 @@ public interface ChallengeProfileBuilder {
     public void setPoints ();
     public void setTitles ();
     public void setNumberOfSolvedChallenges ();
-   // public void setImageUrl ();
+    public void setImageUrl ();
 }
 /*
 *  @Id

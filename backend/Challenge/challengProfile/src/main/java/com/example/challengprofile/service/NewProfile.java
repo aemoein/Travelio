@@ -25,7 +25,7 @@ public class NewProfile implements ChallengeProfileBuilder{
         profile.setUserName(userName);
     }
     public void setRank (){
-        profile.setRank(Rank.BEGGINER);
+        profile.setRank(Rank.BEGINNER);
     }
     public void setPoints (){
         //you will start with 50 points as a reward
@@ -39,12 +39,18 @@ public class NewProfile implements ChallengeProfileBuilder{
         profile.setNumberOfSolvedChallenges(0);
     }
 
+    @Override
+    public void setImageUrl() {
+        profile.setImage();
+    }
+
     public ChallengeProfile getProfile(){
         setId();
         setUserName(username);
         setRank();
         setPoints();
         setTitles();
+        setImageUrl();
         setNumberOfSolvedChallenges();
         return profile;
     }

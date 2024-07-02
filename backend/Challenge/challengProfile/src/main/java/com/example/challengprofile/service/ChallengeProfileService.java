@@ -1,13 +1,11 @@
 package com.example.challengprofile.service;
 
 import com.example.challengprofile.model.ChallengeProfile;
-import com.example.challengprofile.model.Rank;
 import com.example.challengprofile.repository.ChallengeProfileRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -70,6 +68,11 @@ public class ChallengeProfileService {
         ChallengeProfile challengeProfile = challengeProfileRepository.findProfileByUserName(username);
         if(challengeProfile != null) {
             challengeProfile.getTitles().add(title);
+            if (challengeProfile.getTitles().size() % 15 == 0) {
+                // Update the rank
+                challengeProfile.setRank(challengeProfile.getRank().getNextRank());
+                challengeProfile.setImage();
+            }
             challengeProfileRepository.save(challengeProfile);
         }
         else {
@@ -77,5 +80,17 @@ public class ChallengeProfileService {
         }
     }
 
+    // not tested yet
+    @Transactional
+    public void addChallengeProfileSolved(String username) {
+        ChallengeProfile challengeProfile = challengeProfileRepository.findProfileByUserName(username);
+        if(challengeProfile != null) {
+            challengeProfile.setPoints(challengeProfile.getNumberOfSolvedChallenges() + 1);
+            challengeProfileRepository.save(challengeProfile);
+        }
+        else {
+            throw new IllegalStateException("No challenge profile found for username " + username);
+        }
+    }
 
 }
