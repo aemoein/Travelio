@@ -3,6 +3,8 @@ package com.example.challengprofile.service;
 import com.example.challengprofile.model.ChallengeProfile;
 import com.example.challengprofile.repository.ChallengeProfileRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.core.io.Resource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -51,10 +53,22 @@ public class ChallengeProfileService {
     }
 
     @Transactional
-    public void addChallengeProfile(String username, int points) {
+    public void addChallengeProfilePoints(String username, int points) {
         ChallengeProfile challengeProfile = challengeProfileRepository.findProfileByUserName(username);
         if(challengeProfile != null) {
             challengeProfile.setPoints(challengeProfile.getPoints() + points);
+            challengeProfileRepository.save(challengeProfile);
+        }
+        else {
+            throw new IllegalStateException("No challenge profile found for username " + username);
+        }
+    }
+
+    @Transactional
+    public void removeChallengeProfilePoints(String username, int points) {
+        ChallengeProfile challengeProfile = challengeProfileRepository.findProfileByUserName(username);
+        if(challengeProfile != null && challengeProfile.getPoints() >= points) {
+            challengeProfile.setPoints(challengeProfile.getPoints() - points);
             challengeProfileRepository.save(challengeProfile);
         }
         else {
@@ -85,7 +99,7 @@ public class ChallengeProfileService {
     public void addChallengeProfileSolved(String username) {
         ChallengeProfile challengeProfile = challengeProfileRepository.findProfileByUserName(username);
         if(challengeProfile != null) {
-            challengeProfile.setPoints(challengeProfile.getNumberOfSolvedChallenges() + 1);
+            challengeProfile.setNumberOfSolvedChallenges(challengeProfile.getNumberOfSolvedChallenges() + 1);
             challengeProfileRepository.save(challengeProfile);
         }
         else {
@@ -93,4 +107,8 @@ public class ChallengeProfileService {
         }
     }
 
+
+    public ResponseEntity<Resource> getImage(String rank) {
+     return null;
+    }
 }

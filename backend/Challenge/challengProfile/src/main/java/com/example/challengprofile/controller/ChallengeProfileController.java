@@ -3,13 +3,23 @@ package com.example.challengprofile.controller;
 import com.example.challengprofile.model.ChallengeProfile;
 import com.example.challengprofile.service.ChallengeProfileService;
 import lombok.AllArgsConstructor;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("api/challengeProfile")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ChallengeProfileController {
     private final ChallengeProfileService challengeProfileService;
 
@@ -36,24 +46,33 @@ public class ChallengeProfileController {
     }
 
     @PutMapping("/points")
-    public String addChallengeProfile(@RequestParam String username, @RequestParam int points) {
-        challengeProfileService.addChallengeProfile(username, points);
+    public String addChallengeProfilePoints(@RequestParam String username, @RequestParam int points) {
+        challengeProfileService.addChallengeProfilePoints(username, points);
         return "Challenge profile updated";
     }
 
-    //not complete
+    @PutMapping("/change/points")
+    public String removeChallengeProfilePoints(@RequestParam String username, @RequestParam int points) {
+        challengeProfileService.removeChallengeProfilePoints(username, points);
+        return "Challenge profile updated";
+    }
+
+
     @PutMapping("/titles")
     public String addChallengeProfileTitle(@RequestParam String username, @RequestParam String title) {
         challengeProfileService.addChallengeProfileTitle(username, title);
         return "Challenge profile title updated";
     }
 
-    //number of challenge solved
+
     @PutMapping("/solved")
     public String addChallengeProfileSolved(@RequestParam String username) {
         challengeProfileService.addChallengeProfileSolved(username);
-        return "Challenge profile has solved a new challenge";
+        return "Challwhenge profile has solved a new challenge";
     }
 
-
+    @GetMapping("/image/{rank}")
+    public ResponseEntity<Resource> getImage(@PathVariable String rank) {
+        return challengeProfileService.getImage(rank);
+    }
 }
