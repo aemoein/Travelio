@@ -25,6 +25,7 @@ public class Challenge {
     int multiplier;
     String city;
     int attempts;
+    //jason object
 
     // Constructor without id
     public Challenge(String title, String description, int points, ChallengeType type, List<String>tasks,List<String> targets,

@@ -1,0 +1,15 @@
+package com.example.challengprofile.model;
+
+public enum Rank {
+    BEGGINER,
+    NOVICE_EXPLORER,
+    SEASONED_TRAVELER,
+    ADVENTURER,
+    EXPERT_NAVIGATOR,
+    MASTER_PATHFINDER,
+    LEGENDARY_WANDERER,
+    ULTIMATE_VOYAGER,
+    SUPREME_WAYFARER,
+    GRAND_TRAILBLAZER,
+    EPIC_CONQUEROR
+}
