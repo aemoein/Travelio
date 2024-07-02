@@ -29,4 +29,26 @@ public class ChallengeProfileController {
         return "Challenge profile created";
     }
 
+    @DeleteMapping("/delete")
+    public String deleteChallengeProfile(@RequestParam String username) {
+        challengeProfileService.deleteChallengeProfile(username);
+        return "Challenge profile deleted";
+    }
+
+    @PutMapping("/points")
+    public String addChallengeProfile(@RequestParam String username, @RequestParam int points) {
+        challengeProfileService.addChallengeProfile(username, points);
+        return "Challenge profile updated";
+    }
+
+    //not complete
+    @PutMapping("/titles")
+    public String addChallengeProfileTitle(@RequestParam String username, @RequestParam String title) {
+        challengeProfileService.addChallengeProfileTitle(username, title);
+        return "Challenge profile title updated";
+    }
+
+    //number of challenge solved
+    
+
 }

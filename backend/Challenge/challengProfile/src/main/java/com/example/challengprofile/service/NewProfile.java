@@ -4,6 +4,7 @@ import com.example.challengprofile.model.ChallengeProfile;
 import com.example.challengprofile.model.Rank;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
@@ -31,7 +32,7 @@ public class NewProfile implements ChallengeProfileBuilder{
         profile.setPoints(50);
     }
     public void setTitles (){
-        profile.setTitles(null);
+        profile.setTitles(new ArrayList<String>());
 
     }
     public void setNumberOfSolvedChallenges (){
