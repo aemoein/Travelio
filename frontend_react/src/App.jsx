@@ -12,7 +12,7 @@ import Profile from './Modules/Profile/Profile';
 import Quiz from './Modules/Quiz/Quiz';
 import Destinations from './Modules/Destinations/Destinations';
 import City from './Modules/Destinations/City';
-import Itinerary from './Modules/Itinerary/Itinerary';
+import FlightSearchForm from './Modules/Itinerary/Flights';
 
 const AssetImage = () => {
   const { '*': path } = useParams();
@@ -43,7 +43,7 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/city/:id" element={<City />} />
-        <Route path="/planning" element={<Itinerary />} />
+        <Route path="/planning" element={<FlightSearchForm />} />
         <Route path="/assets/*" element={<AssetImage />} />
       </Routes>
     </Router>

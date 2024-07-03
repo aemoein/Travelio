@@ -10,5 +10,6 @@ module.exports = {
     port: process.env.PORT || 3001,
 
     // JWT Secret Key
-    jwtSecret: process.env.JWT_SECRET
+    jwtSecret: process.env.JWT_SECRET,
+    accessToken: process.env.ACCESS_TOKEN
 };
