@@ -34,6 +34,9 @@ const socialProfileSchema = new mongoose.Schema({
         }],
         default: []
     }
+},
+{
+    timestamps: true
 });
 
 const SocialProfile = mongoose.model('SocialProfile', socialProfileSchema);
