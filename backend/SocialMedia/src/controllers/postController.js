@@ -74,7 +74,7 @@ exports.getPostById = async (req, res) => {
     }
 };
 
-// Update a post by ID
+// 5- Update a post by ID
 exports.updatePostById = async (req, res) => {
     try {
         const post = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });

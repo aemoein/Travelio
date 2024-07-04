@@ -14,11 +14,11 @@ router.get('/user-posts/:id',postController.userPosts);
 // 4- get post by id
 router.get('/get-post/:id',postController.getPostById);
 
-//update post by id
+// 5- update post by id
 router.patch('/update-post/:id',postController.updatePostById);
 
 //delete post by id
-router.delete('/delete-post',postController.deletePostById);
+router.delete('/delete-post/:id',postController.deletePostById);
 
 //like post
 router.post('/like/:id',postController.likePost);
