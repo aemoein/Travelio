@@ -96,7 +96,7 @@ exports.updatePostById = async (req, res) => {
     }
 };
 
-// Delete a post by ID
+// 6- Delete a post by ID
 exports.deletePostById = async (req, res) => {
     try {
         const post = await Post.findByIdAndDelete(req.params.id);
@@ -118,7 +118,7 @@ exports.deletePostById = async (req, res) => {
     }
 };
 
-// Like a post
+// 7- Like a post
 exports.likePost = async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
@@ -128,8 +128,8 @@ exports.likePost = async (req, res) => {
                 message: 'Post not found'
             });
         }
-        if (!post.likes.includes(req.body.userId)) {
-            post.likes.push(req.body.userId);
+        if (!post.likes.includes(req.body.profileId)) {
+            post.likes.push(req.body.profileId);
             await post.save();
             res.status(200).json({
                 status: 'success',
@@ -149,7 +149,7 @@ exports.likePost = async (req, res) => {
     }
 };
 
-// Unlike a post
+// 8- Unlike a post
 exports.unlikePost = async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
@@ -159,8 +159,8 @@ exports.unlikePost = async (req, res) => {
                 message: 'Post not found'
             });
         }
-        if (post.likes.includes(req.body.userId)) {
-            post.likes.pull(req.body.userId);
+        if (post.likes.includes(req.body.profileId)) {
+            post.likes.pull(req.body.profileId);
             await post.save();
             res.status(200).json({
                 status: 'success',
@@ -180,9 +180,9 @@ exports.unlikePost = async (req, res) => {
     }
 };
 
-// Add a comment to a post
+// 9- Add a comment to a post
 exports.addComment = async (req, res) => {
-    const { userId, content } = req.body;
+    const { profileId, content } = req.body;
     try {
         const post = await Post.findById(req.params.id);
         if (!post) {
@@ -191,7 +191,7 @@ exports.addComment = async (req, res) => {
                 message: 'Post not found'
             });
         }
-        post.comments.push({ user: userId, content });
+        post.comments.push({ user: profileId, content });
         await post.save();
         res.status(201).json({
             status: 'success',
@@ -205,28 +205,50 @@ exports.addComment = async (req, res) => {
     }
 };
 
-// Delete a comment from a post
-exports.deleteComment = async (req, res) => {
+// 10- Delete a comment from a post
+exports.UnComment = async (req, res) => {
     try {
-        const post = await Post.findById(req.params.postId);
+        const post = await Post.findById(req.body.postId);
         if (!post) {
             return res.status(404).json({
                 status: 'fail',
                 message: 'Post not found'
             });
         }
-        const comment = post.comments.id(req.params.commentId);
+        const comment = post.comments.id(req.body.commentId);
         if (!comment) {
             return res.status(404).json({
                 status: 'fail',
                 message: 'Comment not found'
             });
         }
-        comment.remove();
+        post.comments.pull(comment);
         await post.save();
-        res.status(204).json({
+        res.status(200).json({
             status: 'success',
             message: 'Comment deleted successfully'
+        });
+    } catch (err) {
+        res.status(500).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+};
+
+exports.allComments = async (req,res) => {
+    try {
+        const post = await Post.findById(req.params.id);
+        if (!post) {
+            return res.status(404).json({
+                status: 'fail',
+                message: 'Post not found'
+            });
+        }
+
+        res.status(200).json({
+            status:'success',
+            data: post.comments
         });
     } catch (err) {
         res.status(500).json({

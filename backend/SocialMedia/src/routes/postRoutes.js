@@ -17,19 +17,22 @@ router.get('/get-post/:id',postController.getPostById);
 // 5- update post by id
 router.patch('/update-post/:id',postController.updatePostById);
 
-//delete post by id
+// 6- delete post by id
 router.delete('/delete-post/:id',postController.deletePostById);
 
-//like post
+// 7- like post
 router.post('/like/:id',postController.likePost);
 
-//unlike post
+// 8- unlike post
 router.post('/unlike/:id',postController.unlikePost);
 
-//add comment
+// 9- add comment
 router.post('/comment/:id',postController.addComment);
 
-//delete comment
-router.delete('/:postId/comment/:commentId',postController.deleteComment);
+// 10- delete comment
+router.post('/uncomment',postController.UnComment);
+
+// 11- get all comments for a specific post
+router.get('/all-comments/:id',postController.allComments);
 
 module.exports = router;
