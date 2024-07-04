@@ -104,7 +104,7 @@ public class ChallengeService {
 
 
     public void getGPhotoChallenges(String city) {
-        challengeRepository.findGPhotoChallenges(city);
+        photoChallenges = challengeRepository.findGPhotoChallenges(city);
     }
 
     public Challenge getGlobalPhotoChallenge(String city) {
@@ -118,7 +118,7 @@ public class ChallengeService {
 
 
     public void getGDareChallenges(String city) {
-        challengeRepository.findGPhotoChallenges(city);
+        dareChallenges = challengeRepository.findGPhotoChallenges(city);
     }
 
     public Challenge getGlobalDareChallenge(String city) {
@@ -128,5 +128,13 @@ public class ChallengeService {
         }
         int index = random.nextInt(dareChallenges.size());
         return dareChallenges.get(index);
+    }
+
+    public String deleteChallenge(String id) {
+        if (!challengeRepository.existsById(id)) {
+            throw new IllegalStateException("Challenge not found");
+        }
+        challengeRepository.deleteById(id);
+        return "delete: "+ id;
     }
 }

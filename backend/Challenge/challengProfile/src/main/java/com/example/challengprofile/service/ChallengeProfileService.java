@@ -94,7 +94,7 @@ public class ChallengeProfileService {
         }
     }
 
-    // not tested yet
+
     @Transactional
     public void addChallengeProfileSolved(String username) {
         ChallengeProfile challengeProfile = challengeProfileRepository.findProfileByUserName(username);
