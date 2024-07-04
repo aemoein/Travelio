@@ -45,6 +45,15 @@ router.get('/blocked-users/:id', socialController.listBlockedUsers)
 // 14- Get a blocked user
 router.get('/blocked-user', socialController.getBlockedUser)
 
+// 15- save post
+router.post('/save', socialController.savePost);
+
+// 16- save post
+router.post('/unsave', socialController.unsavePost);
+
+// 17- list all saved posts
+ router.get('/saved-posts/:id', socialController.listSavedPosts);
+
 
 
 module.exports = router;
