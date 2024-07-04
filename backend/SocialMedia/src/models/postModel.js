@@ -38,15 +38,9 @@ const postSchema = new mongoose.Schema({
             default: Date.now
         }
     }],
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
-    }
-});
+},
+{timestamps: true}
+);
 
 // Middleware to update the updatedAt field on save
 postSchema.pre('save', function(next) {
