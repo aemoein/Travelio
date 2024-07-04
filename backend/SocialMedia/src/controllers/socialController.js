@@ -93,7 +93,6 @@ exports.deleteSocialProfile = async (req, res) => {
 };
 
 
-
 // 5- follow a user
 exports.followUser = async (req, res) => {
     const { currentUserProfileId, targetUserProfileId } = req.body;

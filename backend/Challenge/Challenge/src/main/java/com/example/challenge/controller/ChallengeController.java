@@ -10,22 +10,37 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:3000")
 public class ChallengeController {
+
     ChallengeService challengeService;
 
-    @GetMapping("/huntmanpuzzile")
-    public Challenge huntmanPuzzile(@RequestParam String city) {
+    //puzzle is the same for both since its all about general information
+    @GetMapping("/local/huntmanpuzzile")
+    public Challenge localHuntmanPuzzile(@RequestParam String city) {
         return challengeService.getHuntmanPuzzile(city);
     }
 
-    @GetMapping("/photochallenge")
-    public Challenge photoChallenge(@RequestParam String city) {
-        return challengeService.getPhotoChallenge(city);
+    //locals
+    @GetMapping("/local/photochallenge")
+    public Challenge localHhotoChallenge(@RequestParam String city) {
+        return challengeService.getLocalPhotoChallenge(city);
     }
 
-    @GetMapping("/darechallenge")
-    public Challenge dareChallenge(@RequestParam String city) {
-        return challengeService.getDareChallenge(city);
+    @GetMapping("/local/darechallenge")
+    public Challenge localDareChallenge(@RequestParam String city) {
+        return challengeService.getLocalDareChallenge(city);
     }
+
+    //globals
+    @GetMapping("/global/photochallenge")
+    public Challenge globalHhotoChallenge(@RequestParam String city) {
+        return challengeService.getGlobalPhotoChallenge(city);
+    }
+
+    @GetMapping("/global/darechallenge")
+    public Challenge globalDareChallenge(@RequestParam String city) {
+        return challengeService.getGlobalDareChallenge(city);
+    }
+
 
     @PostMapping("/new")
     public String postNewChallenge(@RequestBody Challenge challenge) {
@@ -33,6 +48,9 @@ public class ChallengeController {
         return "New Challenge Added";
     }
 
-
+    @DeleteMapping("/delete")
+    public String deleteChallenge(@RequestParam String id) {
+        return challengeService.deleteChallenge(id);
+    }
 
 }
