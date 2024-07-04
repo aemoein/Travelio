@@ -1,11 +1,11 @@
 const Post = require('../models/postModel');
 
 
-// Create a new post
+// 1- Create a new post
 exports.createPost = async (req, res) => {
-    const { author, content, imageUrl, videoUrl} = req.body;
+    const { author, content, mediaUrl} = req.body;
     try {
-        const newPost = new Post({ author, content, imageUrl, videoUrl});
+        const newPost = new Post({ author, content, mediaUrl});
         const savedPost = await newPost.save();
         res.status(201).json({
             status: 'success',
@@ -19,10 +19,10 @@ exports.createPost = async (req, res) => {
     }
 };
 
-// Get all posts
+// 2- Get all posts
 exports.getAllPosts = async (req, res) => {
     try {
-        const posts = await Post.find().populate('author likes comments.user');
+        const posts = await Post.find();
         res.status(200).json({
             status: 'success',
             data: posts
@@ -35,10 +35,27 @@ exports.getAllPosts = async (req, res) => {
     }
 };
 
-// Get a single post by ID
+// 3- Get all posts for a specific user
+exports.userPosts = async (req, res) => {
+    try {
+        const socialProfileId = req.params.id;
+        const posts = await Post.find({ author: socialProfileId });
+        res.status(200).json({
+            status: 'success',
+            data: posts
+        });
+    } catch (err) {
+        res.status(500).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+};
+
+// 4- Get a single post by ID
 exports.getPostById = async (req, res) => {
     try {
-        const post = await Post.findById(req.params.id).populate('author likes comments.user');
+        const post = await Post.findById(req.params.id);
         if (!post) {
             return res.status(404).json({
                 status: 'fail',
