@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, Typography, Button, Grid, Modal, Box } from '@mui/material';
 import FlightIcon from '@mui/icons-material/Flight';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { format } from 'date-fns';
 
-const FlightCard = ({ flight }) => {
+const FlightCard = ({ flight, cityName, arrivalDate, departureDate, adults }) => {
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -35,25 +38,26 @@ const FlightCard = ({ flight }) => {
             const data = await response.json();
             console.log('Booking successful. Trip ID:', data.tripId);
             alert('Booking successful');
+
+            navigate(`/planning/hotels?cityName=${cityName}&trip=${data.tripId}&arrivalDate=${arrivalDate}&departureDate=${departureDate}&adults=${adults}`);
         } catch (error) {
             console.error('Error booking flight:', error.message);
-            // Handle error state
         }
     };
 
     return (
         <>
-            <Card sx={{ minWidth: 275, mb: 2, pl: 3, pr: 3 }}>
+            <Card sx={{ minWidth: 275, mb: 2, pl: 3, pr: 3, border: '1px solid #ccc', borderRadius: '10px' }}>
                 <CardContent>
                     {flight.itineraries?.length > 0 ? (
                         flight.itineraries.map((itinerary, idx) => (
                             <div key={idx}>
                                 {idx === 0 ? (
-                                    <Typography sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '3vw' }}>
+                                    <Typography sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '35px' }}>
                                         Departure
                                     </Typography>
                                 ) : (
-                                    <Typography sx={{ mt: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '3vw' }}>
+                                    <Typography sx={{ mt: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '35px' }}>
                                         Return
                                     </Typography>
                                 )}
@@ -100,15 +104,15 @@ const FlightCard = ({ flight }) => {
                     ) : (
                         <Typography>No itineraries available</Typography>
                     )}
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography variant="body2" sx={{ mt: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '3vw' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' , pl: 0, pr: 2}}>
+                        <Typography variant="body2" sx={{ mt: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '30px' }}>
                             {`Price: ${flight.price?.total || 'N/A'} ${flight.price?.currency || ''}`}
                         </Typography>
                         <Button variant="outlined" onClick={handleOpen} sx={{ mt: 2 }}>
                             More Info
                         </Button>
                     </Box>
-                    <Button variant="contained" onClick={handleBookFlight} sx={{ mt: 2, width: '100%', fontFamily: 'Poppins', fontWeight: '700', fontSize:'2vw' }}>
+                    <Button variant="contained" onClick={handleBookFlight} sx={{ mt: 2, width: '100%', fontFamily: 'Poppins', fontWeight: '700', fontSize:'25px', borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)'}}>
                         Book
                     </Button>
                 </CardContent>

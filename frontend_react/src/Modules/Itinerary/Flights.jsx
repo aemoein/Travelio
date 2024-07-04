@@ -88,7 +88,7 @@ const FlightSearchForm = () => {
             <Box sx={{ width: '80vw', ml: '10vw', mr: '10vw', mt: 10, minHeight: '100vh'}}>
                 <Grid container justifyContent="center" spacing={2}>
                     <Grid item xs={12}>
-                        <Typography align="left" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
+                        <Typography align="left" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '50px'}}>
                             Flight Search
                         </Typography>
                     </Grid>
@@ -227,7 +227,7 @@ const FlightSearchForm = () => {
                                         sx={{
                                             fontFamily: 'Poppins',
                                             fontWeight: '700',
-                                            fontSize: '1.6vw',
+                                            fontSize: '25px',
                                             borderRadius: '20px',
                                             backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
                                         }}
@@ -247,13 +247,19 @@ const FlightSearchForm = () => {
                     </Grid>
                     {flights?.length > 0 && (
                         <Grid item xs={12}>
-                            <Typography align="left" sx={{ mb: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '3.5vw'}}>
+                            <Typography align="left" sx={{ mb: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px'}}>
                                 Flight Results:
                             </Typography>
                             <Grid container spacing={2}>
                                 {flights.map((flight, index) => (
-                                    <Grid item xs={12} sm={12} md={12} key={index}>
-                                        <FlightCard flight={flight} />
+                                    <Grid item xs={10} sm={12} md={12} lg={6} xl={6} key={index}>
+                                        <FlightCard
+                                            flight={flight}
+                                            cityName={formData.destinationLocationCode}
+                                            arrivalDate={formData.departureDate}
+                                            departureDate={formData.returnDate}
+                                            adults={formData.adults}
+                                        />
                                     </Grid>
                                 ))}
                             </Grid>
