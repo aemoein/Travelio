@@ -165,9 +165,11 @@ const Navbar = () => {
             Destinations
           </Button>
         </Link>
-        <Button color="inherit" sx={buttonStyles}>
-          Planning
-        </Button>
+        <Link to="/planning" style={{ textDecoration: 'none' }}>
+          <Button color="inherit" sx={buttonStyles}>
+            Planning
+          </Button>
+        </Link>
         <Button color="inherit" sx={buttonStyles}>
           Challenges
         </Button>

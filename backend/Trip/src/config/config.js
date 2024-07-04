@@ -2,13 +2,11 @@
 require('dotenv').config();
 
 module.exports = {
-    // MongoDB connection URLs
     mongoURIS: process.env.MONGO_URI_LOCAL,
     mongoURI: process.env.MONGO_URI_REMOTE,
-
-    // Port for the server to listen on
-    port: process.env.PORT || 3001,
-
-    // JWT Secret Key
-    jwtSecret: process.env.JWT_SECRET
+    port: process.env.PORT || 3003,
+    jwtSecret: process.env.JWT_SECRET,
+    accessToken: '',
+    clientId: process.env.CLIENT_ID,  
+    clientSecret: process.env.CLIENT_SECRET,
 };
