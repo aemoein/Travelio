@@ -5,15 +5,14 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const session = require('express-session');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
 const itineraryRoutes = require('./src/routes/itineraryRoutes');
+const routes = require('./src/routes/routes');
+const cron = require('node-cron');
+const { fetchAccessToken } = require('./src/middleware/accessTokenMiddleware');
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
@@ -36,8 +35,16 @@ mongoose.connect(config.mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
+fetchAccessToken();
+
+cron.schedule('*/15 * * * *', () => {
+  fetchAccessToken();
+});
+
 // Define a simple route
 app.use('/api/itinerary', itineraryRoutes);
+
+app.use('/api', routes);
 
 // Start the server
 const PORT = config.port;

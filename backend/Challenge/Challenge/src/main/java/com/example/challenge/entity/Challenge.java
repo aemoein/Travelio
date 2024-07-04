@@ -25,9 +25,10 @@ public class Challenge {
     int multiplier;
     String city;
     int attempts;
+    LocationType locationType;
     //jason object
 
-    // Constructor without id
+    // Constructor without id to test a problem
     public Challenge(String title, String description, int points, ChallengeType type, List<String>tasks,List<String> targets,
                      long nextChallengedur, int multiplier, String city, int attempts) {
         this.title = title;
