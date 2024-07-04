@@ -5,8 +5,11 @@ import com.example.challenge.repository.ChallengeRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -18,7 +21,11 @@ public class ChallengeService {
     private static final Random random = new Random();
 
     public void postNewChallenge(Challenge challenge) {
-        System.out.println(challenge.getId());
+        //System.out.println(challenge.getId());
+        if (challenge.getId() == null){
+            String uuid = UUID.randomUUID().toString();
+            challenge.setId(uuid);
+        }
         if (challengeRepository.existsById(challenge.getId())) {
             challengeRepository.save(challenge);
         }
@@ -27,19 +34,36 @@ public class ChallengeService {
         }
     }
 
+    public static String generateUniqueID() {
+        // Get the current timestamp
+        long timestamp = System.currentTimeMillis();
+
+        // Format the timestamp to a readable date format
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmssSSS");
+        String formattedDate = sdf.format(new Date(timestamp));
+
+        // Generate a random UUID
+        String randomUUID = UUID.randomUUID().toString();
+
+        // Combine the formatted date and random UUID
+        String uniqueID = formattedDate + "-" + randomUUID;
+
+        return uniqueID;
+    }
+
 
 
     /**
      * here be the get random Dare
-     * looks like you need to implement a strategy pattern here
+     * looks like you need to implement a pattern here
      *
      * */
 
     public void getDareChallenges(String city) {
-        dareChallenges = challengeRepository.findDareChallenges(city);
+        dareChallenges = challengeRepository.findGDareChallenges(city);
     }
 
-    public Challenge getDareChallenge(String city) {
+    public Challenge getLocalDareChallenge(String city) {
         getDareChallenges(city);
         if (dareChallenges == null || dareChallenges.isEmpty()) {
             throw new IllegalStateException("Dare challenges are empty");
@@ -49,17 +73,11 @@ public class ChallengeService {
     }
 
 
-    /**
-     * here be the get random photo
-     * looks like you need to implement a strategy pattern here
-     *
-     * */
-
     public void getPhotoChallenges(String city) {
-        photoChallenges = challengeRepository.findPhotoChallenges(city);
+        photoChallenges = challengeRepository.findGPhotoChallenges(city);
     }
 
-    public Challenge getPhotoChallenge(String city) {
+    public Challenge getLocalPhotoChallenge(String city) {
          getPhotoChallenges(city);
          if(photoChallenges == null || photoChallenges.isEmpty()){
              throw new IllegalStateException("Photo challenge not found");
@@ -68,11 +86,7 @@ public class ChallengeService {
          return photoChallenges.get(index);
     }
 
-    /**
-     * here be the get random huntman
-     * looks like you need to implement a strategy pattern here
-     *
-    * */
+
     public void getHuntmanPuzziles(String city) {
        huntmanChallenges = challengeRepository.findHuntmanChallenges(city);
     }
@@ -86,5 +100,33 @@ public class ChallengeService {
 
         int randomIndex = random.nextInt(huntmanChallenges.size());
         return huntmanChallenges.get(randomIndex);
+    }
+
+
+    public void getGPhotoChallenges(String city) {
+        challengeRepository.findGPhotoChallenges(city);
+    }
+
+    public Challenge getGlobalPhotoChallenge(String city) {
+        getGPhotoChallenges(city);
+        if(photoChallenges == null || photoChallenges.isEmpty()){
+            throw new IllegalStateException("Photo challenges list is empty or not initialized.");
+        }
+        int index = random.nextInt(photoChallenges.size());
+        return photoChallenges.get(index);
+    }
+
+
+    public void getGDareChallenges(String city) {
+        challengeRepository.findGPhotoChallenges(city);
+    }
+
+    public Challenge getGlobalDareChallenge(String city) {
+        getGDareChallenges(city);
+        if(dareChallenges == null || dareChallenges.isEmpty()){
+            throw new IllegalStateException("Dare challenges list is empty or not initialized.");
+        }
+        int index = random.nextInt(dareChallenges.size());
+        return dareChallenges.get(index);
     }
 }
