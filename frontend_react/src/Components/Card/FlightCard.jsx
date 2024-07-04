@@ -10,29 +10,58 @@ const FlightCard = ({ flight }) => {
     const handleClose = () => setOpen(false);
 
     const formatTime = (dateTime) => format(new Date(dateTime), 'hh:mm a');
-    const formatDate = (dateTime) => format(new Date(dateTime), 'MM/dd/yyyy');
+
+    const handleBookFlight = async () => {
+        try {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                return;
+            }
+
+            const response = await fetch('http://localhost:3003/api/flights', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${token}`
+                },
+                body: JSON.stringify(flight), 
+                withCredentials: true
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to book flight');
+            }
+
+            const data = await response.json();
+            console.log('Booking successful. Trip ID:', data.tripId);
+            alert('Booking successful');
+        } catch (error) {
+            console.error('Error booking flight:', error.message);
+            // Handle error state
+        }
+    };
 
     return (
         <>
-            <Card sx={{ minWidth: 275, mb: 2, pl: 3, pr: 3  }}>
+            <Card sx={{ minWidth: 275, mb: 2, pl: 3, pr: 3 }}>
                 <CardContent>
                     {flight.itineraries?.length > 0 ? (
                         flight.itineraries.map((itinerary, idx) => (
-                            <div key={idx}> 
-                                {idx === 0  ? (
-                                    <Typography sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '3vw' }} >
+                            <div key={idx}>
+                                {idx === 0 ? (
+                                    <Typography sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '3vw' }}>
                                         Departure
                                     </Typography>
-                                ):(
-                                    <Typography sx={{ mt: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '3vw'}}>
+                                ) : (
+                                    <Typography sx={{ mt: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '3vw' }}>
                                         Return
                                     </Typography>
                                 )}
-                                
+
                                 {itinerary.segments?.length > 0 ? (
                                     itinerary.segments.map((segment, index) => (
-                                        <Grid container alignItems="center" key={index} sx={{ mb: 1}}>
-                                            <Typography component="div" sx={{fontFamily: 'Poppins', width: '100%', fontWeight: '500'}}>
+                                        <Grid container alignItems="center" key={index} sx={{ mb: 1 }}>
+                                            <Typography component="div" sx={{ fontFamily: 'Poppins', width: '100%', fontWeight: '500' }}>
                                                 {`Airline Carrier: ${segment.carrier?.name || 'N/A'}`}
                                             </Typography>
                                             <Grid item xs={5}>
@@ -79,6 +108,9 @@ const FlightCard = ({ flight }) => {
                             More Info
                         </Button>
                     </Box>
+                    <Button variant="contained" onClick={handleBookFlight} sx={{ mt: 2, width: '100%', fontFamily: 'Poppins', fontWeight: '700', fontSize:'2vw' }}>
+                        Book
+                    </Button>
                 </CardContent>
             </Card>
 

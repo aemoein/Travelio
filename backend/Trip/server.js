@@ -8,7 +8,6 @@ const session = require('express-session');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
-const itineraryRoutes = require('./src/routes/itineraryRoutes');
 const routes = require('./src/routes/routes');
 const cron = require('node-cron');
 const { fetchAccessToken } = require('./src/middleware/accessTokenMiddleware');
@@ -25,7 +24,7 @@ app.use(session({
     secret: config.jwtSecret,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } // Use secure: true in production with HTTPS
+    cookie: { secure: false }
 }));
 app.use(extractToken);
 app.use(errorMiddleware);
@@ -40,9 +39,6 @@ fetchAccessToken();
 cron.schedule('*/15 * * * *', () => {
   fetchAccessToken();
 });
-
-// Define a simple route
-app.use('/api/itinerary', itineraryRoutes);
 
 app.use('/api', routes);
 
