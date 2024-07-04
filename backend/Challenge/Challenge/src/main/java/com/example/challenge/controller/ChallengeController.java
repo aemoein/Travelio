@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:3000")
 public class ChallengeController {
+
     ChallengeService challengeService;
 
     //puzzle is the same for both since its all about general information
@@ -47,5 +48,9 @@ public class ChallengeController {
         return "New Challenge Added";
     }
 
+    @DeleteMapping("/delete")
+    public String deleteChallenge(@RequestParam String id) {
+        return challengeService.deleteChallenge(id);
+    }
 
 }
