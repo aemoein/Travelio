@@ -14,6 +14,7 @@ const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
 const socialRouter = require('./src/routes/socialRoutes');
 const postRouter = require('./src/routes/postRoutes');
+const timelineRouter = require('./src/routes/timelineRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -38,6 +39,7 @@ app.use(errorMiddleware);
 //Routes
 app.use('/social',socialRouter);
 app.use('/posts', postRouter);
+app.use('/timeline',timelineRouter);
 
 // Connect to MongoDB
 const DB_URL = process.env.MONGO_URI_REMOTE;

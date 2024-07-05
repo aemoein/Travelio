@@ -236,6 +236,7 @@ exports.UnComment = async (req, res) => {
     }
 };
 
+// 11- Get all comments for a specific post
 exports.allComments = async (req,res) => {
     try {
         const post = await Post.findById(req.params.id);

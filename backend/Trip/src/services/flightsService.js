@@ -1,9 +1,11 @@
 const axios = require('axios');
 const https = require('https');
 const config = require('../config/config');
+const Flight = require('../models/Flight');
+const Trip = require('../models/Trip');
 
 const agent = new https.Agent({
-    rejectUnauthorized: false // Ignore SSL certificate errors
+    rejectUnauthorized: false
 });
 
 async function getFlights(params) {
@@ -11,8 +13,6 @@ async function getFlights(params) {
     const headers = {
         'Authorization': `Bearer ${config.accessToken}`,
     };
-
-    // Add max and currencyCode parameters
     const updatedParams = {
         ...params,
         max: 10,
@@ -22,10 +22,8 @@ async function getFlights(params) {
     try {
         const response = await axios.get(url, { headers, params: updatedParams, httpsAgent: agent });
 
-        // Parse and transform the response
         const parsedData = parseFlightData(response.data);
         console.log(parsedData);
-        
 
         return parsedData;
     } catch (error) {
@@ -57,16 +55,6 @@ function parseFlightData(data) {
                 const baggageDescription = fareDetail ? fareDetail.amenities.find(amenity => amenity.amenityType === 'BAGGAGE').description : 'No baggage info';
                 const baggageQuantity = fareDetail ? fareDetail.includedCheckedBags.quantity : 0;
 
-                console.log('Carrier:', {
-                    code: segment.carrierCode,
-                    name: carriers[segment.carrierCode] || `Unknown Carrier (${segment.carrierCode})`
-                });
-                console.log('Baggage:', {
-                    description: baggageDescription,
-                    quantity: baggageQuantity
-                });
-                console.log('Flight Number:', `${segment.carrierCode}${segment.number}`);
-
                 return {
                     departure: {
                         airportCode: segment.departure.iataCode,
@@ -94,6 +82,33 @@ function parseFlightData(data) {
     }));
 }
 
+async function createFlight(flightData, userId) {
+    let createdFlight;
+    try {
+        // Create the flight
+        createdFlight = await Flight.create(flightData);
+
+        // Calculate total price of the trip
+        const totalPrice = flightData.price.total;
+
+        // Create a new trip object
+        const tripData = {
+            flights: [createdFlight._id],
+            userId: userId,
+            totalPrice: totalPrice
+        };
+        const createdTrip = await Trip.create(tripData);
+
+        return createdTrip._id;
+    } catch (err) {
+        if (createdFlight) {
+            await Flight.findByIdAndDelete(createdFlight._id);
+        }
+        throw new Error('Failed to create flight and associate with trip');
+    }
+}
+
 module.exports = {
-    getFlights
+    getFlights,
+    createFlight
 };

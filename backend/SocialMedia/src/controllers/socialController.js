@@ -461,3 +461,93 @@ exports.getBlockedUser = async (req, res) => {
 }
 };
 
+// 15- save post
+exports.savePost = async (req,res) => {
+    const {currentUserProfileId, postId} = req.body;
+    try{
+        const currentUserProfile = await socialProfile.findById(currentUserProfileId);
+        if(!currentUserProfile){
+            return res.status(404).json({
+                status: 'fail',
+                message: 'user not found'
+            });
+        }
+        if(!currentUserProfile.saved.includes(postId)){
+            currentUserProfile.saved.push(postId);
+            await currentUserProfile.save();
+            return res.status(200).json({
+                status: 'success',
+                message: 'Post saved successfully',
+                data: currentUserProfile.saved
+            })
+        }else{
+            return res.status(400).json({
+                status: 'fail',
+                message: 'Post is already saved'
+            });
+        }
+    }catch (err) {
+        res.status(500).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+}
+
+// 16- unsave post
+exports.unsavePost = async (req,res) => {
+    const {currentUserProfileId, postId} = req.body;
+    try{
+        const currentUserProfile = await socialProfile.findById(currentUserProfileId);
+        if(!currentUserProfile){
+            return res.status(404).json({
+                status: 'fail',
+                message: 'user not found'
+            });
+        }
+        if(currentUserProfile.saved.includes(postId)){
+            currentUserProfile.saved.pull(postId);
+            await currentUserProfile.save();
+            return res.status(200).json({
+                status: 'success',
+                message: 'Post unsaved successfully',
+                data: currentUserProfile.saved
+            })
+        }else{
+            return res.status(400).json({
+                status: 'fail',
+                message: 'Post is already not saved'
+            });
+        }
+    }catch (err) {
+        res.status(500).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+}
+
+// 17- list all saved posts
+exports.listSavedPosts = async (req,res) => {
+    const currentUserProfileId = req.params.id;
+    try{
+        const currentUserProfile = await socialProfile.findById(currentUserProfileId);
+        if(!currentUserProfile){
+            return res.status(404).json({
+                status: 'fail',
+                message: 'user not found'
+            });
+        }
+
+        res.status(200).json({
+            status:'success',
+            data: currentUserProfile.saved
+        });
+        
+    }catch (err) {
+        res.status(500).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+}

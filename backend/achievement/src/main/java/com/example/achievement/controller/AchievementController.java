@@ -1,0 +1,55 @@
+package com.example.achievement.controller;
+
+import com.example.achievement.model.Achievement;
+import com.example.achievement.service.AchievementService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/achievements")
+public class AchievementController {
+    @Autowired
+    private AchievementService achievementService;
+
+    @GetMapping
+    public List<Achievement> getAllAchievements() {
+        return achievementService.getAllAchievements();
+    }
+
+    @GetMapping("/{id}")
+    public Achievement getAchievementById(@PathVariable String id) {
+        return achievementService.getAchievementById(id);
+    }
+
+    @GetMapping("/category/{category}")
+    public List<Achievement> getAchievementsByCategory(@PathVariable String category) {
+        return achievementService.getAchievementsByCategory(category);
+    }
+
+    @GetMapping("/difficulty/{difficulty}")
+    public List<Achievement> getAchievementsByDifficulty(@PathVariable String difficulty) {
+        return achievementService.getAchievementsByDifficulty(difficulty);
+    }
+
+    @PostMapping
+    public Achievement createAchievement(@RequestBody Achievement achievement) {
+        return achievementService.createAchievement(achievement);
+    }
+
+    @PutMapping("/{id}")
+    public Achievement updateAchievement(@PathVariable String id, @RequestBody Achievement achievement) {
+        return achievementService.updateAchievement(id, achievement);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteAchievement(@PathVariable String id) {
+        achievementService.deleteAchievement(id);
+    }
+
+    @PostMapping("/unlock/{userId}")
+    public Achievement unlockAchievement(@PathVariable String userId, @RequestBody Achievement achievement) {
+        return achievementService.unlockAchievement(userId, achievement);
+    }
+}
