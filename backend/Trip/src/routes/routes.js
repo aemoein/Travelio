@@ -11,9 +11,9 @@ const router = express.Router();
 router.get('/flights', flightsController.searchFlights);
 router.get('/hotels', hotelController.getHotels);
 router.post('/flights', authMiddleware, flightsController.createFlightControl);
-router.post('/hotels/', authMiddleware, hotelController.createHotelControl);
-router.post('/itineraries', itinerariesController.create)
+router.post('/hotels', authMiddleware, hotelController.createHotelControl);
+router.post('/itineraries', itinerariesController.create);
 router.post('/itineraries/save', itinerariesController.saveItinerary);
-router.get('/trip', tripController.getTripById)
+router.get('/trip', authMiddleware, tripController.getTripById);
 
 module.exports = router;

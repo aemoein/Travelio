@@ -1,7 +1,7 @@
 const tripService = require('../services/tripService');
 
 function getTripById(req, res) {
-    const { tripId } = req.body;
+    const { tripId } = req.query;
 
     tripService.getTripByIdWithDetails(tripId)
         .then(tripDetails => {
