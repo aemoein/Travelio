@@ -14,13 +14,35 @@ async function generateItinerary(request) {
         adults,
         hotel
     };
-    
+
+    const activity = {
+        name: { type: String, required: true },
+        type: { type: String, required: true },
+        details: { type: String, required: true },
+        time: { type: String, required: true },
+        location: { type: String, required: true },
+        latitude: { type: Number, required: true },
+        longitude: { type: Number, required: true }
+    };
+
+    const itinerary = {
+        day: { type: String, required: true },
+        description: { type: String, required: true },
+        activities: [activity] 
+    };
+
+    const schema = JSON.stringify({
+        activity,
+        itinerary
+    });
+
     const prompt = JSON.stringify({
         request: "Please generate a trip itinerary for the following data:",
         restaurants: "use real world restaurants to the best of your abilities and suggest foods",
-        constraints: "return the itinerary as JSON",
+        constraints: "return the itinerary as JSON and follow the schema provided",
+        schema,
         requestData
-    });    
+    });
 
     try {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -35,7 +57,7 @@ async function generateItinerary(request) {
         text = text.replace(/[*#]/g, '');
         text = text.replace(/##?\s*/g, '');
 
-        console.log(text);
+        //console.log(text);
 
         const itinerary = JSON.parse(text);
 

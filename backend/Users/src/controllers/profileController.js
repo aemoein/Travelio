@@ -18,8 +18,15 @@ async function updateProfile(req, res) {
   res.status(result.status).json(result.user);
 }
 
+async function getPreferences(req, res) { 
+  const userId = req.user.id;
+  const result = await profileService.getUserPreferences(userId);
+  res.status(result.status).json(result.preferences);
+}
+
 module.exports = {
   getProfile,
   checkLoggedIn,
   updateProfile,
+  getPreferences
 };

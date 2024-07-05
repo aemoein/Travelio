@@ -13,5 +13,7 @@ async function setUserPreferences(req, res) {
   
     res.status(result.status).json({ message: result.message });
 }
+
+
   
 module.exports = { quiz, setUserPreferences};

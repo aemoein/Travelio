@@ -59,8 +59,23 @@ async function updateProfile(userId, updatedData) {
   }
 }
 
+async function getUserPreferences(userId) { 
+  try {
+      const user = await User.findById(userId);
+      if (!user) {
+          return { status: 404, message: 'User not found' };
+      }
+  
+      return { status: 200, preferences: user.preferences };
+  } catch (error) {
+      console.error(error);
+      return { status: 500, message: 'Internal server error' };
+  }
+}
+
 module.exports = {
   getUserProfile,
   checkLoggedIn,
   updateProfile,
+  getUserPreferences
 };

@@ -1,5 +1,4 @@
 const hotelService = require('../services/hotelService');
-const Trip = require('../models/Trip'); // Assuming Trip model is defined
 
 const getHotels = async (req, res) => {
     try {
@@ -16,7 +15,7 @@ const getHotels = async (req, res) => {
 
 const createHotelControl = async (req, res) => {
     try {
-        console.log(req.body);
+        //console.log(req.body);
         const hotelData = req.body.hotel;
         const tripId = req.body.tripId;
 
