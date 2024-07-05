@@ -1,29 +1,19 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
 
-const attractionSchema = new Schema({
-    name: String,
-    description: String
+// Define schema for activities within an itinerary
+const activitySchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    type: { type: String, required: true },
+    details: { type: String, required: true },
+    time: { type: String, required: true }
 });
 
-const restaurantSchema = new Schema({
-    name: String,
-    cuisine: String,
-    rating: Number
+const itinerarySchema = new mongoose.Schema({
+    day: { type: String, required: true },
+    description: { type: String, required: true },
+    activities: [activitySchema] 
 });
 
-const activitySchema = new Schema({
-    name: String,
-    description: String
-});
-
-const itineraryDaySchema = new Schema({
-    date: Date,
-    attractions: [attractionSchema],
-    restaurants: [restaurantSchema],
-    activities: [activitySchema]
-});
-
-const Itinerary = mongoose.model('Itinerary', itineraryDaySchema);
+const Itinerary = mongoose.model('Itinerary', itinerarySchema);
 
 module.exports = Itinerary;

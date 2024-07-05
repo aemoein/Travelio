@@ -31,7 +31,6 @@ const HotelsPage = () => {
     };
 
     const cityCode = getCityCode(cityName);
-
     const name = getCity(cityName);
 
     useEffect(() => {
@@ -74,7 +73,14 @@ const HotelsPage = () => {
                         hotels.length > 0 ? (
                             hotels.map((hotel, index) => (
                                 <Grid item key={index} xs={12} sm={6} md={6} lg={6}>
-                                    <HotelCard hotel={hotel} cityName={name} />
+                                    <HotelCard
+                                        hotel={hotel}
+                                        tripId={tripId}
+                                        cityName={name}
+                                        arrivalDate={arrivalDate}
+                                        departureDate={departureDate}
+                                        adults={adults}
+                                    />
                                 </Grid>
                             ))
                         ) : (

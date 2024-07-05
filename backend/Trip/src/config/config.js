@@ -9,4 +9,5 @@ module.exports = {
     accessToken: '',
     clientId: process.env.CLIENT_ID,  
     clientSecret: process.env.CLIENT_SECRET,
+    googleApiKey: process.env.GOOGLE_API_KEY,
 };

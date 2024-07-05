@@ -1,6 +1,8 @@
 const axios = require('axios');
 const https = require('https');
 const config = require('../config/config');
+const Hotel = require('../models/Hotel');
+const Trip = require('../models/Trip');
 
 const agent = new https.Agent({
     rejectUnauthorized: false
@@ -35,10 +37,7 @@ const parseHotelOffers = (offers) => {
 
 const getHotelsByCity = async (cityCode) => {
     try {
-        const chainCodes = ['HH', 'HY', 'IC', 'SI', 'HI', 'NO', 'IB', 'WS', 'RC', 'WY', 'CP'];
-
-        const chainCodes2 = ['AC', 'HH', 'MC', 'HY', 'IC', 'BW', 'RD', 'SI', 'HI', 'NO', 'IB', 'WS', 'FS', 'RC', 'WY', 'CP'];
-
+        const chainCodes = ['AC', 'HH', 'MC', 'HY', 'IC', 'BW', 'RD', 'SI', 'HI', 'NO', 'IB', 'WS', 'FS', 'RC', 'WY', 'CP'];
 
         const response = await axios.get('https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city', {
             headers: {
@@ -46,7 +45,7 @@ const getHotelsByCity = async (cityCode) => {
             },
             params: {
                 cityCode,
-                chainCodes: chainCodes2.join(','),
+                chainCodes: chainCodes.join(','),
             },
             httpsAgent: agent
         });
@@ -57,7 +56,7 @@ const getHotelsByCity = async (cityCode) => {
         return hotelIds;
     } catch (error) {
         console.error('Error fetching hotel data:', error);
-        throw error;
+        throw new Error('Failed to fetch hotels by city');
     }
 };
 
@@ -87,11 +86,52 @@ const getHotelOffers = async (cityCode, adults, checkInDate, checkOutDate, roomQ
         return parsedOffers;
     } catch (error) {
         console.error('Error fetching hotel offers:', error);
-        throw error;
+        throw new Error('Failed to fetch hotel offers');
+    }
+};
+
+const createHotel = async (hotelData, tripId) => {
+    let createdHotel;
+    try {
+        // Create the hotel
+        createdHotel = await Hotel.create(hotelData);
+        
+        // Parse and validate hotel price
+        const hotelPrice = parseFloat(hotelData.offers[0].price.base);
+        if (isNaN(hotelPrice)) {
+            throw new Error(`Invalid price format: ${hotelData.offers[0].price.base}`);
+        }
+
+        // Log the tripId
+        console.log(`Fetching trip with ID: ${tripId}`);
+
+        const trip = await Trip.findById(tripId);
+        if (!trip) {
+            // Log all trips for debugging
+            const allTrips = await Trip.find({});
+            console.log('All trips in the database:', allTrips);
+
+            console.error(`Trip with ID ${tripId} not found`);
+            throw new Error('Trip not found');
+        }
+
+        trip.hotels.push(createdHotel._id);
+        trip.totalPrice += hotelPrice;
+
+        await trip.save();
+
+        return trip._id;
+    } catch (err) {
+        if (createdHotel) {
+            await Hotel.findByIdAndDelete(createdHotel._id);
+        }
+        console.error('Error creating hotel and associating with trip:', err);
+        throw new Error('Failed to create hotel and associate with trip');
     }
 };
 
 module.exports = {
     getHotelsByCity,
-    getHotelOffers
+    getHotelOffers,
+    createHotel
 };
