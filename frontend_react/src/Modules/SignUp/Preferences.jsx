@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Container, Typography, Button, Card, CardContent, Chip } from '@mui/material';
+import { Container, Typography, Button, Chip, Grid, Box} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -17,6 +17,7 @@ const PreferencePage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Any initialization logic can go here
   }, []);
 
   const handleGenreClick = (genre) => {
@@ -53,7 +54,6 @@ const PreferencePage = () => {
     }
   };
   
-  
   const theme = createTheme({
     typography: {
       fontFamily: ['Poppins'].join(','),
@@ -62,54 +62,55 @@ const PreferencePage = () => {
 
   return (
     <ThemeProvider theme={theme}>
-        <Navbar />
-        <Container>
+      <Navbar />
+      <Box sx={{ width: '80vw', mx: '10vw', mb: 3}}>
         <Typography variant="h4" gutterBottom style={{ fontFamily: 'Poppins', marginTop: '70px', fontWeight: '700' }}>
-            select your preferred destinations
+          Select your preferred destinations
         </Typography>
         <div style={{ marginTop: '20px' }}>
-            <Typography variant="h5" gutterBottom style={{ fontFamily: 'Poppins', fontWeight: '700' }}>
-                Selected Genres:
-            </Typography>
-            <div>
-                {selectedGenres.map((genre, index) => (
-                    <Chip key={index} label={genre} style={{ marginRight: '10px', marginBottom: '10px' }} />
-                ))}
-            </div>
+          <Typography variant="h5" gutterBottom style={{ fontFamily: 'Poppins', fontWeight: '700' }}>
+            Selected Genres:
+          </Typography>
+          <div>
+            {selectedGenres.map((genre, index) => (
+              <Chip key={index} label={genre} style={{ marginRight: '10px', marginBottom: '10px' }} />
+            ))}
+          </div>
         </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-            {categories.map((category, index) => (
-            <GenreCard
-                key={index}
+        <Grid container spacing={2} style={{ marginBottom: '20px' }}>
+          {categories.map((category, index) => (
+            <Grid item key={index} xs={12} sm={12} md={6}>
+              <GenreCard
                 genre={category.genre}
                 description={category.description}
                 imageUrl={category.imageUrl}
                 destinations={category.destinations}
-                width="47vw" 
+                width="100%"
                 isSelected={selectedGenres.includes(category.genre)}
                 onToggleSelection={() => handleGenreClick(category.genre)}
-            />
-            ))}
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-            <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                onClick={handleSavePreferences}
-                sx={{
-                    backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
-                    borderRadius: 10,
-                    fontWeight: '500',
-                    fontFamily: 'Montserrat, sans-serif',
-                }}
-            >
-                Save Preferences
-            </Button>
+              />
+            </Grid>
+          ))}
+        </Grid>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            onClick={handleSavePreferences}
+            sx={{
+              backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+              borderRadius: 10,
+              fontWeight: '500',
+              fontFamily: 'Montserrat, sans-serif',
+            }}
+          >
+            Save Preferences
+          </Button>
         </div>
         {error && <Typography variant="body2" color="error">{error}</Typography>}
-        </Container>
-        <Footer />
+      </Box>
+      <Footer />
     </ThemeProvider>
   );
 };

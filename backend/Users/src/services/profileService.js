@@ -10,7 +10,7 @@ async function getUserProfile(userId) {
 
     let profilePicUrl = '';
     if (user.profilePic) {
-      profilePicUrl = req.protocol + '://' + req.get('host') + '/' + user.profilePic;
+      profilePicUrl = user.profilePic;
     }
 
     return { status: 200, user: { ...user.toObject(), profilePicUrl } };
@@ -32,7 +32,7 @@ async function checkLoggedIn(req) {
 
     let profilePicUrl = '';
     if (user.profilePic) {
-      profilePicUrl = req.protocol + '://' + req.get('host') + '/' + user.profilePic;
+      profilePicUrl = user.profilePic;
     }
 
     console.log(profilePicUrl)

@@ -36,6 +36,16 @@ function getTripByIdWithDetails(tripId) {
         });
 }
 
+async function getTripsByUserId(userId) {
+    try {
+        const trips = await Trip.find({ userId: userId }).exec();
+        return trips;
+    } catch (error) {
+        throw new Error('Failed to fetch trips for user');
+    }
+}
+
 module.exports = {
-    getTripByIdWithDetails
+    getTripByIdWithDetails,
+    getTripsByUserId
 };

@@ -12,10 +12,19 @@ const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
 const profileRoutes = require('./src/routes/profileRoutes');
 const authRoutes = require('./src/routes/authRoutes');
+const cloudinary = require('cloudinary').v2;
+
 
 dotenv.config({ path: path.join(process.cwd(), "..", ".env") });
 
 const app = express();
+
+cloudinary.config({
+  cloud_name: config.cloudinaryCloudName,
+  api_key: config.cloudinaryApiKey,
+  api_secret: config.cloudinaryApiSecret
+});
+
 
 // Middleware
 app.use(cors({
@@ -32,8 +41,6 @@ app.use(session({
 }));
 app.use(extractToken);
 app.use(errorMiddleware);
-
-app.use('/Assets/ProfilePics', express.static('../../assets/ProfilePics'));
 
 console.log('MongoDB local URI:', config.mongoURIS);
 console.log('MongoDB remote URI:', config.mongoURI);

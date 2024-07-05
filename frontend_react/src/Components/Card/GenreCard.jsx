@@ -14,14 +14,14 @@ const GenreCard = ({ genre, description, imageUrl, destinations, width, isSelect
       sx={{
         position: 'relative',
         width: width ? width : '47vw',
-        height: '27vw',
+        height: '18vw',
         marginBottom: '20px',
         borderRadius: '10px',
         overflow: 'hidden',
         transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
         cursor: 'pointer',
         '&:hover': {
-          transform: 'scale(1.05)',
+          transform: 'scale(1.02)',
         },
       }}
       onClick={handleToggleClick}
@@ -61,7 +61,7 @@ const GenreCard = ({ genre, description, imageUrl, destinations, width, isSelect
           position: 'absolute',
           bottom: '0',
           left: '0',
-          padding: '10px',
+          padding: '25px',
           color: '#fff',
           width: '100%',
           borderRadius: '0 0 10px 10px',

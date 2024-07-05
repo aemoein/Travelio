@@ -61,7 +61,9 @@ function LoginPage() {
       <CssBaseline />
       <Box
         sx={{
-          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(https://www.boat-tahoe.com/wp-content/uploads/2023/03/Sequence-01.00_00_08_17.Still001.jpg)',
+          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(http://localhost:3000/assets/Pages/AuthPages/Auth.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           height: '100vh',
           display: 'flex',
           alignItems: 'center',
@@ -81,7 +83,7 @@ function LoginPage() {
             lineHeight: '1.0',
             width: '40vw',
           }}>
-            create your own stories
+            The Sky is Your limit
           </Typography>
         </Box>
         <Box sx={{
