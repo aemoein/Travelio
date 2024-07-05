@@ -11,5 +11,8 @@ module.exports = {
 
     // JWT Secret Key
     jwtSecret: process.env.JWT_SECRET,
-    accessToken: process.env.ACCESS_TOKEN
+    accessToken: process.env.ACCESS_TOKEN,
+    clientId: process.env.CLIENT_ID,  
+    clientSecret: process.env.CLIENT_SECRET,
+    googleApiKey: process.env.GOOGLE_API_KEY,
 };

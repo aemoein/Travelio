@@ -1,4 +1,5 @@
 const authService = require('../services/authService');
+const cloudinary = require('cloudinary').v2;
 
 async function signup(req, res) {
     const { username, firstName, lastName, email, password } = req.body;
@@ -37,22 +38,37 @@ async function login(req, res) {
 }
 
 async function userInfoSignUp(req, res) {
-    const { location, birthday, bio, nationality, mobileNumber } = req.body;
-  
-    console.log('SessionId info: ' + req.sessionID);
-    console.log('UserId info: ' + req.session.userId);
-  
+  const { location, birthday, bio, nationality, mobileNumber } = req.body;
+
+  if (!req.file || !req.file.path) {
+    return res.status(400).json({ error: 'Profile picture is required.' });
+  }
+
+  console.log('SessionId info: ' + req.sessionID);
+  console.log('UserId info: ' + req.session.userId);
+
+  try {
+    // Upload file to Cloudinary with folder specified
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: 'profilePics' // Folder name in Cloudinary where images will be stored
+    });
+
     const userInfo = {
       location,
       birthday,
       bio,
       nationality,
       mobileNumber,
+      profilePicUrl: result.secure_url // Use result.secure_url from Cloudinary response
     };
-  
-    const result = await authService.userInformation(req.session.userId, userInfo, req.file);
-  
-    res.status(result.status).json({ message: result.message });
+
+    const updateResult = await authService.userInformation(req.session.userId, userInfo);
+
+    res.status(updateResult.status).json({ message: updateResult.message });
+  } catch (error) {
+    console.error('Error uploading file to Cloudinary:', error);
+    res.status(500).json({ error: 'Error uploading file to Cloudinary' });
+  }
 }
 
 async function logout(req, res) {

@@ -47,7 +47,7 @@ async function loginUser(username, password) {
     }
 }
 
-async function userInformation(userId, userInfo, file) {
+async function userInformation(userId, userInfo) {
     try {
         const user = await User.findById(userId);
         if (!user) {
@@ -56,10 +56,11 @@ async function userInformation(userId, userInfo, file) {
     
         user.location = userInfo.location;
         user.birthday = userInfo.birthday;
-        user.profilePic = file ? file.path : '';
+        user.profilePic = userInfo.profilePicUrl;
         user.bio = userInfo.bio;
         user.nationality = userInfo.nationality;
         user.mobileNumber = userInfo.mobileNumber;
+        
         await user.save();
     
         return { status: 200, message: 'User information updated successfully' };

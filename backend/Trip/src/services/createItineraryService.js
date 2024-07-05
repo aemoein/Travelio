@@ -5,12 +5,16 @@ const createItinerary = async (itineraryData, tripId) => {
     let createdItinerary;
 
     try {
-        // Create a new itinerary
+        for (let i = 0; i < itineraryData.itinerary.length; i++) {
+            itineraryData.itinerary[i].day = i + 1;
+        }
+
+        console.log('Creating itinerary with data:', itineraryData.itinerary);
+
         createdItinerary = await Itinerary.create(itineraryData);
 
         console.log('Created itinerary:', createdItinerary);
 
-        // Find the trip by ID
         const trip = await Trip.findById(tripId);
         if (!trip) {
             console.error(`Trip with ID ${tripId} not found`);

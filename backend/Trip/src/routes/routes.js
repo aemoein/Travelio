@@ -15,5 +15,6 @@ router.post('/hotels', authMiddleware, hotelController.createHotelControl);
 router.post('/itineraries', itinerariesController.create);
 router.post('/itineraries/save', itinerariesController.saveItinerary);
 router.get('/trip', authMiddleware, tripController.getTripById);
+router.get('/my-trips', authMiddleware, tripController.getTripById)
 
 module.exports = router;

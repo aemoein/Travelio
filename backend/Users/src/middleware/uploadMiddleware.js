@@ -1,24 +1,22 @@
+// uploadMiddleware.js
 const multer = require('multer');
-const fs = require('fs');
 const path = require('path');
+const { v2: cloudinary } = require('cloudinary');
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    const uploadPath = '../../../../assets/ProfilePics';
-    try {
-      fs.mkdirSync(uploadPath, { recursive: true });
-      cb(null, uploadPath);
-    } catch (err) {
-      console.error('Error creating upload directory:', err);
-      cb(err);
+// Set up multer storage engine to upload directly to Cloudinary
+const storage = multer.diskStorage({});
+
+// Initialize multer instance with Cloudinary storage engine
+const upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    // Validate file type if needed, example: allow only images
+    if (file.mimetype.startsWith('image/')) {
+      cb(null, true); // Accept file
+    } else {
+      cb(new Error('Only images are allowed!'), false); // Reject file
     }
-  },
-  filename: function (req, file, cb) {
-    const ext = path.extname(file.originalname);
-    cb(null, req.session.username + ext);
   }
 });
-
-const upload = multer({ storage: storage });
 
 module.exports = upload;

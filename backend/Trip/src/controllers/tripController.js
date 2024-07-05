@@ -13,6 +13,18 @@ function getTripById(req, res) {
         });
 }
 
+async function getTripsByUserId(req, res) {
+    const userId = req.user.id;
+    try {
+        const trips = await tripService.getTripsByUserId(userId);
+        res.json(trips);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Failed to fetch trips' });
+    }
+}
+
 module.exports = {
-    getTripById
+    getTripById,
+    getTripsByUserId
 };

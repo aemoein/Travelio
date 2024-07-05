@@ -64,8 +64,10 @@ function SignUpPage() {
       <CssBaseline />
       <Box
         sx={{
-          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(https://www.boat-tahoe.com/wp-content/uploads/2023/03/Sequence-01.00_00_08_17.Still001.jpg)',
+          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(http://localhost:3000/assets/Pages/AuthPages/Auth.jpg)',
           height: '100vh',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -85,7 +87,7 @@ function SignUpPage() {
             lineHeight: '1.0',
             width: '40vw',
           }}>
-            Create your own stories
+           The sky is your limit
           </Typography>
         </Box>
 

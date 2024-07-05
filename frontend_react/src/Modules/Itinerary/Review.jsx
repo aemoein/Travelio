@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, CircularProgress, Grid } from '@mui/material';
-import { useLocation } from 'react-router-dom';
+import { Box, Typography, CircularProgress, Grid, Button } from '@mui/material';
+import { useLocation, useNavigate } from 'react-router-dom';
 import FlightCard from '../../Components/Card/ReviewFlightCard';
 import HotelCard from '../../Components/Card/ReviewHotelCard';
 import ActivityCard from '../../Components/Card/ActivityCard';
@@ -9,6 +9,7 @@ import Footer from '../../Components/Footer/Footer';
 
 const ReviewPage = () => {
     const location = useLocation();
+    const navigate = useNavigate(); // Use the useNavigate hook
     const [tripData, setTripData] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -46,6 +47,19 @@ const ReviewPage = () => {
         }
     }, [location.state]);    
 
+    const handlePayNow = () => {
+        navigate('/planning/checkout', {
+            state: {
+                tripId: location.state.tripId,
+                totalPrice: tripData.totalPrice
+            }
+        });
+    };
+
+    const handleSaveAndPayLater = () => {
+        navigate('/');
+    };
+
     if (loading) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -59,7 +73,7 @@ const ReviewPage = () => {
         <Navbar />
         <Box>
             {tripData && (
-                <Box sx={{ mt: 10, maxWidth: '80vw', ml: '10vw', mr: '10vw'}}>
+                <Box sx={{ mt: 10, maxWidth: '70vw', mx: '15vw'}}>
                     <Typography variant="h4" sx={{ mb: 3, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'center' }}>
                         Review Trip Details
                     </Typography>
@@ -127,6 +141,14 @@ const ReviewPage = () => {
                     <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
                         Total Price: {tripData.totalPrice.toFixed(2)} USD
                     </Typography>
+                    <Box sx={{ textAlign: 'center', mt: 4, width: '100%', mb: 3 }}>
+                        <Button variant="contained" color="primary" onClick={handlePayNow} sx={{ mr: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '25px', borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)'}}>
+                            Pay Now
+                        </Button>
+                        <Button variant="contained" color="primary" onClick={handleSaveAndPayLater} sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '25px', borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' }}>
+                            Save and Pay Later
+                        </Button>
+                    </Box>
                 </Box>
             )}
         </Box>
