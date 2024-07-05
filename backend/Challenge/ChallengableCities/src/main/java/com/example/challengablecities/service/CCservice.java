@@ -51,8 +51,8 @@ public class CCservice {
 
 
     public ChallengableCity newCC(ChallengableCity cc) {
-        boolean exists = ccRepository.existsByCityAndChallengeType(cc.getCity(), cc.getChallengeType());
-        if (!exists) {
+        List<ChallengableCity> exists = ccRepository.existsByCityAndChallengeType(cc.getCity(), cc.getChallengeType());
+        if (exists.isEmpty()) {
             String uuid = UUID.randomUUID().toString();
             cc.setId(uuid);
             return ccRepository.save(cc);
@@ -74,8 +74,8 @@ public class CCservice {
     }
 
 
-    public String deletCC(String cc) {
-        ChallengableCity oldCC = ccRepository.findById(cc).orElse(null);
+    public String deletCC(String id) {
+        ChallengableCity oldCC = ccRepository.findById(id).orElse(null);
         if (oldCC == null) {
             throw new EmptyResultDataAccessException(1);
         }

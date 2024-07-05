@@ -21,5 +21,5 @@ public interface CCRepository extends MongoRepository<ChallengableCity, String> 
 
 
     @Query("{ 'city': ?0, 'challengeType': ?1 }")
-    boolean existsByCityAndChallengeType(String city, ChallengeType challengeType);
+    List<ChallengableCity> existsByCityAndChallengeType(String city, ChallengeType challengeType);
 }

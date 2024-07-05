@@ -14,7 +14,7 @@ public class ChallengeController {
     ChallengeService challengeService;
 
     //puzzle is the same for both since its all about general information
-    @GetMapping("/local/huntmanpuzzile")
+    @GetMapping("/local/puzzle")
     public Challenge localHuntmanPuzzile(@RequestParam String city) {
         return challengeService.getHuntmanPuzzile(city);
     }

@@ -46,8 +46,8 @@ public class CCController {
     }
 
     @DeleteMapping("/delete")
-    public String deleteCC(@RequestBody String cc){
-        return ccService.deletCC(cc);
+    public String deleteCC(@RequestParam String id){
+        return ccService.deletCC(id);
     }
 
 }

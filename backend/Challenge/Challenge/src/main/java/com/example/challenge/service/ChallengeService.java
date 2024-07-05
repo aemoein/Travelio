@@ -60,7 +60,7 @@ public class ChallengeService {
      * */
 
     public void getDareChallenges(String city) {
-        dareChallenges = challengeRepository.findGDareChallenges(city);
+        dareChallenges = challengeRepository.findLDareChallenges(city);
     }
 
     public Challenge getLocalDareChallenge(String city) {
@@ -74,7 +74,7 @@ public class ChallengeService {
 
 
     public void getPhotoChallenges(String city) {
-        photoChallenges = challengeRepository.findGPhotoChallenges(city);
+        photoChallenges = challengeRepository.findLPhotoChallenges(city);
     }
 
     public Challenge getLocalPhotoChallenge(String city) {
@@ -118,7 +118,7 @@ public class ChallengeService {
 
 
     public void getGDareChallenges(String city) {
-        dareChallenges = challengeRepository.findGPhotoChallenges(city);
+        dareChallenges = challengeRepository.findGDareChallenges(city);
     }
 
     public Challenge getGlobalDareChallenge(String city) {
