@@ -3,16 +3,27 @@ const Post = require('../models/postModel');
 
 // 1- Create a new post
 exports.createPost = async (req, res) => {
-    const { author, content, mediaUrl} = req.body;
+    const { author, content } = req.body;
+    console.log(req.file);
+    const mediaUrl = req.file.path;
     try {
-        const newPost = new Post({ author, content, mediaUrl});
+        /*if (mediaUrl) {
+           await cloudinary.uploadToCloudinary(mediaUrl);
+        }*/
+        const newPost = new Post({ 
+            author:author, 
+            content:content,
+            mediaUrl:mediaUrl
+        });
+        
         const savedPost = await newPost.save();
+
         res.status(201).json({
             status: 'success',
             data: savedPost
         });
     } catch (err) {
-        res.status(500).json({
+        res.status(500).json({ 
             status: 'fail',
             message: err.message
         });
