@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, CircularProgress, Grid } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import FlightCard from '../../Components/Card/FlightCard';
-import HotelCard from '../../Components/Card/HotelCard';
+import FlightCard from '../../Components/Card/ReviewFlightCard';
+import HotelCard from '../../Components/Card/ReviewHotelCard';
+import ActivityCard from '../../Components/Card/ActivityCard';
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Components/Footer/Footer';
 
 const ReviewPage = () => {
     const location = useLocation();
@@ -52,6 +55,8 @@ const ReviewPage = () => {
     }
 
     return (
+        <>
+        <Navbar />
         <Box>
             {tripData && (
                 <Box sx={{ mt: 10, maxWidth: '80vw', ml: '10vw', mr: '10vw'}}>
@@ -59,7 +64,9 @@ const ReviewPage = () => {
                         Review Trip Details
                     </Typography>
 
-                    {/* Display Flight Cards */}
+                    <Typography variant="h4" sx={{ mb: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content', }}>
+                        Flight
+                    </Typography>
                     {tripData.flights && tripData.flights.length > 0 && (
                         <Grid container spacing={2}>
                             {tripData.flights.map((flight, index) => (
@@ -76,11 +83,13 @@ const ReviewPage = () => {
                         </Grid>
                     )}
 
-                    {/* Display Hotel Cards */}
+                    <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
+                        Hotel
+                    </Typography>
                     {tripData.hotels && tripData.hotels.length > 0 && (
                         <Grid container spacing={2}>
                             {tripData.hotels.map((hotel, index) => (
-                                <Grid item xs={12} sm={6} key={index}>
+                                <Grid item xs={12} sm={12} key={index}>
                                     <HotelCard
                                         hotel={hotel}
                                         tripId={location.state.tripId}
@@ -94,25 +103,19 @@ const ReviewPage = () => {
                         </Grid>
                     )}
 
-                    {/* Display Itinerary */}
+                    <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
+                        Itinerary
+                    </Typography>
                     {tripData.itinerary[0].itinerary && tripData.itinerary[0].itinerary.length > 0 ? (
                         tripData.itinerary[0].itinerary.map((day, index) => (
                             <Box key={index} sx={{ mb: 4 }}>
                                 <Typography sx={{ mb: 3, width: '100%', textAlign: 'center', fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px' }}>
-                                    Day {index + 1}
+                                    Day {index + 1} - {day.description}
                                 </Typography>
                                 <Grid container spacing={3}>
                                     {day.activities.map((activity, idx) => (
-                                        <Grid item xs={12} sm={6} key={idx}>
-                                            <Box sx={{ border: '1px solid #ccc', borderRadius: '10px', p: 2 }}>
-                                                <Typography sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '30px' }}>
-                                                    {activity.name}
-                                                </Typography>
-                                                <Typography variant="subtitle1" sx={{ fontFamily: 'Poppins', fontWeight: '400', fontSize: '20px' }}>
-                                                    {activity.type ? activity.type.charAt(0).toUpperCase() + activity.type.slice(1) : 'Type'}
-                                                </Typography>
-                                                {/* Add map and other activity details */}
-                                            </Box>
+                                        <Grid item xs={12} sm={12} key={idx}>
+                                            <ActivityCard activity={activity} />
                                         </Grid>
                                     ))}
                                 </Grid>
@@ -121,9 +124,14 @@ const ReviewPage = () => {
                     ) : (
                         <Typography variant="body1">No itinerary found.</Typography>
                     )}
+                    <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
+                        Total Price: {tripData.totalPrice.toFixed(2)} USD
+                    </Typography>
                 </Box>
             )}
         </Box>
+        <Footer />
+        </>
     );
 };
 
