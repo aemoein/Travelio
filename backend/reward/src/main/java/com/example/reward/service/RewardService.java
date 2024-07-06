@@ -1,18 +1,26 @@
 package com.example.reward.service;
 
 import com.example.reward.model.RewardType;
+import com.example.reward.model.UserRewards;
 import com.example.reward.repository.RewardRepository;
 import com.example.reward.model.Reward;
+import com.example.reward.repository.UserRewardRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
+import java.util.UUID;
 
 
 @Service
 public class RewardService {
     @Autowired
     private RewardRepository rewardRepository;
+    @Autowired
+    private UserRewardRepo userRewardRepo;
 
     public List<Reward> getAllRewards() {
 
@@ -53,11 +61,19 @@ public class RewardService {
         }
     }
 
-    public Reward redeemRewardByChallengePoints(int challengePoints, String rewardId) {
+    @Transactional
+    public Reward redeemRewardByChallengePoints(int challengePoints, String rewardId, String username) {
         Reward reward = rewardRepository.findById(rewardId).orElse(null);
-
         if (reward != null) {
             if (challengePoints >= reward.getChallengePoints()) {
+                UserRewards userRewards = userRewardRepo.findByUsername(username);
+                if (userRewards == null) {
+                    userRewards = new UserRewards();
+                    userRewards.setUsername(username);
+                    userRewards.setRewards(new ArrayList<>());
+                }
+                userRewards.addReward(reward);
+                userRewardRepo.save(userRewards);
                 return reward;
             } else {
                 throw new RuntimeException("Insufficient challenge points to redeem this reward");
@@ -66,6 +82,7 @@ public class RewardService {
             throw new RuntimeException("Reward not found");
         }
     }
+
 
     public Reward provideBirthdayReward(String userId, LocalDate birthDate) {
         LocalDate today = LocalDate.now();
@@ -81,5 +98,32 @@ public class RewardService {
             return rewardRepository.save(birthdayReward);
         }
         return null;
+    }
+
+    public List<Reward> getMyRewards(String username) {
+        UserRewards ur = userRewardRepo.findByUsername(username);
+        if (ur != null) {
+            if(ur.getRewards() != null){
+                return ur.getRewards();
+            }
+            else {
+                return null;
+            }
+        }
+        throw new RuntimeException("User or reward not found");
+    }
+
+    public String provideProfileReward(String username) {
+        UserRewards ur = userRewardRepo.findByUsername(username);
+        if (ur != null) {
+            throw new RuntimeException("User already Exists!");
+        }
+        ur = new UserRewards();
+        ur.setUsername(username);
+        ur.setRewards(new ArrayList<>());
+        String id = UUID.randomUUID().toString();
+        ur.setId(id);
+        userRewardRepo.save(ur);
+        return ur.getId();
     }
 }
