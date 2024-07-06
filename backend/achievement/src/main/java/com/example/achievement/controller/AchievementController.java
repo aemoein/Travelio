@@ -48,8 +48,18 @@ public class AchievementController {
         achievementService.deleteAchievement(id);
     }
 
-    @PostMapping("/unlock/{userId}")
-    public Achievement unlockAchievement(@PathVariable String userId, @RequestBody Achievement achievement) {
-        return achievementService.unlockAchievement(userId, achievement);
+    @PutMapping("/unlock/{username}/{achievementId}")
+    public Achievement unlockAchievement(@PathVariable String username, @PathVariable String achievementId) {
+        return achievementService.unlockAchievement(username, achievementId);
+    }
+
+    @GetMapping("/user/{username}")
+    public List<Achievement> getAchievementsByUserId(@PathVariable String username) {
+        return achievementService.getAchievementsByUserId(username);
+    }
+
+    @PostMapping("/profile/{username}")
+    public String createProfile(@PathVariable String username) {
+        return achievementService.createProfile(username);
     }
 }
