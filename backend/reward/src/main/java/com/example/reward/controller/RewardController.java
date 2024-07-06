@@ -10,6 +10,7 @@ import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/api/rewards")
+@CrossOrigin(origins = "http://localhost:3000")
 public class RewardController {
     @Autowired
     private RewardService rewardService;
@@ -29,10 +30,12 @@ public class RewardController {
         rewardService.createReward(reward);
     }
 
-    @PostMapping("/redeem/{rewardId}")
-    public Reward redeemReward(@PathVariable String rewardId, @RequestParam int points) {
+    @PostMapping("/redeem/{rewardId}/{username}")
+    public Reward redeemReward(@PathVariable String rewardId,
+                               @RequestParam int points,
+                                @PathVariable String username) {
         try {
-            return rewardService.redeemReward(points, rewardId);
+            return rewardService.redeemReward(points, rewardId, username);
         }catch (RuntimeException e) {
             throw new RuntimeException("Failed to redeem reward: " + e.getMessage(), e);
         }

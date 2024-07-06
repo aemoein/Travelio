@@ -46,12 +46,17 @@ public class RewardService {
     }
 
 
-    public Reward redeemReward(int userPoints, String rewardId) {
+    public Reward redeemReward(int userPoints, String rewardId, String username) {
 
         Reward reward = rewardRepository.findById(rewardId).orElse(null);
-
+        UserRewards userRewards = userRewardRepo.findByUsername(username);
+        if(userRewards == null) {
+            throw new RuntimeException("User not found");
+        }
         if (reward != null) {
             if (userPoints >= reward.getUserPoints()) {
+                userRewards.addReward(reward);
+                userRewardRepo.save(userRewards);
                 return reward;
             } else {
                 throw new RuntimeException("Insufficient points to redeem this reward");
@@ -120,9 +125,8 @@ public class RewardService {
         }
         ur = new UserRewards();
         ur.setUsername(username);
+        ur.setId(UUID.randomUUID().toString());
         ur.setRewards(new ArrayList<>());
-        String id = UUID.randomUUID().toString();
-        ur.setId(id);
         userRewardRepo.save(ur);
         return ur.getId();
     }
