@@ -19,6 +19,11 @@ public class RewardController {
         return rewardService.getAllRewards();
     }
 
+    @PostMapping
+    public void addReward(@RequestBody Reward reward) {
+        rewardService.createReward(reward);
+    }
+
     @PostMapping("/redeem/{rewardId}")
     public Reward redeemReward(@PathVariable String rewardId, @RequestParam int points) {
         try {

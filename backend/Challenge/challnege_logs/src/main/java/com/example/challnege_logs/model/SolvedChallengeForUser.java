@@ -18,5 +18,6 @@ public class SolvedChallengeForUser {
     private String challengeId;
     private String userName;
     private LocalDateTime solvedAt;
+    private LocalDateTime nextChallengeAt;
 
 }

@@ -24,7 +24,6 @@ public class RewardService {
     }
 
     public Reward createReward(Reward reward) {
-
         return rewardRepository.save(reward);
     }
 

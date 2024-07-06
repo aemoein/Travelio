@@ -19,6 +19,11 @@ public class ChallengeController {
         return challengeService.getHuntmanPuzzile(city);
     }
 
+    @GetMapping("/global/puzzle")
+    public Challenge globalHuntmanPuzzile(@RequestParam String city) {
+        return challengeService.getHuntmanPuzzile(city);
+    }
+
     //locals
     @GetMapping("/local/photochallenge")
     public Challenge localHhotoChallenge(@RequestParam String city) {
