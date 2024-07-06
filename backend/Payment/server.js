@@ -9,11 +9,15 @@ const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
+const paymentRouter = require('./src/Routes/paymentRoutes');
 
 // Load environment variables
 dotenv.config();
 
 const app = express();
+
+// Routes
+app.use('/payment', paymentRouter);
 
 // Middleware
 app.use(cors());
@@ -29,9 +33,9 @@ app.use(extractToken);
 app.use(errorMiddleware);
 
 // Connect to MongoDB
-mongoose.connect(config.mongoURI)
+/*mongoose.connect(config.mongoURI)
   .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
+  .catch(err => console.log(err));*/
 
 // Define a simple route
 app.get('/', (req, res) => {
