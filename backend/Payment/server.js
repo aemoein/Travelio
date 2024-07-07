@@ -8,6 +8,7 @@ const session = require('express-session');
 const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
+const authenticateUser = require('./src/middleware/authenticateUser');
 const config = require('./src/config/config');
 const paymentRouter = require('./src/Routes/paymentRoutes');
 
@@ -31,6 +32,7 @@ app.use(session({
 }));
 app.use(extractToken);
 app.use(errorMiddleware);
+app.use(authenticateUser);
 
 // Connect to MongoDB
 /*mongoose.connect(config.mongoURI)

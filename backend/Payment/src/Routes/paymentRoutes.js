@@ -1,10 +1,9 @@
 const express = require('express');
 const paymentController = require('../Controllers/paymentController');
+const authenticateUser = require('../middleware/authenticateUser');
 const router = express.Router();
 
-
-router.get('/checkout-session/:tripId',paymentController.getCheckoutSession);
-
-
+// Ensure `authenticateUser` and `paymentController.getCheckoutSession` are defined
+router.get('/checkout-session/:tripId', authenticateUser, paymentController.getCheckoutSession);
 
 module.exports = router;
