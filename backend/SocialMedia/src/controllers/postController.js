@@ -51,6 +51,23 @@ exports.getAllPosts = async (req, res) => {
 // 3- Get all posts for a specific user
 exports.userPosts = async (req, res) => {
     try {
+        const socialProfileId = req.params.id;
+        const posts = await Post.find({ author: socialProfileId });
+        res.status(200).json({
+            status: 'success',
+            data: posts
+        });
+    } catch (err) {
+        res.status(500).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+};
+
+// 3- Get all posts for a specific user
+exports.myPosts = async (req, res) => {
+    try {
         const socialProfileId = req.user.socialProfileId;
         const posts = await Post.find({ author: socialProfileId });
         res.status(200).json({

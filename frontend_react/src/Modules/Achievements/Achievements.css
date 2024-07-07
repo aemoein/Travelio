@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: black;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.achievements-rewards-container {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  margin: 20px;
+}
+
+.view-mode-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-mode-buttons button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(to right, #6b778d, #ff6b6b);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+.view-mode-buttons button:hover {
+  background: linear-gradient(to right, #636e82, #ed6464);
+}
+
+button.get-reward {
+  background: linear-gradient(to right, #6b778d, #ff6b6b);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  borderradius: 4px;
+}
+
+.data-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.achievements-container,
+.rewards-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  background-color: #f5f5f5;
+}
+
+.achievement,
+.reward {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.achievement h3,
+.achievements-container h2,
+.reward h3,
+.rewards-container h2 {
+  background-image: linear-gradient(to right, #6b778d, #ff6b6b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+.achievement p,
+.reward p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .data-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.user-info-box {
+  display: table;
+  width: 30%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  height: 250px;
+}
+
+.user-info-box h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  background-image: linear-gradient(to right, #6b778d, #ff6b6b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+.user-info-box p {
+  margin: 5px 0;
+}
