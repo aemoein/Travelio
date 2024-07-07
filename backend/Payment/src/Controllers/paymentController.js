@@ -1,4 +1,5 @@
 const stripe = require('stripe')(require('../utils/stripe').stripeSecretKey);
+const catchAsync = require('../utils/catchAsync');
 const axios = require('axios');
 
 
