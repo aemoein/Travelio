@@ -1,21 +1,22 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(require('../utils/stripe').stripeSecretKey);
 const axios = require('axios');
 
 
 exports.getCheckoutSession = catchAsync(async (req,res,next) => {
     // 1) Get the the currently booked trips
     const tripId = req.params.tripId;
-    const tour = await axios.get(`localhost - endpoint from the trip service that take tripId as parameter and response with the trip`);
+    const trip = await axios.get(`localhost:3003/api/trip/${tripId}`);
+    const user = await axios.get("localhost:3001/checkLoggedIn")
     //2) Create checkout session
     const session = await stripe.checkout.sessions.create({
         paymnet_method_types:['cards'],
         success_url: `url to the home page `,
         cancel_url: `url to the home page`,
-        customer_email: "get the email from the user service",
-        client_refrence_id: req.params.tourId,
+        customer_email: user.email,
+        client_refrence_id: req.params.tripId,
         line_items: [{
-            name: tour.data.name,
-            amount: tour.data.amount * 100,
+            name: trip.data.name,
+            amount: tripId.data.totalPrice * 100,
             currency: 'usd',
             quantity: 1
         }],
