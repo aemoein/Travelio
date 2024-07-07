@@ -5,8 +5,11 @@ const socialController = require('./../controllers/socialController');
 // 2- get All social profiles
 router.get('/profiles', socialController.getAllSocialProfiles);
 
-// 3- get social prof٤ile by id
+// 3- get social profile by id
 router.get('/social-profile/:id', socialController.getSocialProfile);
+
+// 3- get social profile by id
+router.get('/profile', socialController.getmySocialProfile);
 
 // 4- delete social profile
 router.delete('/social-profile/:id', socialController.deleteSocialProfile);

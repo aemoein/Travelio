@@ -14,10 +14,9 @@ const PostCard = ({ post, socialId }) => {
   const [comments, setComments] = useState(post.comments); // Initialize comments state with existing comments
 
   useEffect(() => {
-    // Check if socialId is in the likes array to determine initial liked state
     setLiked(post.likes.includes(socialId));
-    setLikeCount(post.likes.length); // Update like count
-    setComments(post.comments); // Update comments
+    setLikeCount(post.likes.length);
+    setComments(post.comments);
   }, [post.likes, post.comments, socialId]);
 
   const handleLike = async () => {
@@ -29,8 +28,8 @@ const PostCard = ({ post, socialId }) => {
         },
       });
       console.log('Like/Unlike response:', response.data);
-      setLiked(!liked); // Toggle liked state
-      setLikeCount(liked ? likeCount - 1 : likeCount + 1); // Update like count based on like/unlike action
+      setLiked(!liked); 
+      setLikeCount(liked ? likeCount - 1 : likeCount + 1);
     } catch (error) {
       console.error('Error liking/unliking post:', error);
     }

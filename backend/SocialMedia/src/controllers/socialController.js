@@ -49,8 +49,8 @@ exports.getAllSocialProfiles = async (req,res) =>{
 // 3- get a social profile
 exports.getSocialProfile = async (req, res) => {
     try {
-        const getSocialProfile = await socialProfile.findById(req.params.id);
-        if (!getSocialProfile) {
+        const SocialProfile = await socialProfile.findById(req.params.id);
+        if (!SocialProfile) {
             return res.status(404).json({
                 status: 'fail',
                 message: 'Social Profile not found'
@@ -58,7 +58,29 @@ exports.getSocialProfile = async (req, res) => {
         } else {
             return res.status(200).json({
                 status: 'success',
-                data: getSocialProfile
+                data: SocialProfile
+            });
+        }
+    } catch (err) {
+        return res.status(500).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+};
+
+exports.getmySocialProfile = async (req, res) => {
+    try {
+        const SocialProfile = await socialProfile.findById(req.user.socialProfileId);
+        if (!SocialProfile) {
+            return res.status(404).json({
+                status: 'fail',
+                message: 'Social Profile not found'
+            });
+        } else {
+            return res.status(200).json({
+                status: 'success',
+                data: SocialProfile
             });
         }
     } catch (err) {

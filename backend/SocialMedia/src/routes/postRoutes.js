@@ -2,7 +2,6 @@ const express = require('express');
 const postController = require('../controllers/postController');
 const router = express.Router();
 const { uploadSingleImage } = require('../middleware/uploadImageMiddleware');
- 
 
 // 1- create post
 router.post('/create', uploadSingleImage('media'), postController.createPost);
@@ -12,6 +11,9 @@ router.get('/all',postController.getAllPosts);
 
 // 3- Get all posts for a specific user
 router.get('/:id',postController.userPosts);
+
+// 3- Get all posts for a specific user
+router.get('/',postController.myPosts);
 
 // 4- get post by id //unused
 router.get('/get/:id',postController.getPostById);
