@@ -47,24 +47,34 @@ public class RewardService {
 
 
     public Reward redeemReward(int userPoints, String rewardId, String username) {
-
         Reward reward = rewardRepository.findById(rewardId).orElse(null);
         UserRewards userRewards = userRewardRepo.findByUsername(username);
-        if(userRewards == null) {
+
+        if (userRewards == null) {
             throw new RuntimeException("User not found");
         }
+
         if (reward != null) {
             if (userPoints >= reward.getUserPoints()) {
-                userRewards.addReward(reward);
-                userRewardRepo.save(userRewards);
-                return reward;
+                // Check if the reward is already present for the user
+                boolean alreadyHasReward = userRewards.getRewards().stream()
+                        .anyMatch(r -> r.getId().equals(reward.getId()));
+
+                if (!alreadyHasReward) {
+                    userRewards.addReward(reward);
+                    userRewardRepo.save(userRewards);
+                    return reward;
+                } else {
+                    throw new RuntimeException("Reward is already redeemed by the user");
+                }
             } else {
                 throw new RuntimeException("Insufficient points to redeem this reward");
             }
         } else {
-            throw new RuntimeException("User or reward not found");
+            throw new RuntimeException("Reward not found");
         }
     }
+
 
     @Transactional
     public Reward redeemRewardByChallengePoints(int challengePoints, String rewardId, String username) {
