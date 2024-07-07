@@ -2,29 +2,26 @@ const express = require('express');
 const router = express();
 const socialController = require('./../controllers/socialController');
 
-// 1- create social profile
-router.post('/create-profile',socialController.createSocialProfile);
-
 // 2- get All social profiles
-router.get('/social-profiles',socialController.getAllSocialProfiles);
+router.get('/profiles', socialController.getAllSocialProfiles);
 
-// 3- get social profile by id
-router.get('/social-profile/:id',socialController.getSocialProfile);
+// 3- get social prof٤ile by id
+router.get('/social-profile/:id', socialController.getSocialProfile);
 
 // 4- delete social profile
-router.delete('/social-profile/:id',socialController.deleteSocialProfile);
+router.delete('/social-profile/:id', socialController.deleteSocialProfile);
 
 // 5- follow user 
 router.post('/follow', socialController.followUser);
 
 // 6- unfollow user
-router.post('/unfollow',socialController.unfollowUser);
+router.post('/unfollow', socialController.unfollowUser);
 
 // 7- List all followers of a user (take the user id parameter)
-router.get('/list-followers/:id', socialController.listFollowers);
+router.get('/followers', socialController.listFollowers);
 
 // 8- List all followings of a user (take the user id parameter)
-router.get('/list-followings/:id', socialController.listFollowings);
+router.get('/followings', socialController.listFollowings);
 
 // 9- Get a follower
 router.get('/follower', socialController.getFollower);
@@ -51,8 +48,6 @@ router.post('/save', socialController.savePost);
 router.post('/unsave', socialController.unsavePost);
 
 // 17- list all saved posts
- router.get('/saved-posts/:id', socialController.listSavedPosts);
-
-
+router.get('/saved-posts/:id', socialController.listSavedPosts);
 
 module.exports = router;

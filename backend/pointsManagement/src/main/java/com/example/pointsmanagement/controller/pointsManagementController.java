@@ -10,8 +10,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/points-management")
+@CrossOrigin(origins = "http://localhost:3000")
 public class pointsManagementController {
-
     @Autowired
     private PointsManagementService pointsManagementService;
 
@@ -44,4 +44,6 @@ public class pointsManagementController {
     public LocalDate getDateOfBirth(@PathVariable String id) {
         return pointsManagementService.getDateOfBirth(id);
     }
+
+
 }

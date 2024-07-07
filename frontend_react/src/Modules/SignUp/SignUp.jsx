@@ -39,6 +39,7 @@ function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      console.log('Starting signup process...');
       const response = await axios.post('http://localhost:3001/auth/signup', formData, {
         withCredentials: true,
         headers: {
@@ -46,18 +47,33 @@ function SignUpPage() {
         },
       });
   
-      if (!response.status === 201) {
+      if (response.status !== 201) {
         throw new Error(response.data.message);
       }
   
+      console.log('Signup successful, response data:', response.data);
+      const { userId } = response.data;
       const { username } = formData;
-      console.log('User signed up successfully:', username);
+  
+      console.log('Sending create request to /create endpoint with userId:', userId);
+      const createResponse = await axios.post('http://localhost:3004/create', { userId }, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (createResponse.status !== 201) {
+        throw new Error(createResponse.data.message);
+      }
+  
+      console.log('Create request successful, response data:', createResponse.data);
+      // Navigate to the signUpInfo page
       navigate(`/signUpInfo`);
     } catch (error) {
-      console.error('Error signing up:', error);
+      console.error('Error during signup process:', error);
       setError('An error occurred during signup');
     }
-  };
+  };  
   
   return (
     <ThemeProvider theme={theme}>

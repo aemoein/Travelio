@@ -1,3 +1,4 @@
+const axios = require('axios');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User } = require('../middleware/userMiddleware');
@@ -38,8 +39,20 @@ async function loginUser(username, password) {
         if (!isPasswordValid) {
             return { status: 400, message: 'Invalid username or password' };
         }
-    
-        const token = jwt.sign({ id: user._id, email: user.email, username: user.username }, config.jwtSecret);
+
+        // Request the social profile
+        const socialProfileResponse = await axios.get(`http://localhost:3004/socialbyuser/${user._id}`);
+        if (socialProfileResponse.status !== 200) {
+            return { status: 500, message: 'Failed to retrieve social profile' };
+        }
+        
+        const socialProfileId = socialProfileResponse.data.data._id;
+
+        const token = jwt.sign(
+            { id: user._id, email: user.email, username: user.username, profilePic: user.profilePic, socialProfileId },
+            config.jwtSecret
+        );
+
         return { status: 200, message: 'Login successful', token: token, id: user._id };
     } catch (error) {
         console.error(error);

@@ -14,7 +14,7 @@ async function signup(req, res) {
       console.log('UserId: ' + req.session.userId);
     }
   
-    res.status(result.status).json({ message: result.message });
+    res.status(result.status).json({ message: result.message, userId: result.userId});
 }
 
 async function login(req, res) {
