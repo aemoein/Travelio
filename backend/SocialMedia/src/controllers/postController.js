@@ -1,19 +1,20 @@
 const Post = require('../models/postModel');
 
-
-// 1- Create a new post
 exports.createPost = async (req, res) => {
-    const { author, content } = req.body;
-    console.log(req.file);
-    const mediaUrl = req.file.path;
+    const { content } = req.body;
+    const username = req.user.username;
+    const profilePic = req.user.profilePic;
+    const author = req.user.socialProfileId;
+
     try {
-        /*if (mediaUrl) {
-           await cloudinary.uploadToCloudinary(mediaUrl);
-        }*/
+        const mediaUrl = req.file ? req.file.path : '';
+
         const newPost = new Post({ 
-            author:author, 
-            content:content,
-            mediaUrl:mediaUrl
+            author: author,
+            username: username,
+            profilePic: profilePic,
+            content: content,
+            mediaUrl: mediaUrl
         });
         
         const savedPost = await newPost.save();
@@ -23,6 +24,7 @@ exports.createPost = async (req, res) => {
             data: savedPost
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json({ 
             status: 'fail',
             message: err.message
@@ -49,7 +51,7 @@ exports.getAllPosts = async (req, res) => {
 // 3- Get all posts for a specific user
 exports.userPosts = async (req, res) => {
     try {
-        const socialProfileId = req.params.id;
+        const socialProfileId = req.user.socialProfileId;
         const posts = await Post.find({ author: socialProfileId });
         res.status(200).json({
             status: 'success',
@@ -139,8 +141,8 @@ exports.likePost = async (req, res) => {
                 message: 'Post not found'
             });
         }
-        if (!post.likes.includes(req.body.profileId)) {
-            post.likes.push(req.body.profileId);
+        if (!post.likes.includes(req.user.socialProfileId)) {
+            post.likes.push(req.user.socialProfileId);
             await post.save();
             res.status(200).json({
                 status: 'success',
@@ -170,8 +172,8 @@ exports.unlikePost = async (req, res) => {
                 message: 'Post not found'
             });
         }
-        if (post.likes.includes(req.body.profileId)) {
-            post.likes.pull(req.body.profileId);
+        if (post.likes.includes(req.user.socialProfileId)) {
+            post.likes.pull(req.user.socialProfileId);
             await post.save();
             res.status(200).json({
                 status: 'success',
@@ -193,7 +195,10 @@ exports.unlikePost = async (req, res) => {
 
 // 9- Add a comment to a post
 exports.addComment = async (req, res) => {
-    const { profileId, content } = req.body;
+    const { content } = req.body;
+    const profileId = req.user.socialProfileId;
+    const username = req.user.username;
+    const profilePic = req.user.profilePic;
     try {
         const post = await Post.findById(req.params.id);
         if (!post) {
@@ -202,7 +207,7 @@ exports.addComment = async (req, res) => {
                 message: 'Post not found'
             });
         }
-        post.comments.push({ user: profileId, content });
+        post.comments.push({ user: profileId, username: username, profilePic: profilePic, content });
         await post.save();
         res.status(201).json({
             status: 'success',

@@ -31,9 +31,12 @@ exports.createSocialProfile = async (req, res) => {
 exports.getAllSocialProfiles = async (req,res) =>{
     try{
         const socialProfiles = await socialProfile.find();
+        console.log(socialProfiles);
         res.status(200).json({
             status:'success',
-            data: socialProfiles
+            data: socialProfiles,
+            username: req.user.username,
+            profilePic: req.user.profilePic
         });
     }catch(err){
         res.status(500).json({
@@ -95,7 +98,8 @@ exports.deleteSocialProfile = async (req, res) => {
 
 // 5- follow a user
 exports.followUser = async (req, res) => {
-    const { currentUserProfileId, targetUserProfileId } = req.body;
+    const { targetUserProfileId } = req.body;
+    const currentUserProfileId = req.user.socialProfileId;
     try {
         const currentUserProfile = await socialProfile.findById(currentUserProfileId);
         const targetUserProfile = await socialProfile.findById(targetUserProfileId);
@@ -146,7 +150,8 @@ exports.followUser = async (req, res) => {
 
 // 6- unfollow a user
 exports.unfollowUser = async (req, res) => {
-    const { currentUserProfileId, targetUserProfileId } = req.body;
+    const { targetUserProfileId } = req.body;
+    const currentUserProfileId = req.user.socialProfileId;
     try {
         const currentUserProfile = await socialProfile.findById(currentUserProfileId);
         const targetUserProfile = await socialProfile.findById(targetUserProfileId);
@@ -190,7 +195,7 @@ exports.unfollowUser = async (req, res) => {
 // 7- List all followers of a user
 exports.listFollowers = async (req, res) => {
     try{
-        const UsersocialProfile = await socialProfile.findById(req.params.id);
+        const UsersocialProfile = await socialProfile.findById(req.user.socialProfileId);
         if(!UsersocialProfile){
             res.status(404).json({
                 status: 'fail',
@@ -212,7 +217,7 @@ exports.listFollowers = async (req, res) => {
 // 8- List all followings of a user
 exports.listFollowings = async (req, res) => {
     try{
-        const UsersocialProfile = await socialProfile.findById(req.params.id);
+        const UsersocialProfile = await socialProfile.findById(req.user.socialProfileId);
         if(!UsersocialProfile){
             res.status(404).json({
                 status: 'fail',
@@ -233,7 +238,8 @@ exports.listFollowings = async (req, res) => {
 
 // 9- Get a follower
 exports.getFollower = async (req, res) => {
-    const { userProfileId, followerProfileId } = req.body;
+    const { followerProfileId } = req.body;
+    const userProfileId = req.user.socialProfileId;
     try {
         const userProfile = await socialProfile.findOne({ _id: userProfileId });
 
@@ -273,7 +279,8 @@ exports.getFollower = async (req, res) => {
 
 // 10- Get a following
 exports.getFollowing = async (req, res) => {
-    const { userProfileId, followingProfileId } = req.body;
+    const { followingProfileId } = req.body;
+    const userProfileId = req.user.socialProfileId;
     try {
         const userProfile = await socialProfile.findOne({ _id: userProfileId });
 
@@ -313,7 +320,8 @@ exports.getFollowing = async (req, res) => {
 
 // 11- Block a user
 exports.blockUser = async (req, res) => {
-    const { currentUserId, targetUserId } = req.body;
+    const { targetUserId } = req.body;
+    const currentUserId = req.user.socialProfileId;
     try {
         const currentUserProfile = await socialProfile.findById(currentUserId);
         const targetUserProfile = await socialProfile.findById(targetUserId);
@@ -366,7 +374,8 @@ exports.blockUser = async (req, res) => {
 
 // 12- Unblock a user
 exports.unblockUser = async (req, res) => {
-    const { currentUserId, targetUserId } = req.body;
+    const { targetUserId } = req.body;
+    const currentUserId = req.user.socialProfileId;
     try {
         const currentUserProfile = await socialProfile.findById(currentUserId);
         const targetUserProfile = await socialProfile.findById(targetUserId);
@@ -403,7 +412,7 @@ exports.unblockUser = async (req, res) => {
 // 13- List all blocked users
 exports.listBlockedUsers = async (req, res) => {
     try {
-        const currentUserProfile = await socialProfile.findById(req.params.id);
+        const currentUserProfile = await socialProfile.findById(req.user.socialProfileId);
         if (!currentUserProfile) {
             return res.status(404).json({
                 status: 'fail',
@@ -425,7 +434,8 @@ exports.listBlockedUsers = async (req, res) => {
 
 // 14- Get a blocked user
 exports.getBlockedUser = async (req, res) => {
-    const { currentUserId, targetUserId } = req.body;
+    const { targetUserId } = req.body;
+    const currentUserId = req.user.socialProfileId;
     try {
         const currentUserProfile = await socialProfile.findById(currentUserId);
         if (!currentUserProfile) {
@@ -463,7 +473,8 @@ exports.getBlockedUser = async (req, res) => {
 
 // 15- save post
 exports.savePost = async (req,res) => {
-    const {currentUserProfileId, postId} = req.body;
+    const { postId } = req.body;
+    const currentUserProfileId = req.user.socialProfileId;
     try{
         const currentUserProfile = await socialProfile.findById(currentUserProfileId);
         if(!currentUserProfile){
@@ -480,7 +491,7 @@ exports.savePost = async (req,res) => {
                 message: 'Post saved successfully',
                 data: currentUserProfile.saved
             })
-        }else{
+        } else {
             return res.status(400).json({
                 status: 'fail',
                 message: 'Post is already saved'
@@ -496,7 +507,8 @@ exports.savePost = async (req,res) => {
 
 // 16- unsave post
 exports.unsavePost = async (req,res) => {
-    const {currentUserProfileId, postId} = req.body;
+    const { postId } = req.body;
+    const currentUserProfileId = req.user.socialProfileId;
     try{
         const currentUserProfile = await socialProfile.findById(currentUserProfileId);
         if(!currentUserProfile){
@@ -513,7 +525,7 @@ exports.unsavePost = async (req,res) => {
                 message: 'Post unsaved successfully',
                 data: currentUserProfile.saved
             })
-        }else{
+        } else {
             return res.status(400).json({
                 status: 'fail',
                 message: 'Post is already not saved'
@@ -529,7 +541,7 @@ exports.unsavePost = async (req,res) => {
 
 // 17- list all saved posts
 exports.listSavedPosts = async (req,res) => {
-    const currentUserProfileId = req.params.id;
+    const currentUserProfileId = req.user.socialProfileId;
     try{
         const currentUserProfile = await socialProfile.findById(currentUserProfileId);
         if(!currentUserProfile){
@@ -551,3 +563,25 @@ exports.listSavedPosts = async (req,res) => {
         });
     }
 }
+
+exports.getSocialProfileByUserId = async (req, res) => {
+    const { userId } = req.params;
+    try {
+        const profile = await socialProfile.findOne({ userId });
+        if (!profile) {
+            return res.status(404).json({
+                status: 'fail',
+                message: 'Social profile not found'
+            });
+        }
+        res.status(200).json({
+            status: 'success',
+            data: profile
+        });
+    } catch (err) {
+        return res.status(500).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+};

@@ -16,6 +16,10 @@ import FlightSearchForm from './Modules/Itinerary/Flights';
 import HotelsPage from './Modules/Itinerary/Hotels';
 import Itinerary from './Modules/Itinerary/Itinerary';
 import Review from './Modules/Itinerary/Review';
+import SocialFeed from './Modules/Social/SocialFeed';
+import CreatePost from './Modules/Social/CreatePost';
+import Search from './Modules/Social/Search';
+import ExploreFeed from './Modules/Social/ExploreFeed';
 
 const AssetImage = () => {
   const { '*': path } = useParams();
@@ -73,6 +77,11 @@ function App() {
         <Route path="/planning/hotels" element={<HotelsPage />} />
         <Route path="/planning/itinerary" element={<Itinerary />} />
         <Route path="/planning/review" element={<Review />} />
+        <Route path="/social" element={<SocialFeed />} />
+        <Route path="/social/create" element={<CreatePost />} />\
+        <Route path="/social/search" element={<Search />} />
+        <Route path="/social/profile" element={<Profile />} />
+        <Route path="/social/explore" element={<ExploreFeed />} />
       </Routes>
     </Router>
   );

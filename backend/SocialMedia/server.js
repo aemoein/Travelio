@@ -5,7 +5,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const session = require('express-session');
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const helmet = require('helmet');
 const authMiddleware = require('./src/middleware/authMiddleware');
@@ -15,6 +14,7 @@ const config = require('./src/config/config');
 const socialRouter = require('./src/routes/socialRoutes');
 const postRouter = require('./src/routes/postRoutes');
 const timelineRouter = require('./src/routes/timelineRoutes');
+const createRoutes = require('./src/routes/createSocialRoute');
 
 // Load environment variables
 dotenv.config();
@@ -23,37 +23,32 @@ const app = express();
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(session({
     secret: config.jwtSecret,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false } // Use secure: true in production with HTTPS
+    cookie: { secure: false }
 }));
 app.use(helmet());
 app.use(extractToken);
-//app.use(authMiddleware);
 app.use(errorMiddleware);
 
-//Routes
-app.use('/social',socialRouter);
-app.use('/posts', postRouter);
-app.use('/timeline',timelineRouter);
+// Routes
+app.use('/', createRoutes);
+app.use('/social', authMiddleware, socialRouter);
+app.use('/posts', authMiddleware, postRouter);
+app.use('/timeline', authMiddleware, timelineRouter);
 
 // Connect to MongoDB
-const DB_URL = process.env.MONGO_URI_REMOTE;
-mongoose.connect(DB_URL).then(()=> {
+mongoose.connect(process.env.MONGO_URI_REMOTE).then(()=> {
     console.log('DB connection successfully');
 }).catch(err => {
     console.log(err);
     console.log('DB connection failed');
     process.exit(1);
-});
-
-// Define a simple route
-app.get('/', (req, res) => {
-    res.send('Hello, world!');
 });
 
 // Start the server

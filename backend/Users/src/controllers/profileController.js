@@ -24,9 +24,17 @@ async function getPreferences(req, res) {
   res.status(result.status).json(result.preferences);
 }
 
+async function getProfileData(req, res) { 
+  const { userId } = req.params;
+  console.log("userid suii: ",userId);
+  const result = await profileService.getProfileData(userId);
+  res.status(result.status).json(result.profileData);
+}
+
 module.exports = {
   getProfile,
   checkLoggedIn,
   updateProfile,
-  getPreferences
+  getPreferences,
+  getProfileData
 };

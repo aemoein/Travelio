@@ -7,6 +7,14 @@ const postSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
+    username: {
+        type: String,
+        default: ''
+    },
+    profilePic: {
+        type: String,
+        default: ''
+    },
     content: {
         type: String,
         default: ''
@@ -24,6 +32,14 @@ const postSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
             required: true
+        },
+        username: {
+            type: String,
+            default: ''
+        },
+        profilePic: {
+            type: String,
+            default: ''
         },
         content: {
             type: String,

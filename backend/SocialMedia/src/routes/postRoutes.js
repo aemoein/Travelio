@@ -5,24 +5,24 @@ const { uploadSingleImage } = require('../middleware/uploadImageMiddleware');
  
 
 // 1- create post
-router.post('/create-post',uploadSingleImage('media'),postController.createPost);
+router.post('/create', uploadSingleImage('media'), postController.createPost);
 
 // 2- get all posts
-router.get('/all-posts',postController.getAllPosts);
+router.get('/all',postController.getAllPosts);
 
 // 3- Get all posts for a specific user
-router.get('/user-posts/:id',postController.userPosts);
+router.get('/:id',postController.userPosts);
 
-// 4- get post by id
-router.get('/get-post/:id',postController.getPostById);
+// 4- get post by id //unused
+router.get('/get/:id',postController.getPostById);
 
-// 5- update post by id
-router.patch('/update-post/:id',postController.updatePostById);
+// 5- update post by id //unused
+router.patch('/update/:id',postController.updatePostById);
 
 // 6- delete post by id
-router.delete('/delete-post/:id',postController.deletePostById);
+router.delete('/delete/:id',postController.deletePostById);
 
-// 7- like post
+// 7- like post 
 router.post('/like/:id',postController.likePost);
 
 // 8- unlike post
@@ -32,10 +32,10 @@ router.post('/unlike/:id',postController.unlikePost);
 router.post('/comment/:id',postController.addComment);
 
 // 10- delete comment
-router.post('/uncomment',postController.UnComment);
+router.delete('/uncomment',postController.UnComment);
 
 // 11- get all comments for a specific post
-router.get('/all-comments/:id',postController.allComments);
+router.get('/comments/:id',postController.allComments);
 
 
 // Helper function to upload image buffer to Cloudinary
