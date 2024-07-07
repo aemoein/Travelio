@@ -4,6 +4,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import Navbar from '../../Components/Navbar/Navbar';
 import axios from 'axios';
 import countriesData from '../../Components/Data/countries.json';
+import PostsGalleryCard from '../../Components/Social/PostsGalleryCard';
+import Footer from '../../Components/Footer/Footer';
 
 const Profile = () => {
   const coverPhotoStyle = {
@@ -18,11 +20,13 @@ const Profile = () => {
     margin: '8px',
   };
 
+  const [posts, setPosts] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
   const [countryName, setCountryName] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState({});
+  const [socialData, setSocialData] = useState(null);
 
   const checkLoggedIn = async () => {
     try {
@@ -45,9 +49,46 @@ const Profile = () => {
         setUserData(data);
         setEditData(data);
         console.log('User is logged in');
+        await fetchSocialData(token);
+        await fetchPosts(token);
       }
     } catch (error) {
       console.error('Error checking if user is logged in:', error);
+    }
+  };
+
+  const fetchSocialData = async (token) => {
+    try {
+      const response = await axios.get('http://localhost:3004/social/profile', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        withCredentials: true,
+      });
+
+      if (response.status === 200) {
+        setSocialData(response.data.data);
+        console.log('Social data:', response.data.data);
+      }
+    } catch (error) {
+      console.error('Error fetching social data:', error);
+    }
+  };
+
+  const fetchPosts = async (token) => {
+    try {
+      const response = await axios.get('http://localhost:3004/posts', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      // Reverse the array of posts
+      setPosts(response.data.data);
+      console.log('Posts:', response.data.data);
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+    } finally {
+      //setLoading(false); // Set loading to false after posts are fetched
     }
   };
 
@@ -111,9 +152,10 @@ const Profile = () => {
   }
 
   return (
+    <>
     <div style={{ flexGrow: 1 }}>
       <Navbar isLoggedIn={isLoggedIn} sx={{ position: 'fixed', width: '100%', zIndex: 1000 }} />
-      <Box style={{ position: 'relative', width: '100vw', height: '33vw', overflow: 'hidden' }}>
+      <Box sx={{ position: 'relative', width: '100vw', height: '33vw', overflow: 'hidden', mb: 2 }}>
         <Box
           style={{
             backgroundImage: 'url(https://pbs.twimg.com/profile_banners/1387553922152386562/1659343923/1500x500)',
@@ -129,8 +171,8 @@ const Profile = () => {
           src={userData.profilePicUrl}
           sx={{
             position: 'absolute',
-            width: '16vw',
-            height: '16vw',
+            width: '14vw',
+            height: '14vw',
             top: '75.75%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
@@ -140,7 +182,7 @@ const Profile = () => {
         />
       </Box>
       {isEditing ? (
-        <Grid container spacing={2} justifyContent="center" sx={{padding: 5}}>
+        <Grid container spacing={2} justifyContent="center" sx={{ padding: 5 }}>
           <Grid item xs={12} md={6}>
             <TextField
               fullWidth
@@ -215,30 +257,73 @@ const Profile = () => {
         </Grid>
       ) : (
         <Box>
-          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '5vw', marginBottom: '0px', fontWeight: '600', padding: '0px', height: '5.5vw' }}>
-            {userData.username}
-          </Typography>
-          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '2.8vw', marginBottom: '0px', fontWeight: '300', padding: '0px', height: '3.5vw' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
+          >
+            <Typography
+              align="center"
+              sx={{
+                fontFamily: 'Poppins',
+                fontSize: '50px',
+                fontWeight: '600',
+                padding: '0px',
+                mr: 2,
+                ml: 5,
+                mt: -2
+              }}
+            >
+              {userData.username}
+            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <EditIcon
+                onClick={handleEditToggle}
+                sx={{ cursor: 'pointer', width: '35px', height: '35px' }}
+              />
+            </Box>
+          </Box>
+          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '30px', marginBottom: '0px', fontWeight: '300', padding: '0px' }}>
             {userData.firstName + ' ' + userData.lastName}
           </Typography>
-          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '2vw', marginBottom: '0px', fontWeight: '300', padding: '0px', height: '2.8vw' }}>
+          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '24px', marginBottom: '0px', fontWeight: '300', padding: '0px' }}>
             {userData.location}
           </Typography>
-          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '2vw', marginBottom: '0px', fontWeight: '300', padding: '0px', height: '2.8vw' }}>
+          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '24px', marginBottom: '0px', fontWeight: '300', padding: '0px' }}>
             {formatDate(userData.birthday)}
           </Typography>
-          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '2vw', marginBottom: '0px', fontWeight: '300', padding: '0px', height: '2.8vw' }}>
+          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '24px', marginBottom: '0px', fontWeight: '300', padding: '0px' }}>
             {countryName}
           </Typography>
-          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '2vw', marginBottom: '0px', fontWeight: '300', padding: '0px', height: '2.8vw' }}>
+          <Typography align="center" gutterBottom sx={{ fontFamily: 'Poppins', fontSize: '24px', marginBottom: '0px', fontWeight: '300', padding: '0px' }}>
             {userData.bio}
           </Typography>
-          <Box textAlign="center" sx={{mt: 5}}>
-            <EditIcon onClick={handleEditToggle} sx={{cursor: 'pointer', position: 'absolute', right: '35vw', top: '36vw'}}/>
+          {socialData && (
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+              <Typography align="center" sx={{ fontFamily: 'Poppins', fontSize: '24px', marginRight: '16px' }}>
+                Followers: {socialData.followers.length}
+              </Typography>
+              <Typography align="center" sx={{ fontFamily: 'Poppins', fontSize: '24px' }}>
+                Following: {socialData.followings.length}
+              </Typography>
+            </Box>
+          )}
+          <Box sx={{px: '15vw'}}>
+            <Grid container spacing={0} sx={{width: '70vw'}}>
+              {posts.map((post, index) => (
+                <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
+                    <PostsGalleryCard post={post} socialId={socialData._id}/>
+                </Grid>
+              ))}
+            </Grid>
           </Box>
         </Box>
       )}
     </div>
+    <Footer/>
+    </>
   );
 };
 

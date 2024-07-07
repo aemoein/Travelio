@@ -21,8 +21,17 @@ dotenv.config();
 
 const app = express();
 
+// CORS configuration
+const corsOptions = {
+  origin: 'http://localhost:3000', // Your front-end URL
+  credentials: true,
+  methods: 'GET,HEAD,OPTIONS,POST,PUT',
+  allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+};
+
+app.use(cors(corsOptions));
+
 // Middleware
-app.use(cors());
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
@@ -43,7 +52,7 @@ app.use('/posts', authMiddleware, postRouter);
 app.use('/timeline', authMiddleware, timelineRouter);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI_REMOTE).then(()=> {
+mongoose.connect(process.env.MONGO_URI_REMOTE).then(() => {
     console.log('DB connection successfully');
 }).catch(err => {
     console.log(err);

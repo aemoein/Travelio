@@ -47,7 +47,7 @@ const Create = () => {
       formData.append('media', image);
 
       try {
-        setLoading(true); // Set loading to true before making the API call
+        setLoading(true);
 
         const response = await axios.post('http://localhost:3004/posts/create', formData, {
           headers: {
@@ -68,7 +68,7 @@ const Create = () => {
       } catch (error) {
         console.error('Error creating post:', error);
       } finally {
-        setLoading(false); // Set loading to false after receiving the response
+        setLoading(false);
       }
     }
   };

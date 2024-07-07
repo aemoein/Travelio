@@ -217,28 +217,3 @@ const CityPage = ({ city }) => {
   };
 
 export default City;
-
-/*
-<Grid container spacing={4}>
-              <Grid item xs={12} sm={6}>
-              <Typography variant="h6" component="h2">
-                  General Info
-              </Typography>
-              <Paper variant="outlined" p={2}>
-                  <Typography>Language: {city.language}</Typography>
-                  <Typography>Currency: {city.currency}</Typography>
-              </Paper>
-              </Grid>
-  
-              <Grid item xs={12} sm={6}>
-              <Typography variant="h6" component="h2">
-                  Genres
-              </Typography>
-              <Paper variant="outlined" p={2}>
-                  {city.genre.map((genre, index) => (
-                  <Typography key={index}>{genre}</Typography>
-                  ))}
-              </Paper>
-              </Grid>
-          </Grid>
-*/
