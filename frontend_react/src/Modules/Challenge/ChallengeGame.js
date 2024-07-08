@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import AdventureCard from "./AdventureCard";
 import Puzzle from "./Puzzle";
-import PuzzleGame from "./PuzzleGame";
 import "./Challenge.css";
 
 export const formatPrediction = (prediction) => {
@@ -232,7 +231,15 @@ function Task({
           <button onClick={handleSubmit} className="check-challenge">
             Check
           </button>
-          {loading && <p>Loading...</p>}
+          {loading && (
+            <div className="popup">
+              <div className="popup-content">
+                <ImageProcessing />
+                <br></br>
+                <span style={{ color: "black" }}>Please wait...</span>
+              </div>
+            </div>
+          )}
           {prediction &&
             (prediction === currentTarget ? (
               <div>
