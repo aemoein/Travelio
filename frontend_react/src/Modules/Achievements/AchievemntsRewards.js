@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Achievements.css";
+import Footer from "../../Components/Footer/Footer";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const AchievementsRewards = () => {
   const [viewMode, setViewMode] = useState("achievements"); // Default view mode
@@ -89,7 +91,9 @@ const AchievementsRewards = () => {
 
   // Render loading state or data based on viewMode
   return (
-    <div className="achievements-rewards-container">
+    <>
+    <Navbar/>
+    <div className="achievements-rewards-container" style={{minHeight: '100vh', marginTop: '100px'}}>
       <div className="data-container">
         {loading ? (
           <p>Loading...</p>
@@ -162,6 +166,8 @@ const AchievementsRewards = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

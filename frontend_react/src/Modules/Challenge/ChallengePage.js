@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../Components/Navbar/Navbar";
 
 import "./Challenge.css";
 
@@ -207,7 +208,9 @@ const ChallengePage = ({ user }) => {
   };
 
   return (
-    <div className="bodychallenge">
+    <>
+    <Navbar />
+    <div className="bodychallenge" style={{marginTop: '30px'}}>
       <div style={styles.challengePage}>
         <div style={styles.header}>
           <div style={styles.mountains}>
@@ -254,6 +257,7 @@ const ChallengePage = ({ user }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

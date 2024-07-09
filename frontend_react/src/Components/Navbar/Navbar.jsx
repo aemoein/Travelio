@@ -175,9 +175,11 @@ const Navbar = () => {
             Social
           </Button>
         </Link>
-        <Button color="inherit" sx={buttonStyles}>
-          Challenges
-        </Button>
+        <Link to="/challenge" style={{ textDecoration: 'none' }}>
+          <Button color="inherit" sx={buttonStyles}>
+            Challenges
+          </Button>
+        </Link>
 
         {isLoggedIn ? (
           <UserIcon

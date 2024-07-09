@@ -16,7 +16,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
             payment_method_types: ['card'],
             success_url: 'http://yourdomain.com/success',
             cancel_url: 'http://yourdomain.com/cancel',
-            customer_email: "samy@gmail.com",
+            customer_email: req.user.email,
             client_reference_id: tripId,
             line_items: [{
                 price_data: {
@@ -24,7 +24,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
                     product_data: {
                         name: 'Cairo Trip',
                     },
-                    unit_amount: 65000, // Amount in cents
+                    unit_amount: parseInt(req.body.payment)/100,
                 },
                 quantity: 1,
             }],

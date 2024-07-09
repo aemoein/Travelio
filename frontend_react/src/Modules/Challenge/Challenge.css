@@ -212,7 +212,7 @@ h1 {
   gap: 10px;
 }
 
-button {
+/*button {
   background: #7209b7;
   border: none;
   border-radius: 5px;
@@ -223,11 +223,11 @@ button {
   transition: background 0.3s;
   width: 200px;
   margin: 5px;
-}
+}*/
 
-button:hover {
+/*button:hover {
   background: #560bad;
-}
+}*/
 
 button.local-challenge {
   background: #29b2f2;

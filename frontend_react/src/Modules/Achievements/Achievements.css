@@ -1,4 +1,4 @@
-body {
+/*body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: #fff;
@@ -7,7 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
 .achievements-rewards-container {
   display: flex;
