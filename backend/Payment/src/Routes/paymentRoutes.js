@@ -1,8 +1,10 @@
 const express = require('express');
 const paymentController = require('../Controllers/paymentController');
+const authMiddleware = require('../middleware/authMiddleware');
 const router = express.Router();
 
-// Ensure `authenticateUser` and `paymentController.getCheckoutSession` are defined
-router.post('/', paymentController.getCheckoutSession);
+router.post('/', authMiddleware, paymentController.getCheckoutSession);
+
+router.get('/success', paymentController.paymentSuccess);
 
 module.exports = router;

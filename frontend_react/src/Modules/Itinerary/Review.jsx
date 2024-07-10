@@ -12,13 +12,20 @@ const ReviewPage = () => {
     const navigate = useNavigate();
     const [tripData, setTripData] = useState({});
     const [loading, setLoading] = useState(true);
+    const [tripId, setTripId] = useState(null); // State to store tripId
+    const searchParams = new URLSearchParams(location.search);
+    console.log("location.search:", location.search);  // Check what is in location.search
+    const destination = searchParams.get('destination');
+    console.log("destination:", destination);  // Check the value of destination
+
 
     useEffect(() => {
         const fetchTripData = async () => {
             const token = localStorage.getItem('token');
-            const tripId = location.state.tripId;
-            const url = `http://localhost:3003/api/trip?tripId=${tripId}`;
-    
+            const searchParams = new URLSearchParams(location.search);
+            const fetchedTripId = searchParams.get('tripId');
+            const url = `http://localhost:3003/api/trip?tripId=${fetchedTripId}`;
+
             try {
                 const response = await fetch(url, {
                     method: 'GET',
@@ -27,10 +34,12 @@ const ReviewPage = () => {
                         'Authorization': `Bearer ${token}`
                     },
                 });
-    
+
                 if (response.ok) {
                     const tripData = await response.json();
+                    console.log(tripData.trip.itinerary[0].itinerary);
                     setTripData(tripData.trip);
+                    setTripId(fetchedTripId); // Store tripId in state
                 } else {
                     throw new Error('Failed to fetch trip data');
                 }
@@ -40,24 +49,21 @@ const ReviewPage = () => {
                 setLoading(false);
             }
         };
-    
-        if (location.state && location.state.tripId) {
+
+        if (location.search) {
             fetchTripData();
         }
-    }, [location.state]);
+    }, [location.search]);
 
     const handlePayNow = async () => {
         const token = localStorage.getItem('token');
-        const tripId = location.state.tripId;
-        const destination = location.state.destination;
-        const totalPrice = tripData.totalPrice;
+        const body = JSON.stringify({
+            tripId: tripId,
+            destination: destination,
+            totalPrice: tripData.totalPrice
+        });
 
         const url = 'http://localhost:3005/payment';
-        const body = JSON.stringify({
-            tripId,
-            destination,
-            totalPrice
-        });
 
         try {
             const response = await fetch(url, {
@@ -69,16 +75,22 @@ const ReviewPage = () => {
                 body: body
             });
 
+            const responseData = await response.json();
+
             if (response.ok) {
-                // Payment successful, handle response accordingly
+                console.log(responseData);
+
+                const paymentUrl = responseData.session.url;
+
+                console.log(paymentUrl);
                 console.log('Payment successful!');
-                navigate('/planning/checkout'); // Navigate to checkout page or handle success flow
+
+                window.location.href = paymentUrl;
             } else {
                 throw new Error('Payment failed');
             }
         } catch (error) {
             console.error('Error making payment:', error);
-            // Handle payment error, show error message, etc.
         }
     };
 
@@ -132,7 +144,7 @@ const ReviewPage = () => {
                                 <Grid item xs={12} sm={12} key={index}>
                                     <HotelCard
                                         hotel={hotel}
-                                        tripId={location.state.tripId}
+                                        tripId={tripId} // Pass tripId as prop to HotelCard
                                         cityName={hotel.name}
                                         arrivalDate={tripData.departureDate}
                                         departureDate={tripData.returnDate}

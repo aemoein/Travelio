@@ -29,6 +29,7 @@ import Puzzle from './Modules/Challenge/Puzzle';
 import ChallengeGame from './Modules/Challenge/ChallengeGame';
 import ChallengeProfile from './Modules/Challenge/ChallengeProfile';
 import AchievemntsRewards from './Modules/Achievements/AchievemntsRewards';
+import SuccessPage from './Modules/Itinerary/SuccessPage';
 
 const AssetImage = () => {
   const { '*': path } = useParams();
@@ -86,6 +87,7 @@ function App() {
         <Route path="/planning/hotels" element={<HotelsPage />} />
         <Route path="/planning/itinerary" element={<Itinerary />} />
         <Route path="/planning/review" element={<Review />} />
+        <Route path="/payment/success" element={<SuccessPage />} />
         <Route path="/social" element={<SocialFeed />} />
         <Route path="/social/create" element={<CreatePost />} />
         <Route path="/social/search" element={<Search />} />

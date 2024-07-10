@@ -34,7 +34,7 @@ mongoose.connect(config.mongoURI)
   .catch(err => console.log(err));
 
 // Routes
-app.use('/payment', authMiddleware, paymentRouter);
+app.use('/payment', paymentRouter);
 
 // Start the server
 const PORT = config.port;

@@ -77,7 +77,7 @@ const Itinerary = () => {
         const token = localStorage.getItem('token');
         const tripId = location.state.tripId;
         const url = 'http://localhost:3003/api/itineraries/save';
-
+    
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -90,19 +90,21 @@ const Itinerary = () => {
                     tripId
                 })
             });
-
+    
             const destination = location.state.bookedHotel.cityName;
-
+    
             if (response.ok) {
                 console.log('Itinerary saved successfully');
-                navigate('/planning/review', { state: { tripId, destination} }); // Redirect to review page with tripId in state
+                const encodedTripId = encodeURIComponent(tripId);
+                const encodedDestination = encodeURIComponent(destination);
+                navigate(`/planning/review?tripId=${encodedTripId}&destination=${encodedDestination}`);
             } else {
                 throw new Error('Failed to save itinerary');
             }
         } catch (error) {
             console.error('Error saving itinerary:', error);
         }
-    };
+    };    
 
     if (loading) {
         return (
