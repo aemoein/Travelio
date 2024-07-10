@@ -5,13 +5,14 @@ const axios = require('axios');
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     try {
-        // 1) Get the currently booked trip
-        const tripId = req.params.tripId;
-        //const tripResponse = await axios.get(`http://localhost:3003/api/trip/${tripId}`);
-        //const trip = tripResponse.data;
+        const tripId = req.body.tripId;
+        const destination = req.body.destination;
+        const price = req.body.price;
 
-        
-        // 3) Create checkout session
+        console.log("tripId: ", tripId);
+        console.log("destination: ", destination);
+        console.log("price: ", price);
+
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             success_url: 'http://yourdomain.com/success',
@@ -22,16 +23,15 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
                 price_data: {
                     currency: 'usd',
                     product_data: {
-                        name: 'Cairo Trip',
+                        name: 'Trip',
                     },
-                    unit_amount: parseInt(req.body.payment)/100,
+                    unit_amount: parseInt(req.body.price)/100,
                 },
                 quantity: 1,
             }],
             mode: 'payment'
         });
 
-        // 4) Send the checkout session ID back to the client
         res.status(200).json({
             status: 'success',
             session
@@ -40,7 +40,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         console.error('Error in getCheckoutSession:', error.message);
         res.status(500).json({
             status: 'error',
-            message: error//.message
+            message: error
         });
     }
 });

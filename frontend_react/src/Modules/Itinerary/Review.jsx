@@ -9,7 +9,7 @@ import Footer from '../../Components/Footer/Footer';
 
 const ReviewPage = () => {
     const location = useLocation();
-    const navigate = useNavigate(); // Use the useNavigate hook
+    const navigate = useNavigate();
     const [tripData, setTripData] = useState({});
     const [loading, setLoading] = useState(true);
 
@@ -30,7 +30,6 @@ const ReviewPage = () => {
     
                 if (response.ok) {
                     const tripData = await response.json();
-                    console.log(tripData.trip.itinerary[0].itinerary);
                     setTripData(tripData.trip);
                 } else {
                     throw new Error('Failed to fetch trip data');
@@ -45,15 +44,42 @@ const ReviewPage = () => {
         if (location.state && location.state.tripId) {
             fetchTripData();
         }
-    }, [location.state]);    
+    }, [location.state]);
 
-    const handlePayNow = () => {
-        navigate('/planning/checkout', {
-            state: {
-                tripId: location.state.tripId,
-                totalPrice: tripData.totalPrice
-            }
+    const handlePayNow = async () => {
+        const token = localStorage.getItem('token');
+        const tripId = location.state.tripId;
+        const destination = location.state.destination;
+        const totalPrice = tripData.totalPrice;
+
+        const url = 'http://localhost:3005/payment';
+        const body = JSON.stringify({
+            tripId,
+            destination,
+            totalPrice
         });
+
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: body
+            });
+
+            if (response.ok) {
+                // Payment successful, handle response accordingly
+                console.log('Payment successful!');
+                navigate('/planning/checkout'); // Navigate to checkout page or handle success flow
+            } else {
+                throw new Error('Payment failed');
+            }
+        } catch (error) {
+            console.error('Error making payment:', error);
+            // Handle payment error, show error message, etc.
+        }
     };
 
     const handleSaveAndPayLater = () => {

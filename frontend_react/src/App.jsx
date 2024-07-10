@@ -24,7 +24,7 @@ import ChallengePage from './Modules/Challenge/ChallengePage';
 import Local from './Modules/Challenge/Local';
 import Global from './Modules/Challenge/Global';
 import LocalChoose from './Modules/Challenge/LocalChoose';
-import ChallengeChoose from './Modules/Challenge/ChallengeChoose';
+import ChallengeChoose from './Modules/Challenge/GlobalChoose';
 import Puzzle from './Modules/Challenge/Puzzle';
 import ChallengeGame from './Modules/Challenge/ChallengeGame';
 import ChallengeProfile from './Modules/Challenge/ChallengeProfile';

@@ -91,9 +91,11 @@ const Itinerary = () => {
                 })
             });
 
+            const destination = location.state.bookedHotel.cityName;
+
             if (response.ok) {
                 console.log('Itinerary saved successfully');
-                navigate('/planning/review', { state: { tripId } }); // Redirect to review page with tripId in state
+                navigate('/planning/review', { state: { tripId, destination} }); // Redirect to review page with tripId in state
             } else {
                 throw new Error('Failed to save itinerary');
             }

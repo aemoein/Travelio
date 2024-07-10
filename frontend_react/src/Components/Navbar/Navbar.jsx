@@ -92,9 +92,8 @@ const Navbar = () => {
   };
 
   const buttonStyles = {
-    fontWeight: 'bold',
     fontSize: '16px',
-    fontFamily: 'Open Sans, sans-serif',
+    fontFamily: "Poppins", fontWeight: "900",
     marginRight: 3,
     color: '#000',
     transition: 'color 0.3s ease-out, background-position 0.3s ease-out',

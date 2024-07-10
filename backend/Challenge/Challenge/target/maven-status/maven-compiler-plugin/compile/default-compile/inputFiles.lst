@@ -1,0 +1,8 @@
+/Users/ahmedelsayed/Documents/GitHub/Travelio/backend/Challenge/Challenge/src/main/java/com/example/challenge/ChallengeApplication.java
+/Users/ahmedelsayed/Documents/GitHub/Travelio/backend/Challenge/Challenge/src/main/java/com/example/challenge/controller/ChallengeController.java
+/Users/ahmedelsayed/Documents/GitHub/Travelio/backend/Challenge/Challenge/src/main/java/com/example/challenge/entity/Challenge.java
+/Users/ahmedelsayed/Documents/GitHub/Travelio/backend/Challenge/Challenge/src/main/java/com/example/challenge/entity/ChallengeType.java
+/Users/ahmedelsayed/Documents/GitHub/Travelio/backend/Challenge/Challenge/src/main/java/com/example/challenge/entity/LocationType.java
+/Users/ahmedelsayed/Documents/GitHub/Travelio/backend/Challenge/Challenge/src/main/java/com/example/challenge/repository/ChallengeRepository.java
+/Users/ahmedelsayed/Documents/GitHub/Travelio/backend/Challenge/Challenge/src/main/java/com/example/challenge/service/ChallengeService.java
+/Users/ahmedelsayed/Documents/GitHub/Travelio/backend/Challenge/Challenge/src/main/java/com/example/challenge/service/GetChallengeStrategy.java

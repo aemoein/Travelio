@@ -41,7 +41,7 @@ async function loginUser(username, password) {
         }
 
         // Request the social profile
-        const socialProfileResponse = await axios.get(`http://localhost:3004/socialbyuser/${user._id}`);
+        const socialProfileResponse = await axios.get(`http://host.docker.internal:3004/socialbyuser/${user._id}`);
         if (socialProfileResponse.status !== 200) {
             return { status: 500, message: 'Failed to retrieve social profile' };
         }
