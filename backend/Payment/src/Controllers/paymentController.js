@@ -1,7 +1,7 @@
 const stripe = require('stripe')(require('../utils/stripe').stripeSecretKey);
 const catchAsync = require('../utils/catchAsync');
 const axios = require('axios');
-const Payment = require('../models/paymentModel'); // Assuming you have a Payment model
+const Payment = require('../models/paymentModel');
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     try {
