@@ -13,11 +13,11 @@ const Global = () => {
       try {
         let response;
         if (type === "photochallenge") {
-          response = await fetch("http://localhost:5005/api/cc/photo");
+          response = await fetch("http://localhost:3008/api/cc/photo");
         } else if (type === "darechallenge") {
-          response = await fetch("http://localhost:5005/api/cc/dare");
+          response = await fetch("http://localhost:3008/api/cc/dare");
         } else if (type === "puzzle") {
-          response = await fetch("http://localhost:5005/api/cc/puzzle");
+          response = await fetch("http://localhost:3008/api/cc/puzzle");
         } else {
           throw new Error("Invalid type");
         }

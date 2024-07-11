@@ -32,7 +32,7 @@ export default function ChallengeGame() {
       }, 2500);
 
       try {
-        let endpoint = `http://localhost:33507/api/Challenge/${location}/${type}?city=${city}`;
+        let endpoint = `http://localhost:3006/api/Challenge/${location}/${type}?city=${city}`;
 
         const response = await fetch(endpoint, { signal: controller.signal });
 
@@ -92,7 +92,7 @@ export default function ChallengeGame() {
   const handleReward = async () => {
     try {
       const responseTitle = await fetch(
-        `http://localhost:11169/api/challengeProfile/titles?username=aemoein&title=${challenge.title}`,
+        `http://localhost:3009/api/challengeProfile/titles?username=aemoein&title=${challenge.title}`,
         { method: "PUT" }
       );
 
@@ -101,7 +101,7 @@ export default function ChallengeGame() {
       }
 
       const responsePoints = await fetch(
-        `http://localhost:11169/api/challengeProfile/points?username=aemoein&points=${challenge.points * challenge.multiplier}`,
+        `http://localhost:3009/api/challengeProfile/points?username=aemoein&points=${challenge.points * challenge.multiplier}`,
         { method: "PUT" }
       );
 
@@ -110,7 +110,7 @@ export default function ChallengeGame() {
       }
 
       const responseSolved = await fetch(
-        `http://localhost:11169/api/challengeProfile/solved?username=aemoein`,
+        `http://localhost:3009/api/challengeProfile/solved?username=aemoein`,
         { method: "PUT" }
       );
 
@@ -119,7 +119,7 @@ export default function ChallengeGame() {
       }
 
       const responseLog = await fetch(
-        `http://localhost:9000/api/logs/record/aemoein/${challenge.id}/${challenge.nextChallengedur}`,
+        `http://localhost:3007/api/logs/record/aemoein/${challenge.id}/${challenge.nextChallengedur}`,
         { method: "POST" }
       );
 

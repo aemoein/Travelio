@@ -11,7 +11,7 @@ const ChallengeProfile = () => {
   const fetchProfile = async () => {
     try {
       const response = await fetch(
-        `http://localhost:11169/api/challengeProfile/getprofile?username=${user}`
+        `http://localhost:3009/api/challengeProfile/getprofile?username=${user}`
       );
 
       if (!response.ok) {

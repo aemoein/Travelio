@@ -21,7 +21,7 @@ export default function AdventureCard({ city, user }) {
     const fetchProfile = async () => {
       try {
         const response = await fetch(
-          `http://localhost:11169/api/challengeProfile/getprofile?username=${user}`
+          `http://localhost:3009/api/challengeProfile/getprofile?username=${user}`
         );
 
         if (!response.ok) {
@@ -59,7 +59,7 @@ export default function AdventureCard({ city, user }) {
       <CardMedia
         component="img"
         height="140"
-        image={`http://localhost:11169/images/ranks/${profile.rank}.png`}
+        image={`http://localhost:3009/images/ranks/${profile.rank}.png`}
         alt="Rank"
         sx={{ objectFit: "contain" }}
       />
