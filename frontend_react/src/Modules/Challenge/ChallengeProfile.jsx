@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Box, CircularProgress } from "@mui/material";
 import AdventureCard from "./AdventureCard";
+import Navbar from "../../Components/Navbar/Navbar";
 
 const ChallengeProfile = () => {
-  const { user } = useParams();
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null);
 
   const fetchProfile = async () => {
+    const user = localStorage.getItem('username');
+
+    setUser(user);
+
+    console.log("user: ", user)
     try {
       const response = await fetch(
         `http://localhost:3009/api/challengeProfile/getprofile?username=${user}`
@@ -29,7 +35,21 @@ const ChallengeProfile = () => {
 
   useEffect(() => {
     fetchProfile();
-  }, [user]);
+  }, []);
+
+  const styles = {
+    body: {
+      margin: 0,
+      fontFamily: '"Poppins", sans-serif',
+      background: "#530358",
+      color: "white",
+      display: "block",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "100vh",
+      display: "flex",
+    },
+  };
 
   if (loading) {
     return (
@@ -47,14 +67,11 @@ const ChallengeProfile = () => {
   }
 
   return (
+    <>
+    <Navbar/>
     <Box
       className="bodychallenge"
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
+      sx={styles.body}
     >
       {profile && (
         <AdventureCard
@@ -65,6 +82,7 @@ const ChallengeProfile = () => {
         />
       )}
     </Box>
+    </>
   );
 };
 

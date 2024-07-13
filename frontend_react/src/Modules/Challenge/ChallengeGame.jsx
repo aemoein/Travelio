@@ -23,6 +23,7 @@ export default function ChallengeGame() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
   const [currentTaskIndex, setCurrentTaskIndex] = useState(0);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     const fetchChallenge = async () => {
@@ -90,9 +91,12 @@ export default function ChallengeGame() {
   };
 
   const handleReward = async () => {
+    const user = localStorage.getItem('username');
+
+    setUser(user);
     try {
       const responseTitle = await fetch(
-        `http://localhost:3009/api/challengeProfile/titles?username=aemoein&title=${challenge.title}`,
+        `http://localhost:3009/api/challengeProfile/titles?username=${user}&title=${challenge.title}`,
         { method: "PUT" }
       );
 
@@ -101,7 +105,7 @@ export default function ChallengeGame() {
       }
 
       const responsePoints = await fetch(
-        `http://localhost:3009/api/challengeProfile/points?username=aemoein&points=${challenge.points * challenge.multiplier}`,
+        `http://localhost:3009/api/challengeProfile/points?username=${user}&points=${challenge.points * challenge.multiplier}`,
         { method: "PUT" }
       );
 
@@ -110,7 +114,7 @@ export default function ChallengeGame() {
       }
 
       const responseSolved = await fetch(
-        `http://localhost:3009/api/challengeProfile/solved?username=aemoein`,
+        `http://localhost:3009/api/challengeProfile/solved?username=${user}`,
         { method: "PUT" }
       );
 

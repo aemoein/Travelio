@@ -8,7 +8,7 @@ const session = require('express-session');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
-const paymentRouter = require('./src/Routes/paymentRoutes');
+const paymentRouter = require('./src/routes/paymentRoutes');
 
 // Load environment variables
 dotenv.config();

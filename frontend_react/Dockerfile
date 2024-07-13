@@ -11,7 +11,8 @@ FROM node:14 AS server
 WORKDIR /app
 COPY --from=build /app/build ./build
 COPY server.js ./
-RUN npm install express
+COPY package.json package-lock.json ./
+RUN npm install express cors
 
 EXPOSE 3000
 CMD ["node", "server.js"]

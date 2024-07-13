@@ -100,7 +100,7 @@ function App() {
         <Route path="/global/choose" element={<ChallengeChoose />} />
         <Route path="/challengegame/puzzle" element={<Puzzle />} />
         <Route path="/challengegame/:location/:type/:city" element={<ChallengeGame />} />
-        <Route path="/User/:user" element={<ChallengeProfile />} />
+        <Route path="challenge/user" element={<ChallengeProfile />} />
         <Route path="/achievementsandrewards" element={<AchievemntsRewards />} />
       </Routes>
     </Router>

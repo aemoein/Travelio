@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Box, CircularProgress, Typography } from "@mui/material";
+import { Box, CircularProgress, Typography, Grid } from "@mui/material";
+import Navbar from "../../Components/Navbar/Navbar";
+import CityCard from "../../Components/Challenge/CityCard"; // Adjust the path as necessary
 
 const Local = () => {
   const { type } = useParams(); 
@@ -68,51 +70,59 @@ const Local = () => {
     );
   }
 
+  const styles = {
+    body: {
+      fontFamily: '"Poppins", sans-serif',
+      background: "#530358",
+      color: "white",
+      minHeight: '100vh'
+    },
+  };
+
   return (
-    <Box className="bodychallenge">
-      <Box className="App">
-        <Typography variant="h1" sx={{ textAlign: "center", mt: 2 }}>
-          🔭 Explore the Wonders of the World - Choose Your Next Adventure! 🗺️
+    <>
+      <Navbar />
+      <Box className="bodychallenge" sx={styles.body}>
+      <Box className="App" sx={{ py: 10, width: '70vw', mx: '15vw'}}>
+        <Typography sx={{ textAlign: "center", mt: 2, fontFamily: 'Poppins', fontWeight: '900', fontSize: '40px' }}>
+          🔭 Explore the Wonders of the World 🗺️
         </Typography>
-        <Box
-          className="grid-container"
-          sx={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-            gap: "1rem",
-            mt: 4,
-            mx: "auto",
-            maxWidth: "1200px",
-            padding: "0 1rem",
-          }}
-        >
-          {cities.map((city, index) => (
-            <Box key={index} className="grid-item">
-              <Link
-                key={index}
-                to={`/challengegame/local/${type}/${city.city}`}
-                className="grid-item"
-                sx={{
-                  display: "block",
-                  textDecoration: "none",
-                  color: "inherit",
-                  textAlign: "center",
-                }}
-              >
-                <img
-                  src={city.photoLink}
-                  alt={city.city}
-                  style={{ maxWidth: "100%", height: "auto", borderRadius: "8px" }}
-                />
-                <Typography variant="h2" sx={{ mt: 2 }}>
-                  {city.city}
-                </Typography>
-              </Link>
-            </Box>
-          ))}
+        <Typography variant="h4" sx={{ textAlign: "center", mt: 2, fontFamily: 'Poppins', fontWeight: '900' }}>
+          Choose Your Next Adventure!
+        </Typography>
+          <Grid
+            container
+            spacing={2}
+            sx={{
+              mt: 2,
+              mx: "auto",
+              maxWidth: "1200px",
+              padding: "0 1rem",
+            }}
+          >
+            {cities.map((city, index) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+                <Link
+                  to={`/challengegame/local/${type}/${city.city}`}
+                  style={{
+                    display: "block",
+                    textDecoration: "none",
+                    color: "inherit",
+                    textAlign: "center",
+                  }}
+                >
+                  <CityCard 
+                    city={city.city} 
+                    imageUrl={city.photoLink} 
+                    onClick={() => console.log(`Clicked on ${city.city}`)}
+                  />
+                </Link>
+              </Grid>
+            ))}
+          </Grid>
         </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 

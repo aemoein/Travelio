@@ -53,7 +53,6 @@ async function loginUser(username, password) {
             config.jwtSecret
         );
 
-        return { status: 200, message: 'Login successful', token: token, id: user._id };
     } catch (error) {
         console.error(error);
         return { status: 500, message: 'Internal server error' };

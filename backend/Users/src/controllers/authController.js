@@ -27,7 +27,7 @@ async function login(req, res) {
       
           console.log('SessionId: ' + req.sessionID);
           console.log('UserId: ' + req.session.userId);
-          return res.status(200).json({ token: result.token });
+          return res.status(200).json({ token: result.token, username: result.username});
       }
 
       return res.status(result.status).json({ message: result.message });

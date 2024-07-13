@@ -15,7 +15,7 @@ const ChallengePage = ({ user }) => {
   };
 
   const handleProfile = () => {
-    navigate(`/User/${user}`);
+    navigate(`/challenge/user`);
   };
 
   const styles = {
