@@ -1,0 +1,781 @@
+=========================|Cairo|=========================
+huntman
+{
+  "title": "Chef Sherbeeny",
+  "description": "The chef sherbeeny is a famous Egyptian chef and now he will test your abilities in the Egyptian Ketchen",
+  "points": 100,
+  "type": "HUNTMAN",
+  "tasks": [
+    "Green dish, Egyptians believe this dish to affect your eyes color!!"
+  ],
+  "targets": [
+    "molokhiya"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Cairo",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "Abu Tarek?",
+  "description": "After solving this you must try Abu Tarek dishes",
+  "points": 100,
+  "type": "HUNTMAN",
+  "tasks": [
+    "Abu Tarek Serves a very popular Egyptian dish, Which contain everything from the Egyptian Ketchen!! Guess it.."
+  ],
+  "targets": [
+    "Koshary"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Cairo",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "Pasha Masr",
+  "description": "CLaim the honor and be a ؛asha!",
+  "points": 100,
+  "type": "HUNTMAN",
+  "tasks": [
+    "Have you heard of blood lunch? Our pasha is the owner of the most famous lunch in Egypt, where he invited the Mamluks to lunch and then killed them all. Be a respectable pasha and do not be like him. Do you know who he is?"
+  ],
+  "targets": [
+    "mohamedali"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 3,
+  "city": "Cairo",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "Nadi Al Qarn",
+  "description": "Oh yeah! The red champion of africa..",
+  "points": 100,
+  "type": "HUNTMAN",
+  "tasks": [
+    "It is the most successful football club in mama africa, it has the most tiltles in the history! more than Real Madrid does!!"
+  ],
+  "targets": [
+    "alahly"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 5,
+  "city": "Cairo",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+Photo
+{
+  "title": "The prince of egypt",
+  "description": "Uncover the hidden treasures of the Pharaohs in Cairo's historic sites.",
+  "points": 100,
+  "type": "PHOTO",
+  "tasks": [
+    "The Grandfather, Father and Son are all down under the grave.."
+  ],
+  "targets": [
+    "GIZA_PYRAMIDS"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Cairo",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The prince of egypt",
+  "description": "Uncover the hidden treasures of the Pharaohs in Cairo's historic sites.",
+  "points": 150,
+  "type": "PHOTO",
+  "tasks": [
+    "The Grandfather, Father and Son are all down under the grave.."
+  ],
+  "targets": [
+    "GIZA_PYRAMIDS"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 5,
+  "city": "Cairo",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+=========================|Rome|=========================
+HUNTMAN
+{
+  "title": "Secrets of the Catacombs",
+  "description": "Unravel the mysteries buried deep beneath Rome.",
+  "points": 120,
+  "type": "HUNTMAN",
+  "tasks": [
+    "Rome is famous for its ancient underground burial places. What is the name of these burial places where early Christians buried their dead?"
+  ],
+  "targets": [
+    "catacombs"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Rome",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The Legend of Romulus and Remus",
+  "description": "Explore the myth of Rome's founders.",
+  "points": 150,
+  "type": "HUNTMAN",
+  "tasks": [
+    "According to Roman mythology, Rome was founded by two brothers who were raised by a she-wolf. Name these two legendary brothers."
+  ],
+  "targets": [
+    "romulusandremus"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Rome",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The Fountain Mystery",
+  "description": "Discover the secrets of one of Rome's most iconic landmarks.",
+  "points": 130,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This famous fountain in Rome is known for a tradition where people throw coins over their shoulders. What is the name of this fountain?"
+  ],
+  "targets": [
+    "trevi"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 2,
+  "city": "Rome",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "The Dome of Ancient Rome",
+  "description": "Uncover the architectural marvels of ancient Rome.",
+  "points": 140,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This ancient Roman building, originally a temple, is renowned for its massive dome and oculus. What is the name of this architectural wonder?"
+  ],
+  "targets": [
+    "pantheon"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 2,
+  "city": "Rome",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+PHOTO
+{
+  "title": "Ancient Rome Adventure",
+  "description": "Embark on an adventure to uncover the ancient secrets of Rome.",
+  "points": 120,
+  "type": "PHOTO",
+  "tasks": [
+    "Take your sword and your horse, if you wanna marry her then you should deserve her!"
+  ],
+  "targets": [    
+    "COLOSSEUM" 
+    ],
+  "nextChallengedur": 864000000,
+  "multiplier": 2,
+  "city": "Rome",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "Ancient Proposal",
+  "description": "Embark on an adventure to uncover the ancient secrets of Rome.",
+  "points": 170,
+  "type": "PHOTO",
+  "tasks": [
+    "Take your sword and your horse, if you wanna marry her then you should deserve her!"
+  ],
+  "targets": [    
+    "COLOSSEUM" 
+    ],
+  "nextChallengedur": 864000000,
+  "multiplier": 4,
+  "city": "Rome",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+=========================|Pisa|=========================
+huntman
+{
+  "title": "The Circular Marvel",
+  "description": "Decode the secrets of Pisa's circular religious building.",
+  "points": 140,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This round building in the Piazza dei Miracoli is the largest of its kind in Italy and is known for its perfect acoustics. What is its name?"
+  ],
+  "targets": [
+    "baptistery"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Pisa",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The Historic Cemetery Riddle",
+  "description": "Unravel the tales of Pisa's historic cemetery.",
+  "points": 150,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This historic cemetery in Pisa, also known as Camposanto Monumentale, is said to contain soil brought back from Golgotha. What is its name?"
+  ],
+  "targets": [
+    "camposantomonumentale"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Pisa",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The Historic Gatekeeper",
+  "description": "Discover the secrets of Pisa's medieval entrance.",
+  "points": 135,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This historic gate in Pisa was once the main entrance to the city. Can you name this ancient portal?"
+  ],
+  "targets": [
+    "portanuova"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 3,
+  "city": "Pisa",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "The Ancient Palace Mystery",
+  "description": "Unveil the history of Pisa's royal residence.",
+  "points": 145,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This historic palace in Pisa was once the residence of the rulers of Pisa. What is the name of this palace?"
+  ],
+  "targets": [
+    "palazzodellacarovana"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 3,
+  "city": "Pisa",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+PHOTO
+{
+  "title": "Meraviglia pendente",
+  "description": "Solve the mystery of Pisa's most famous architectural wonder.",
+  "points": 120,
+  "type": "PHOTO",
+  "tasks": [
+    "This iconic structure in Pisa is known for its unintended tilt. What is the name of this tower?"
+  ],
+  "targets": [
+    "Leaning Tower of Pisa"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Pisa",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The Leaning Wonder",
+  "description": "Solve the mystery of Pisa's most famous architectural wonder.",
+  "points": 120,
+  "type": "PHOTO",
+  "tasks": [
+    "This iconic structure in Pisa is known for its unintended tilt. What is the name of this tower?"
+  ],
+  "targets": [
+    "PISA_TOWER"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 4,
+  "city": "Pisa",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+=========================|New York|=========================
+huntman
+{
+  "title": "The Skyscraper King",
+  "description": "Unravel the secrets of New York's tallest building.",
+  "points": 160,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This iconic skyscraper in Midtown Manhattan was the tallest building in the world when it was completed in 1931. What is the name of this building?"
+  ],
+  "targets": [
+    "empirestate"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "New York",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The Famous Times",
+  "description": "Discover the bustling heart of New York City.",
+  "points": 140,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This major commercial intersection, tourist destination, and entertainment center in Midtown Manhattan is known for its bright lights and Broadway shows. Can you name this famous square?"
+  ],
+  "targets": [
+    "timessquare"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "New York",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The Historic Terminal",
+  "description": "Uncover the story of New York's famous train station.",
+  "points": 150,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This iconic transportation hub in Midtown Manhattan is known for its grand architecture and beautiful ceiling. What is the name of this terminal?"
+  ],
+  "targets": [
+    "grandcentralterminal"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 2,
+  "city": "New York",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "The Iconic Bridge",
+  "description": "Solve the puzzle of New York's famous crossing.",
+  "points": 140,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This historic suspension bridge connects Manhattan and Brooklyn. Can you name this famous bridge?"
+  ],
+  "targets": [
+    "brooklynbridge"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 2,
+  "city": "New York",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+PHOTO
+{
+  "title": "The Great Lady of Liberty",
+  "description": "Find out about New York's symbol of freedom.",
+  "points": 150,
+  "type": "PHOTO",
+  "tasks": [
+    "This monumental symbol of freedom stands on Liberty Island in New York Harbor. Can you name this iconic statue?"
+  ],
+  "targets": [
+    "LIBERTY_STATUE"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "New York",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+PHOTO
+{
+  "title": "The Liberty city",
+  "description": "Find out about New York's symbol of freedom.",
+  "points": 200,
+  "type": "PHOTO",
+  "tasks": [
+    "This monumental symbol of freedom stands on Liberty Island in New York Harbor. Can you name this iconic statue?"
+  ],
+  "targets": [
+    "LIBERTY_STATUE"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 4,
+  "city": "New York",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+=========================|London|=========================
+huntman
+{
+  "title": "The Football Cathedral",
+  "description": "Discover the historic home of English football.",
+  "points": 150,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This famous football stadium in London is known as the 'Home of Football'. What is the name of this iconic stadium?"
+  ],
+  "targets": [
+    "wembley"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "London",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The Crown Jewel",
+  "description": "Unravel the secrets of London's majestic royal palace.",
+  "points": 160,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This historic royal palace in London has been the residence of British monarchs for centuries. What is the name of this palace?"
+  ],
+  "targets": [
+    "buckinghampalace"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 2,
+  "city": "London",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "Taste of London",
+  "description": "Discover a beloved dish that represents London's culinary heritage.",
+  "points": 140,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This traditional British dish consists of sausages wrapped in bacon and served with mashed potatoes and gravy. What is the name of this classic London dish?"
+  ],
+  "targets": [
+    "Ttoadinthehole"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "London",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "The London Football Icon",
+  "description": "Delve into the legacy of a legendary football figure in London.",
+  "points": 140,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This statue outside a prominent London football stadium honors a player known for his incredible goalscoring prowess and dedication to his club. Who is this football icon?"
+  ],
+  "targets": [
+    "thierryhenry"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 2,
+  "city": "London",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "Timeless Majesty",
+  "description": "Explore the history and significance of London's famous clocktower.",
+  "points": 200,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This iconic clocktower in London is renowned for its striking chimes and majestic presence along the River Thames. What is the name of this historic landmark?"
+  ],
+  "targets": [
+    "BIG_BEN"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "London",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "History Time",
+  "description": "Explore the history and significance of London's famous clocktower.",
+  "points": 200,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This iconic clocktower in London is renowned for its striking chimes and majestic presence along the River Thames. What is the name of this historic landmark?"
+  ],
+  "targets": [
+    "BIG_BEN"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 3,
+  "city": "London",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+
+
+=========================|Dubai|=========================
+huntman
+{
+  "title": "Traditional Emirati Attire",
+  "description": "Identify the traditional clothing worn by Emirati men, reflecting elegance and cultural significance.",
+  "points": 170,
+  "type": "HUNTMAN",
+  "tasks": [
+    "Emirati men wear traditional attire that reflects elegance and cultural significance. What is the name of this attire?"
+  ],
+  "targets": [
+    "Kandura"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Dubai",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "Elegance in Emirati Dress",
+  "description": "Discover the attire that embodies elegance and cultural pride among Emirati women.",
+  "points": 170,
+  "type": "HUNTMAN",
+  "tasks": [
+    "Emirati women wear attire that reflects elegance and cultural significance. What is the name of this traditional dress?"
+  ],
+  "targets": [
+    "abaya"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 2,
+  "city": "Dubai",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "Global Gathering",
+  "description": "Discover the event that brought the world to Dubai in 2020.",
+  "points": 150,
+  "type": "HUNTMAN",
+  "tasks": [
+    "In 2020, Dubai hosted a global event showcasing innovation, culture, and sustainability from around the world. What is the name of this international event?"
+  ],
+  "targets": [
+    "expo"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Dubai",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "Sail of Luxury",
+  "description": "Identify the iconic hotel known for its sail-like design.",
+  "points": 150,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This iconic hotel in Dubai is known for its unique sail-like design and luxurious accommodations. Can you name this landmark?"
+  ],
+  "targets": [
+    "burjalarab"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Dubai",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+
+Photo
+{
+  "title": "Two Sunsets",
+  "description": "Discover the tallest building in the world located in Dubai.",
+  "points": 200,
+  "type": "PHOTO",
+  "tasks": [
+    "This towering structure in Dubai holds the title of the tallest building in the world. Can you name this architectural wonder?"
+  ],
+  "targets": [
+    "Burj Khalifa"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Dubai",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "Sky High Wonder",
+  "description": "Discover the tallest building in the world located in Dubai.",
+  "points": 200,
+  "type": "PHOTO",
+  "tasks": [
+    "This towering structure in Dubai holds the title of the tallest building in the world. Can you name this architectural wonder?"
+  ],
+  "targets": [
+    "KHALIFA_TOWER"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 3,
+  "city": "Dubai",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+=========================|Paris|=========================
+HUNTMAN
+{
+  "title": "French Delicacies",
+  "description": "Explore the world-renowned French cuisine. Identify a famous French pastry known for its flaky layers and buttery taste.",
+  "points": 150,
+  "type": "HUNTMAN",
+  "tasks": [
+    "French cuisine is celebrated for its pastries. Can you name the pastry that is famous for its flaky layers and buttery taste?"
+  ],
+  "targets": [
+    "croissant"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Paris",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "Artistic Haven",
+  "description": "Discover the art museum in Paris known for its vast collection, including the Mona Lisa.",
+  "points": 190,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This renowned art museum in Paris houses the famous painting Mona Lisa. What is the name of this museum?"
+  ],
+  "targets": [
+    "louvre"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 2,
+  "city": "Paris",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "Literary Genius",
+  "description": "Identify the famous French author known for writing 'Les Misérables' and 'The Hunchback of Notre-Dame'.",
+  "points": 100,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This renowned French author is celebrated for works like 'Les Misérables' and 'The Hunchback of Notre-Dame'. Who is this literary figure?"
+  ],
+  "targets": [
+    "victorhugo"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 2,
+  "city": "Paris",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
+
+{
+  "title": "Fashion Icon",
+  "description": "Discover the fashion designer who founded a luxury brand known for its elegant haute couture.",
+  "points": 180,
+  "type": "HUNTMAN",
+  "tasks": [
+    "This fashion designer founded a luxury brand famous for its elegant haute couture. Who is this influential figure?"
+  ],
+  "targets": [
+    "cocochanel"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Paris",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+
+
+PHOTO
+{
+  "title": "Iron Tower",
+  "description": "Identify the iconic iron lattice tower located in Paris, known for its breathtaking views of the city.",
+  "points": 180,
+  "type": "PHOTO",
+  "tasks": [
+    "This iconic iron lattice tower in Paris offers breathtaking views of the city. What is the name of this famous landmark?"
+  ],
+  "targets": [
+    "EIFFLE_TOWER"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 1,
+  "city": "Paris",
+  "attempts": 2,
+  "locationType": "LOCAL"
+}
+
+{
+  "title": "A Tower in the City of Love",
+  "description": "Identify the iconic iron lattice tower located in Paris, known for its breathtaking views of the city.",
+  "points": 180,
+  "type": "PHOTO",
+  "tasks": [
+    "This iconic iron lattice tower in Paris offers breathtaking views of the city. What is the name of this famous landmark?"
+  ],
+  "targets": [
+    "EIFFLE_TOWER"
+  ],
+  "nextChallengedur": 604800000,
+  "multiplier": 3,
+  "city": "Paris",
+  "attempts": 2,
+  "locationType": "GLOBAL"
+}
