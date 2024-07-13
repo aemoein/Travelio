@@ -13,7 +13,7 @@ steps:
     command: 'buildAndPush'
     repository: 'trvloreg.azurecr.io/users'
     dockerfile: 'Users/Dockerfile'
-    containerRegistry: 'ACR_USERS_CONNECTION'
+    containerRegistry: 'ACR_SERVICE_CONNECTION'
     tags: |
       $(Build.BuildId)
 
