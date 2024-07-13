@@ -32,7 +32,8 @@ const UserIcon = ({ profilePic, username, firstName }) => {
       const response = await axios.post('http://localhost:3001/auth/logout', null, { withCredentials: true });
       if (response.data.message === "Logout successful") {
         localStorage.removeItem('token');
-        localStorage.setItem('loggedin', 'true');
+        localStorage.removeItem('username');
+        localStorage.setItem('loggedin', 'false');
         navigate(`/`);
         window.location.reload();
       } else {

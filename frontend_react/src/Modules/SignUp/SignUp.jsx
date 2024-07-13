@@ -39,41 +39,48 @@ function SignUpPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log('Starting signup process...');
-      const response = await axios.post('http://localhost:3001/auth/signup', formData, {
-        withCredentials: true,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-  
-      if (response.status !== 201) {
-        throw new Error(response.data.message);
-      }
-  
-      console.log('Signup successful, response data:', response.data);
-      const { userId } = response.data;
-      const { username } = formData;
-  
-      console.log('Sending create request to /create endpoint with userId:', userId);
-      const createResponse = await axios.post('http://localhost:3004/create', { userId }, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-  
-      if (createResponse.status !== 201) {
-        throw new Error(createResponse.data.message);
-      }
-  
-      console.log('Create request successful, response data:', createResponse.data);
-      // Navigate to the signUpInfo page
-      navigate(`/signUpInfo`);
+        console.log('Starting signup process...');
+        const response = await axios.post('http://localhost:3001/auth/signup', formData, {
+            withCredentials: true,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.status !== 201) {
+            throw new Error(response.data.message);
+        }
+
+        console.log('Signup successful, response data:', response.data);
+        const { userId } = response.data;
+        const { username } = formData;
+
+        console.log('Sending create request to /create endpoint with userId:', userId);
+        const createResponse = await axios.post('http://localhost:3004/create', { userId }, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (createResponse.status !== 201) {
+            throw new Error(createResponse.data.message);
+        }
+
+        console.log('Create request successful, response data:', createResponse.data);
+
+        // Send challenge profile creation request with username as a URL parameter
+        console.log('Sending create request to /api/challengeProfile/new with username:', username);
+        const challengeResponse = await axios.post(`http://localhost:3009/api/challengeProfile/new?username=${encodeURIComponent(username)}`);
+
+        console.log('Challenge profile creation successful, response data:', challengeResponse.data);
+        
+        // Navigate to the signUpInfo page
+        navigate(`/signUpInfo`);
     } catch (error) {
-      console.error('Error during signup process:', error);
-      setError('An error occurred during signup');
+        console.error('Error during signup process:', error);
+        setError('An error occurred during signup');
     }
-  };  
+ };
   
   return (
     <ThemeProvider theme={theme}>

@@ -44,6 +44,10 @@ function LoginPage() {
             // Save the token in local storage
             localStorage.setItem('token', response.data.token);
 
+            console.log('username: ' + response.data.username);
+            localStorage.setItem('username', response.data.username);
+            
+
             // Set loggedin flag to true
             localStorage.setItem('loggedin', 'true');
 
