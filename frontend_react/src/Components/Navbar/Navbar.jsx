@@ -6,8 +6,13 @@ import {
   Menu,
   MenuItem,
   Box,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ArticleCard from '../Card/ArticleCard';
 import TextTitle from '../Text/TextTitle';
@@ -49,6 +54,8 @@ const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
+  const [openDialog, setOpenDialog] = useState(false);
+  const navigate = useNavigate();
 
   const checkLoggedIn = async () => {
     try {
@@ -91,6 +98,19 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const handleProtectedClick = (e, path) => {
+    if (!isLoggedIn) {
+      e.preventDefault();
+      setOpenDialog(true);
+    } else {
+      navigate(path);
+    }
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
+
   const buttonStyles = {
     fontSize: '16px',
     fontFamily: "Poppins", fontWeight: "900",
@@ -107,105 +127,119 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: '#f2f2f2', zIndex: 1000, top: 0 }}>
-      <Toolbar>
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <TextTitle text="TRVLO" />
-        </Link>
-        <Box sx={{ flexGrow: 1 }}></Box>
-        <Button color="inherit" onClick={handleMenuOpen} sx={buttonStyles}>
-          Articles
-        </Button>
-        <Menu
-          anchorEl={anchorEl}
-          open={!!anchorEl}
-          onClose={handleMenuClose}
-          elevation={0}
-          getContentAnchorEl={null}
-          anchorOrigin={{
-            vertical: 'bottom',
-            horizontal: 'left',
-          }}
-          transformOrigin={{
-            vertical: 'top',
-            horizontal: 'left',
-          }}
-          PaperProps={{
-            sx: {
-              borderRadius: 2,
-              marginTop: '10px',
-              backgroundColor: '#fff',
-              color: '#000',
-              padding: '10px',
-              width: '60%',
-              mb: 0,
-            },
-          }}
-        >
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-            {articles.map((article, index) => (
-              <Box key={index} sx={{ width: 'calc(50% - 5px)' }}>
-                <ArticleCard
-                  imageUrl={article.imageUrl}
-                  category={article.category}
-                  title={article.title}
-                  date={article.date}
-                  summary={article.summary}
-                  width='100%'
-                  height='150px'
-                />
-              </Box>
-            ))}
-          </Box>
-          <MenuItem onClick={handleMenuClose} sx={{padding: 1, mt: 1, mb: 0, fontFamily: 'Poppins', fontWeight: 600}}>More Articles</MenuItem>
-        </Menu>
-        <Link to="/destinations" style={{ textDecoration: 'none' }}>
-          <Button color="inherit" sx={buttonStyles}>
-            Destinations
+    <>
+      <AppBar position="fixed" sx={{ backgroundColor: '#f2f2f2', zIndex: 1000, top: 0 }}>
+        <Toolbar>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <TextTitle text="TRVLO" />
+          </Link>
+          <Box sx={{ flexGrow: 1 }}></Box>
+          <Button color="inherit" onClick={handleMenuOpen} sx={buttonStyles}>
+            Articles
           </Button>
-        </Link>
-        <Link to="/planning" style={{ textDecoration: 'none' }}>
-          <Button color="inherit" sx={buttonStyles}>
+          <Menu
+            anchorEl={anchorEl}
+            open={!!anchorEl}
+            onClose={handleMenuClose}
+            elevation={0}
+            getContentAnchorEl={null}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'left',
+            }}
+            PaperProps={{
+              sx: {
+                borderRadius: 2,
+                marginTop: '10px',
+                backgroundColor: '#fff',
+                color: '#000',
+                padding: '10px',
+                width: '60%',
+                mb: 0,
+              },
+            }}
+          >
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+              {articles.map((article, index) => (
+                <Box key={index} sx={{ width: 'calc(50% - 5px)' }}>
+                  <ArticleCard
+                    imageUrl={article.imageUrl}
+                    category={article.category}
+                    title={article.title}
+                    date={article.date}
+                    summary={article.summary}
+                    width='100%'
+                    height='150px'
+                  />
+                </Box>
+              ))}
+            </Box>
+            <MenuItem onClick={handleMenuClose} sx={{padding: 1, mt: 1, mb: 0, fontFamily: 'Poppins', fontWeight: 600}}>More Articles</MenuItem>
+          </Menu>
+          <Link to="/destinations" style={{ textDecoration: 'none' }}>
+            <Button color="inherit" sx={buttonStyles}>
+              Destinations
+            </Button>
+          </Link>
+          <Button color="inherit" sx={buttonStyles} onClick={(e) => handleProtectedClick(e, '/planning')}>
             Planning
           </Button>
-        </Link>
-        <Link to="/social" style={{ textDecoration: 'none' }}>
-          <Button color="inherit" sx={buttonStyles}>
+          <Button color="inherit" sx={buttonStyles} onClick={(e) => handleProtectedClick(e, '/social')}>
             Social
           </Button>
-        </Link>
-        <Link to="/challenge" style={{ textDecoration: 'none' }}>
-          <Button color="inherit" sx={buttonStyles}>
+          <Button color="inherit" sx={buttonStyles} onClick={(e) => handleProtectedClick(e, '/challenge')}>
             Challenges
           </Button>
-        </Link>
+          {isLoggedIn ? (
+            <UserIcon
+              profilePic={userData && userData.profilePicUrl}
+              username={userData && userData.username}
+              firstName={userData && userData.firstName}
+            />
+          ) : (
+            <Link to="/signin" style={{ textDecoration: 'none' }}>
+              <Button
+                variant="contained"
+                color="primary"
+                size="medium"
+                sx={{
+                  ...buttonStyles,
+                  minWidth: '100px',
+                  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+                  color: '#fff',
+                  borderRadius: '25px',
+                }}
+              >
+                Sign In
+              </Button>
+            </Link>
+          )}
+        </Toolbar>
+      </AppBar>
 
-        {isLoggedIn ? (
-          <UserIcon
-            profilePic={userData && userData.profilePicUrl}
-            username={userData && userData.username}
-            firstName={userData && userData.firstName}
-          />
-        ) : (
+      <Dialog open={openDialog} onClose={handleCloseDialog}>
+        <DialogTitle>You need to be a member to access this feature</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Please sign in to access this feature.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog} color="primary">
+            Cancel
+          </Button>
           <Link to="/signin" style={{ textDecoration: 'none' }}>
-            <Button
-              variant="contained"
-              color="primary"
-              size="medium"
-              sx={{
-                ...buttonStyles,
-                minWidth: '100px',
-                backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
-                color: '#fff',
-                borderRadius: '25px',
-              }}
-            >
+            <Button color="primary" autoFocus>
               Sign In
             </Button>
           </Link>
-        )}
-      </Toolbar>
-    </AppBar>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 };
 

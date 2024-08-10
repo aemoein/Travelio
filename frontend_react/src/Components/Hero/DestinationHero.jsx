@@ -27,7 +27,7 @@ const Hero = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '30vh',
-        backgroundImage: 'url(http://localhost:3000/assets/Pages/Destinations/Hero2.jpg)',
+        backgroundImage: 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Times_Square_April_2022_by_Don_Ramey_Logan.jpg/1200px-Times_Square_April_2022_by_Don_Ramey_Logan.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

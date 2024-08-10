@@ -65,7 +65,7 @@ function LoginPage() {
       <CssBaseline />
       <Box
         sx={{
-          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(http://localhost:3000/assets/Pages/AuthPages/Auth.jpg)',
+          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(https://efirq7mmtwd.exactdn.com/wp-content/uploads/2023/06/sunset-nature-landscape-2232548205.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           height: '100vh',

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Typography, Container, Box, TextField, Button, Select, MenuItem, Grid } from '@mui/material';
+import { Typography, Container, Box, TextField, Button, Select, MenuItem, Grid, CircularProgress } from '@mui/material';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
 import GradientText from '../../Components/Text/GradientText';
 import CountriesData from '../../Components/Data/countries.json';
 
@@ -18,6 +17,7 @@ function SignUpInfo() {
     dialingCode: ''
   });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false); // Added loading state
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function SignUpInfo() {
               const data = await response.json();
               const city = data[0].name;
               const country = data[0].country;
-              
+
               setFormData(prevState => ({ ...prevState, location: `${city}, ${country}` }));
               const selectedCountry = CountriesData.find(countryData => countryData.code === country);
               if (selectedCountry) {
@@ -52,9 +52,9 @@ function SignUpInfo() {
         console.error('Geolocation is not supported by this browser.');
       }
     };
-  
+
     getLocation();
-  }, []);  
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -67,6 +67,7 @@ function SignUpInfo() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading
     try {
       formData.mobileNumber = formData.dialingCode + formData.mobileNumber;
       const formDataToSend = new FormData();
@@ -81,31 +82,46 @@ function SignUpInfo() {
         }
       });
       console.log(response.data);
-      
+
       if (response.data.message === 'User information updated successfully') {
         navigate(`/preferences/select`);
       }
     } catch (error) {
       console.error('Error updating user information:', error.response.data);
       setError(error.response.data.message);
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <Box sx={{
+    <Box
+      sx={{
         height: '100vh',
         display: 'flex',
-        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        textAlign: 'center',
-      }}>
-        <GradientText text='TRVLO' />
-        <Typography variant="h4" component="h1" sx={{ fontFamily: 'Poppins', fontWeight: 'bold', mt: 2 }}>
-          Complete Your Profile
-        </Typography>
+        backgroundImage: 'url(https://efirq7mmtwd.exactdn.com/wp-content/uploads/2023/06/sunset-nature-landscape-2232548205.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <Container component="main" maxWidth="sm">
         <Box
+          sx={{
+            backgroundColor: 'rgba(255, 255, 255, 0.85)',
+            borderRadius: 2,
+            padding: 4,
+            textAlign: 'center',
+            boxShadow: 3,
+          }}
+        >
+          <GradientText text='TRVLO' />
+          <Typography variant="h4" component="h1" sx={{ fontFamily: 'Poppins', fontWeight: 'bold', mt: 2 }}>
+            Complete Your Profile
+          </Typography>
+          <Box
+            onClick={() => document.getElementById('profilePic').click()}
             sx={{
               height: '150px',
               width: '150px',
@@ -115,13 +131,21 @@ function SignUpInfo() {
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               display: 'flex',
-              flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              textAlign: 'center',
+              cursor: 'pointer',
+              margin: '0 auto',
+              position: 'relative',
+              '&:hover::after': {
+                content: '"Click to select photo"',
+                position: 'absolute',
+                color: 'white',
+                backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                padding: '5px 10px',
+                borderRadius: '5px',
+              }
             }}
           />
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
           <input
             type="file"
             accept="image/*"
@@ -130,105 +154,99 @@ function SignUpInfo() {
             onChange={handleChange}
             style={{ display: 'none' }}
           />
-          <label htmlFor="profilePic">
-            <Button
-              variant="contained"
-              component="span"
-              sx={{ mt: 2 }}
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 3 }}>
+            <TextField
+              margin="normal"
+              fullWidth
+              id="location"
+              label="Location"
+              name="location"
+              autoComplete="location"
+              value={formData.location}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              fullWidth
+              id="birthday"
+              label="Birthday"
+              name="birthday"
+              type="date"
+              InputLabelProps={{ shrink: true }}
+              value={formData.birthday}
+              onChange={handleChange}
+            />
+            <TextField
+              margin="normal"
+              fullWidth
+              id="bio"
+              label="Bio"
+              name="bio"
+              multiline
+              rows={4}
+              value={formData.bio}
+              onChange={handleChange}
+            />
+            <Select
+              fullWidth
+              margin="normal"
+              id="nationality"
+              name="nationality"
+              label="Nationality"
+              value={formData.nationality}
+              onChange={handleChange}
             >
-              Upload Profile Picture
+              {CountriesData.map((country, index) => (
+                <MenuItem key={index} value={country.code}>{country.name}</MenuItem>
+              ))}
+            </Select>
+            <Grid container spacing={2}>
+              <Grid item xs={4} sx={{ marginTop: '16px' }}>
+                <Select
+                  fullWidth
+                  margin="normal"
+                  id="dialingCode"
+                  name="dialingCode"
+                  label="Dialing Code"
+                  value={formData.dialingCode}
+                  onChange={handleChange}
+                >
+                  {CountriesData.map((country, index) => (
+                    <MenuItem key={index} value={country.dial_code}>{`${country.dial_code}`}</MenuItem>
+                  ))}
+                </Select>
+              </Grid>
+              <Grid item xs={8}>
+                <TextField
+                  margin="normal"
+                  fullWidth
+                  id="mobileNumber"
+                  label="Mobile Number"
+                  name="mobileNumber"
+                  type="tel"
+                  autoComplete="mobileNumber"
+                  value={formData.mobileNumber}
+                  onChange={handleChange}
+                />
+              </Grid>
+            </Grid>
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+              disabled={loading} // Disable button when loading
+            >
+              {loading ? <CircularProgress size={24} /> : 'Save Information'} {/* Conditionally render spinner or text */}
             </Button>
-          </label>
-          <TextField
-            margin="normal"
-            fullWidth
-            id="location"
-            label="Location"
-            name="location"
-            autoComplete="location"
-            value={formData.location}
-            onChange={handleChange}
-          />
-          <TextField
-            margin="normal"
-            fullWidth
-            id="birthday"
-            label="Birthday"
-            name="birthday"
-            type="date"
-            InputLabelProps={{ shrink: true }}
-            value={formData.birthday}
-            onChange={handleChange}
-          />
-          <TextField
-            margin="normal"
-            fullWidth
-            id="bio"
-            label="Bio"
-            name="bio"
-            multiline
-            rows={4}
-            value={formData.bio}
-            onChange={handleChange}
-          /> 
-          <Select
-            fullWidth
-            margin="normal"
-            id="nationality"
-            name="nationality"
-            label="Nationality"
-            value={formData.nationality}
-            onChange={handleChange}
-          >
-            {CountriesData.map((country, index) => (
-              <MenuItem key={index} value={country.code}>{country.name}</MenuItem>
-            ))}
-          </Select>
-          <Grid container spacing={2}>
-            <Grid item xs={4} sx={{ marginTop: '16px'}}>
-              <Select
-                fullWidth
-                margin="normal"
-                id="dialingCode"
-                name="dialingCode"
-                label="Dialing Code"
-                value={formData.dialingCode}
-                onChange={handleChange}
-              >
-                {CountriesData.map((country, index) => (
-                  <MenuItem key={index} value={country.dial_code}>{`${country.dial_code}`}</MenuItem>
-                ))}
-              </Select>
-            </Grid>
-            <Grid item xs={8}>
-              <TextField
-                margin="normal"
-                fullWidth
-                id="mobileNumber"
-                label="Mobile Number"
-                name="mobileNumber"
-                type="tel"
-                autoComplete="mobileNumber"
-                value={formData.mobileNumber}
-                onChange={handleChange}
-              />
-            </Grid>
-          </Grid>
-          <Button
-            type="submit"
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Save Information
-          </Button>
+          </Box>
+          {error && (
+            <Typography variant="body2" color="error" sx={{ mt: 1 }}>
+              {error}
+            </Typography>
+          )}
         </Box>
-        {error && (
-          <Typography variant="body2" color="error" sx={{ mt: 1 }}>
-            {error}
-          </Typography>
-        )}
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 }
 

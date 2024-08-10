@@ -5,3 +5,4 @@ backend/Challenge/MLmodel
 *.jpg
 *.jpg
 /backend/Challenge/ML model
+/backend/ImageModel/node_modules

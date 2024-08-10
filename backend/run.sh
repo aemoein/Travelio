@@ -14,7 +14,7 @@ services=(
     "points pointsManagement/ 3010:3010"
     "achievements achievements/ 3012:3012"
     "rewards reward/ 3011:3011"
-    "mlmodel Challenge/MLmodel 5555:5555"
+    "imagemodel ImageModel/ 5555:5555"
 )
 
 # Build and run Docker containers

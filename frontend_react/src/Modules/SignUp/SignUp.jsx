@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Typography, Container, CssBaseline, Box, Link } from '@mui/material';
+import { Button, TextField, Typography, Container, CssBaseline, Box, Link, CircularProgress } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -26,6 +26,7 @@ function SignUpPage() {
     confirmPassword: ''
   });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -38,6 +39,7 @@ function SignUpPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
         console.log('Starting signup process...');
         const response = await axios.post('http://localhost:3001/auth/signup', formData, {
@@ -79,6 +81,8 @@ function SignUpPage() {
     } catch (error) {
         console.error('Error during signup process:', error);
         setError('An error occurred during signup');
+    } finally {
+        setLoading(false);
     }
  };
   
@@ -87,7 +91,7 @@ function SignUpPage() {
       <CssBaseline />
       <Box
         sx={{
-          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(http://localhost:3000/assets/Pages/AuthPages/Auth.jpg)',
+          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(https://efirq7mmtwd.exactdn.com/wp-content/uploads/2023/06/sunset-nature-landscape-2232548205.jpg)',
           height: '100vh',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -213,8 +217,9 @@ function SignUpPage() {
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2, fontFamily: 'Poppins', fontWeight: 'bold', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' }}
+                  disabled={loading}
                 >
-                  Continue
+                  {loading ? <CircularProgress size={24} /> : 'Continue'}
                 </Button>
               </form>
 
