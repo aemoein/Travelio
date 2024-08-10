@@ -2,3 +2,6 @@
 assets/
 backend/Challenge/MLmodel
 /backend/Challenge/ML model
+*.jpg
+*.jpg
+/backend/Challenge/ML model
