@@ -1,11 +1,10 @@
-FROM node:20-alpine
+FROM node:20
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm cache clean --force \
-    && npm install
+RUN npm install
 
 COPY . .
 
