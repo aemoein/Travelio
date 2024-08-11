@@ -6,7 +6,7 @@ const GradientText = ({ text }) => {
     <Typography
       sx={{
         display: 'inline-block',
-        fontSize: { xs: '46px', sm: '52px', md: '64px', lg : '84px'},
+        fontSize: { xs: '36px', sm: '52px', md: '64px', lg : '84px'},
         fontWeight: '900',
         fontFamily: 'Roboto Condensed, sans-serif',
         textTransform: 'uppercase',

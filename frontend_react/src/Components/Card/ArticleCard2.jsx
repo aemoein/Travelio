@@ -7,7 +7,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width }) => {
       sx={{
         position: 'relative',
         width: width ? width : '27vw',
-        height: '27vw',
+        height: { xs: '150px', sm: '200px', md: '300px', lg: '350px' },
         borderRadius: '10px',
         overflow: 'hidden',
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
@@ -47,7 +47,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width }) => {
             fontFamily: 'Poppins',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '1.4vw',
+            fontSize: { xs: '8px', sm: '12px', md: '14px', lg: '18px' },
           }}>
           {category}
         </Typography>
@@ -55,7 +55,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width }) => {
             fontFamily: 'Poppins',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '2.2vw',
+            fontSize: { xs: '14px', sm: '12px', md: '14px', lg: '18px' },
           }}>
           {title}
         </Typography>
@@ -63,7 +63,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width }) => {
             fontFamily: 'Poppins',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '1.2vw',
+            fontSize: { xs: '8px', sm: '12px', md: '14px', lg: '18px' },
           }}>
           {date}
         </Typography>
@@ -71,7 +71,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width }) => {
             fontFamily: 'Poppins',
             fontWeight: '400',
             width: 'fit-content',
-            fontSize: '1.2vw',
+            fontSize: { xs: '8px', sm: '12px', md: '14px', lg: '18px' },
           }}>
           {summary}
         </Typography>

@@ -6,8 +6,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width, height }
     <Box
       sx={{
         position: 'relative',
-        width: width ? width : '27vw',
-        height: height ? height : '27vw',
+        height: { xs: '150px', sm: '200px', md: '300px', lg: '350px' },
         borderRadius: '10px',
         overflow: 'hidden',
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
@@ -47,7 +46,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width, height }
             fontFamily: 'Poppins',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '0.8vw',
+            fontSize: { xs: '8px', sm: '12px', md: '14px', lg: '18px' },
           }}>
           {category}
         </Typography>
@@ -55,8 +54,8 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width, height }
             fontFamily: 'Poppins',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '1.2vw',
-            maxWidth: '24vw'
+            fontSize: { xs: '8px', sm: '12px', md: '14px', lg: '18px' },
+            maxWidth: '36vw'
           }}>
           {title}
         </Typography>
@@ -64,7 +63,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width, height }
             fontFamily: 'Poppins',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '0.7vw',
+            fontSize: { xs: '7px', sm: '12px', md: '14px', lg: '18px' },
           }}>
           {date}
         </Typography>
@@ -72,8 +71,8 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width, height }
             fontFamily: 'Poppins',
             fontWeight: '400',
             width: 'fit-content',
-            fontSize: '0.7vw',
-            maxWidth: '25vw'
+            fontSize: { xs: '6px', sm: '12px', md: '14px', lg: '18px' },
+            maxWidth: '36vw'
           }}>
           {summary}
         </Typography>

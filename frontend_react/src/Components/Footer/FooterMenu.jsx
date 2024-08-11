@@ -6,16 +6,16 @@ import Button from '@mui/material/Button';
 const FooterMenu = ({ title, buttons }) => {
   return (
     <Box sx={{ marginRight: '20px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-        <Typography sx={{
-            color: '#666666',
-            fontFamily: 'Montserrat, sans-serif',
-            fontWeight: '900',
-            marginLeft: '8px',
-            fontsize: { xs: '8px', sm: '12px', md: '14px', lg : '18px'},
-            letterSpacing: 'large',
-        }}>
-            {title}
-        </Typography>
+      <Typography sx={{
+          color: '#666666',
+          fontFamily: 'Montserrat, sans-serif',
+          fontWeight: '900',
+          marginLeft: '8px',
+          fontSize: { xs: '12px', sm: '12px', md: '14px', lg: '16px' },  // Corrected here
+          letterSpacing: 'large',
+      }}>
+        {title}
+      </Typography>
       
       {buttons.map((button, index) => (
         <Button key={index} sx={{
@@ -23,10 +23,10 @@ const FooterMenu = ({ title, buttons }) => {
             fontFamily: 'Montserrat, sans-serif',
             fontWeight: '600',
             letterSpacing: 'large',
-            fontsize: '6px',
+            fontSize: { xs: '10px', sm: '12px', md: '14px', lg: '16px' },  // Corrected here
             lineHeight: '1.1',
         }}>
-            {button}
+          {button}
         </Button>
       ))}
     </Box>

@@ -8,15 +8,16 @@ const DesView = ({ destinations }) => {
   const limitedDestinations = destinations.slice(0, 2);
 
   return (
-    <Box sx={{ marginLeft: '40px', marginRight: '40px', padding: '20px', marginTop: '10px', maxWidth: '85%' }}>
+    <Box sx={{ marginLeft: '2vw', marginRight: '2vw', padding: '20px', marginTop: '10px', maxWidth: '85%' }}>
       <Typography
         align="left"
         sx={{
           marginLeft: '10px',
           fontFamily: 'Merriweather',
           fontWeight: '900',
-          fontSize: { xs: '16px', sm: '18px', md: '20px', lg: '22px' },
+          fontSize: { xs: '12px', sm: '16px', md: '20px', lg: '22px' },
           lineHeight: '1.0',
+          mb: 0,
           width: 'fit-content',
           backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
           WebkitBackgroundClip: 'text',
@@ -31,23 +32,23 @@ const DesView = ({ destinations }) => {
           sx={{
             marginBottom: '0px',
             marginLeft: '10px',
+            lineHeight: '0.7',
             fontFamily: 'Poppins',
             fontWeight: '900',
-            fontSize: { xs: '18px', sm: '20px', md: '24px', lg: '28px' },
+            fontSize: { xs: '16px', sm: '20px', md: '24px', lg: '28px' },
           }}
         >
           Your Next Adventure!
         </Typography>
-        <GradientButton text={"View Destinations"} />
+        <GradientButton text={"View More"} />
       </Box>
       
-      <Grid container spacing={2} sx={{ marginTop: '0px' }}>
-        {/* Display 2 cards on xs, and all cards on sm and larger */}
+      <Grid container spacing={0.5} sx={{ marginTop: '0px' }}>
         {(window.innerWidth <= 600 ? limitedDestinations : destinations).map((destination, index) => (
           <Grid 
             item 
-            xs={6} // 2 cards on extra small screens
-            sm={4} // 3 cards on small screens and above
+            xs={6}
+            sm={4}
             key={index}
           >
             <DestinationCard

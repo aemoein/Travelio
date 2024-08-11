@@ -83,7 +83,7 @@ const Footer = () => {
         <Box
           sx={{
             display: 'flex',
-            marginLeft: { xs: '0px', sm: '10px', md: '10px', lg: '10px' },
+            marginLeft: { xs: '-40px', sm: '10px', md: '10px', lg: '10px' },
             paddingBottom: '20px',
           }}
         >

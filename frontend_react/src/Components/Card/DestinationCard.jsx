@@ -7,16 +7,16 @@ const DestinationCard = ({ country, city, imageUrl }) => {
       //width: '28vw',
       transition: 'transform 0.3s ease-in-out',
       '&:hover': {
-        transform: 'scale(1.1)',
+        transform: 'scale(1.05)',
       }
     }}>
-      <Box sx={{ padding: '1.5vw', textAlign: 'center' }}>
+      <Box sx={{ padding: '10px', textAlign: 'center' }}>
         <Box
           sx={{
             backgroundImage: `url(${imageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            height: { xs: '280px', sm: '200px', md: '300px', lg: '350px' },
+            height: { xs: '220px', sm: '200px', md: '300px', lg: '350px' },
             margin: '0 auto',
             borderRadius: '5%',
           }}
@@ -28,7 +28,7 @@ const DestinationCard = ({ country, city, imageUrl }) => {
             fontFamily: 'Merriweather',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '1.0vw',
+            fontSize: { xs: '12px', sm: '12px', md: '14px', lg: '16px' },
             backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
@@ -42,7 +42,7 @@ const DestinationCard = ({ country, city, imageUrl }) => {
             lineHeight: '1.0',
             fontFamily: 'Poppins',
             fontWeight: '900',
-            fontSize: '2vw',
+            fontSize: { xs: '16px', sm: '16px', md: '18px', lg: '21px' },
           }}>
           {city}
         </Typography>

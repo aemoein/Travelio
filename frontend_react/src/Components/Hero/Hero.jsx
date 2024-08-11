@@ -28,7 +28,7 @@ function Hero() {
       <GradientText text="Welcome To TRVLO" />
       <Typography sx={{  
         display: 'inline-block',
-        fontSize: { xs: '48px', sm: '72px', md: '84px', lg : '96px'},
+        fontSize: { xs: '42px', sm: '72px', md: '84px', lg : '96px'},
         fontWeight: '900',
         fontFamily: 'reenie beanie',
         color: '#fff',
@@ -48,7 +48,7 @@ function Hero() {
             borderRadius: 10,
             fontWeight: '700',
             fontFamily: 'Poppins',
-            fontSize: { xs: '12px', sm: '14px', md: '16px', lg : '18px'},
+            fontSize: { xs: '10px', sm: '14px', md: '16px', lg : '18px'},
         }}
       >
         Get Started
