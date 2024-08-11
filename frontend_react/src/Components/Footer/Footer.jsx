@@ -33,6 +33,7 @@ const Footer = () => {
               fontSize: '4vw',
               maxWidth: 'fit-content',
               lineHeight: '1.0',
+              display: { xs: 'none', sm: 'none', md: 'block' } // Hide on xs and sm
             }}
           >
             TRVLO
@@ -51,38 +52,38 @@ const Footer = () => {
               maxWidth: '25vw',
               lineHeight: '1.0',
               paddingRight: '2vw',
+              display: { xs: 'none', sm: 'none', md: 'block' } // Hide on xs and sm
             }}
           >
             Create your own stories
-            {!isLoggedIn && (
-              <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                sx={{
-                  backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
-                  borderRadius: 10,
-                  fontWeight: '900',
-                  fontsize: '3vw',
-                  fontFamily: 'Montserrat, sans-serif',
-                  marginTop: '20px',
-                  width: '15vw',
-                  height: '3vw',
-                }}
-              >
-                Join Now
-              </Button>
-            )}
           </Typography>
+          
+          {!isLoggedIn && (
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+                borderRadius: 10,
+                fontWeight: '900',
+                fontsize: { xs: '10px', sm: '10px', md: '10px', lg: '10px' },
+                fontFamily: 'Montserrat, sans-serif',
+                minWidth: 'fit-content',
+                mt: 1,
+                display: { xs: 'none', sm: 'none', md: 'block' } // Hide on xs and sm
+              }}
+            >
+              Join Us
+            </Button>
+          )}
         </Box>
 
-        <Box>
-        </Box>
+        <Box></Box>
 
         <Box
           sx={{
             display: 'flex',
-            marginLeft: '25px',
+            marginLeft: { xs: '0px', sm: '10px', md: '10px', lg: '10px' },
             paddingBottom: '20px',
           }}
         >
@@ -92,7 +93,7 @@ const Footer = () => {
               'Destinations',
               'Categories',
               'Planning',
-              'Articles & Stories',
+              'Articles',
               'Challenges',
               'Social'
             ]}
@@ -104,7 +105,7 @@ const Footer = () => {
               'Destinations',
               'Categories',
               'Planning',
-              'Articles & Stories',
+              'Articles',
               'Challenges',
               'Social'
             ]}

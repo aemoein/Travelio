@@ -57,9 +57,9 @@ const Home = () => {
         <Hero />
         <DesView
             destinations={[
-                { country: 'China', city: 'Shanghai', imageUrl: 'https://media4.giphy.com/media/M49pHLnIqvA08/giphy.webp?cid=790b76115in3e50a4gzo76jvy780mmd8devaeujz0ibfg7qc&ep=v1_gifs_search&rid=giphy.webp&ct=g' },
                 { country: 'United States', city: 'New York', imageUrl: 'https://media1.giphy.com/media/8uiZLn37DZIXu/giphy.webp?cid=ecf05e47j0rd48c2wb65h60wv384djo2fayagtqz13axtybe&ep=v1_gifs_search&rid=giphy.webp&ct=g' },
                 { country: 'Spain', city: 'Barcelona', imageUrl: 'https://media4.giphy.com/media/SRko8MpQH2vEZhyyVy/giphy.gif' },
+                { country: 'China', city: 'Shanghai', imageUrl: 'https://media4.giphy.com/media/M49pHLnIqvA08/giphy.webp?cid=790b76115in3e50a4gzo76jvy780mmd8devaeujz0ibfg7qc&ep=v1_gifs_search&rid=giphy.webp&ct=g' },
             ]}
         />
 
@@ -69,7 +69,7 @@ const Home = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '100%',
-                height: '900px',
+                height: { xs: '500px', sm: '500px', md: '600px', lg: '900px' },
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -79,7 +79,7 @@ const Home = () => {
                 sx={{
                     fontFamily: 'Poppins',
                     fontWeight: '900',
-                    fontSize: '5vw',
+                    fontSize: { xs: '36px', sm: '46px', md: '52px', lg: '90px' },
                     color: '#fff',
                     maxWidth: '70vw'
                 }}

@@ -13,7 +13,7 @@ const TextTitle = ({ text }) => {
         WebkitBackgroundClip: 'text',
         color: 'transparent',
         maxWidth: 'fit-content',
-        fontSize: { xs: '26px', sm: '32px', md: '32px', lg : '40px'},
+        fontSize: { xs: '36px', sm: '32px', md: '32px', lg : '40px'},
       }}
     >
       {text}

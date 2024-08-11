@@ -156,7 +156,7 @@ const Navbar = () => {
           <IconButton 
             size="large" 
             edge="end" 
-            color="inherit" 
+            color="black" 
             onClick={handleDrawerToggle} 
             sx={{ display: { xs: 'block', sm: 'none' } }} // Show only on small screens
           >

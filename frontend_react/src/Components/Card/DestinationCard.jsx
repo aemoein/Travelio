@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 const DestinationCard = ({ country, city, imageUrl }) => {
   return (
     <Box sx={{
-      width: '28vw',
+      //width: '28vw',
       transition: 'transform 0.3s ease-in-out',
       '&:hover': {
         transform: 'scale(1.1)',
@@ -16,10 +16,9 @@ const DestinationCard = ({ country, city, imageUrl }) => {
             backgroundImage: `url(${imageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            width: '26vw',
-            height: '33.33vw', 
-            margin: '0 auto', 
-            borderRadius: '5%', 
+            height: { xs: '280px', sm: '200px', md: '300px', lg: '350px' },
+            margin: '0 auto',
+            borderRadius: '5%',
           }}
         />
         <Typography align="left" 

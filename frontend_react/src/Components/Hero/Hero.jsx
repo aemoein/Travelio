@@ -16,7 +16,7 @@ function Hero() {
         backgroundImage: 'url(https://media.cntraveler.com/photos/6539d1998ab4257d24ee47e4/16:9/w_1920%2Cc_limit/Lenc%25CC%25A7o%25CC%2581is-Maranhenses-National-Park-marcreation-M0wxmEHpBtE-unsplash.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        height: 'calc(100vh - 64px)',
+        height: { xs: 'calc(55vh - 64px)', sm: 'calc(100vh - 64px)', md: 'calc(100vh - 64px)', lg: 'calc(100vh - 64px)' },
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -28,7 +28,7 @@ function Hero() {
       <GradientText text="Welcome To TRVLO" />
       <Typography sx={{  
         display: 'inline-block',
-        fontSize: '8.5vw',
+        fontSize: { xs: '48px', sm: '72px', md: '84px', lg : '96px'},
         fontWeight: '900',
         fontFamily: 'reenie beanie',
         color: '#fff',
@@ -48,6 +48,7 @@ function Hero() {
             borderRadius: 10,
             fontWeight: '700',
             fontFamily: 'Poppins',
+            fontSize: { xs: '12px', sm: '14px', md: '16px', lg : '18px'},
         }}
       >
         Get Started

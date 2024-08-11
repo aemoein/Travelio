@@ -7,17 +7,19 @@ const GradientButton = ({ text }) => {
       variant="outlined"
       sx={{
         color: '#A9A9A9',
-        font: 'Poppins',
+        fontFamily: 'Poppins',
         border: '2px solid',
         borderRadius: 10,
         textTransform: 'none',
         fontWeight: '900',
-        fontSize: '1vw',
+        fontSize: { xs: '12px', sm: '20px', md: '24px', lg: '28px' },
         backgroundColor: 'transparent',
         padding: '10px 20px',
         transition: 'background-image 0.8s, color 0.2s',
-        maxHeight: '2.5vw',
-        marginRight: '0.7vw',
+        maxHeight: { xs: '32px', sm: '32px', md: '32px', lg : '40px'},
+        mt: { xs: '-10px', sm: '-10px', md: '-10px', lg: '-10px' },
+        
+        marginRight: '10px',
         '&:hover': {
             backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
             color: '#ffffff', 

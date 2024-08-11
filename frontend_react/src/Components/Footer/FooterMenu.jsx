@@ -11,7 +11,7 @@ const FooterMenu = ({ title, buttons }) => {
             fontFamily: 'Montserrat, sans-serif',
             fontWeight: '900',
             marginLeft: '8px',
-            fontSize: '1.5vw',
+            fontsize: { xs: '8px', sm: '12px', md: '14px', lg : '18px'},
             letterSpacing: 'large',
         }}>
             {title}
@@ -23,7 +23,7 @@ const FooterMenu = ({ title, buttons }) => {
             fontFamily: 'Montserrat, sans-serif',
             fontWeight: '600',
             letterSpacing: 'large',
-            fontSize: '1.2vw',
+            fontsize: '6px',
             lineHeight: '1.1',
         }}>
             {button}
