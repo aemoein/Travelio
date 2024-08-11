@@ -13,7 +13,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width }) => {
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
         transition: 'transform 0.3s ease-in-out',
         '&:hover': {
-          transform: 'scale(1.05)',
+          transform: 'scale(1.02)',
         }
       }}
     >

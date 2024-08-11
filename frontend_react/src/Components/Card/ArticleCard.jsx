@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 
-const ArticleCard = ({ imageUrl, category, title, date, summary, width, height }) => {
+const ArticleCard = ({ imageUrl, category, title, date, summary}) => {
   return (
     <Box
       sx={{
@@ -12,7 +12,7 @@ const ArticleCard = ({ imageUrl, category, title, date, summary, width, height }
         boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
         transition: 'transform 0.3s ease-in-out',
         '&:hover': {
-          transform: 'scale(1.05)',
+          transform: 'scale(1.02)',
         }
       }}
     >
