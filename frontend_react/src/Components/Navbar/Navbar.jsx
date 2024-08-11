@@ -144,7 +144,7 @@ const Navbar = () => {
               display: { xs: 'flex', sm: 'block' }, // Flex on small screens, block on larger screens
               justifyContent: { xs: 'center', sm: 'flex-start' }, // Center on small screens
               width: { xs: '100%', sm: 'fit-content', md: 'fit-content', lg: 'fit-content'},
-              ml: { xs: "36px", sm: '0', md: '0', lg: '0' }
+              ml: { xs: "42px", sm: '0', md: '0', lg: '0' }
             }}
           >
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
