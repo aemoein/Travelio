@@ -14,6 +14,7 @@ import {
   IconButton,
   Drawer,
 } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ArticleCard from '../Card/ArticleCard';
@@ -125,10 +126,11 @@ const Navbar = () => {
   };
 
   const buttonStyles = {
-    fontSize: { xs: '12px', sm: '14px', md: '16px' },
+    fontSize: { xs: '24px', sm: '14px', md: '16px' },
     fontFamily: 'Poppins',
     fontWeight: '900',
-    marginRight: { xs: 1, sm: 2, md: 3 },
+    mr: { xs: 0, sm: 2, md: 3 },
+    mb: { xs: 1, sm: 0, md: 0, lg: 0 },
     color: '#000',
     transition: 'color 0.3s ease-out, background-position 0.3s ease-out',
     '&:hover': {
@@ -222,6 +224,7 @@ const Navbar = () => {
         Close
       </Button>
     </Box>
+    
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', padding: 2 }}>
       {isLoggedIn ? (
         <UserIcon
