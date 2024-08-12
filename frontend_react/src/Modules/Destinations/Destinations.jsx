@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Box, Button, Grid, Typography, TextField, Select, MenuItem } from '@mui/material';
 import DesCard from '../../Components/Card/DesCard';
-import DesCardLarge from '../../Components/Card/DesCardLarge';
 import DestinationHero from '../../Components/Hero/DestinationHero';
 import Navbar from '../../Components/Navbar/Navbar';
 import KeyboardDoubleArrowRightOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowRightOutlined';
@@ -93,7 +92,8 @@ const Destinations = () => {
     const getButtonStyles = (page) => ({
         margin: 1,
         borderRadius: 10,
-        fontSize: '1.5vw',
+        fontSize: { xs: '10px', sm: '12px', md: '14px', lg: '16px' },
+        textTransform: 'uppercase',
         fontFamily: 'Poppins',
         fontWeight: '700',
         border: currentPage === page ? '2px solid ' : '2px solid',
@@ -108,13 +108,14 @@ const Destinations = () => {
     });
 
     const buttonStyles = {
-        ml: 2,
         mb: 2,
         width: '100%',
         padding: '10px',
         borderRadius: 10,
-        fontWeight: 'bold',
-        font: 'Poppins',
+        fontWeight: '900',
+        fontSize: { xs: '10px', sm: '12px', md: '14px', lg: '16px' },
+        textTransform: 'uppercase',
+        fontFamily: 'Poppins',
         textTransform: 'capitalize',
         backgroundColor: '#ffffff',
         color: '#aaaaaa',
@@ -170,56 +171,88 @@ const Destinations = () => {
             <Navbar />
             <Box sx={{ height: 50 }} />
             <DestinationHero />
-            <Box sx={{ width: '80vw', margin: 'auto', justifyContent: 'center', display: 'flex', alignItems: 'center', pl: 6, pr: 6 }}>
-                <Box sx={{ padding: 4 }}>
-                    <Typography align="left" 
+            <Box sx={{ maxWidth: { xs: '90vw', sm: '80vw', md: '80vw', lg: '80vw' }, margin: 'auto', justifyContent: 'center', display: 'flex', alignItems: 'center'}}>
+                <Box sx={{ pt: 4 }}>
+                    <Box 
                         sx={{ 
-                            ml: { xs: '1.6vw', sm: '1.6vw', md: '1.6vw', lg: '0.0vw'},
-                            fontFamily: 'Merriweather',
-                            fontWeight: '900',
-                            fontSize: 20,
-                            lineHeight: '1.2',
-                            width: 'fit-content',
-                            backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
-                            WebkitBackgroundClip: 'text',
-                            color: 'transparent',
-                        }}>
-                        Explore
-                    </Typography>
-                    <Typography variant="h4" gutterBottom sx={{ ml: { xs: '1.6vw', sm: '1.6vw', md: '1.6vw', lg: '0.0vw'}, fontFamily: 'Poppins', fontWeight: '600' }}>
-                        Destinations
-                    </Typography>
-                    <Box display="flex" alignItems="center" justifyContent="center" sx={{ width: { xs: '78vw', sm: '78vw', md: '79vw', lg: '77vw' }, ml: { xs: '-0.6vw', sm: '-0.6vw', md: '-0.6vw', lg: '-0.6vw' }}}>
+                            maxWidth: '100%',
+                            width: { xs: '90vw', sm: '80vw', md: '80vw', lg: '80vw' }, 
+                            mx: { xs: '5vw', sm: '10vw', md: '10vw', lg: '10vw'}
+                        }}
+                    >
+                        <Typography align="left" 
+                            sx={{
+                                fontFamily: 'Merriweather',
+                                fontWeight: '900',
+                                fontSize: { xs: '16px', sm: '24px', md: '28px', lg: '28px' },
+                                lineHeight: '1.2',
+                                width: 'fit-content',
+                                backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+                                WebkitBackgroundClip: 'text',
+                                color: 'transparent',
+                            }}>
+                            Explore
+                        </Typography>
+                        <Typography gutterBottom sx={{ fontSize: { xs: '28px', sm: '32px', md: '38px', lg: '42px' }, fontFamily: 'Poppins', fontWeight: '600' }}>
+                            Destinations
+                        </Typography>
+                    </Box>
+                    <Box 
+                        display="flex" 
+                        alignItems="center" 
+                        justifyContent="center" 
+                        gap={2} // This adds 16px spacing between buttons
+                        sx={{ 
+                            width: { xs: '90vw', sm: '80vw', md: '80vw', lg: '80vw' },
+                            mx: { xs: '5vw', sm: '10vw', md: '10vw', lg: '10vw'}
+                        }}
+                    >
                         <Button
                             sx={selectedCategory === 'countries' ? activeButtonStyles : buttonStyles}
                             onClick={() => handleCategoryChange('countries')}
                         >
-                            Countries
+                            COUNTRIES
                         </Button>
                         <Button
                             sx={selectedCategory === 'cities' ? activeButtonStyles : buttonStyles}
                             onClick={() => handleCategoryChange('cities')}
                         >
-                            Cities
+                            CITIES
                         </Button>
                         <Button
                             sx={selectedCategory === 'natural' ? activeButtonStyles : buttonStyles}
                             onClick={() => handleCategoryChange('natural')}
                         >
-                            Natural
+                            NATURE
                         </Button>
                     </Box>
-                    <TextField
-                        label="Search destinations"
-                        variant="outlined"
-                        fullWidth
-                        value={searchTerm}
-                        onChange={handleSearchChange}
-                        InputProps={{ sx: { borderRadius: '40px' } }}
-                        InputLabelProps={{ sx: { pl: 1.7 } }}
-                        sx={{ mb: 2,  width: { xs: '78vw', sm: '78vw', md: '78vw', lg: '77vw' }, ml: { xs: '1.8vw', sm: '1.5vw', md: '1.2vw', lg: '0vw' } }}
-                    />    
-                    <Box display="flex" alignItems="center" justifyContent="center" sx={{ width: { xs: '78vw', sm: '78vw', md: '78vw', lg: '77vw' }, ml: { xs: '1.8vw', sm: '1.8vw', md: '1.2vw', lg: '0vw' }}}>
+                    <Box 
+                        display="flex" 
+                        alignItems="center" 
+                        justifyContent="space-evenly"
+                        sx={{ 
+                            width: { xs: '90vw', sm: '80vw', md: '80vw', lg: '80vw' }, 
+                            mx: { xs: '5vw', sm: '10vw', md: '10vw', lg: '10vw'},
+                            mb: 2,
+                        }}
+                    >
+                        <TextField
+                            label="Search destinations"
+                            variant="outlined"
+                            fullWidth
+                            value={searchTerm}
+                            onChange={handleSearchChange}
+                            InputProps={{ sx: { borderRadius: '40px' } }}
+                            InputLabelProps={{ sx: { pl: 1.7 } }}
+                            sx={{maxWidth: { xs: '90vw', sm: '80vw', md: '80vw', lg: '80vw' }}}
+                        /> 
+                    </Box>
+                    <Box display="flex" alignItems="center" justifyContent="center" 
+                        sx={{ 
+                            width: { xs: '90vw', sm: '80vw', md: '80vw', lg: '80vw' }, 
+                            mx: { xs: '5vw', sm: '10vw', md: '10vw', lg: '10vw'},
+                        }}
+                    >
                         <Select
                             value={selectedRegion}
                             onChange={handleRegionChange}
@@ -274,24 +307,15 @@ const Destinations = () => {
                             justifyContent: 'center',
                         }}
                     >
-                        <Grid container justifyContent="center" spacing={4} sx={{ width: '80vw' }}>
+                        <Grid container justifyContent="center" spacing={1} sx={{ width: { xs: '90vw', sm: '80vw', md: '80vw', lg: '80vw' },  mx: { xs: '5vw', sm: '10vw', md: '10vw', lg: '10vw'},}}>
                             {currentDestinations.map((destination, index) => (
-                                <Grid item xs={4} sm={4} md={4} lg={3} key={index}>
-                                    {window.innerWidth >= 1280 ? (
-                                        <DesCardLarge
-                                            country={destination.region}
-                                            city={destination.name}
-                                            imageUrl={destination.picture}
-                                            onClick={() => handleCardClick(destination._id, selectedCategory === 'countries' ? 'country' : 'city')}
-                                        />
-                                    ) : (
-                                        <DesCard
-                                            country={destination.region}
-                                            city={destination.name}
-                                            imageUrl={destination.picture}
-                                            onClick={() => handleCardClick(destination._id, selectedCategory === 'countries' ? 'country' : 'city')}
-                                        />
-                                    )}
+                                <Grid item xs={6} sm={4} md={4} lg={3} key={index}>
+                                    <DesCard
+                                        country={destination.region}
+                                        city={destination.name}
+                                        imageUrl={destination.picture}
+                                        onClick={() => handleCardClick(destination._id, selectedCategory === 'countries' ? 'country' : 'city')}
+                                    />
                                 </Grid>
                             ))}
                         </Grid>

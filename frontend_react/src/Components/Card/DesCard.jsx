@@ -5,10 +5,9 @@ const DesCard = ({ country, city, imageUrl, onClick }) => {
   return (
     <Box 
       sx={{
-        width: '24vw',
         transition: 'transform 0.3s ease-in-out',
         '&:hover': {
-          transform: 'scale(1.05)',
+          transform: 'scale(1.03)',
           cursor: 'pointer',
         }
       }}
@@ -20,8 +19,7 @@ const DesCard = ({ country, city, imageUrl, onClick }) => {
             backgroundImage: `url(${imageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            width: '24vw',
-            height: '30vw', 
+            height: { xs: '200px', sm: '200px', md: '300px', lg: '350px' },
             margin: '0 auto', 
             borderRadius: '5%', 
           }}
@@ -34,7 +32,7 @@ const DesCard = ({ country, city, imageUrl, onClick }) => {
             fontFamily: 'Merriweather',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '1.0vw',
+            fontSize: { xs: '10px', sm: '12px', md: '14px', lg: '16px' },
             backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
@@ -50,7 +48,7 @@ const DesCard = ({ country, city, imageUrl, onClick }) => {
             lineHeight: '1.0',
             fontFamily: 'Poppins',
             fontWeight: '900',
-            fontSize: '2vw',
+            fontSize: { xs: '16px', sm: '12px', md: '14px', lg: '16px' },
           }}
         >
           {city}

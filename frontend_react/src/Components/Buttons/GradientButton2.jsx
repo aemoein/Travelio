@@ -12,7 +12,7 @@ const GradientButton = ({ text }) => {
         borderRadius: 10,
         textTransform: 'none',
         fontWeight: '900',
-        fontSize: { xs: '10px', sm: '20px', md: '24px', lg: '28px' },
+        fontSize: { xs: '10px', sm: '12px', md: '14px', lg: '18px' },
         backgroundColor: 'transparent',
         padding: '10px 20px',
         transition: 'background-image 0.8s, color 0.2s',

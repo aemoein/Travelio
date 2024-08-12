@@ -114,6 +114,11 @@ const Navbar = () => {
       navigate(path);
     }
   };
+  
+  const handleClick = (e, path) => {
+    e.preventDefault();
+    navigate(path);
+  };  
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
@@ -247,7 +252,7 @@ const Navbar = () => {
       <Button color="inherit" onClick={handleMenuOpen} sx={buttonStyles}>
         Articles
       </Button>
-      <Button color="inherit" sx={buttonStyles} onClick={(e) => handleProtectedClick(e, '/destinations')}>
+      <Button color="inherit" sx={buttonStyles} onClick={(e) => handleClick(e, '/destinations')}>
         Destinations
       </Button>
       <Button color="inherit" sx={buttonStyles} onClick={(e) => handleProtectedClick(e, '/planning')}>
