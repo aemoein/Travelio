@@ -82,7 +82,9 @@ export default function ChallengeGame() {
       }
 
       const data = await response.json();
+      console.log(data);
       setPrediction(data.predicted_class);
+      console.log(data.predicted);
     } catch (err) {
       setError(err.message);
     } finally {

@@ -40,7 +40,7 @@ const DesView = ({ destinations }) => {
         >
           Your Next Adventure!
         </Typography>
-        <GradientButton text={"View More"} />
+        <GradientButton text={"View More"} path="/destinations"/>
       </Box>
       
       <Grid container spacing={0.5} sx={{ marginTop: '0px' }}>

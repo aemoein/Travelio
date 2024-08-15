@@ -32,7 +32,7 @@ const ArticleView = ({ articles }) => {
                 >
                 The Latest Stories & News
                 </Typography>
-                <GradientButton text={"View More"} />
+                <GradientButton text={"View More"} path="/articles"/>
             </Box>
             <Grid container spacing={0.5} sx={{ marginTop: '0px' }}>
             {(window.innerWidth <= 600 ? limitedArticles : articles).map((article, index) => (
