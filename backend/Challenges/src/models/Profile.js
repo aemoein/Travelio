@@ -8,14 +8,15 @@ const profileSchema = new mongoose.Schema({
   },
   rank: {
     type: String,
-    required: true
+    enum: ["Beginner", "Intermediate", "Semipro", "Professional", "Expert", "Global Nomad"],
+    default: "Beginner"
   },
   points: {
     type: Number,
     default: 0
   },
   titles: {
-    type: [String], // Array of titles
+    type: [String],
   },
   solvedChallenges: [{
     type: mongoose.Schema.Types.ObjectId,

@@ -21,7 +21,7 @@ export default function AdventureCard({ city, user }) {
     const fetchProfile = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3009/api/challengeProfile/getprofile?username=${user}`
+          `http://localhost:3100/profiles/getprofile?username=${user}`
         );
 
         if (!response.ok) {
@@ -29,6 +29,7 @@ export default function AdventureCard({ city, user }) {
         }
 
         const profileData = await response.json();
+        console.log("Fetched profile:", profileData);
         setProfile(profileData);
       } catch (error) {
         console.error("Error fetching profile data:", error.message);
@@ -68,7 +69,7 @@ export default function AdventureCard({ city, user }) {
           <p>
             Username:
             {" @"}
-            <i>{profile.userName}</i>
+            <i>{profile.username}</i>
           </p>
           <p>
             Rank: <i>{formatPrediction(profile.rank)}</i>{" "}

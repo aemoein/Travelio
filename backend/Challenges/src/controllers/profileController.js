@@ -23,15 +23,24 @@ exports.getProfileById = async (req, res) => {
   }
 };
 
+// Get profile by username
+exports.getProfileByUsername = async (req, res) => {
+  try {
+    const profile = await Profile.findOne({ username: req.query.username }).populate('solvedChallenges');
+    if (profile == null) {
+      return res.status(404).json({ message: 'Profile not found' });
+    }
+    res.json(profile);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// Create a new profile
 // Create a new profile
 exports.createProfile = async (req, res) => {
   const profile = new Profile({
     username: req.body.username,
-    rank: req.body.rank,
-    points: req.body.points,
-    titles: req.body.titles,
-    solvedChallenges: req.body.solvedChallenges,
-    numberOfSolvedChallenges: req.body.solvedChallenges.length
   });
 
   try {

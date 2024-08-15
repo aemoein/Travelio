@@ -17,7 +17,7 @@ const ChallengeProfile = () => {
     console.log("user: ", user)
     try {
       const response = await fetch(
-        `http://localhost:3009/api/challengeProfile/getprofile?username=${user}`
+        `http://localhost:3100/profiles/getprofile?username=${user}`
       );
 
       if (!response.ok) {

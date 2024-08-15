@@ -8,7 +8,6 @@ const session = require('express-session');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
-const cityRoutes = require('./src/routes/cityRoutes');
 const challengeRoutes = require('./src/routes/challengeRoutes');
 const profileRoutes = require('./src/routes/profileRoutes');
 
@@ -37,7 +36,6 @@ mongoose.connect(config.mongoURI)
   .catch(err => console.log(err));
 
 // Define a simple route
-app.use('/cities', cityRoutes);
 app.use('/challenges', challengeRoutes);
 app.use('/profiles', profileRoutes);
 
