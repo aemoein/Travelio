@@ -4,7 +4,8 @@ import { Box, Grid, Typography } from "@mui/material";
 import AdventureCard from "./AdventureCard";
 import Puzzle from "./Puzzle";
 import Header from "./Header";
-import Task from "./Task";
+import Task from "./Task"
+import Navbar from "../../Components/Navbar/Navbar";
 
 export const formatPrediction = (prediction) => {
   return prediction
@@ -155,7 +156,9 @@ export default function ChallengeGame() {
     : null;
 
   return (
-    <Box sx={{ fontFamily: "Poppins, sans-serif", background: "#530358", color: "white", display: "block", justifyContent: "center", alignItems: "center", height: "110vh" }}>
+    <>
+    <Navbar/>
+    <Box sx={{ fontFamily: "Poppins, sans-serif", background: "#530358", color: "white", display: "block", justifyContent: "center", alignItems: "center", height: "110vh", mt: 8 }}>
       <Header />
       {type !== "puzzle" && (
         <Grid container spacing={3} sx={{ gridTemplateRows: "1fr auto", gridTemplateColumns: "3fr 2fr", gap: "20px", padding: "20px" }}>
@@ -185,5 +188,6 @@ export default function ChallengeGame() {
         />
       )}
     </Box>
+    </>
   );
 }

@@ -17,6 +17,17 @@ export default function Task({
   handleReward,
   error,
 }) {
+  const [uploadedImageUrl, setUploadedImageUrl] = React.useState(null);
+
+  const handleFileChangeWithUrl = (event) => {
+    handleFileChange(event);
+    const file = event.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setUploadedImageUrl(imageUrl);
+    }
+  };
+
   return (
     <Paper sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", color: "#530358", padding: "16px", borderRadius: "8px", backgroundColor: "#f9f9f9" }}>
       <Box sx={{ flex: 1, marginBottom: "16px", color: "#86117b", border: "2px solid #c169b8", padding: "16px", borderRadius: "8px" }}>
@@ -26,8 +37,8 @@ export default function Task({
       </Box>
 
       <Box sx={{ flex: 1, display: "grid", flexDirection: "column", alignItems: "flex-start", border: "2px solid #c169b8", padding: "16px", borderRadius: "8px" }}>
-        <FileUploadSection handleFileChange={handleFileChange} handleSubmit={handleSubmit} />
-        {loading && <LoadingPopup />}
+        <FileUploadSection handleFileChange={handleFileChangeWithUrl} handleSubmit={handleSubmit} />
+        {loading && <LoadingPopup imageUrl={uploadedImageUrl} />}
         {prediction && (
           prediction === currentTarget ? (
             <Box>

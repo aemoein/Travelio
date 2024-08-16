@@ -23,7 +23,7 @@ const addKeyframes = () => {
   document.head.appendChild(styleElement);
 };
 
-const ImageProcessing = () => {
+const ImageProcessing = ({ imageUrl }) => {
   useEffect(() => {
     addKeyframes();
   }, []);
@@ -43,7 +43,7 @@ const ImageProcessing = () => {
       }}
     >
       <img
-        src="/Assets/Process/image.png"
+        src={imageUrl}
         alt="Processing"
         style={{
           width: "100%",

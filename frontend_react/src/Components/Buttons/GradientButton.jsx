@@ -28,7 +28,7 @@ const GradientButton = ({ text, path }) => {
           border: 'none',
         },
       }}
-      onClick={() => navigate(path)} // Navigates to the provided path
+      onClick={() => navigate(path)}
     >
       {text}
     </Button>
