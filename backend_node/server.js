@@ -12,6 +12,27 @@ const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
 
+//Routes
+const authRoutes = require('./routes/authRoutes');
+const profileRoutes = require('./routes/profileRoutes');
+
+const socialRoutes = require('./routes/socialRoutes');
+const postRoutes = require('./routes/postRoutes');
+const timelineRoutes = require('./routes/timelineRoutes');
+const createRoutes = require('./routes/createRoutes');
+
+const cityRoutes = require('./src/routes/cityRoutes')
+const config = require('./src/config/config');
+const weatherRoutes = require('./src/routes/weatherRoutes');
+
+const tripRoutes = require('./src/routes/tripRoutes');
+const paymentRoutes = require('./src/routes/paymentRoutes');
+
+const challengeRoutes = require('./src/routes/challengeRoutes');
+const profileRoutes = require('./src/routes/profileRoutes');
+
+const imageRoutes = require('./routes/imageRoutes');
+
 // Load environment variables
 dotenv.config();
 
@@ -35,15 +56,15 @@ mongoose.connect(config.mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
-//Routes
+//user routes
 app.use('/users/auth', authRoutes);
 app.use('/users/profile', authMiddleware, profileRoutes);
 
 //social routes
 app.use('/social/create', createRoutes);
-app.use('/social/', authMiddleware, socialRouter);
-app.use('/social/posts', authMiddleware, postRouter);
-app.use('/social/timeline', authMiddleware, timelineRouter);
+app.use('/social/', authMiddleware, socialRoutes);
+app.use('/social/posts', authMiddleware, postRoutes);
+app.use('/social/timeline', authMiddleware, timelineRoutes);
 
 //destination routes
 app.use('/destinations/', destinationRoutes);
@@ -51,12 +72,17 @@ app.use('/destinations/city', cityRoutes);
 app.use('/destinations/weather', weatherRoutes);
 
 //trip routes
-app.use('/trip', routes);
+app.use('/trip', tripRoutes);
 
 //payment routes
-app.use('/payment', paymentRouter);
+app.use('/payment', paymentRoutes);
 
 //challenge routes
+app.use('/challenges', challengeRoutes);
+app.use('/challenges/profiles', ChallengeProfileRoutes);
+
+//image recognition routes
+app.use('/image', imageRoutes);
 
 // Start the server
 const PORT = config.port;
