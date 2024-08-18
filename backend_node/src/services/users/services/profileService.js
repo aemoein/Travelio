@@ -1,4 +1,4 @@
-const { User } = require('../middleware/userMiddleware');
+const { User } = require('../utils/userMiddleware');
 
 async function getUserProfile(userId) {
   try {

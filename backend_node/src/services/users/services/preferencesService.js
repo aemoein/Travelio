@@ -1,5 +1,5 @@
 const Preferences = require('../models/Preferences');
-const { User } = require('../middleware/userMiddleware');
+const { User } = require('../utils/userMiddleware');
 
 function generatePreferences(answers) {
     return Preferences.generatePreferences(answers);
