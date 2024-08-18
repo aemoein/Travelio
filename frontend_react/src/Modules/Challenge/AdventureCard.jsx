@@ -21,7 +21,7 @@ export default function AdventureCard({ city, user }) {
     const fetchProfile = async () => {
       try {
         const response = await fetch(
-          `http://localhost:7777/challenges/profiles/getprofile?username=${user}`
+          `https://travelio-production.up.railway.app/challenges/profiles/getprofile?username=${user}`
         );
 
         if (!response.ok) {

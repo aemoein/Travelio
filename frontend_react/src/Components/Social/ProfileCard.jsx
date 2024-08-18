@@ -15,7 +15,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     useEffect(() => {
         const fetchProfileData = async () => {
         try {
-            const response = await axios.get(`http://localhost:7777/users/profile/data/${profile.userId}`, {
+            const response = await axios.get(`https://travelio-production.up.railway.app/users/profile/data/${profile.userId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -35,7 +35,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     const handleFollow = async () => {
         try {
         const response = await axios.post(
-            'http://localhost:7777/social/main/follow',
+            'https://travelio-production.up.railway.app/social/main/follow',
             { targetUserProfileId: profile._id },
             {
             headers: {
@@ -54,7 +54,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     const handleUnfollow = async () => {
         try {
         const response = await axios.post(
-            'http://localhost:7777/social/main/unfollow',
+            'https://travelio-production.up.railway.app/social/main/unfollow',
             { targetUserProfileId: profile._id },
             {
             headers: {

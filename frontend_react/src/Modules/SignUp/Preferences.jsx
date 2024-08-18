@@ -35,7 +35,7 @@ const PreferencePage = () => {
     }
   
     try {
-      const response = await axios.post(`http://localhost:7777/users/auth/setUserPreferences`, {
+      const response = await axios.post(`https://travelio-production.up.railway.app/users/auth/setUserPreferences`, {
         preferences: selectedGenres
       }, {
         withCredentials: true,

@@ -72,7 +72,7 @@ const FlightSearchForm = () => {
         };
 
         try {
-            const response = await axios.get('http://localhost:7777/trip/flights', { params });
+            const response = await axios.get('https://travelio-production.up.railway.app/trip/flights', { params });
             console.log('API response:', response.data);
             setFlights(response.data || []);
         } catch (error) {

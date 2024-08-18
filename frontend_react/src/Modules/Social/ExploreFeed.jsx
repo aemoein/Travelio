@@ -14,7 +14,7 @@ const ExploreFeed = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('http://localhost:7777/social/timeline/explore', {
+        const response = await axios.get('https://travelio-production.up.railway.app/social/timeline/explore', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

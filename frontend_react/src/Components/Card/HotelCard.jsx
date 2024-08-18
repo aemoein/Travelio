@@ -40,7 +40,7 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
 
     const handleBookHotel = async () => {
         const token = localStorage.getItem('token');
-        const url = 'http://localhost:7777/trip/hotels';
+        const url = 'https://travelio-production.up.railway.app/trip/hotels';
 
         try {
             const response = await fetch(url, {

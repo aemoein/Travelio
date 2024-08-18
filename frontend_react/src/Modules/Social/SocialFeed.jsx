@@ -14,7 +14,7 @@ const SocialFeed = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('http://localhost:7777/social/timeline/', {
+        const response = await axios.get('https://travelio-production.up.railway.app/social/timeline/', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

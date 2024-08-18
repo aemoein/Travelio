@@ -36,7 +36,7 @@ const Profile = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:7777/users/profile/checkLoggedIn', {
+      const response = await axios.get('https://travelio-production.up.railway.app/users/profile/checkLoggedIn', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +59,7 @@ const Profile = () => {
 
   const fetchSocialData = async (token) => {
     try {
-      const response = await axios.get('http://localhost:7777/social/profile', {
+      const response = await axios.get('https://travelio-production.up.railway.app/social/profile', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -77,7 +77,7 @@ const Profile = () => {
 
   const fetchPosts = async (token) => {
     try {
-      const response = await axios.get('http://localhost:7777/social/posts', {
+      const response = await axios.get('https://travelio-production.up.railway.app/social/posts', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -127,7 +127,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        'http://localhost:7777/users/profile/update',
+        'https://travelio-production.up.railway.app/users/profile/update',
         editData,
         {
           headers: {

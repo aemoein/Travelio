@@ -35,7 +35,7 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post('http://localhost:7777/users/auth/login', formData, {
+        const response = await axios.post('https://travelio-production.up.railway.app/users/auth/login', formData, {
             withCredentials: true
         });
         console.log(response.data.message);

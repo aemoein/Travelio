@@ -15,7 +15,7 @@ const Search = () => {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const response = await axios.get('http://localhost:7777/social/profiles', {
+        const response = await axios.get('https://travelio-production.up.railway.app/social/profiles', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -31,7 +31,7 @@ const Search = () => {
 
     const fetchCurrentUser = async () => {
       try {
-        const response = await axios.get('http://localhost:7777/users/profile', {
+        const response = await axios.get('https://travelio-production.up.railway.app/users/profile', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,7 +44,7 @@ const Search = () => {
 
     const fetchFollowings = async () => {
       try {
-        const response = await axios.get('http://localhost:7777/social/main/followings', {
+        const response = await axios.get('https://travelio-production.up.railway.app/social/main/followings', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

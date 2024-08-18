@@ -36,7 +36,7 @@ const app = express();
 // Middleware
 const allowedOrigins = [
   'http://localhost:3000',
-  'http://localhost:7777',
+  'https://travelio-production.up.railway.app',
   'http://another-origin.com'
 ];
 

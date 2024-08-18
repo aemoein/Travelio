@@ -68,7 +68,7 @@ const Navbar = () => {
       if (!token) {
         return;
       }
-      const response = await axios.get('http://localhost:7777/users/profile/checkLoggedIn', {
+      const response = await axios.get('https://travelio-production.up.railway.app/users/profile/checkLoggedIn', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

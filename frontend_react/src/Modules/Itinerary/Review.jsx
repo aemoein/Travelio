@@ -24,7 +24,7 @@ const ReviewPage = () => {
             const token = localStorage.getItem('token');
             const searchParams = new URLSearchParams(location.search);
             const fetchedTripId = searchParams.get('tripId');
-            const url = `http://localhost:7777/trip/trip?tripId=${fetchedTripId}`;
+            const url = `https://travelio-production.up.railway.app/trip/trip?tripId=${fetchedTripId}`;
 
             try {
                 const response = await fetch(url, {
@@ -63,7 +63,7 @@ const ReviewPage = () => {
             totalPrice: tripData.totalPrice
         });
 
-        const url = 'http://localhost:7777/payment';
+        const url = 'https://travelio-production.up.railway.app/payment';
 
         try {
             const response = await fetch(url, {
