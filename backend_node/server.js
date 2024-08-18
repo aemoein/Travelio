@@ -37,7 +37,7 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:3000',
   'https://travelio-production.up.railway.app',
-  'http://another-origin.com'
+  'https://travelio-gold.vercel.app/'
 ];
 
 app.use(cors({
