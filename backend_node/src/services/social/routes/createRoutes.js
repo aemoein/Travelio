@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express();
 
-const socialController = require('./../controllers/socialController');
+const socialController = require('../controllers/socialController');
 
 // 1- create social profile
 router.post('/create', socialController.createSocialProfile);
