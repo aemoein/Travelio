@@ -21,7 +21,7 @@ const FlightCard = ({ flight, cityName, arrivalDate, departureDate, adults }) =>
                 return;
             }
 
-            const response = await fetch('http://localhost:3003/api/flights', {
+            const response = await fetch('http://localhost:7777/trip/flights', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

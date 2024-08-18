@@ -72,7 +72,10 @@ function SignUpPage() {
 
         // Send challenge profile creation request with username as a URL parameter
         console.log('Sending create request to /api/challengeProfile/new with username:', username);
-        const challengeResponse = await axios.post(`http://localhost:7777/challenges/profiles/new?username=${encodeURIComponent(username)}`);
+
+        const challengeResponse = await axios.post('http://localhost:7777/challenges/profiles', {
+          username: username
+        });
 
         console.log('Challenge profile creation successful, response data:', challengeResponse.data);
         

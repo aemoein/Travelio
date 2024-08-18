@@ -44,7 +44,7 @@ const Search = () => {
 
     const fetchFollowings = async () => {
       try {
-        const response = await axios.get('http://localhost:7777/social/followings', {
+        const response = await axios.get('http://localhost:7777/social/main/followings', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

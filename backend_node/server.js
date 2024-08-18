@@ -12,25 +12,20 @@ const config = require('./src/config/config');
 const cron = require('node-cron');
 const { fetchAccessToken } = require('./src/middleware/accessTokenMiddleware');
 
-//Routes
+// Routes
 const authRoutes = require('./src/services/users/routes/authRoutes');
 const profileRoutes = require('./src/services/users/routes/profileRoutes');
-
 const socialRoutes = require('./src/services/social/routes/socialRoutes');
 const postRoutes = require('./src/services/social/routes/postRoutes');
 const timelineRoutes = require('./src/services/social/routes/timelineRoutes');
 const createRoutes = require('./src/services/social/routes/createRoutes');
-
-const cityRoutes = require('./src/services/destinations/routes/cityRoutes')
+const cityRoutes = require('./src/services/destinations/routes/cityRoutes');
 const destinationRoutes = require('./src/services/destinations/routes/destinationRoutes');
 const weatherRoutes = require('./src/services/destinations/routes/weatherRoutes');
-
 const tripRoutes = require('./src/services/trip/routes/tripRoutes');
 const paymentRoutes = require('./src/services/payment/routes/paymentRoutes');
-
 const challengeRoutes = require('./src/services/challenges/routes/challengeRoutes');
 const challengeProfileRoutes = require('./src/services/challenges/routes/profileRoutes');
-
 const imageRoutes = require('./src/services/imgrec/routes/imageRoutes');
 
 // Load environment variables
@@ -39,7 +34,29 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:7777',
+  'http://another-origin.com'
+];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
+
+// Log the origin of each request
+app.use((req, res, next) => {
+    console.log(`Request Origin: ${req.headers.origin}`);
+    next();
+});
+
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(session({
@@ -64,32 +81,32 @@ cron.schedule('*/15 * * * *', () => {
 
 ////// ROUTES ///////
 
-//user routes
+// User routes
 app.use('/users/auth', authRoutes);
 app.use('/users/profile', authMiddleware, profileRoutes);
 
-//social routes
+// Social routes
 app.use('/social/create', createRoutes);
-app.use('/social', authMiddleware, socialRoutes);
+app.use('/social/main', authMiddleware, socialRoutes);
 app.use('/social/posts', authMiddleware, postRoutes);
 app.use('/social/timeline', authMiddleware, timelineRoutes);
 
-//destination routes
-app.use('/destinations/', destinationRoutes);
+// Destination routes
+app.use('/destinations', destinationRoutes);
 app.use('/destinations/city', cityRoutes);
 app.use('/destinations/weather', weatherRoutes);
 
-//trip routes
+// Trip routes
 app.use('/trip', tripRoutes);
 
-//payment routes
+// Payment routes
 app.use('/payment', paymentRoutes);
 
-//challenge routes
+// Challenge routes
 app.use('/challenges', challengeRoutes);
 app.use('/challenges/profiles', challengeProfileRoutes);
 
-//image recognition routes
+// Image recognition routes
 app.use('/image', imageRoutes);
 
 // Start the server

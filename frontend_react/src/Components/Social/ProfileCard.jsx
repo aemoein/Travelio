@@ -35,7 +35,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     const handleFollow = async () => {
         try {
         const response = await axios.post(
-            'http://localhost:7777/social/follow',
+            'http://localhost:7777/social/main/follow',
             { targetUserProfileId: profile._id },
             {
             headers: {
@@ -54,7 +54,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     const handleUnfollow = async () => {
         try {
         const response = await axios.post(
-            'http://localhost:7777/social/unfollow',
+            'http://localhost:7777/social/main/unfollow',
             { targetUserProfileId: profile._id },
             {
             headers: {

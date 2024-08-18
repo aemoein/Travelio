@@ -3,6 +3,6 @@ const destinationsController = require('../controllers/destinationsController');
 
 const router = express.Router();
 
-router.get('/destinations', destinationsController.fetchDestinations);
+router.get('/', destinationsController.fetchDestinations);
 
 module.exports = router;

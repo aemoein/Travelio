@@ -13,7 +13,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         console.log("totalPrice: " + totalPrice);
         console.log("userId: " + userId);
 
-        const successUrl = `http://localhost:3005/payment/success?tripId=${tripId}&destination=${encodeURIComponent(destination)}&totalPrice=${totalPrice}&userId=${userId}`;
+        const successUrl = `http://localhost:7777/payment/success?tripId=${tripId}&destination=${encodeURIComponent(destination)}&totalPrice=${totalPrice}&userId=${userId}`;
         const cancelUrl = `http://localhost:3000/planning/review?tripId=${tripId}&destination=${encodeURIComponent(destination)}`;
 
         const session = await stripe.checkout.sessions.create({
