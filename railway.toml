@@ -1,0 +1,5 @@
+[build]
+command = "cd backend_node && npm install && npm run build"
+
+[deploy]
+command = "cd backend_node && npm start"
