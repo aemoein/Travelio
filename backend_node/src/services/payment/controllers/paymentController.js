@@ -13,8 +13,8 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         console.log("totalPrice: " + totalPrice);
         console.log("userId: " + userId);
 
-        const successUrl = `http://localhost:3005/payment/success?tripId=${tripId}&destination=${encodeURIComponent(destination)}&totalPrice=${totalPrice}&userId=${userId}`;
-        const cancelUrl = `http://localhost:3000/planning/review?tripId=${tripId}&destination=${encodeURIComponent(destination)}`;
+        const successUrl = `https://travelio-production.up.railway.app/payment/success?tripId=${tripId}&destination=${encodeURIComponent(destination)}&totalPrice=${totalPrice}&userId=${userId}`;
+        const cancelUrl = `https://travelio-gold.vercel.app/planning/review?tripId=${tripId}&destination=${encodeURIComponent(destination)}`;
 
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
@@ -59,7 +59,7 @@ exports.paymentSuccess = catchAsync(async (req, res, next) => {
             userId
         });
 
-        res.redirect(`http://localhost:3000/payment/success?tripId=${tripId}&destination=${encodeURIComponent(destination)}&totalPrice=${totalPrice}&userId=${userId}`);
+        res.redirect(`https://travelio-gold.vercel.app/payment/success?tripId=${tripId}&destination=${encodeURIComponent(destination)}&totalPrice=${totalPrice}&userId=${userId}`);
     } catch (error) {
         console.error('Error in paymentSuccess:', error.message);
         res.status(500).json({
