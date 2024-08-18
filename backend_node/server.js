@@ -37,7 +37,7 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:3000',
   'https://travelio-production.up.railway.app',
-  'https://travelio-gold.vercel.app/'
+  'https://travelio-gold.vercel.app'
 ];
 
 app.use(cors({
@@ -48,22 +48,26 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+// Handle OPTIONS requests
+app.options('*', cors());
 
 // Log the origin of each request
 app.use((req, res, next) => {
-    console.log(`Request Origin: ${req.headers.origin}`);
-    next();
+  console.log(`Request Origin: ${req.headers.origin}`);
+  next();
 });
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(session({
-    secret: config.jwtSecret,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false } // Use secure: true in production with HTTPS
+  secret: config.jwtSecret,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // Use secure: true in production with HTTPS
 }));
 app.use(extractToken);
 app.use(errorMiddleware);
@@ -79,38 +83,24 @@ cron.schedule('*/15 * * * *', () => {
   fetchAccessToken();
 });
 
-////// ROUTES ///////
-
-// User routes
+// ROUTES
 app.use('/users/auth', authRoutes);
 app.use('/users/profile', authMiddleware, profileRoutes);
-
-// Social routes
 app.use('/social/create', createRoutes);
 app.use('/social/main', authMiddleware, socialRoutes);
 app.use('/social/posts', authMiddleware, postRoutes);
 app.use('/social/timeline', authMiddleware, timelineRoutes);
-
-// Destination routes
 app.use('/destinations', destinationRoutes);
 app.use('/destinations/city', cityRoutes);
 app.use('/destinations/weather', weatherRoutes);
-
-// Trip routes
 app.use('/trip', tripRoutes);
-
-// Payment routes
 app.use('/payment', paymentRoutes);
-
-// Challenge routes
 app.use('/challenges', challengeRoutes);
 app.use('/challenges/profiles', challengeProfileRoutes);
-
-// Image recognition routes
 app.use('/image', imageRoutes);
 
 // Start the server
 const PORT = config.port;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
