@@ -6,3 +6,4 @@ backend/Challenge/MLmodel
 *.jpg
 /backend/Challenge/ML model
 /backend/ImageModel/node_modules
+.env

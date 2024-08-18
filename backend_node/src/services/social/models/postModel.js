@@ -60,6 +60,6 @@ postSchema.pre('save', function(next) {
     next();
 });
 
-const Post = mongoose.model('Post', postSchema, 'social');
+const Post = mongoose.model('Post', postSchema);
 
 module.exports = Post;

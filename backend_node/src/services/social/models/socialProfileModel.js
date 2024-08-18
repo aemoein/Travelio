@@ -38,6 +38,6 @@ const socialProfileSchema = new mongoose.Schema({
 {timestamps: true}
 );
 
-const SocialProfile = mongoose.model('SocialProfile', socialProfileSchema, 'social');
+const SocialProfile = mongoose.model('SocialProfile', socialProfileSchema);
 
 module.exports = SocialProfile;

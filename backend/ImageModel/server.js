@@ -5,16 +5,17 @@ const tf = require('@tensorflow/tfjs-node');
 const Jimp = require('jimp');
 const fs = require('fs');
 const path = require('path');
-const morgan = require('morgan');
+const morgan = require('morgan'); // Import Morgan
 
 const app = express();
 const port = 5555;
 
 app.use(cors());
-app.use(morgan('dev'));
+app.use(morgan('dev')); // Use Morgan for logging
 
 // Load model architecture and weights
 const loadModel = async () => {
+  // Update the path to point to the correct directory
   const model = await tf.loadLayersModel('file://./model_architecture/model.json');
   return model;
 };
@@ -33,30 +34,14 @@ loadModel().then((loadedModel) => {
   console.error("Error loading model:", err);
 });
 
-// Load class indices from the dataset directory
-const datasetPath = path.join(__dirname, 'CHALLNGE_DATA-SET');
-const classIndices = {};
-
-// Read the dataset directory to map class names to indices
-fs.readdirSync(datasetPath).forEach((folder, index) => {
-  const folderPath = path.join(datasetPath, folder);
-  if (fs.statSync(folderPath).isDirectory()) {
-    classIndices[index-1] = folder; // Map index to class name (starting from 0)
-  }
-});
-
-// Log the class indices for debugging
-console.log("Class Indices:", classIndices);
-
 const predictImage = async (imgBuffer) => {
   const image = await Jimp.read(imgBuffer);
-  image.resize(imgWidth, imgHeight); // Resize to the input size of the model
-  const imgTensor = tf.browser.fromPixels(image.bitmap).div(255.0).expandDims(0); // Normalize pixel values
+  image.resize(imgWidth, imgHeight);
+  const imgTensor = tf.browser.fromPixels(image.bitmap).div(255.0).expandDims(0);
   
-  const predictions = await model.predict(imgTensor).data(); // Get predictions
-  console.log('Raw Predictions:', predictions); // Log the predictions array
-
-  const classIdx = predictions.indexOf(Math.max(...predictions)); // Get the class index of the highest prediction
+  const predictions = await model.predict(imgTensor).data();
+  const classIdx = predictions.indexOf(Math.max(...predictions));
+  
   return classIdx;
 };
 
@@ -65,14 +50,20 @@ app.post('/api/predict/', upload.single('file'), async (req, res) => {
     const imgBuffer = req.file.buffer;
     const classIdx = await predictImage(imgBuffer);
     
-    // Log the predicted class index
-    console.log('Predicted Class Index:', classIdx);
-
-    // Get the class label from the classIndices mapping
+    // Map class index to class label
+    const classIndices = {
+      '0': 'BIG_BEN',
+      '1': 'COLOSSEUM',
+      '2': 'EIFFLE_TOWER',
+      '3': 'GIZA_PYRAMIDS',
+      '4': 'KHALIFA_TOWER',
+      '5': 'LIBERTY_STATUE',
+      '6': 'PISA_TOWER'
+    };
+    
     const predictedClass = classIndices[classIdx] || 'Unknown';
     res.json({ predicted_class: predictedClass });
   } catch (error) {
-    console.error("Error during prediction:", error);
     res.status(500).send(error.toString());
   }
 });
