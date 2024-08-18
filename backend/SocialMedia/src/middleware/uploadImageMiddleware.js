@@ -6,7 +6,7 @@ const multerOptions = () => {
     const storage = new CloudinaryStorage({
         cloudinary,
         params: {
-            folder: 'CloudinaryDemo',
+            folder: 'posts',
             allowedFormats: ['jpeg', 'png', 'jpg'],
         },
     });

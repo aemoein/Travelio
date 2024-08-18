@@ -3,10 +3,8 @@ const multer = require('multer');
 const path = require('path');
 const { v2: cloudinary } = require('cloudinary');
 
-// Set up multer storage engine to upload directly to Cloudinary
 const storage = multer.diskStorage({});
 
-// Initialize multer instance with Cloudinary storage engine
 const upload = multer({
   storage: storage,
   fileFilter: (req, file, cb) => {

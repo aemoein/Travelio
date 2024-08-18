@@ -50,7 +50,7 @@ async function userInfoSignUp(req, res) {
   try {
     // Upload file to Cloudinary with folder specified
     const result = await cloudinary.uploader.upload(req.file.path, {
-      folder: 'profilePics' // Folder name in Cloudinary where images will be stored
+      folder: 'profilePics' 
     });
 
     const userInfo = {
@@ -59,7 +59,7 @@ async function userInfoSignUp(req, res) {
       bio,
       nationality,
       mobileNumber,
-      profilePicUrl: result.secure_url // Use result.secure_url from Cloudinary response
+      profilePicUrl: result.secure_url
     };
 
     const updateResult = await authService.userInformation(req.session.userId, userInfo);

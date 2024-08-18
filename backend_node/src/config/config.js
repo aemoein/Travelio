@@ -16,7 +16,17 @@ module.exports = {
 
     // JWT Secret Key
     jwtSecret: process.env.JWT_SECRET,
+
+    // Cloudinary credentials
     cloudinaryApiKey: process.env.CLOUDINARY_API_KEY,
     cloudinaryApiSecret: process.env.CLOUDINARY_API_SECRET,
-    cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME
+    cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
+
+    // Amadeus credentials
+    accessToken: '',
+    clientId: process.env.CLIENT_ID,  
+    clientSecret: process.env.CLIENT_SECRET,
+
+    // Google API Key
+    googleApiKey: process.env.GOOGLE_API_KEY,
 };

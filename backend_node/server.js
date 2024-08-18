@@ -5,12 +5,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const session = require('express-session');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
+const cron = require('node-cron');
+const { fetchAccessToken } = require('./src/middleware/accessTokenMiddleware');
 
 //Routes
 const authRoutes = require('./src/services/users/routes/authRoutes');
@@ -55,6 +55,12 @@ app.use(errorMiddleware);
 mongoose.connect(config.mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
+
+fetchAccessToken();
+
+cron.schedule('*/15 * * * *', () => {
+  fetchAccessToken();
+});
 
 ////// ROUTES ///////
 

@@ -1,5 +1,5 @@
-class apiErrors extends Error {
-    constructor(message, statusCode) {
+class ApiErrors extends Error{
+    constructor(message,statusCode){
         super(message)
         this.message=message
         this.statusCode=`${statusCode}`.startsWith(4)?"fail":"error"
@@ -7,4 +7,4 @@ class apiErrors extends Error {
     }
 }
 
-module.exports = apiErrors;
+module.exports=ApiErrors;

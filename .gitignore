@@ -7,3 +7,4 @@ backend/Challenge/MLmodel
 /backend/Challenge/ML model
 /backend/ImageModel/node_modules
 .env
+backend_node/.env
