@@ -1,6 +1,6 @@
 const axios = require('axios');
 const https = require('https');
-const config = require('../config/config');
+const config = require('../../../config/config');
 const Flight = require('../models/Flight');
 const Trip = require('../models/Trip');
 

@@ -2,7 +2,7 @@ const axios = require('axios');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { User } = require('../middleware/userMiddleware');
-const config = require('../config/config');
+const config = require('../../../config/config');
 
 async function registerUser(userInfo) {
     const { username, firstName, lastName, email, password } = userInfo;

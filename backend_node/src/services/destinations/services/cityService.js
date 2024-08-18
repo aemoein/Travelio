@@ -111,7 +111,7 @@ async function addTransportationToCity(cityId, transportationData) {
   }
 }
 
-loadCityDataFromFile('london').then((result) => console.log(result.message)).catch((error) => console.error(error.message));
+//loadCityDataFromFile('london').then((result) => console.log(result.message)).catch((error) => console.error(error.message));
 
 module.exports = {
   getAllCities,

@@ -29,7 +29,7 @@ const tripRoutes = require('./src/services/trip/routes/tripRoutes');
 const paymentRoutes = require('./src/services/payment/routes/paymentRoutes');
 
 const challengeRoutes = require('./src/services/challenges/routes/challengeRoutes');
-const profileRoutes = require('./src/services/challenges/routes/profileRoutes');
+const challengeProfileRoutes = require('./src/services/challenges/routes/profileRoutes');
 
 const imageRoutes = require('./src/services/imgrec/routes/imageRoutes');
 
@@ -81,7 +81,7 @@ app.use('/payment', paymentRoutes);
 
 //challenge routes
 app.use('/challenges', challengeRoutes);
-app.use('/challenges/profiles', ChallengeProfileRoutes);
+app.use('/challenges/profiles', challengeProfileRoutes);
 
 //image recognition routes
 app.use('/image', imageRoutes);
