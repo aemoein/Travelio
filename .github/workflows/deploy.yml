@@ -31,4 +31,4 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_PROJECT_ID }}
         run: |
           cd backend_node
-          railway up
+          railway up --service Travelio
