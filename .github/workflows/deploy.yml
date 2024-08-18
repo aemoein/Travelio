@@ -37,4 +37,4 @@ jobs:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           cd backend_node
-          railway up --yes
+          railway up
