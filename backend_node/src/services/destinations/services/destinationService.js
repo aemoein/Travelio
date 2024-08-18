@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.resolve(__dirname, '../../Countries.json');
-let destinations = []; // Initialize an empty array to store destinations
+const filePath = path.resolve(__dirname, '../resources/countries.json');
+let destinations = [];
 
 // Function to load destinations from JSON file
 const loadDestinations = () => {

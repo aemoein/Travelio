@@ -4,7 +4,7 @@ const flightsController = require('../controllers/flightsController');
 const hotelController = require('../controllers/hotelController');
 const itinerariesController = require('../controllers/itinerariesController');
 const tripController = require('../controllers/tripController');
-const authMiddleware = require('../middleware/authMiddleware');
+const authMiddleware = require('../../../middleware/authMiddleware');
 
 const router = express.Router();
 

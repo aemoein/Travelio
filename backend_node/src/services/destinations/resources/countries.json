@@ -1,0 +1,3531 @@
+[
+    {
+      "name": "United States",
+      "picture": "https://d1dzqwexhp5ztx.cloudfront.net/imageRepo/7/0/113/310/593/S_Washington_Monument_S.jpg",
+      "description": "The United States of America is a country primarily located in North America.",
+      "population": 331002651,
+      "language": "English",
+      "currency": "USD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−04:00 to UTC−12:00, +10:00, +11:00",
+      "capital": "Washington, D.C.",
+      "funfacts": [
+        "The U.S. has no official language at the federal level.",
+        "The U.S. is home to the world's largest economy.",
+        "The U.S. has the most Olympic medals of any country."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Canada",
+      "picture": "https://www.internationalcitizens.com/wp-content/uploads/2022/09/iStock-1178852373.jpg",
+      "description": "Canada is the second largest country by land area.",
+      "population": 37742154,
+      "language": "English, French",
+      "currency": "CAD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−03:30 to UTC−08:00",
+      "capital": "Ottawa",
+      "funfacts": [
+        "Canada has the longest coastline of any country in the world.",
+        "Canada is known for its maple syrup, producing 71% of the world's supply.",
+        "Canada has two official languages: English and French."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Mexico",
+      "picture": "https://cdn.mos.cms.futurecdn.net/dXVL6xpUyWzLiEd9CAyGtS-1200-80.jpg",
+      "description": "Mexico is known for its rich cultural heritage and diverse landscapes.",
+      "population": 128932753,
+      "language": "Spanish",
+      "currency": "MXN",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−08:00 to UTC−06:00",
+      "capital": "Mexico City",
+      "funfacts": [
+        "Mexico introduced chocolate, chilies, and corn to the world.",
+        "Mexico City is the oldest city in North America.",
+        "Mexico has 34 UNESCO World Heritage Sites."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Guatemala",
+      "picture": "https://www.hmrv.de/resource/image/194316/5x6/767/920/40d481a800d0241d1f2bdefa043640f6/C1FE314247921F4896CBFB1B3ECCC340/guatemala.webp",
+      "description": "Guatemala is known for its Mayan history and vibrant culture.",
+      "population": 17915568,
+      "language": "Spanish",
+      "currency": "GTQ",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−06:00",
+      "capital": "Guatemala City",
+      "funfacts": [
+        "Guatemala is known as the birthplace of chocolate.",
+        "The country has 37 volcanoes, 3 of which are active.",
+        "Guatemala hosts the largest collection of UNESCO World Heritage sites in Central America."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Belize",
+      "picture": "https://i.natgeofe.com/n/318dbe1c-829a-400b-b52f-ed7f9a1f0ccb/GettyImages-451852-001-1.jpg",
+      "description": "Belize is known for its beautiful Caribbean coastline and rich marine life.",
+      "population": 397621,
+      "language": "English",
+      "currency": "BZD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−06:00",
+      "capital": "Belmopan",
+      "funfacts": [
+        "Belize is home to the second largest barrier reef in the world.",
+        "English is the official language of Belize.",
+        "Belize is the only country in Central America with no Pacific coastline."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Honduras",
+      "picture": "https://media.cntraveler.com/photos/53dadfa1dcd5888e145d3789/master/pass/coral-lodge-costa-arriba-panama-109786-1.jpg",
+      "description": "Honduras is known for its rich natural resources and ancient Mayan ruins.",
+      "population": 9904607,
+      "language": "Spanish",
+      "currency": "HNL",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−06:00",
+      "capital": "Tegucigalpa",
+      "funfacts": [
+        "Honduras means 'depths' in Spanish.",
+        "The Bay Islands are part of the world's second largest coral reef.",
+        "Honduras is home to the ancient Mayan city of Copán."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "El Salvador",
+      "picture": "https://www.state.gov/wp-content/uploads/2023/07/shutterstock_189552479v2.jpg",
+      "description": "El Salvador is the smallest and most densely populated country in Central America.",
+      "population": 6486205,
+      "language": "Spanish",
+      "currency": "USD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−06:00",
+      "capital": "San Salvador",
+      "funfacts": [
+        "El Salvador is known as the 'Land of Volcanoes'.",
+        "It is the only Central American country without a Caribbean coastline.",
+        "El Salvador uses the U.S. dollar as its official currency."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Nicaragua",
+      "picture": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/88/bf/9c.jpg",
+      "description": "Nicaragua is known for its dramatic terrain of lakes, volcanoes, and beaches.",
+      "population": 6624554,
+      "language": "Spanish",
+      "currency": "NIO",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−06:00",
+      "capital": "Managua",
+      "funfacts": [
+        "Nicaragua is the largest country in Central America.",
+        "Lake Nicaragua is the only freshwater lake in the world where sharks live.",
+        "Nicaragua is known for its twin volcanoes, Concepción and Maderas."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Costa Rica",
+      "picture": "https://assets-jpcust.jwpsrv.com/thumbnails/UUgsC1HS-720.jpg",
+      "description": "Costa Rica is known for its beaches, volcanoes, and biodiversity.",
+      "population": 5094118,
+      "language": "Spanish",
+      "currency": "CRC",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−06:00",
+      "capital": "San José",
+      "funfacts": [
+        "Costa Rica means 'Rich Coast' in Spanish.",
+        "It has no standing army since 1949.",
+        "Costa Rica is home to more than 5% of the world's biodiversity."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Panama",
+      "picture": "https://i.natgeofe.com/n/bd40e5a2-e085-4f1d-88a2-6504a8348690/GettyImages-1168257279_2x3.jpg",
+      "description": "Panama is known for the Panama Canal that connects the Atlantic and Pacific Oceans.",
+      "population": 4314768,
+      "language": "Spanish",
+      "currency": "PAB, USD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−05:00",
+      "capital": "Panama City",
+      "funfacts": [
+        "The Panama Canal generates a third of Panama's entire economy.",
+        "Panama is the only place in the world where you can see the sun rise on the Pacific and set on the Atlantic.",
+        "Panama City is the only capital city that has a rainforest within the city limits."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Cuba",
+      "picture": "https://services.travelsavers.com/AMGService.svc/REST/GetImage?ImageID=8f96c373-9224-e911-b4aa-782bcb66a2f2",
+      "description": "Cuba is the largest island in the Caribbean known for its vibrant culture.",
+      "population": 11326616,
+      "language": "Spanish",
+      "currency": "CUP",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−05:00",
+      "capital": "Havana",
+      "funfacts": [
+        "Cuba is the most populous island in the Caribbean.",
+        "Cuba has one of the best healthcare systems in the world.",
+        "Cuba is known for its classic cars due to the embargo."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Jamaica",
+      "picture": "https://www.resortsdaily.com/images/Sandals-Royal-Caribbean-Private-Island.jpg",
+      "description": "Jamaica is known for its reggae music, white-sand beaches, and rich culture.",
+      "population": 2961167,
+      "language": "English",
+      "currency": "JMD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−05:00",
+      "capital": "Kingston",
+      "funfacts": [
+        "Jamaica was the first Caribbean country to gain independence.",
+        "It is the birthplace of reggae music.",
+        "Jamaica has the fastest runners in the world."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Haiti",
+      "picture": "x",
+      "description": "Haiti is known for its rich history as the first post-colonial independent black-led nation.",
+      "population": 11402528,
+      "language": "French, Haitian Creole",
+      "currency": "HTG",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−05:00",
+      "capital": "Port-au-Prince",
+      "funfacts": [
+        "Haiti is the second oldest independent nation in the Western Hemisphere.",
+        "It is the most mountainous country in the Caribbean.",
+        "Haiti was the first country in the world to abolish slavery."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Dominican Republic",
+      "picture": "x",
+      "description": "The Dominican Republic is known for its beautiful beaches and resorts.",
+      "population": 10847910,
+      "language": "Spanish",
+      "currency": "DOP",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−04:00",
+      "capital": "Santo Domingo",
+      "funfacts": [
+        "The Dominican Republic is the most visited destination in the Caribbean.",
+        "Santo Domingo is the oldest continuously inhabited city in the New World.",
+        "It shares the island of Hispaniola with Haiti."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Bahamas",
+      "picture": "x",
+      "description": "The Bahamas is an archipelago known for its stunning clear waters and beaches.",
+      "population": 393244,
+      "language": "English",
+      "currency": "BSD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−05:00",
+      "capital": "Nassau",
+      "funfacts": [
+        "The Bahamas is made up of over 700 islands.",
+        "The world's third largest barrier reef is in the Bahamas.",
+        "The Bahamas is one of the richest countries in the Americas."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Barbados",
+      "picture": "x",
+      "description": "Barbados is known for its beaches, botanical gardens, and the birthplace of rum.",
+      "population": 287375,
+      "language": "English",
+      "currency": "BBD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−04:00",
+      "capital": "Bridgetown",
+      "funfacts": [
+        "Barbados is known as the 'Land of the Flying Fish'.",
+        "It is the birthplace of Rihanna.",
+        "Barbados is one of the leading tourist destinations in the Caribbean."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Trinidad and Tobago",
+      "picture": "x",
+      "description": "Trinidad and Tobago is known for its Carnival and as the birthplace of steelpan and calypso music.",
+      "population": 1399491,
+      "language": "English",
+      "currency": "TTD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−04:00",
+      "capital": "Port of Spain",
+      "funfacts": [
+        "Trinidad and Tobago is the wealthiest country in the Caribbean.",
+        "It is home to the largest Carnival celebration in the Caribbean.",
+        "The steelpan drum was invented in Trinidad and Tobago."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Saint Kitts and Nevis",
+      "picture": "x",
+      "description": "Saint Kitts and Nevis is known for its cloud-shrouded mountains and beaches.",
+      "population": 53192,
+      "language": "English",
+      "currency": "XCD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−04:00",
+      "capital": "Basseterre",
+      "funfacts": [
+        "Saint Kitts and Nevis is the smallest country in the Western Hemisphere.",
+        "It was the first Caribbean island to be colonized by Europeans.",
+        "The island's Brimstone Hill Fortress is a UNESCO World Heritage Site."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Antigua and Barbuda",
+      "picture": "x",
+      "description": "Antigua and Barbuda is known for its reef-lined beaches and rainforests.",
+      "population": 97929,
+      "language": "English",
+      "currency": "XCD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−04:00",
+      "capital": "Saint John's",
+      "funfacts": [
+        "Antigua and Barbuda is known for having 365 beaches, one for each day of the year.",
+        "It is home to the largest nesting colony of frigate birds in the Caribbean.",
+        "Antigua's carnival is a 10-day festival that takes place every summer."
+      ],
+      "gallery": []
+    },
+    {
+      "name": "Saint Lucia",
+      "picture": "x",
+      "description": "Saint Lucia is known for its volcanic beaches, reef-diving sites, and luxury resorts.",
+      "population": 183627,
+      "language": "English",
+      "currency": "XCD",
+      "continent": "North America",
+      "region": "North America",
+      "timezone": "UTC−04:00",
+      "capital": "Castries",
+      "funfacts": [
+        "Saint Lucia is the only country in the world named after a woman.",
+        "It is home to the Pitons, two mountainous volcanic plugs.",
+        "Saint Lucia has the second highest number of Nobel laureates per capita in the world."
+      ],
+      "gallery": []
+    },
+    {
+        "name": "Grenada",
+        "picture": "x",
+        "description": "Grenada is known as the 'Spice Isle' for its production of nutmeg and mace.",
+        "population": 112523,
+        "language": "English",
+        "currency": "XCD",
+        "continent": "North America",
+        "region": "Central America & Caribbean",
+        "timezone": "UTC−04:00",
+        "capital": "Saint George's",
+        "funfacts": [
+          "Grenada is the world's second largest producer of nutmeg.",
+          "It is home to the world's first underwater sculpture park.",
+          "Grenada gained independence from the UK in 1974."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Saint Vincent and the Grenadines",
+        "picture": "x",
+        "description": "Saint Vincent and the Grenadines is known for its yacht-filled harbors and stunning beaches.",
+        "population": 110589,
+        "language": "English",
+        "currency": "XCD",
+        "continent": "North America",
+        "region": "Central America & Caribbean",
+        "timezone": "UTC−04:00",
+        "capital": "Kingstown",
+        "funfacts": [
+          "Saint Vincent is famous for its black sand beaches.",
+          "The movie 'Pirates of the Caribbean' was filmed here.",
+          "It consists of 32 islands and cays, of which only 9 are inhabited."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Dominica",
+        "picture": "x",
+        "description": "Dominica is known as the 'Nature Island' of the Caribbean.",
+        "population": 71986,
+        "language": "English",
+        "currency": "XCD",
+        "continent": "North America",
+        "region": "Central America & Caribbean",
+        "timezone": "UTC−04:00",
+        "capital": "Roseau",
+        "funfacts": [
+          "Dominica is home to the world's second-largest hot spring, Boiling Lake.",
+          "It has the highest concentration of active volcanoes in the world.",
+          "Dominica is a popular destination for hiking and diving."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Argentina",
+        "picture": "x",
+        "description": "Argentina is known for its tango dance, beef, and the Andes mountains.",
+        "population": 45195777,
+        "language": "Spanish",
+        "currency": "ARS",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−03:00",
+        "capital": "Buenos Aires",
+        "funfacts": [
+          "Argentina is the eighth-largest country in the world.",
+          "It was the first country to use fingerprints as a method of identification.",
+          "The tango originated in the slaughterhouse district of Buenos Aires."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Bolivia",
+        "picture": "x",
+        "description": "Bolivia is known for its diverse cultures and landscapes, including the Andes, the Amazon, and the Salar de Uyuni.",
+        "population": 11673029,
+        "language": "Spanish, Quechua, Aymara, and others",
+        "currency": "BOB",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−04:00",
+        "capital": "Sucre (constitutional), La Paz (administrative)",
+        "funfacts": [
+          "Bolivia has the highest capital city in the world, La Paz.",
+          "It is home to the world's largest salt flat, Salar de Uyuni.",
+          "Bolivia has 37 official languages."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Brazil",
+        "picture": "x",
+        "description": "Brazil is the largest country in South America, known for its Amazon rainforest, Carnival festival, and football (soccer) tradition.",
+        "population": 212559417,
+        "language": "Portuguese",
+        "currency": "BRL",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−03:00 to UTC−05:00",
+        "capital": "Brasília",
+        "funfacts": [
+          "Brazil is the fifth-largest country in the world by both land area and population.",
+          "The Amazon River, located in Brazil, is the second longest river in the world.",
+          "Brazil has won the FIFA World Cup five times, more than any other country."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Chile",
+        "picture": "x",
+        "description": "Chile is known for its long, narrow shape stretching along South America's western edge and its diverse climate and geography.",
+        "population": 19116201,
+        "language": "Spanish",
+        "currency": "CLP",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−03:00 to UTC−05:00",
+        "capital": "Santiago",
+        "funfacts": [
+          "Chile is home to the Atacama Desert, the driest place on Earth.",
+          "The Andes mountains run the entire length of the country.",
+          "Chile has one of the longest coastlines in the world, stretching over 4,300 kilometers."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Colombia",
+        "picture": "x",
+        "description": "Colombia is known for its coffee, diverse landscapes, and vibrant culture.",
+        "population": 50882891,
+        "language": "Spanish",
+        "currency": "COP",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−05:00",
+        "capital": "Bogotá",
+        "funfacts": [
+          "Colombia is the world's leading source of emeralds.",
+          "It is one of the most biodiverse countries in the world.",
+          "The city of Medellín was once known as the 'City of Eternal Spring' due to its temperate weather."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Ecuador",
+        "picture": "x",
+        "description": "Ecuador is known for its diverse geography, including the Amazon rainforest, Andean highlands, and the Galápagos Islands.",
+        "population": 17643054,
+        "language": "Spanish",
+        "currency": "USD",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−05:00",
+        "capital": "Quito",
+        "funfacts": [
+          "Ecuador is named after the equator, which runs through the country.",
+          "The Galápagos Islands, located in Ecuador, are famous for their unique wildlife.",
+          "Quito, the capital, is the highest official capital city in the world."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Guyana",
+        "picture": "x",
+        "description": "Guyana is known for its dense rainforest and is home to many rivers and waterfalls, including Kaieteur Falls.",
+        "population": 786552,
+        "language": "English",
+        "currency": "GYD",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−04:00",
+        "capital": "Georgetown",
+        "funfacts": [
+          "Guyana is the only South American country where English is the official language.",
+          "Kaieteur Falls is one of the world's highest single-drop waterfalls.",
+          "Nearly 90% of Guyana is covered in forest."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Paraguay",
+        "picture": "x",
+        "description": "Paraguay is a landlocked country known for its large subtropical forests, savannas, and grasslands.",
+        "population": 7132530,
+        "language": "Spanish, Guarani",
+        "currency": "PYG",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−04:00",
+        "capital": "Asunción",
+        "funfacts": [
+          "Paraguay is one of the world's largest producers of hydroelectric power.",
+          "The Guarani language is widely spoken and is an official language alongside Spanish.",
+          "Paraguay has one of the largest navies of any landlocked country in the world."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Peru",
+        "picture": "x",
+        "description": "Peru is a country in western South America known for its rich cultural history, ancient civilizations, and diverse landscapes ranging from the Pacific coast to the Andes mountains and the Amazon rainforest.",
+        "population": 33050325,
+        "language": "Spanish, Quechua, Aymara",
+        "currency": "Peruvian sol (PEN)",
+        "continent": "South America",
+        "region": "Western South America",
+        "timezone": "UTC-5 (Peru Time)",
+        "capital": "Lima",
+        "funfacts": [
+          "Peru was the heart of the Inca Empire, known for Machu Picchu and other archaeological sites.",
+          "Lake Titicaca, located on the border of Peru and Bolivia, is one of the highest navigable lakes in the world.",
+          "Peru is a megadiverse country with a wide variety of plants and animals, many of which are endemic."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Suriname",
+        "picture": "x",
+        "description": "Suriname is known for its diverse culture, lush rainforests, and colonial architecture.",
+        "population": 586632,
+        "language": "Dutch",
+        "currency": "SRD",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−03:00",
+        "capital": "Paramaribo",
+        "funfacts": [
+          "Suriname is the smallest sovereign state in South America.",
+          "It is one of the few countries where Dutch is spoken.",
+          "Suriname has one of the highest biodiversity rates in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Uruguay",
+        "picture": "x",
+        "description": "Uruguay is known for its stable democracy, progressive social policies, and beautiful beaches along the Atlantic Ocean.",
+        "population": 3473730,
+        "language": "Spanish",
+        "currency": "UYU",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−03:00",
+        "capital": "Montevideo",
+        "funfacts": [
+          "Uruguay is the second smallest country in South America after Suriname.",
+          "It has the highest literacy rate in Latin America.",
+          "Uruguay legalized same-sex marriage in 2013, becoming one of the most LGBT-friendly countries in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Venezuela",
+        "picture": "x",
+        "description": "Venezuela is known for its oil reserves, tropical landscapes, and Angel Falls, the world's highest uninterrupted waterfall.",
+        "population": 28435943,
+        "language": "Spanish",
+        "currency": "VES",
+        "continent": "South America",
+        "region": "South America",
+        "timezone": "UTC−04:00",
+        "capital": "Caracas",
+        "funfacts": [
+          "Venezuela has the world's largest proven oil reserves.",
+          "Angel Falls in Venezuela is the highest waterfall in the world.",
+          "Venezuela has won the Miss Universe pageant more times than any other country."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Iceland",
+        "picture": "x",
+        "description": "Iceland is known for its dramatic landscapes, including volcanoes, geysers, hot springs, and lava fields.",
+        "population": 343599,
+        "language": "Icelandic",
+        "currency": "ISK",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC±00:00",
+        "capital": "Reykjavík",
+        "funfacts": [
+          "Iceland has no standing army, navy, or air force.",
+          "The Icelandic language has changed little since the Viking age.",
+          "The country is home to one of the world's oldest parliaments, established in 930 AD."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Norway",
+        "picture": "x",
+        "description": "Norway is known for its stunning fjords, Viking history, and Northern Lights.",
+        "population": 5421241,
+        "language": "Norwegian",
+        "currency": "NOK",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Oslo",
+        "funfacts": [
+          "Norway is home to approximately 450,000 lakes.",
+          "It has the highest Human Development Index (HDI) ranking in the world.",
+          "The Kon-Tiki expedition, led by Thor Heyerdahl, started from Norway in 1947."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Sweden",
+        "picture": "x",
+        "description": "Sweden is known for its beautiful landscapes, innovative design, and welfare state.",
+        "population": 10230185,
+        "language": "Swedish",
+        "currency": "SEK",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Stockholm",
+        "funfacts": [
+          "Sweden has the highest number of McDonald's restaurants per capita in Europe.",
+          "The country has a law called Allemansrätten, which gives everyone the right to access public and private land.",
+          "Sweden is the birthplace of IKEA, Spotify, and the Nobel Prize."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Finland",
+        "picture": "x",
+        "description": "Finland is known for its lakes, forests, saunas, and the Northern Lights.",
+        "population": 5540720,
+        "language": "Finnish, Swedish",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC+02:00",
+        "capital": "Helsinki",
+        "funfacts": [
+          "Finland has the highest coffee consumption per capita in the world.",
+          "It has over 3 million saunas, which is more than the number of cars in the country.",
+          "Santa Claus is said to live in Finland, in a place called Korvatunturi."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Denmark",
+        "picture": "x",
+        "description": "Denmark is known for its fairy-tale castles, Viking history, and design.",
+        "population": 5818553,
+        "language": "Danish",
+        "currency": "DKK",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Copenhagen",
+        "funfacts": [
+          "Denmark is often considered one of the happiest countries in the world.",
+          "LEGO, one of the world's most famous toy brands, was invented in Denmark.",
+          "The country has the oldest monarchy in the world, dating back over 1000 years."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Estonia",
+        "picture": "x",
+        "description": "Estonia is known for its medieval towns, forests, and islands.",
+        "population": 1326535,
+        "language": "Estonian",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC+02:00",
+        "capital": "Tallinn",
+        "funfacts": [
+          "Estonia has the highest number of startups per person in Europe.",
+          "It was the first country in the world to use online political voting.",
+          "Skype, the video calling service, was developed by Estonian engineers."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Latvia",
+        "picture": "x",
+        "description": "Latvia is known for its beaches, forests, and medieval Old Towns.",
+        "population": 1886198,
+        "language": "Latvian",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC+02:00",
+        "capital": "Riga",
+        "funfacts": [
+          "Latvia has the widest waterfall in Europe, the Ventas Rumba.",
+          "It has the oldest flag still in use, dating back to 1279 AD.",
+          "Riga, the capital, has one of the largest collections of Art Nouveau buildings in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Lithuania",
+        "picture": "x",
+        "description": "Lithuania is known for its medieval architecture, forests, and amber.",
+        "population": 2722289,
+        "language": "Lithuanian",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC+02:00",
+        "capital": "Vilnius",
+        "funfacts": [
+          "Lithuania has one of the fastest internet speeds in the world.",
+          "It has the largest moving sand dunes in Europe, the Curonian Spit.",
+          "The country is famous for its amber, often called 'Baltic gold'."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "United Kingdom",
+        "picture": "x",
+        "description": "The United Kingdom is known for its historic landmarks, cultural diversity, and royalty.",
+        "population": 67886011,
+        "language": "English",
+        "currency": "GBP",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC±00:00",
+        "capital": "London",
+        "funfacts": [
+          "The UK is made up of four countries: England, Scotland, Wales, and Northern Ireland.",
+          "London's Big Ben is not the name of the clock or tower, but the bell inside it.",
+          "The UK has the world's oldest underground railway system, the London Underground."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Ireland",
+        "picture": "x",
+        "description": "Ireland is known for its lush green landscapes, rich history, and Guinness beer.",
+        "population": 4937786,
+        "language": "Irish, English",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Northern Europe",
+        "timezone": "UTC±00:00",
+        "capital": "Dublin",
+        "funfacts": [
+          "Ireland is famous for its many ancient castles, some of which are over 800 years old.",
+          "St. Patrick, the patron saint of Ireland, was not Irish but a Roman citizen.",
+          "The Cliffs of Moher are one of Ireland's most visited natural attractions."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "France",
+        "picture": "x",
+        "description": "France is known for its art, fashion, cuisine, and picturesque landscapes.",
+        "population": 65273511,
+        "language": "French",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Western Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Paris",
+        "funfacts": [
+          "The Eiffel Tower, an iconic symbol of France, was originally criticized by artists and intellectuals.",
+          "France produces more than 400 types of cheese, including Camembert and Roquefort.",
+          "French is the second most widely learned foreign language in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Belgium",
+        "picture": "x",
+        "description": "Belgium is known for its medieval towns, Renaissance architecture, and chocolate.",
+        "population": 11589623,
+        "language": "Dutch, French, German",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Western Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Brussels",
+        "funfacts": [
+          "Belgium has more castles per square kilometer than any other country in the world.",
+          "The saxophone was invented by Adolphe Sax in Belgium in the 1840s.",
+          "Belgium produces over 220,000 tons of chocolate per year."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Netherlands",
+        "picture": "x",
+        "description": "The Netherlands is known for its flat landscape, canals, tulip fields, windmills, and cycling routes.",
+        "population": 17134872,
+        "language": "Dutch",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Western Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Amsterdam",
+        "funfacts": [
+          "The Netherlands is the largest beer exporter in the world.",
+          "Over 32% of the country lies below sea level.",
+          "Amsterdam has more canals than Venice."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Luxembourg",
+        "picture": "x",
+        "description": "Luxembourg is known for its medieval castles, historic towns, and European Union institutions.",
+        "population": 625978,
+        "language": "Luxembourgish, French, German",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Western Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Luxembourg City",
+        "funfacts": [
+          "Luxembourg is the only Grand Duchy in the world.",
+          "It is one of the richest countries in the world by GDP per capita.",
+          "Luxembourg City is a UNESCO World Heritage site."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Germany",
+        "picture": "x",
+        "description": "Germany is known for its history, beer, sausages, and cars.",
+        "population": 83783942,
+        "language": "German",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Western Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Berlin",
+        "funfacts": [
+          "Germany has over 1,500 types of sausages.",
+          "There are more than 6,000 breweries in Germany, producing about 5,000 brands of beer.",
+          "Berlin is nine times larger than Paris and has more bridges than Venice."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Switzerland",
+        "picture": "x",
+        "description": "Switzerland is known for its mountains, watches, chocolate, and neutrality.",
+        "population": 8654622,
+        "language": "German, French, Italian, Romansh",
+        "currency": "CHF",
+        "continent": "Europe",
+        "region": "Western Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Bern",
+        "funfacts": [
+          "Switzerland has no official capital, but Bern is considered the de facto capital.",
+          "The Swiss consume the most chocolate per capita in the world.",
+          "It is home to the world's oldest democracy, with the Federal Charter of 1291."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Austria",
+        "picture": "x",
+        "description": "Austria is known for its mountain villages, baroque architecture, and classical music.",
+        "population": 9006398,
+        "language": "German",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Western Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Vienna",
+        "funfacts": [
+          "Vienna, the capital, has been ranked the world's most livable city several times.",
+          "Austria is the birthplace of famous composers Mozart, Schubert, and Strauss.",
+          "The Red Bull energy drink was created in Austria."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Liechtenstein",
+        "picture": "x",
+        "description": "Liechtenstein is known for its medieval castles, alpine landscapes, and low tax rates.",
+        "population": 38128,
+        "language": "German",
+        "currency": "CHF",
+        "continent": "Europe",
+        "region": "Western Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Vaduz",
+        "funfacts": [
+          "Liechtenstein is the sixth smallest country in the world.",
+          "It is a constitutional monarchy with a prince as head of state.",
+          "Liechtenstein is landlocked between Switzerland and Austria."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Monaco",
+        "picture": "x",
+        "description": "Monaco is known for its luxury lifestyle, casinos, yacht-lined harbor, and Grand Prix motor race.",
+        "population": 39242,
+        "language": "French",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Western Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Monaco",
+        "funfacts": [
+          "Monaco is the second smallest country in the world after Vatican City.",
+          "It has the highest GDP per capita in the world.",
+          "The Monaco Grand Prix is one of the most prestigious motor races in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Portugal",
+        "picture": "x",
+        "description": "Portugal is known for its historic cities, beaches, wine production, and warm climate.",
+        "population": 10196709,
+        "language": "Portuguese",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Southern Europe",
+        "timezone": "UTC±00:00",
+        "capital": "Lisbon",
+        "funfacts": [
+          "Portugal is the oldest nation-state in Europe, founded in 1139.",
+          "The country is famous for its Port wine, produced in the Douro Valley.",
+          "Lisbon is older than Rome, London, and Paris, making it one of the oldest cities in Europe."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Spain",
+        "picture": "x",
+        "description": "Spain is known for its diverse culture, flamenco music and dance, beaches, and cuisine.",
+        "population": 46754778,
+        "language": "Spanish",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Southern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Madrid",
+        "funfacts": [
+          "Spain is home to the world's third-largest number of UNESCO World Heritage Sites.",
+          "The Sagrada Família church in Barcelona has been under construction for over 130 years.",
+          "It has the highest number of bars per inhabitant in Europe."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Italy",
+        "picture": "x",
+        "description": "Italy is known for its art, history, fashion, food, and beautiful landscapes.",
+        "population": 60461826,
+        "language": "Italian",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Southern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Rome",
+        "funfacts": [
+          "Italy has more UNESCO World Heritage Sites than any other country in the world.",
+          "The Vatican City, an independent enclave within Rome, is the smallest country in the world.",
+          "The oldest university in the Western world, the University of Bologna, was founded in Italy in 1088."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Greece",
+        "picture": "x",
+        "description": "Greece is known for its ancient history, philosophy, art, and beautiful islands.",
+        "population": 10423054,
+        "language": "Greek",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Southern Europe",
+        "timezone": "UTC+02:00",
+        "capital": "Athens",
+        "funfacts": [
+          "Greece has a coastline of around 13,676 kilometers, the 11th longest in the world.",
+          "The Olympic Games originated in Ancient Greece in Olympia around 776 BC.",
+          "The Greek national anthem has 158 verses, making it the longest national anthem in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Malta",
+        "picture": "x",
+        "description": "Malta is known for its historic sites, clear blue waters, and warm Mediterranean climate.",
+        "population": 441543,
+        "language": "Maltese, English",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Southern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Valletta",
+        "funfacts": [
+          "Malta is one of the world's smallest and most densely populated countries.",
+          "The Maltese language is Semitic in origin and is the only official Semitic language in the European Union.",
+          "The oldest free-standing structures in the world, the megalithic temples, are found in Malta."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Andorra",
+        "picture": "x",
+        "description": "Andorra is known for its ski resorts, duty-free shopping, and mountainous landscapes.",
+        "population": 77265,
+        "language": "Catalan",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Southern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Andorra la Vella",
+        "funfacts": [
+          "Andorra is one of the world's only two co-principalities, with the President of France and the Bishop of Urgell (Spain) as co-princes.",
+          "It has one of the lowest crime rates in the world.",
+          "Andorra does not have an airport or train station; the nearest airports are in Spain and France."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "San Marino",
+        "picture": "x",
+        "description": "San Marino is known for its medieval architecture, picturesque landscapes, and being the world's oldest republic.",
+        "population": 33931,
+        "language": "Italian",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Southern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "San Marino",
+        "funfacts": [
+          "San Marino is the world's oldest sovereign state and constitutional republic, founded in AD 301.",
+          "It has the third highest GDP per capita in the world.",
+          "San Marino is entirely surrounded by Italy."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Vatican City",
+        "picture": "x",
+        "description": "Vatican City is known for being the spiritual and administrative center of the Roman Catholic Church.",
+        "population": 825,
+        "language": "Italian, Latin",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Southern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Vatican City",
+        "funfacts": [
+          "Vatican City is the smallest independent state in the world, both in terms of area and population.",
+          "It is the residence of the Pope, the leader of the Catholic Church.",
+          "The Vatican Museums house one of the greatest art collections in the world, including Michelangelo's Sistine Chapel ceiling."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Poland",
+        "picture": "x",
+        "description": "Poland is known for its rich history, medieval architecture, and hearty cuisine.",
+        "population": 38386000,
+        "language": "Polish",
+        "currency": "PLN",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Warsaw",
+        "funfacts": [
+          "Poland has the world's largest castle by area, Malbork Castle.",
+          "It boasts one of the oldest universities in Europe, the Jagiellonian University in Kraków.",
+          "The composer Frédéric Chopin was born in Poland."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Czech Republic",
+        "picture": "x",
+        "description": "The Czech Republic is known for its historic castles, beer, and picturesque towns.",
+        "population": 10708981,
+        "language": "Czech",
+        "currency": "CZK",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Prague",
+        "funfacts": [
+          "Prague Castle is the largest ancient castle in the world.",
+          "The Czech Republic consumes the most beer per capita in the world.",
+          "The country has the highest density of castles in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Slovakia",
+        "picture": "x",
+        "description": "Slovakia is known for its dramatic natural landscapes, medieval castles, and folk traditions.",
+        "population": 5456362,
+        "language": "Slovak",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Bratislava",
+        "funfacts": [
+          "Slovakia has the world's highest number of castles and chateaux per capita.",
+          "The Slovak Paradise National Park features more than 300 caves.",
+          "The Banská Štiavnica town is a UNESCO World Heritage site."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Hungary",
+        "picture": "x",
+        "description": "Hungary is known for its thermal baths, historic architecture, and vibrant cultural scene.",
+        "population": 9772756,
+        "language": "Hungarian",
+        "currency": "HUF",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Budapest",
+        "funfacts": [
+          "Budapest is home to the third largest Parliament building in the world.",
+          "Hungary is one of the oldest countries in Europe, founded in 895.",
+          "Lake Balaton in Hungary is the largest lake in Central Europe."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Romania",
+        "picture": "x",
+        "description": "Romania is known for its stunning landscapes, medieval castles, and vibrant folklore.",
+        "population": 19237691,
+        "language": "Romanian",
+        "currency": "RON",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+02:00",
+        "capital": "Bucharest",
+        "funfacts": [
+          "The Palace of Parliament in Bucharest is the second largest administrative building in the world.",
+          "Romania has one of the largest gold resources in Europe.",
+          "The Carpathian Mountains in Romania are home to Europe's largest population of brown bears."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Bulgaria",
+        "picture": "x",
+        "description": "Bulgaria is known for its ancient history, Orthodox churches, and Black Sea coastline.",
+        "population": 7000039,
+        "language": "Bulgarian",
+        "currency": "BGN",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+02:00",
+        "capital": "Sofia",
+        "funfacts": [
+          "Bulgaria is one of the oldest countries in Europe, established in 681 AD.",
+          "The Cyrillic alphabet, used in many Slavic languages, was developed in Bulgaria by Saints Cyril and Methodius.",
+          "The Rila Monastery in Bulgaria is a UNESCO World Heritage site."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Croatia",
+        "picture": "x",
+        "description": "Croatia is known for its Adriatic coastline, stunning islands, and medieval towns.",
+        "population": 4087843,
+        "language": "Croatian",
+        "currency": "HRK",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Zagreb",
+        "funfacts": [
+          "The city of Dubrovnik in Croatia is a UNESCO World Heritage site.",
+          "Croatia has over 1,000 islands along its Adriatic coast.",
+          "The Dalmatian dog breed originated from Croatia."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Slovenia",
+        "picture": "x",
+        "description": "Slovenia is known for its mountains, ski resorts, and beautiful lakes.",
+        "population": 2078938,
+        "language": "Slovenian",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Ljubljana",
+        "funfacts": [
+          "Slovenia is the only country in the world with 'love' in its name.",
+          "Lake Bled in Slovenia features an island with a church and a medieval castle.",
+          "The oldest vine in the world, over 400 years old, is in Maribor, Slovenia."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "picture": "x",
+        "description": "Bosnia and Herzegovina is known for its medieval villages, rivers, and mountainous terrain.",
+        "population": 3323929,
+        "language": "Bosnian, Croatian, Serbian",
+        "currency": "BAM",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Sarajevo",
+        "funfacts": [
+          "The Sarajevo Film Festival is one of the largest and most prestigious film festivals in Southeast Europe.",
+          "Bosnia and Herzegovina is home to the world's last remaining wild horses, in Livno.",
+          "It has one of the largest pyramids in the world, the Bosnian Pyramid of the Sun."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Serbia",
+        "picture": "x",
+        "description": "Serbia is known for its Orthodox monasteries, vibrant nightlife, and rich history.",
+        "population": 6901188,
+        "language": "Serbian",
+        "currency": "RSD",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Belgrade",
+        "funfacts": [
+          "Belgrade, the capital, is one of the oldest continuously inhabited cities in Europe.",
+          "The Serbian language is written in both the Cyrillic and Latin alphabets.",
+          "Serbia has the largest number of Roman emperors born outside Rome itself."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Montenegro",
+        "picture": "x",
+        "description": "Montenegro is known for its rugged mountains, medieval villages, and Adriatic coastline.",
+        "population": 622359,
+        "language": "Montenegrin",
+        "currency": "EUR",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Podgorica",
+        "funfacts": [
+          "The Bay of Kotor in Montenegro is one of the most indented parts of the Adriatic Sea.",
+          "Montenegro is home to the second deepest canyon in the world, the Tara River Canyon.",
+          "It has the world's highest mausoleum, the Njegoš Mausoleum."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "North Macedonia",
+        "picture": "x",
+        "description": "North Macedonia is known for its historic sites, scenic mountains, and Lake Ohrid.",
+        "population": 2083459,
+        "language": "Macedonian",
+        "currency": "MKD",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Skopje",
+        "funfacts": [
+          "Lake Ohrid in North Macedonia is one of the oldest and deepest lakes in Europe.",
+          "Mother Teresa, Nobel Peace Prize laureate, was born in Skopje, North Macedonia.",
+          "It is known for producing high-quality wines, particularly Vranec."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Albania",
+        "picture": "x",
+        "description": "Albania is known for its rugged mountains, ancient archaeological sites, and beautiful beaches.",
+        "population": 2877797,
+        "language": "Albanian",
+        "currency": "ALL",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+01:00",
+        "capital": "Tirana",
+        "funfacts": [
+          "Albania has more than 750,000 bunkers scattered throughout the country.",
+          "The Albanian language is one of the oldest in the world, dating back to ancient times.",
+          "Mother Teresa, Nobel Peace Prize laureate, was of Albanian descent."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Moldova",
+        "picture": "x",
+        "description": "Moldova is known for its wine industry, historic monasteries, and rural landscapes.",
+        "population": 2657637,
+        "language": "Romanian",
+        "currency": "MDL",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+02:00",
+        "capital": "Chișinău",
+        "funfacts": [
+          "Moldova has one of the largest wine cellars in the world, Mileștii Mici, with over 2 million bottles.",
+          "It is the least visited country in Europe, despite its rich cultural heritage.",
+          "The world's largest collection of roses is found in Moldova."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Ukraine",
+        "picture": "x",
+        "description": "Ukraine is known for its Orthodox churches, Black Sea coastline, and rich cultural heritage.",
+        "population": 41723998,
+        "language": "Ukrainian",
+        "currency": "UAH",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+02:00",
+        "capital": "Kyiv",
+        "funfacts": [
+          "Ukraine is the largest country entirely in Europe.",
+          "It has the deepest metro station in the world, Arsenalna in Kyiv, at 105.5 meters deep.",
+          "Lviv, a city in western Ukraine, has the highest number of cafes and coffee houses per capita in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Belarus",
+        "picture": "x",
+        "description": "Belarus is known for its Soviet-era architecture, vast forests, and cultural heritage.",
+        "population": 9449323,
+        "language": "Belarusian, Russian",
+        "currency": "BYN",
+        "continent": "Europe",
+        "region": "Eastern Europe",
+        "timezone": "UTC+03:00",
+        "capital": "Minsk",
+        "funfacts": [
+          "Belarus has Europe's largest forest reserve, Białowieża Forest.",
+          "The Mir Castle Complex in Belarus is a UNESCO World Heritage site.",
+          "It has one of the highest literacy rates in the world, with over 99% of adults being literate."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Kosovo",
+        "picture": "x",
+        "description": "Kosovo is a partially recognized state in Southeastern Europe. It declared independence from Serbia in 2008.",
+        "population": 1810463,
+        "language": "Albanian, Serbian",
+        "currency": "Euro (EUR)",
+        "continent": "Europe",
+        "region": "Southeastern Europe",
+        "timezone": "UTC+1 (Central European Time)",
+        "capital": "Pristina",
+        "funfacts": [
+          "Kosovo is known for its cultural heritage, including medieval monasteries and Ottoman heritage.",
+          "It is home to the UNESCO World Heritage Site of the Medieval Monuments in Kosovo.",
+          "The majority of Kosovo's population is ethnic Albanian."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Russia",
+        "picture": "x",
+        "description": "Russia is known for its vast landscapes, rich history, and cultural diversity.",
+        "population": 145912025,
+        "language": "Russian",
+        "currency": "RUB",
+        "continent": "Europe",
+        "region": "Russia and Caucasus",
+        "timezone": "UTC+02:00 to UTC+12:00",
+        "capital": "Moscow",
+        "funfacts": [
+          "Russia is the largest country in the world by area, spanning eleven time zones.",
+          "Lake Baikal in Russia is the deepest lake in the world and holds around 20% of the world's unfrozen freshwater.",
+          "The Moscow Metro is one of the busiest metro systems in the world, known for its stunning architecture."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Armenia",
+        "picture": "x",
+        "description": "Armenia is known for its ancient monasteries, rugged mountains, and rich cultural heritage.",
+        "population": 2963243,
+        "language": "Armenian",
+        "currency": "AMD",
+        "continent": "Europe",
+        "region": "Russia and Caucasus",
+        "timezone": "UTC+04:00",
+        "capital": "Yerevan",
+        "funfacts": [
+          "Armenia is one of the oldest countries in the world, with a history dating back to 4000 BC.",
+          "It was the first nation to adopt Christianity as its state religion in 301 AD.",
+          "Mount Ararat, located in Turkey but visible from Armenia, is a national symbol."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Azerbaijan",
+        "picture": "x",
+        "description": "Azerbaijan is known for its cultural mix of Eastern and Western influences, ancient landmarks, and natural beauty.",
+        "population": 10139177,
+        "language": "Azerbaijani",
+        "currency": "AZN",
+        "continent": "Europe",
+        "region": "Russia and Caucasus",
+        "timezone": "UTC+04:00",
+        "capital": "Baku",
+        "funfacts": [
+          "Baku, the capital, is the lowest lying national capital in the world, located below sea level.",
+          "Azerbaijan is home to the world's first oil well, drilled in 1846 near Baku.",
+          "The country has nine out of eleven possible climate zones."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Georgia",
+        "picture": "x",
+        "description": "Georgia is known for its ancient churches, mountainous landscapes, and traditional hospitality.",
+        "population": 3989167,
+        "language": "Georgian",
+        "currency": "GEL",
+        "continent": "Europe",
+        "region": "Russia and Caucasus",
+        "timezone": "UTC+04:00",
+        "capital": "Tbilisi",
+        "funfacts": [
+          "Georgia is one of the world's oldest wine-producing countries, with evidence of winemaking dating back over 8,000 years.",
+          "It is home to Europe's highest village, Ushguli, located in the Caucasus Mountains.",
+          "The Georgian alphabet is one of only 14 alphabets in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Kazakhstan",
+        "picture": "x",
+        "description": "Kazakhstan is known for its vast steppe landscapes, modern cities, and rich cultural heritage.",
+        "population": 18776707,
+        "language": "Kazakh, Russian",
+        "currency": "KZT",
+        "continent": "Asia",
+        "region": "Central Asia",
+        "timezone": "UTC+05:00 to UTC+06:00",
+        "capital": "Nur-Sultan",
+        "funfacts": [
+          "Kazakhstan is the world's largest landlocked country.",
+          "It has the Baikonur Cosmodrome, the world's first and largest operational space launch facility.",
+          "The Charyn Canyon in Kazakhstan is often called the 'Grand Canyon's little brother.'"
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Uzbekistan",
+        "picture": "x",
+        "description": "Uzbekistan is known for its ancient cities along the Silk Road, Islamic architecture, and vibrant culture.",
+        "population": 34140667,
+        "language": "Uzbek",
+        "currency": "UZS",
+        "continent": "Asia",
+        "region": "Central Asia",
+        "timezone": "UTC+05:00",
+        "capital": "Tashkent",
+        "funfacts": [
+          "Samarkand, one of the oldest inhabited cities in Central Asia, is known for its stunning Islamic architecture.",
+          "Uzbekistan is home to the oldest Quran in the world, dating back to the 7th century.",
+          "It has one of the largest open-air markets in the world, Chorsu Bazaar in Tashkent."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Turkmenistan",
+        "picture": "x",
+        "description": "Turkmenistan is known for its ancient Silk Road cities, desert landscapes, and modern architecture.",
+        "population": 6031187,
+        "language": "Turkmen",
+        "currency": "TMT",
+        "continent": "Asia",
+        "region": "Central Asia",
+        "timezone": "UTC+05:00",
+        "capital": "Ashgabat",
+        "funfacts": [
+          "The capital, Ashgabat, holds the Guinness World Record for the highest density of white marble buildings.",
+          "Turkmenistan is home to the Darvaza gas crater, known as the 'Door to Hell,' a natural gas field that has been burning continuously since 1971.",
+          "The country is known for its Akhal-Teke horses, one of the oldest and most beautiful horse breeds."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Kyrgyzstan",
+        "picture": "x",
+        "description": "Kyrgyzstan is known for its mountainous landscapes, nomadic culture, and hospitality.",
+        "population": 6548655,
+        "language": "Kyrgyz, Russian",
+        "currency": "KGS",
+        "continent": "Asia",
+        "region": "Central Asia",
+        "timezone": "UTC+06:00",
+        "capital": "Bishkek",
+        "funfacts": [
+          "Kyrgyzstan is home to the second largest alpine lake in the world, Issyk-Kul Lake.",
+          "It is known for its traditional yurt dwelling, a portable round tent used by nomads.",
+          "The country has more than 2,700 glaciers and over 40 peaks above 4,000 meters."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Tajikistan",
+        "picture": "x",
+        "description": "Tajikistan is known for its rugged mountains, ancient Silk Road cities, and vibrant culture.",
+        "population": 9537645,
+        "language": "Tajik",
+        "currency": "TJS",
+        "continent": "Asia",
+        "region": "Central Asia",
+        "timezone": "UTC+05:00",
+        "capital": "Dushanbe",
+        "funfacts": [
+          "More than 90% of Tajikistan is covered by mountains, including the Pamir Mountains, known as the 'Roof of the World.'",
+          "It has one of the largest glaciers outside of the polar regions, the Fedchenko Glacier.",
+          "The country is famous for its apricots, considered some of the best in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Turkey",
+        "picture": "x",
+        "description": "Turkey is known for its rich history, diverse culture, and stunning landscapes.",
+        "population": 83154997,
+        "language": "Turkish",
+        "currency": "TRY",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+03:00",
+        "capital": "Ankara",
+        "funfacts": [
+          "Istanbul, Turkey's largest city, straddles Europe and Asia across the Bosphorus Strait.",
+          "Turkey is home to two of the Seven Wonders of the Ancient World: the Temple of Artemis and the Mausoleum at Halicarnassus.",
+          "The Turkish cuisine is renowned worldwide for its diversity and flavor."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Cyprus",
+        "picture": "x",
+        "description": "Cyprus is known for its ancient ruins, beautiful beaches, and vibrant culture.",
+        "population": 1207359,
+        "language": "Greek, Turkish",
+        "currency": "EUR",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+02:00",
+        "capital": "Nicosia",
+        "funfacts": [
+          "Cyprus is the legendary birthplace of Aphrodite, the Greek goddess of love and beauty.",
+          "It has one of the oldest water wells in the world, dating back over 10,000 years.",
+          "The island is famous for its production of halloumi cheese, a traditional Cypriot delicacy."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Palestine",
+        "picture": "x",
+        "description": "Palestine is known for its ancient history, religious significance, and ongoing political situation.",
+        "population": 5491969,
+        "language": "Arabic",
+        "currency": "ILS",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+02:00",
+        "capital": "East Jerusalem",
+        "funfacts": [
+          "The Old City of Jerusalem, a UNESCO World Heritage site, is one of the holiest places in the world for Judaism, Christianity, and Islam.",
+          "Bethlehem, in Palestine, is the traditional birthplace of Jesus Christ.",
+          "The Dead Sea, located at the lowest point on Earth, is shared between Palestine, Jordan, and Israel."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Lebanon",
+        "picture": "x",
+        "description": "Lebanon is known for its ancient history, vibrant nightlife, and Mediterranean cuisine.",
+        "population": 6825445,
+        "language": "Arabic",
+        "currency": "LBP",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+02:00",
+        "capital": "Beirut",
+        "funfacts": [
+          "Beirut, the capital, is often called the 'Paris of the Middle East' for its lively culture and nightlife.",
+          "Lebanese cuisine, including dishes like tabbouleh and hummus, is internationally renowned.",
+          "The Baalbek ruins in Lebanon contain some of the largest and best-preserved Roman ruins in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Jordan",
+        "picture": "x",
+        "description": "Jordan is known for its ancient ruins, desert landscapes, and historical significance.",
+        "population": 10101694,
+        "language": "Arabic",
+        "currency": "JOD",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+03:00",
+        "capital": "Amman",
+        "funfacts": [
+          "Petra, a UNESCO World Heritage site in Jordan, is an ancient city carved into the red sandstone cliffs.",
+          "The Dead Sea in Jordan is the lowest point on Earth's land surface and known for its buoyant waters.",
+          "Jordan is home to some of the world's oldest continuously inhabited cities, including Jerash."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Syria",
+        "picture": "x",
+        "description": "Syria is known for its ancient ruins, historic cities, and diverse cultural heritage.",
+        "population": 17500658,
+        "language": "Arabic",
+        "currency": "SYP",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+02:00",
+        "capital": "Damascus",
+        "funfacts": [
+          "Damascus, the capital, is one of the oldest continuously inhabited cities in the world.",
+          "Syria has six UNESCO World Heritage sites, including the ancient city of Palmyra.",
+          "The city of Aleppo, known for its historic citadel and souks, is one of the oldest cities in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Iraq",
+        "picture": "x",
+        "description": "Iraq is known for its ancient Mesopotamian sites, diverse cultural heritage, and historical significance.",
+        "population": 40222493,
+        "language": "Arabic, Kurdish",
+        "currency": "IQD",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+03:00",
+        "capital": "Baghdad",
+        "funfacts": [
+          "Iraq is home to the ancient city of Babylon, one of the Seven Wonders of the Ancient World.",
+          "The Tigris and Euphrates rivers, which flow through Iraq, are considered the cradle of civilization.",
+          "The marshlands of southern Iraq, home to the Marsh Arabs, are believed to be the original Garden of Eden."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Saudi Arabia",
+        "picture": "x",
+        "description": "Saudi Arabia is known for its vast deserts, Islamic holy sites, and modern cities.",
+        "population": 34813871,
+        "language": "Arabic",
+        "currency": "SAR",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+03:00",
+        "capital": "Riyadh",
+        "funfacts": [
+          "Mecca and Medina in Saudi Arabia are two of the holiest cities in Islam, visited by millions of Muslims annually for pilgrimage.",
+          "Saudi Arabia has the world's largest continuous sand desert, the Rub' al Khali (Empty Quarter).",
+          "The country is home to the ancient archaeological site of Mada'in Saleh, a UNESCO World Heritage site."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Kuwait",
+        "picture": "x",
+        "description": "Kuwait is known for its modern architecture, vibrant souks, and rich cultural heritage.",
+        "population": 4270571,
+        "language": "Arabic",
+        "currency": "KWD",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+03:00",
+        "capital": "Kuwait City",
+        "funfacts": [
+          "Kuwait City, the capital, is known for its modern skyline dominated by the iconic Kuwait Towers.",
+          "The country has one of the world's highest per capita incomes due to its oil reserves.",
+          "Traditional Kuwaiti boats, known as dhows, are an integral part of the country's maritime culture."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Bahrain",
+        "picture": "x",
+        "description": "Bahrain is known for its modern infrastructure, historic sites, and cultural festivals.",
+        "population": 1543300,
+        "language": "Arabic",
+        "currency": "BHD",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+03:00",
+        "capital": "Manama",
+        "funfacts": [
+          "Bahrain is home to the ancient Dilmun civilization, known for its burial mounds.",
+          "The Bahrain International Circuit hosts the Formula One Bahrain Grand Prix annually.",
+          "Pearl diving was once a major industry in Bahrain, and the country is known for its pearls."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Qatar",
+        "picture": "x",
+        "description": "Qatar is known for its futuristic skyline, desert landscapes, and cultural heritage.",
+        "population": 2881053,
+        "language": "Arabic",
+        "currency": "QAR",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+03:00",
+        "capital": "Doha",
+        "funfacts": [
+          "Doha, the capital, is known for its modern architecture, including the iconic Museum of Islamic Art.",
+          "Qatar is one of the wealthiest countries in the world per capita due to its natural gas reserves.",
+          "The country will host the FIFA World Cup in 2022, making it the first Arab country to host the event."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "United Arab Emirates",
+        "picture": "x",
+        "description": "The United Arab Emirates (UAE) is known for its modern cities, luxury shopping, and iconic landmarks.",
+        "population": 9890400,
+        "language": "Arabic",
+        "currency": "AED",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+04:00",
+        "capital": "Abu Dhabi",
+        "funfacts": [
+        "Dubai, in the UAE, is home to the Burj Khalifa, the tallest building in the world.",
+        "The UAE has a man-made archipelago of islands shaped like a world map, called The World.",
+        "It has one of the highest percentages of expatriate populations in the world."
+        ],
+        "gallery": []
+       },
+       {
+        "name": "Oman",
+        "picture": "x",
+        "description": "Oman is known for its stunning desert landscapes, historic forts, and traditional culture.",
+        "population": 5216640,
+        "language": "Arabic",
+        "currency": "OMR",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+04:00",
+        "capital": "Muscat",
+        "funfacts": [
+        "Oman's Wahiba Sands desert is known for its towering sand dunes and Bedouin communities.",
+        "The Sultan Qaboos Grand Mosque in Muscat is one of the largest mosques in the world.",
+        "Oman has a long maritime history and is famous for its traditional wooden dhows."
+        ],
+        "gallery": []
+       },
+       {
+        "name": "Yemen",
+        "picture": "x",
+        "description": "Yemen is known for its ancient history, unique architecture, and diverse landscapes.",
+        "population": 29825964,
+        "language": "Arabic",
+        "currency": "YER",
+        "continent": "Asia",
+        "region": "Middle East",
+        "timezone": "UTC+03:00",
+        "capital": "Sana'a",
+        "funfacts": [
+            "Yemen is home to the ancient city of Sana'a, known for its unique multi-story tower houses.",
+            "It is the only country in the Arabian Peninsula to have a republican form of government.",
+            "The Arabian Peninsula's highest peak, Jabal an-Nabi Shu'ayb, is located in Yemen."
+        ],
+        "gallery": []
+       },
+       {
+        "name": "Egypt",
+        "picture": "x",
+        "description": "Egypt is known for its ancient civilization, iconic monuments, and rich cultural heritage.",
+        "population": 104258327,
+        "language": "Arabic",
+        "currency": "EGP",
+        "continent": "Africa",
+        "region": "North Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Cairo",
+        "funfacts": [
+          "The Great Pyramid of Giza is one of the Seven Wonders of the Ancient World and the only one still largely intact.",
+          "The Nile River, the longest river in the world, flows through Egypt and has been vital to its civilization for millennia.",
+          "Egypt has one of the oldest universities in the world, Al-Azhar University, founded in 970 AD."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Libya",
+        "picture": "x",
+        "description": "Libya is known for its ancient history, Sahara Desert landscapes, and Mediterranean coastline.",
+        "population": 6871292,
+        "language": "Arabic",
+        "currency": "LYD",
+        "continent": "Africa",
+        "region": "North Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Tripoli",
+        "funfacts": [
+          "The Sahara Desert covers much of Libya's territory, with vast dunes and oases scattered throughout.",
+          "Leptis Magna, a UNESCO World Heritage site in Libya, was one of the largest cities of the Roman Empire.",
+          "Libya has one of the highest percentages of fossil fuel reserves in Africa."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Tunisia",
+        "picture": "x",
+        "description": "Tunisia is known for its ancient ruins, beautiful Mediterranean beaches, and vibrant culture.",
+        "population": 11818619,
+        "language": "Arabic",
+        "currency": "TND",
+        "continent": "Africa",
+        "region": "North Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Tunis",
+        "funfacts": [
+          "Carthage, near Tunis, was once a major power in the ancient Mediterranean and is now a UNESCO World Heritage site.",
+          "Tunisia's Sahara Desert offers stunning landscapes, including the salt flats of Chott el Djerid.",
+          "The country is famous for its mosaic art, with examples dating back to Roman times."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Algeria",
+        "picture": "x",
+        "description": "Algeria is known for its Sahara Desert landscapes, ancient ruins, and diverse cultural heritage.",
+        "population": 43851044,
+        "language": "Arabic, Berber",
+        "currency": "DZD",
+        "continent": "Africa",
+        "region": "North Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Algiers",
+        "funfacts": [
+          "The Sahara Desert covers over 80% of Algeria's territory, making it the largest country in Africa.",
+          "Timgad, a UNESCO World Heritage site in Algeria, showcases Roman ruins preserved in the desert.",
+          "Algeria has one of the highest percentages of young people in the world, with a median age of around 28 years."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Morocco",
+        "picture": "x",
+        "description": "Morocco is known for its vibrant souks, historic cities, and diverse landscapes.",
+        "population": 36910560,
+        "language": "Arabic, Berber",
+        "currency": "MAD",
+        "continent": "Africa",
+        "region": "North Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Rabat",
+        "funfacts": [
+          "Marrakech's Djemaa el-Fna square is one of the busiest squares in Africa, known for its street performers and markets.",
+          "Morocco is the top exporter of phosphates in the world.",
+          "The Atlas Mountains in Morocco offer stunning scenery and are a popular destination for trekking and skiing."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Western Sahara",
+        "picture": "x",
+        "description": "Western Sahara is known for its desert landscapes and ongoing political conflict.",
+        "population": "Estimated around 600,000",
+        "language": "Arabic, Spanish, Berber",
+        "currency": "MAD, DZD, DZD",
+        "continent": "Africa",
+        "region": "North Africa",
+        "timezone": "UTC+00:00",
+        "capital": "Laayoune",
+        "funfacts": [
+          "Western Sahara is one of the most sparsely populated territories in the world.",
+          "The region has been the subject of a long-standing dispute between Morocco and the Polisario Front.",
+          "Its coastal areas are known for their rich fishing grounds."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Mauritania",
+        "picture": "x",
+        "description": "Mauritania is known for its Sahara Desert landscapes, ancient caravan routes, and diverse culture.",
+        "population": 4649658,
+        "language": "Arabic",
+        "currency": "MRU",
+        "continent": "Africa",
+        "region": "North Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Nouakchott",
+        "funfacts": [
+          "The Richat Structure in Mauritania, also known as the 'Eye of the Sahara,' is a prominent geological formation visible from space.",
+          "Mauritania's Chinguetti Mosque is one of the oldest mosques in Africa.",
+          "The country has a rich tradition of storytelling and oral literature, known as Hassaniya."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Senegal",
+        "picture": "x",
+        "description": "Senegal is known for its rich culture, music, and diverse ecosystems.",
+        "population": 16743927,
+        "language": "French",
+        "currency": "XOF",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Dakar",
+        "funfacts": [
+          "Gorée Island, off the coast of Dakar, is a UNESCO World Heritage site known for its role in the Atlantic slave trade.",
+          "Senegal is home to the Bandia Wildlife Reserve, where visitors can see animals like giraffes, rhinos, and antelopes.",
+          "The country is famous for its vibrant music scene, especially mbalax music popularized by Youssou N'Dour."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Gambia",
+        "picture": "x",
+        "description": "The Gambia is known for its river, beaches, and diverse wildlife.",
+        "population": 2416668,
+        "language": "English",
+        "currency": "GMD",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Banjul",
+        "funfacts": [
+          "The Gambia River flows through the country and is a prominent feature of its landscape.",
+          "Jufureh, a town in the Gambia, is believed to be the ancestral home of Kunta Kinte, made famous in Alex Haley's novel 'Roots.'",
+          "The country is known for its birdwatching opportunities, with over 500 bird species recorded."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Guinea-Bissau",
+        "picture": "x",
+        "description": "Guinea-Bissau is known for its diverse culture, wildlife, and vibrant music.",
+        "population": 1968001,
+        "language": "Portuguese, Crioulo",
+        "currency": "XOF",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Bissau",
+        "funfacts": [
+          "The Bijagós Islands off the coast of Guinea-Bissau are a UNESCO Biosphere Reserve and home to diverse ecosystems.",
+          "Guinea-Bissau is known for its music, particularly gumbe, a genre that blends traditional African rhythms with Portuguese influences.",
+          "The country has a significant amount of mangrove forests, which play a crucial role in coastal ecosystems."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Guinea",
+        "picture": "x",
+        "description": "Guinea is known for its diverse landscapes, wildlife, and cultural diversity.",
+        "population": 13132795,
+        "language": "French",
+        "currency": "GNF",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Conakry",
+        "funfacts": [
+          "Mount Nimba Strict Nature Reserve in Guinea is a UNESCO World Heritage site known for its biodiversity.",
+          "The country is one of the largest producers of bauxite, used in aluminum production.",
+          "Guinea's music and dance traditions, such as the djembe drumming, are integral parts of its cultural heritage."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Sierra Leone",
+        "picture": "x",
+        "description": "Sierra Leone is known for its diamond mines, sandy beaches, and diverse wildlife.",
+        "population": 7976983,
+        "language": "English",
+        "currency": "SLL",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Freetown",
+        "funfacts": [
+          "Sierra Leone is known as the 'Land of Diamonds' due to its rich deposits of diamonds.",
+          "Tiwai Island Wildlife Sanctuary is home to various endangered species, including pygmy hippos and chimpanzees.",
+          "The country has a vibrant cultural scene, with traditional music genres like bubu and palm wine music."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Liberia",
+        "picture": "x",
+        "description": "Liberia is known for its history as a settlement for freed American slaves, lush rainforests, and diverse culture.",
+        "population": 5057681,
+        "language": "English",
+        "currency": "LRD",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Monrovia",
+        "funfacts": [
+          "Liberia was founded by freed American slaves in the early 19th century, making it one of Africa's oldest republics.",
+          "Sapo National Park in Liberia is one of the largest remaining areas of primary rainforest in West Africa.",
+          "The country is known for its vibrant arts scene, including traditional dance and music performances."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Côte d'Ivoire",
+        "picture": "x",
+        "description": "Côte d'Ivoire, or Ivory Coast, is known for its cocoa production, diverse culture, and beautiful beaches.",
+        "population": 26378274,
+        "language": "French",
+        "currency": "XOF",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Yamoussoukro",
+        "funfacts": [
+          "Côte d'Ivoire is the world's largest producer of cocoa beans.",
+          "Grand-Bassam, a UNESCO World Heritage site, was the former capital and a major center of the African slave trade.",
+          "The country is known for its vibrant culture, including traditional masks and dance forms."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Ghana",
+        "picture": "x",
+        "description": "Ghana is known for its rich history, vibrant culture, and traditional festivals.",
+        "population": 31072940,
+        "language": "English",
+        "currency": "GHS",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Accra",
+        "funfacts": [
+          "Ghana was the first sub-Saharan African country to gain independence from colonial rule.",
+          "The Ashanti Empire, known for its gold wealth, played a significant role in Ghana's history.",
+          "The country hosts the Panafest cultural festival, celebrating African heritage and contributions to world civilization."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Togo",
+        "picture": "x",
+        "description": "Togo is known for its palm-lined beaches, vibrant markets, and diverse culture.",
+        "population": 8278724,
+        "language": "French",
+        "currency": "XOF",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Lomé",
+        "funfacts": [
+          "Togo's Aledjo Wildlife Reserve is home to elephants, buffaloes, and various bird species.",
+          "The country is known for its voodoo practices, which are an integral part of its cultural heritage.",
+          "Lomé, the capital, is known for its bustling Grand Marché, offering a wide range of goods."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Benin",
+        "picture": "x",
+        "description": "Benin is known for its historic Dahomey Kingdom, traditional religious practices, and diverse culture.",
+        "population": 12123200,
+        "language": "French",
+        "currency": "XOF",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Porto-Novo",
+        "funfacts": [
+          "Benin is the birthplace of Vodun (Voodoo), a religion practiced by a significant portion of the population.",
+          "The Royal Palaces of Abomey, a UNESCO World Heritage site, showcase the history of the powerful Dahomey Kingdom.",
+          "The country hosts the annual Voodoo Festival, attracting visitors from around the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Burkina Faso",
+        "picture": "x",
+        "description": "Burkina Faso is known for its traditional music, art, and vibrant cultural festivals.",
+        "population": 20870000,
+        "language": "French",
+        "currency": "XOF",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Ouagadougou",
+        "funfacts": [
+          "Burkina Faso's film industry, known as 'Burkina Cinema,' is celebrated internationally through the FESPACO film festival.",
+          "The country is home to the Ruins of Loropéni, a UNESCO World Heritage site, representing ancient African civilizations.",
+          "Burkina Faso is known for its traditional masked dances, such as the Bwa and Nuna peoples' masks."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Mali",
+        "picture": "x",
+        "description": "Mali is known for its historic trading centers, vibrant music, and diverse culture.",
+        "population": 20250833,
+        "language": "French",
+        "currency": "XOF",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC±00:00",
+        "capital": "Bamako",
+        "funfacts": [
+          "Timbuktu, a historic city in Mali, was a major center of learning and trade during the Mali Empire and is a UNESCO World Heritage site.",
+          "The Dogon people of Mali are known for their unique architecture, art, and spiritual traditions.",
+          "Mali's traditional music, especially the griot tradition, is renowned worldwide."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Niger",
+        "picture": "x",
+        "description": "Niger is known for its Sahara Desert landscapes, diverse wildlife, and rich cultural heritage.",
+        "population": 24206644,
+        "language": "French",
+        "currency": "XOF",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Niamey",
+        "funfacts": [
+          "Niger's W National Park is a UNESCO World Heritage site and home to endangered species such as the West African lion and elephant.",
+          "The country has one of the youngest populations globally, with a significant percentage under the age of 15.",
+          "Agadez, a city in Niger, is known for its distinctive mud-brick architecture and as a gateway to the Sahara."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Nigeria",
+        "picture": "x",
+        "description": "Nigeria is known for its diverse cultures, vibrant cities, and rich natural resources.",
+        "population": 206139589,
+        "language": "English",
+        "currency": "NGN",
+        "continent": "Africa",
+        "region": "West Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Abuja",
+        "funfacts": [
+          "Nollywood, Nigeria's film industry, is the second-largest in the world in terms of output.",
+          "The country is the largest producer of oil in Africa and one of the top 10 globally.",
+          "Lagos, Nigeria's largest city, is one of the fastest-growing cities in the world and a major financial center."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Chad",
+        "picture": "x",
+        "description": "Chad is known for its diverse landscapes, wildlife, and rich cultural heritage.",
+        "population": 16425864,
+        "language": "French, Arabic",
+        "currency": "XAF",
+        "continent": "Africa",
+        "region": "Central Africa",
+        "timezone": "UTC+01:00",
+        "capital": "N'Djamena",
+        "funfacts": [
+          "Lake Chad, after which the country is named, is one of the largest lakes in Africa and a vital water source for the region.",
+          "Chad's Ennedi Plateau is a UNESCO World Heritage site known for its stunning rock formations and ancient rock art.",
+          "The country is known for its traditional dances and music, such as the Sâr, a ceremonial dance of the Sara people."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Central African Republic",
+        "picture": "x",
+        "description": "The Central African Republic is known for its wildlife, rainforests, and diverse cultures.",
+        "population": 4829767,
+        "language": "French, Sango",
+        "currency": "XAF",
+        "continent": "Africa",
+        "region": "Central Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Bangui",
+        "funfacts": [
+          "Dzanga-Sangha National Park in the Central African Republic is a UNESCO World Heritage site and home to forest elephants, gorillas, and chimpanzees.",
+          "The country is known for its traditional crafts, including pottery and woven goods.",
+          "The Sangha River, flowing through the country, supports a rich ecosystem and is vital for local communities."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Cameroon",
+        "picture": "x",
+        "description": "Cameroon is known for its diverse landscapes, wildlife, and cultural diversity.",
+        "population": 26545863,
+        "language": "English, French",
+        "currency": "XAF",
+        "continent": "Africa",
+        "region": "Central Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Yaoundé",
+        "funfacts": [
+          "Mount Cameroon, an active volcano, is the highest point in West Africa and a popular destination for hikers.",
+          "Cameroon's Bamenda Ring Road offers scenic views of the country's highlands and traditional villages.",
+          "The country is known for its rich musical traditions, including makossa and bikutsi music styles."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Equatorial Guinea",
+        "picture": "x",
+        "description": "Equatorial Guinea is known for its diverse ecosystems, Spanish colonial heritage, and oil reserves.",
+        "population": 1402985,
+        "language": "Spanish, French, Portuguese",
+        "currency": "XAF",
+        "continent": "Africa",
+        "region": "Central Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Malabo",
+        "funfacts": [
+          "Bioko Island, part of Equatorial Guinea, is known for its biodiversity, including rare primates and birds.",
+          "The country has the highest GDP per capita in Africa due to its oil wealth.",
+          "Equatorial Guinea is one of the few African countries where Spanish is an official language."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Gabon",
+        "picture": "x",
+        "description": "Gabon is known for its rainforests, diverse wildlife, and rich cultural heritage.",
+        "population": 2225734,
+        "language": "French",
+        "currency": "XAF",
+        "continent": "Africa",
+        "region": "Central Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Libreville",
+        "funfacts": [
+          "Gabon's Lopé National Park is a UNESCO World Heritage site and home to forest elephants, gorillas, and other endangered species.",
+          "The country has one of the highest percentages of protected land in the world, preserving its natural biodiversity.",
+          "Gabon's culture includes traditional Bwiti ceremonies and music styles such as the dance-based soukous."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Republic of the Congo",
+        "picture": "x",
+        "description": "The Republic of the Congo is known for its rainforests, diverse wildlife, and vibrant culture.",
+        "population": 5518087,
+        "language": "French",
+        "currency": "XAF",
+        "continent": "Africa",
+        "region": "Central Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Brazzaville",
+        "funfacts": [
+          "The Congo Basin, a vast tropical rainforest, covers much of the country's territory and is one of the world's biodiversity hotspots.",
+          "The country is known for its traditional artwork, including masks and sculptures.",
+          "Congo's music, such as the lively soukous style, is popular across Central Africa and beyond."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Democratic Republic of the Congo",
+        "picture": "x",
+        "description": "The Democratic Republic of the Congo is known for its vast rainforests, wildlife, and mineral wealth.",
+        "population": 101780263,
+        "language": "French",
+        "currency": "CDF",
+        "continent": "Africa",
+        "region": "Central Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Kinshasa",
+        "funfacts": [
+          "The Congo River, the second-longest river in Africa, flows through the Democratic Republic of the Congo.",
+          "Virunga National Park is a UNESCO World Heritage site and home to endangered mountain gorillas.",
+          "The country has significant mineral resources, including cobalt, which is essential for batteries used in electric vehicles."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "São Tomé and Príncipe",
+        "picture": "x",
+        "description": "São Tomé and Príncipe is known for its lush rainforests, volcanic landscapes, and cocoa production.",
+        "population": 219159,
+        "language": "Portuguese",
+        "currency": "STN",
+        "continent": "Africa",
+        "region": "Central Africa",
+        "timezone": "UTC±00:00",
+        "capital": "São Tomé",
+        "funfacts": [
+          "São Tomé and Príncipe is one of the smallest countries in Africa, consisting of two main islands and several smaller islets.",
+          "The country's cocoa beans are prized for their quality and used in high-end chocolate production.",
+          "The islands are known for their endemic bird species and marine biodiversity."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Sudan",
+        "picture": "x",
+        "description": "Sudan is known for its ancient history, Nile River, and diverse cultures.",
+        "population": 43849260,
+        "language": "Arabic, English",
+        "currency": "SDG",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Khartoum",
+        "funfacts": [
+          "The Nile River, the longest river in the world, flows through Sudan, shaping its geography and history.",
+          "Sudan has more pyramids than Egypt, notably at Meroe and Jebel Barkal, remnants of ancient Nubian civilizations.",
+          "The country has a rich cultural heritage, including traditional Nubian music and vibrant festivals."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "South Sudan",
+        "picture": "x",
+        "description": "South Sudan is known for its vast wilderness areas, ethnic diversity, and struggle for independence.",
+        "population": 11193725,
+        "language": "English",
+        "currency": "SSP",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Juba",
+        "funfacts": [
+          "South Sudan gained independence from Sudan in 2011, becoming the world's youngest nation.",
+          "The country is home to significant wildlife, including populations of elephants, giraffes, and various antelope species.",
+          "South Sudan's traditional cultures, such as the Dinka and Nuer peoples, have rich oral traditions and artistic expressions."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Eritrea",
+        "picture": "x",
+        "description": "Eritrea is known for its diverse landscapes, ancient history, and vibrant cultural heritage.",
+        "population": 3546421,
+        "language": "Tigrinya, Arabic, English",
+        "currency": "ERN",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Asmara",
+        "funfacts": [
+          "Asmara, the capital of Eritrea, is known for its well-preserved modernist architecture and is a UNESCO World Heritage site.",
+          "The country has a unique blend of cultures, influenced by its location at the crossroads of Africa, the Middle East, and Europe.",
+          "Eritrea is home to the Dahlak Archipelago, known for its coral reefs and marine biodiversity."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Djibouti",
+        "picture": "x",
+        "description": "Djibouti is known for its strategic location, diverse landscapes, and vibrant culture.",
+        "population": 988000,
+        "language": "French, Arabic",
+        "currency": "DJF",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Djibouti City",
+        "funfacts": [
+          "Djibouti is home to Lake Assal, the lowest point in Africa and the third-lowest point on Earth's land surface.",
+          "The country hosts military bases for several foreign countries due to its strategic location near the Bab-el-Mandeb strait.",
+          "Djibouti's culture is influenced by Somali, Afar, and Arab traditions, reflected in its music, cuisine, and festivals."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Ethiopia",
+        "picture": "x",
+        "description": "Ethiopia is known for its ancient history, diverse landscapes, and rich cultural heritage.",
+        "population": 114963588,
+        "language": "Amharic",
+        "currency": "ETB",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Addis Ababa",
+        "funfacts": [
+          "Ethiopia is one of the oldest nations in the world, with a history dating back thousands of years.",
+          "The country has nine UNESCO World Heritage sites, including Lalibela's rock-hewn churches and Aksum's ancient ruins.",
+          "Ethiopia is the birthplace of coffee, and coffee ceremonies are an integral part of its cultural traditions."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Somalia",
+        "picture": "x",
+        "description": "Somalia is known for its nomadic culture, beautiful beaches, and ancient trading ports.",
+        "population": 15893222,
+        "language": "Somali, Arabic",
+        "currency": "SOS",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Mogadishu",
+        "funfacts": [
+          "Somalia has the longest coastline on mainland Africa, with pristine beaches and coral reefs.",
+          "The country has a rich oral tradition, with Somali poetry and storytelling playing a central role in its culture.",
+          "Somalia's architecture includes ancient ruins such as the city of Zeila, once a thriving trading hub."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Uganda",
+        "picture": "x",
+        "description": "Uganda is known for its diverse landscapes, wildlife, and welcoming people.",
+        "population": 45741007,
+        "language": "English, Swahili",
+        "currency": "UGX",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Kampala",
+        "funfacts": [
+          "Uganda is home to half of the world's population of endangered mountain gorillas, found in Bwindi Impenetrable National Park.",
+          "The country has over 1,000 species of birds, making it a paradise for birdwatchers.",
+          "Uganda's cultural diversity is showcased in traditional dances like the energetic Kiganda dance and vibrant festivals."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Kenya",
+        "picture": "x",
+        "description": "Kenya is known for its diverse wildlife, beautiful landscapes, and vibrant culture.",
+        "population": 53771296,
+        "language": "Swahili, English",
+        "currency": "KES",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Nairobi",
+        "funfacts": [
+          "Kenya is home to the Maasai Mara National Reserve, famous for its annual wildebeest migration.",
+          "The country has over 50 national parks and reserves, protecting a wide variety of wildlife.",
+          "Kenya is known for its long-distance runners, who have achieved global recognition in marathons and athletics."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Tanzania",
+        "picture": "x",
+        "description": "Tanzania is known for its diverse wildlife, stunning landscapes, and rich cultural heritage.",
+        "population": 59734218,
+        "language": "Swahili, English",
+        "currency": "TZS",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Dodoma",
+        "funfacts": [
+          "Mount Kilimanjaro, Africa's highest peak, is located in Tanzania and attracts climbers from around the world.",
+          "The Serengeti National Park hosts the annual Great Migration of wildebeest and zebra, a natural spectacle.",
+          "Zanzibar, an archipelago off Tanzania's coast, is famous for its spice markets, historic Stone Town, and beautiful beaches."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Rwanda",
+        "picture": "x",
+        "description": "Rwanda is known for its breathtaking scenery, mountain gorillas, and remarkable recovery from tragedy.",
+        "population": 12952218,
+        "language": "Kinyarwanda, French, English",
+        "currency": "RWF",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Kigali",
+        "funfacts": [
+          "Rwanda is one of the few places in the world where you can trek to see endangered mountain gorillas in their natural habitat.",
+          "The country has made significant progress in conservation, with over a third of its land designated as protected areas.",
+          "Rwanda's recovery from the 1994 genocide is reflected in its focus on unity, reconciliation, and sustainable development."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Burundi",
+        "picture": "x",
+        "description": "Burundi is known for its scenic landscapes, drumming traditions, and cultural heritage.",
+        "population": 11890784,
+        "language": "Kirundi, French",
+        "currency": "BIF",
+        "continent": "Africa",
+        "region": "East Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Gitega",
+        "funfacts": [
+          "Lake Tanganyika, the world's second-largest freshwater lake by volume, forms part of Burundi's western border.",
+          "Burundi's royal drummers, known as Abatimbo, play a central role in the country's cultural ceremonies and traditions.",
+          "The country is known for its rich biodiversity, including endangered species such as the mountain gorilla and chimpanzees."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Angola",
+        "picture": "x",
+        "description": "Angola is known for its diverse landscapes, rich cultural heritage, and oil reserves.",
+        "population": 33933611,
+        "language": "Portuguese",
+        "currency": "AOA",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+01:00",
+        "capital": "Luanda",
+        "funfacts": [
+          "Angola has one of the largest waterfalls in the world, the Kalandula Falls, located on the Lucala River.",
+          "The country is famous for its traditional music and dance forms such as semba and kizomba.",
+          "Angola is home to significant wildlife reserves, including Quiçama National Park and Kissama Game Park."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Zambia",
+        "picture": "x",
+        "description": "Zambia is known for its abundant wildlife, diverse ecosystems, and Victoria Falls.",
+        "population": 18920673,
+        "language": "English",
+        "currency": "ZMW",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Lusaka",
+        "funfacts": [
+          "Victoria Falls, one of the Seven Natural Wonders of the World, is shared between Zambia and Zimbabwe.",
+          "Zambia has 20 national parks and 34 game management areas, making it a prime destination for safaris.",
+          "The country is known for its traditional ceremonies and vibrant cultural festivals."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Malawi",
+        "picture": "x",
+        "description": "Malawi is known for its stunning lake, diverse wildlife, and friendly people.",
+        "population": 19631055,
+        "language": "English, Chewa",
+        "currency": "MWK",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Lilongwe",
+        "funfacts": [
+          "Lake Malawi, also known as the Lake of Stars, is home to more species of fish than any other lake.",
+          "Malawi's Mount Mulanje is a popular hiking destination, offering stunning views and unique plant species.",
+          "The country is known for its traditional music and dance, such as the lively Gule Wamkulu performances."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Mozambique",
+        "picture": "x",
+        "description": "Mozambique is known for its pristine beaches, vibrant culture, and diverse wildlife.",
+        "population": 33155435,
+        "language": "Portuguese",
+        "currency": "MZN",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Maputo",
+        "funfacts": [
+          "Mozambique's Bazaruto Archipelago is a marine reserve famous for its coral reefs, marine life, and pristine beaches.",
+          "The country has a rich cultural heritage, with Makonde wood carving and Capulana cloth being notable artistic expressions.",
+          "Mozambique is known for its vibrant music, such as marrabenta and the traditional dance form known as tufo."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Zimbabwe",
+        "picture": "x",
+        "description": "Zimbabwe is known for its diverse landscapes, Victoria Falls, and ancient civilizations.",
+        "population": 14862924,
+        "language": "English, Shona, Ndebele",
+        "currency": "ZWL",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Harare",
+        "funfacts": [
+          "Victoria Falls, known locally as Mosi-oa-Tunya ('The Smoke That Thunders'), is one of the largest waterfalls in the world.",
+          "Zimbabwe is home to Great Zimbabwe, an ancient city and UNESCO World Heritage site built by the Shona civilization.",
+          "The country's rich cultural heritage includes traditional music, dance, and art, with the mbira (thumb piano) being a prominent instrument."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Botswana",
+        "picture": "x",
+        "description": "Botswana is known for its vast wilderness areas, wildlife, and stable political environment.",
+        "population": 2374636,
+        "language": "English, Tswana",
+        "currency": "BWP",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Gaborone",
+        "funfacts": [
+          "Botswana's Okavango Delta is the largest inland delta in the world and a UNESCO World Heritage site.",
+          "The country has a high concentration of elephants, and the Chobe National Park is known for its large herds.",
+          "Botswana's Kalahari Desert is home to the San people, known for their ancient hunter-gatherer lifestyle."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Namibia",
+        "picture": "x",
+        "description": "Namibia is known for its stunning desert landscapes, wildlife, and rich cultural heritage.",
+        "population": 2540905,
+        "language": "English",
+        "currency": "NAD",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Windhoek",
+        "funfacts": [
+          "Namibia's Namib Desert is one of the oldest deserts in the world, known for its towering red sand dunes.",
+          "The country has a diverse wildlife population, including the endangered black rhino and desert-adapted elephants.",
+          "Namibia's Skeleton Coast is known for its shipwrecks and wildlife, offering a stark yet beautiful landscape."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "South Africa",
+        "picture": "x",
+        "description": "South Africa is known for its diverse landscapes, wildlife, and cultural diversity.",
+        "population": 60446000,
+        "language": "Afrikaans, English, Zulu, Xhosa",
+        "currency": "ZAR",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Pretoria (executive), Bloemfontein (judicial), Cape Town (legislative)",
+        "funfacts": [
+          "South Africa is home to the iconic Table Mountain in Cape Town, a New7Wonders of Nature.",
+          "The country has a diverse cultural heritage, with 11 official languages and a rich history of struggle against apartheid.",
+          "South Africa's Kruger National Park is one of the largest game reserves in Africa, known for its wildlife safaris."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Lesotho",
+        "picture": "x",
+        "description": "Lesotho is known for its mountainous terrain, traditional culture, and high-altitude charm.",
+        "population": 2142249,
+        "language": "Sesotho, English",
+        "currency": "LSL, ZAR",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Maseru",
+        "funfacts": [
+          "Lesotho is one of the world's highest countries, with a lowest point at 1,400 meters above sea level.",
+          "The traditional Basotho blanket is an iconic symbol of Lesotho's culture, often worn during ceremonies and festivals.",
+          "The country has a unique form of governance as a constitutional monarchy and is entirely surrounded by South Africa."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Eswatini (Swaziland)",
+        "picture": "x",
+        "description": "Eswatini, formerly known as Swaziland, is known for its traditional culture, stunning landscapes, and annual festivals.",
+        "population": 1160164,
+        "language": "Swati, English",
+        "currency": "SZL",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+02:00",
+        "capital": "Mbabane (executive), Lobamba (legislative)",
+        "funfacts": [
+          "Eswatini is known for its annual Reed Dance ceremony, where thousands of young women dance for the king.",
+          "The country's traditional handicrafts, including intricate beadwork and woodcarvings, are highly valued.",
+          "Eswatini is one of the last remaining absolute monarchies in the world, with King Mswati III as the current ruler."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Madagascar",
+        "picture": "x",
+        "description": "Madagascar is known for its unique wildlife, diverse ecosystems, and vibrant culture.",
+        "population": 27691018,
+        "language": "Malagasy, French",
+        "currency": "MGA",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Antananarivo",
+        "funfacts": [
+          "Madagascar is home to unique wildlife found nowhere else on Earth, including lemurs, chameleons, and fossas.",
+          "The island's Avenue of the Baobabs is a famous landscape dotted with ancient baobab trees, some over 1,000 years old.",
+          "Madagascar's traditional music and dance, such as the energetic salegy, reflect the island's diverse cultural heritage."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Comoros",
+        "picture": "x",
+        "description": "Comoros is known for its volcanic islands, aromatic spices, and cultural diversity.",
+        "population": 869601,
+        "language": "Comorian, French, Arabic",
+        "currency": "KMF",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+03:00",
+        "capital": "Moroni",
+        "funfacts": [
+          "Comoros is known as the 'Perfumed Islands' due to its extensive production of ylang-ylang, vanilla, and cloves.",
+          "The country has a rich history influenced by Arab, African, and French cultures, reflected in its architecture and cuisine.",
+          "Comoros is home to endangered species such as the Coelacanth fish, often called a 'living fossil.'"
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Seychelles",
+        "picture": "x",
+        "description": "Seychelles is known for its stunning beaches, coral reefs, and unique biodiversity.",
+        "population": 98347,
+        "language": "Seychellois Creole, English, French",
+        "currency": "SCR",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+04:00",
+        "capital": "Victoria",
+        "funfacts": [
+          "Seychelles has some of the world's most beautiful beaches, such as Anse Source d'Argent on La Digue Island.",
+          "The country is a biodiversity hotspot, with unique flora and fauna, including the rare Seychelles black parrot.",
+          "Seychelles is a popular honeymoon destination, offering luxury resorts and pristine natural beauty."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Mauritius",
+        "picture": "x",
+        "description": "Mauritius is known for its beautiful beaches, turquoise waters, and diverse culture.",
+        "population": 1271768,
+        "language": "Mauritian Creole, French, English",
+        "currency": "MUR",
+        "continent": "Africa",
+        "region": "Southern Africa",
+        "timezone": "UTC+04:00",
+        "capital": "Port Louis",
+        "funfacts": [
+          "Mauritius is home to the extinct dodo bird and is known for its efforts in conservation and protecting its unique wildlife.",
+          "The island is surrounded by coral reefs, offering excellent diving and snorkeling opportunities.",
+          "Mauritius has a diverse population and a rich cultural heritage influenced by Indian, African, French, and Chinese traditions."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "India",
+        "picture": "x",
+        "description": "India is known for its diverse culture, ancient heritage, and bustling cities.",
+        "population": 1393409038,
+        "language": "Hindi, English",
+        "currency": "INR",
+        "continent": "Asia",
+        "region": "South Asia",
+        "timezone": "UTC+05:30",
+        "capital": "New Delhi",
+        "funfacts": [
+          "India is the world's largest democracy, with a rich history spanning over 5,000 years.",
+          "The country is home to the iconic Taj Mahal, a UNESCO World Heritage site and one of the New7Wonders of the World.",
+          "India is known for its diverse cuisine, with each region offering unique flavors and culinary traditions."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Pakistan",
+        "picture": "x",
+        "description": "Pakistan is known for its ancient civilizations, diverse landscapes, and vibrant culture.",
+        "population": 225199937,
+        "language": "Urdu, English",
+        "currency": "PKR",
+        "continent": "Asia",
+        "region": "South Asia",
+        "timezone": "UTC+05:00",
+        "capital": "Islamabad",
+        "funfacts": [
+          "Pakistan is home to Mohenjo-daro and Harappa, ancient cities of the Indus Valley Civilization, dating back over 4,000 years.",
+          "The country has some of the world's highest peaks, including K2, the second highest mountain in the world.",
+          "Pakistan is known for its rich cultural heritage, including classical music, dance forms like Kathak, and traditional handicrafts."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Bangladesh",
+        "picture": "x",
+        "description": "Bangladesh is known for its lush landscapes, rivers, and vibrant cultural heritage.",
+        "population": 166303498,
+        "language": "Bengali",
+        "currency": "BDT",
+        "continent": "Asia",
+        "region": "South Asia",
+        "timezone": "UTC+06:00",
+        "capital": "Dhaka",
+        "funfacts": [
+          "Bangladesh is home to the Sundarbans, the largest mangrove forest in the world and a UNESCO World Heritage site.",
+          "The country is known for its rich literary tradition, with authors like Rabindranath Tagore, who won the Nobel Prize in Literature.",
+          "Bangladesh is one of the world's largest producers of textiles, known for its vibrant fabrics and traditional weaving techniques."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Nepal",
+        "picture": "x",
+        "description": "Nepal is known for its majestic Himalayas, rich cultural heritage, and spiritual significance.",
+        "population": 29609623,
+        "language": "Nepali",
+        "currency": "NPR",
+        "continent": "Asia",
+        "region": "South Asia",
+        "timezone": "UTC+05:45",
+        "capital": "Kathmandu",
+        "funfacts": [
+          "Nepal is home to Mount Everest, the highest peak in the world, attracting climbers and adventurers from around the globe.",
+          "The country has a rich religious heritage, with Hinduism and Buddhism coexisting peacefully and influencing Nepali culture.",
+          "Nepal's Kathmandu Valley is a UNESCO World Heritage site, known for its ancient temples, palaces, and vibrant festivals."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Bhutan",
+        "picture": "x",
+        "description": "Bhutan is known for its pristine landscapes, Gross National Happiness index, and unique culture.",
+        "population": 779666,
+        "language": "Dzongkha",
+        "currency": "BTN, INR",
+        "continent": "Asia",
+        "region": "South Asia",
+        "timezone": "UTC+06:00",
+        "capital": "Thimphu",
+        "funfacts": [
+          "Bhutan measures its success by Gross National Happiness (GNH), a holistic approach to development focusing on well-being.",
+          "The country is home to Taktsang Monastery (Tiger's Nest), a sacred Buddhist site perched on a cliff at 3,120 meters.",
+          "Bhutan is one of the world's few remaining biodiversity hotspots, with over 70% of its land covered in forests."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Sri Lanka",
+        "picture": "x",
+        "description": "Sri Lanka is known for its ancient cities, tea plantations, and stunning beaches.",
+        "population": 21413249,
+        "language": "Sinhala, Tamil",
+        "currency": "LKR",
+        "continent": "Asia",
+        "region": "South Asia",
+        "timezone": "UTC+05:30",
+        "capital": "Colombo (executive), Sri Jayawardenepura Kotte (legislative)",
+        "funfacts": [
+          "Sri Lanka is home to eight UNESCO World Heritage sites, including the ancient city of Polonnaruwa and Sigiriya fortress.",
+          "The country is renowned for its Ceylon tea, grown in the central highlands and celebrated for its flavor and aroma.",
+          "Sri Lanka's wildlife includes leopards, elephants, and a rich variety of bird species, making it a biodiversity hotspot."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Maldives",
+        "picture": "x",
+        "description": "Maldives is known for its stunning coral reefs, turquoise waters, and luxury resorts.",
+        "population": 530953,
+        "language": "Dhivehi",
+        "currency": "MVR",
+        "continent": "Asia",
+        "region": "South Asia",
+        "timezone": "UTC+05:00",
+        "capital": "Malé",
+        "funfacts": [
+          "The Maldives is the lowest-lying country in the world, with an average ground level of only 1.5 meters above sea level.",
+          "The country has some of the world's best diving and snorkeling spots, with vibrant coral reefs and diverse marine life.",
+          "Maldivian culture is influenced by South Indian, Sinhalese, and Arab traditions, reflected in music, dance, and cuisine."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Myanmar",
+        "picture": "x",
+        "description": "Myanmar, formerly Burma, is known for its rich cultural heritage, temples, and diverse landscapes.",
+        "population": 54817919,
+        "language": "Burmese",
+        "currency": "MMK",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+06:30",
+        "capital": "Naypyidaw",
+        "funfacts": [
+          "Myanmar is home to the ancient city of Bagan, with over 2,000 Buddhist monuments dating back to the 9th century.",
+          "The country has a unique culture influenced by Buddhism, traditional festivals, and vibrant arts and crafts.",
+          "Myanmar's Inle Lake is famous for its floating gardens, stilt houses, and traditional fishermen who row with one leg."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Thailand",
+        "picture": "x",
+        "description": "Thailand is known for its beautiful beaches, ornate temples, and vibrant street life.",
+        "population": 69950860,
+        "language": "Thai",
+        "currency": "THB",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+07:00",
+        "capital": "Bangkok",
+        "funfacts": [
+          "Thailand is home to Wat Phra Kaew (Temple of the Emerald Buddha) and the Grand Palace in Bangkok, symbols of Thai craftsmanship and architecture.",
+          "The country is known for its delicious cuisine, including dishes like pad thai, green curry, and mango sticky rice.",
+          "Thailand's Songkran festival, marking the Thai New Year, is celebrated with water fights and is one of the world's largest water festivals."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Laos",
+        "picture": "x",
+        "description": "Laos is known for its mountainous terrain, Buddhist monasteries, and traditional culture.",
+        "population": 7392620,
+        "language": "Lao",
+        "currency": "LAK",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+07:00",
+        "capital": "Vientiane",
+        "funfacts": [
+          "Laos is home to the ancient city of Luang Prabang, a UNESCO World Heritage site known for its well-preserved architecture and temples.",
+          "The country is known for its laid-back atmosphere, friendly people, and traditional festivals like Boun Bang Fai (Rocket Festival).",
+          "Laos is one of the most heavily bombed countries in the world per capita, a legacy of the Vietnam War."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Cambodia",
+        "picture": "x",
+        "description": "Cambodia is known for its Khmer Empire ruins, including Angkor Wat, and its tragic history.",
+        "population": 16718965,
+        "language": "Khmer",
+        "currency": "KHR",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+07:00",
+        "capital": "Phnom Penh",
+        "funfacts": [
+          "Angkor Wat, a UNESCO World Heritage site in Cambodia, is the largest religious monument in the world.",
+          "The country has a tragic recent history under the Khmer Rouge, but has since rebuilt and is known for its warm hospitality.",
+          "Cambodia's traditional dance forms, such as Apsara dance, are highly refined and part of the country's cultural identity."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Vietnam",
+        "picture": "x",
+        "description": "Vietnam is known for its bustling cities, Buddhist pagodas, and vibrant street food culture.",
+        "population": 98168843,
+        "language": "Vietnamese",
+        "currency": "VND",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+07:00",
+        "capital": "Hanoi",
+        "funfacts": [
+          "Vietnam's Ha Long Bay, a UNESCO World Heritage site, is known for its emerald waters and thousands of towering limestone islands topped with rainforests.",
+          "The country is famous for its cuisine, including pho (noodle soup), banh mi (Vietnamese sandwich), and fresh spring rolls.",
+          "Vietnam has a rich cultural heritage, with influences from China, France, and Southeast Asian neighbors shaping its traditions."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Malaysia",
+        "picture": "x",
+        "description": "Malaysia is known for its diverse culture, modern cities, and natural landscapes.",
+        "population": 32365999,
+        "language": "Malay",
+        "currency": "MYR",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+08:00",
+        "capital": "Kuala Lumpur",
+        "funfacts": [
+          "Malaysia is home to the iconic Petronas Twin Towers in Kuala Lumpur, once the tallest buildings in the world.",
+          "The country is known for its rich culinary heritage, with Malay, Chinese, and Indian influences shaping its diverse cuisine.",
+          "Malaysia's biodiversity includes vast rainforests, home to endangered species like orangutans and pygmy elephants."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Singapore",
+        "picture": "x",
+        "description": "Singapore is known for its modern skyline, multicultural society, and efficient transportation system.",
+        "population": 5896684,
+        "language": "English, Malay, Mandarin, Tamil",
+        "currency": "SGD",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+08:00",
+        "capital": "Singapore",
+        "funfacts": [
+          "Singapore is one of the world's leading financial centers and a global hub for technology, education, and healthcare.",
+          "The country is known for its strict laws, cleanliness, and efficient public transportation system, including the famous Singapore Mass Rapid Transit (MRT).",
+          "Singapore's Gardens by the Bay is a futuristic park with giant Supertrees, showcasing the country's commitment to sustainable urban development."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Brunei",
+        "picture": "x",
+        "description": "Brunei is known for its rich oil resources, Islamic culture, and serene rainforests.",
+        "population": 437479,
+        "language": "Malay",
+        "currency": "BND",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+08:00",
+        "capital": "Bandar Seri Begawan",
+        "funfacts": [
+          "Brunei is one of the richest countries in the world due to its extensive oil and gas reserves.",
+          "The country follows Sharia law, and Islam is an integral part of Bruneian culture and daily life.",
+          "Brunei's rainforests are home to diverse wildlife, including proboscis monkeys, pygmy elephants, and hornbills."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Indonesia",
+        "picture": "x",
+        "description": "Indonesia is known for its thousands of islands, volcanoes, and rich cultural diversity.",
+        "population": 276361783,
+        "language": "Indonesian",
+        "currency": "IDR",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+07:00 to UTC+09:00",
+        "capital": "Jakarta",
+        "funfacts": [
+          "Indonesia has the world's largest archipelago, consisting of over 17,000 islands, including Java, Sumatra, Bali, and Borneo (Kalimantan).",
+          "The country is known for its diverse wildlife, including orangutans in Borneo and Komodo dragons in Komodo National Park.",
+          "Indonesia's Borobudur and Prambanan temples are UNESCO World Heritage sites, reflecting the country's rich cultural and historical heritage."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Philippines",
+        "picture": "x",
+        "description": "The Philippines is an archipelagic country in Southeast Asia known for its rich biodiversity, vibrant culture, and stunning beaches.",
+        "population": 111046913,
+        "language": "Filipino (official), English (official)",
+        "currency": "Philippine peso (PHP)",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+8 (Philippine Standard Time)",
+        "capital": "Manila",
+        "funfacts": [
+          "The Philippines has over 7,600 islands, making it the second-largest archipelago in the world.",
+          "It is the only predominantly Christian nation in Asia, with Roman Catholicism being the dominant religion.",
+          "Filipino cuisine is diverse and includes dishes influenced by Chinese, Spanish, and American cuisines."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "East Timor",
+        "picture": "x",
+        "description": "East Timor, also known as Timor-Leste, is known for its rugged landscapes, rich biodiversity, and historical significance.",
+        "population": 1333059,
+        "language": "Tetum, Portuguese",
+        "currency": "USD",
+        "continent": "Asia",
+        "region": "Southeast Asia",
+        "timezone": "UTC+09:00",
+        "capital": "Dili",
+        "funfacts": [
+          "East Timor gained independence from Indonesia in 2002, becoming one of the world's newest countries.",
+          "The country is located on the eastern half of the island of Timor, with stunning beaches and coral reefs.",
+          "East Timor has a rich cultural heritage, with influences from Portuguese colonization and indigenous traditions."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "China",
+        "picture": "x",
+        "description": "China is known for its ancient civilization, diverse landscapes, and rapid modernization.",
+        "population": 1439323776,
+        "language": "Mandarin",
+        "currency": "CNY",
+        "continent": "Asia",
+        "region": "East Asia",
+        "timezone": "UTC+08:00",
+        "capital": "Beijing",
+        "funfacts": [
+          "China is home to the Great Wall, a UNESCO World Heritage site and one of the New7Wonders of the World, stretching over 13,000 miles.",
+          "The country is known for its rich cultural heritage, including Confucianism, Taoism, and Chinese opera.",
+          "China is the world's largest producer of rice, wheat, and tea, and has a rich culinary tradition that varies widely across its regions."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Mongolia",
+        "picture": "x",
+        "description": "Mongolia is known for its vast steppes, nomadic culture, and Genghis Khan's historical empire.",
+        "population": 3278290,
+        "language": "Mongolian",
+        "currency": "MNT",
+        "continent": "Asia",
+        "region": "East Asia",
+        "timezone": "UTC+08:00",
+        "capital": "Ulaanbaatar",
+        "funfacts": [
+          "Mongolia is one of the least densely populated countries in the world, with a nomadic culture that has persisted for centuries.",
+          "The country is known for its traditional festivals like Naadam, featuring horse racing, wrestling, and archery competitions.",
+          "Mongolia's Gobi Desert is home to unique wildlife such as the Bactrian camel and the elusive snow leopard."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "North Korea",
+        "picture": "x",
+        "description": "North Korea is known for its secretive regime, military parades, and ideological governance.",
+        "population": 25778816,
+        "language": "Korean",
+        "currency": "KPW",
+        "continent": "Asia",
+        "region": "East Asia",
+        "timezone": "UTC+09:00",
+        "capital": "Pyongyang",
+        "funfacts": [
+          "North Korea operates under a socialist system known as Juche, emphasizing self-reliance, nationalism, and state control.",
+          "The country is home to Mount Paektu, a sacred volcano in Korean folklore and a symbol of Korean identity.",
+          "North Korea's mass games are elaborate performances involving tens of thousands of participants, showcasing synchronized gymnastics and artistic displays."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "South Korea",
+        "picture": "x",
+        "description": "South Korea is known for its technological innovation, pop culture, and vibrant cities.",
+        "population": 51269185,
+        "language": "Korean",
+        "currency": "KRW",
+        "continent": "Asia",
+        "region": "East Asia",
+        "timezone": "UTC+09:00",
+        "capital": "Seoul",
+        "funfacts": [
+          "South Korea is a global leader in technology, known for brands like Samsung, LG, and Hyundai.",
+          "The country is a hub of pop culture, known as the Korean Wave (Hallyu), influencing music, dramas, and fashion across Asia.",
+          "South Korea hosted the 1988 Summer Olympics in Seoul and the 2002 FIFA World Cup, showcasing its global presence."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Japan",
+        "picture": "x",
+        "description": "Japan is known for its ancient traditions, cutting-edge technology, and natural beauty.",
+        "population": 126050804,
+        "language": "Japanese",
+        "currency": "JPY",
+        "continent": "Asia",
+        "region": "East Asia",
+        "timezone": "UTC+09:00",
+        "capital": "Tokyo",
+        "funfacts": [
+          "Japan is known for its Cherry Blossom festivals (Sakura), where millions gather to view the blooming cherry trees each spring.",
+          "The country is a pioneer in technology, with companies like Sony, Toyota, and Nintendo leading global innovation.",
+          "Japan's cuisine, including sushi, ramen, and tempura, is celebrated worldwide for its quality, craftsmanship, and cultural significance."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Taiwan",
+        "picture": "x",
+        "description": "Taiwan is known for its bustling night markets, Chinese temples, and stunning mountainous landscapes.",
+        "population": 23816775,
+        "language": "Mandarin",
+        "currency": "TWD",
+        "continent": "Asia",
+        "region": "East Asia",
+        "timezone": "UTC+08:00",
+        "capital": "Taipei",
+        "funfacts": [
+          "Taiwan is home to Taipei 101, once the tallest building in the world, known for its design and engineering feats.",
+          "The country is known for its delicious street food, including beef noodle soup, bubble tea, and xiaolongbao (soup dumplings).",
+          "Taiwan's Taroko National Park is famed for its marble canyons, towering cliffs, and hiking trails through lush forests."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Australia",
+        "picture": "x",
+        "description": "Australia is known for its vast Outback, vibrant cities, and unique wildlife such as kangaroos and koalas.",
+        "population": 25788216,
+        "language": "English",
+        "currency": "AUD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+08:00 to UTC+11:00",
+        "capital": "Canberra",
+        "funfacts": [
+          "Australia is home to the Great Barrier Reef, the world's largest coral reef system and a UNESCO World Heritage site.",
+          "The country's indigenous Aboriginal culture dates back over 60,000 years, with rock art and Dreamtime stories.",
+          "Australia's diverse landscapes range from tropical rainforests to arid deserts, offering unique ecosystems and natural wonders."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "New Zealand",
+        "picture": "x",
+        "description": "New Zealand is known for its stunning landscapes, Maori culture, and adventure tourism.",
+        "population": 4822233,
+        "language": "English, Maori",
+        "currency": "NZD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+12:00",
+        "capital": "Wellington",
+        "funfacts": [
+          "New Zealand is famous for its filming locations for movies like The Lord of the Rings and The Hobbit trilogy.",
+          "The country is known for its outdoor activities such as bungee jumping, skydiving, and skiing.",
+          "New Zealand's indigenous Maori culture is integral to its identity, with traditional arts, haka performances, and Maori language revitalization."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Papua New Guinea",
+        "picture": "x",
+        "description": "Papua New Guinea is known for its cultural diversity, tribal traditions, and remote rainforests.",
+        "population": 9008093,
+        "language": "English, Tok Pisin, Hiri Motu",
+        "currency": "PGK",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+10:00 to UTC+11:00",
+        "capital": "Port Moresby",
+        "funfacts": [
+          "Papua New Guinea has over 800 indigenous languages, making it one of the most linguistically diverse countries in the world.",
+          "The country is known for its traditional tribal cultures, with unique ceremonies, dances, and art forms.",
+          "Papua New Guinea is home to the Kokoda Track, a historic trail through rugged mountains that was a WWII battleground."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Fiji",
+        "picture": "x",
+        "description": "Fiji is known for its tropical islands, vibrant coral reefs, and warm hospitality.",
+        "population": 896445,
+        "language": "English, Fijian, Hindi",
+        "currency": "FJD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+12:00",
+        "capital": "Suva",
+        "funfacts": [
+          "Fiji is an archipelago of over 300 islands, with pristine beaches, lush rainforests, and clear turquoise waters.",
+          "The country is famous for its traditional Fijian culture, including meke dances, kava ceremonies, and weaving.",
+          "Fiji's Coral Coast is renowned for its spectacular coral reefs, offering some of the best diving and snorkeling in the world."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Solomon Islands",
+        "picture": "x",
+        "description": "The Solomon Islands are known for their rich cultural heritage, WWII history, and stunning marine biodiversity.",
+        "population": 686884,
+        "language": "English, Solomon Islands Pijin",
+        "currency": "SBD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+11:00",
+        "capital": "Honiara",
+        "funfacts": [
+          "The Solomon Islands are part of the Coral Triangle, boasting some of the most diverse marine life on Earth.",
+          "The country has a unique blend of Melanesian cultures, with traditional music, shell money, and wood carvings.",
+          "The Solomon Islands played a significant role in WWII, with remnants like sunken warships and aircraft wrecks attracting divers and history enthusiasts."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Vanuatu",
+        "picture": "x",
+        "description": "Vanuatu is known for its volcanic landscapes, diverse cultures, and adventure tourism.",
+        "population": 307145,
+        "language": "Bislama, English, French",
+        "currency": "VUV",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+11:00",
+        "capital": "Port Vila",
+        "funfacts": [
+          "Vanuatu is home to Mount Yasur, one of the world's most accessible active volcanoes, offering nightly volcanic eruptions.",
+          "The country has a rich cultural heritage, with traditional ceremonies, dance, and unique customs like land diving on Pentecost Island.",
+          "Vanuatu's underwater world is renowned for its coral reefs, wreck dives, and marine biodiversity, attracting divers and snorkelers."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Samoa",
+        "picture": "x",
+        "description": "Samoa is known for its Polynesian culture, pristine beaches, and lush rainforests.",
+        "population": 200874,
+        "language": "Samoan, English",
+        "currency": "WST",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+13:00",
+        "capital": "Apia",
+        "funfacts": [
+          "Samoa is one of the first places on Earth to see each new day, making it the last country to celebrate New Year's Eve.",
+          "The country's traditional tattooing, called Pe'a for men and Malu for women, is a symbol of cultural identity and pride.",
+          "Samoa's To Sua Ocean Trench and Piula Cave Pool are natural wonders, offering crystal-clear waters for swimming and snorkeling."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Tonga",
+        "picture": "x",
+        "description": "Tonga is known for its royal heritage, ancient Polynesian culture, and pristine coral reefs.",
+        "population": 105695,
+        "language": "Tongan, English",
+        "currency": "TOP",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+13:00",
+        "capital": "Nuku'alofa",
+        "funfacts": [
+          "Tonga is the only remaining Polynesian kingdom and has a proud royal heritage dating back over a thousand years.",
+          "The country is known for its friendly hospitality, traditional feasts (like 'umu' or underground oven cooking), and vibrant dance performances.",
+          "Tonga's Ha'apai Islands are a hidden gem for eco-tourism, offering untouched beaches, whale watching, and diving opportunities."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Kiribati",
+        "picture": "x",
+        "description": "Kiribati is known for its remote atolls, world-class fishing, and being the first to enter the New Year.",
+        "population": 120428,
+        "language": "English, Gilbertese",
+        "currency": "AUD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+12:00 to UTC+14:00",
+        "capital": "South Tarawa",
+        "funfacts": [
+          "Kiribati is spread across 33 atolls and reef islands, straddling the equator and the International Date Line.",
+          "The country is a pioneer in sustainable development, aiming to protect its vulnerable ecosystems from climate change.",
+          "Kiribati's Christmas Island hosts the world's largest population of the red crab, which migrates en masse to the sea each year."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Tuvalu",
+        "picture": "x",
+        "description": "Tuvalu is known for its low-lying islands, vibrant marine life, and being one of the smallest countries in the world.",
+        "population": 11792,
+        "language": "Tuvaluan, English",
+        "currency": "AUD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+12:00",
+        "capital": "Funafuti",
+        "funfacts": [
+          "Tuvalu is made up of nine coral atolls, with an average elevation of just a few meters above sea level.",
+          "The country is highly vulnerable to climate change and rising sea levels, posing existential threats to its existence.",
+          "Tuvalu is known for its friendly community spirit, traditional music and dance, and laid-back island lifestyle."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Nauru",
+        "picture": "x",
+        "description": "Nauru is known for its phosphate mining history, small size, and distinctive Pacific culture.",
+        "population": 10834,
+        "language": "Nauruan, English",
+        "currency": "AUD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+12:00",
+        "capital": "Yaren",
+        "funfacts": [
+          "Nauru was once one of the wealthiest nations per capita due to its phosphate deposits, now largely depleted.",
+          "The country's natural landscape includes ancient coral reefs and phosphate pinnacles, shaped by its mining history.",
+          "Nauruans have a strong cultural identity, expressed through traditional music, storytelling, and arts."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Micronesia",
+        "picture": "x",
+        "description": "Micronesia is known for its remote islands, pristine diving spots, and Micronesian culture.",
+        "population": 548914,
+        "language": "English, various Micronesian languages",
+        "currency": "USD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+10:00 to UTC+12:00",
+        "capital": "Palikir",
+        "funfacts": [
+          "Micronesia is a federation of four states spread across the western Pacific Ocean, known for their lush landscapes and biodiversity.",
+          "The country's traditional navigation techniques, using star patterns and wave patterns, are still practiced by skilled navigators.",
+          "Micronesia's Chuuk Lagoon is one of the world's largest lagoons, famous for its sunken WWII wrecks and vibrant coral reefs."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Palau",
+        "picture": "x",
+        "description": "Palau is known for its pristine marine environment, ancient rock islands, and unique cultural traditions.",
+        "population": 18008,
+        "language": "Palauan, English",
+        "currency": "USD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+09:00",
+        "capital": "Ngerulmud",
+        "funfacts": [
+          "Palau is home to the world's first shark sanctuary, protecting over 600,000 square kilometers of ocean habitat.",
+          "The country's Rock Islands are UNESCO World Heritage sites, known for their unique limestone formations and hidden lagoons.",
+          "Palauan culture is rich in oral traditions, legends, and rituals, expressed through traditional dances, storytelling, and art."
+        ],
+        "gallery": []
+      },
+      {
+        "name": "Marshall Islands",
+        "picture": "x",
+        "description": "The Marshall Islands are known for their atolls, WWII history, and being home to the Bikini Atoll nuclear tests.",
+        "population": 59190,
+        "language": "Marshallese, English",
+        "currency": "USD",
+        "continent": "Oceania",
+        "region": "Oceania",
+        "timezone": "UTC+12:00 to UTC+14:00",
+        "capital": "Majuro",
+        "funfacts": [
+          "The Marshall Islands are part of the Ralik Chain and Ratak Chain, consisting of over 1,000 coral islands and islets.",
+          "The Bikini Atoll was the site of nuclear tests conducted by the United States in the 1940s and 1950s, leaving a legacy of environmental and cultural impact.",
+          "Marshallese culture emphasizes communal living, storytelling, and navigation skills, passed down through generations."
+        ],
+        "gallery": []
+      },
+    {
+        "name": "Greenland",
+        "picture": "x",
+        "description": "Greenland is known for its vast ice sheets, polar bears, and indigenous Inuit culture.",
+        "population": 56770,
+        "language": "Greenlandic, Danish",
+        "currency": "Danish Krone (DKK)",
+        "continent": "Arctic",
+        "region": "The Arctic and Antarctica",
+        "timezone": "UTC-01:00 to UTC-04:00",
+        "capital": "Nuuk",
+        "funfacts": [
+        "Greenland is the world's largest island, located between the Arctic and Atlantic Oceans.",
+        "The country's ice sheet covers about 80% of its surface and is the second-largest in the world after Antarctica.",
+        "Greenland's Inuit population has a rich cultural heritage, with traditional hunting, kayaking, and drum dancing."
+        ],
+        "gallery": []
+    },
+    {
+        "name": "Antarctica",
+        "picture": "x",
+        "description": "Antarctica is known for its pristine environment, icebergs, and diverse wildlife including penguins and seals.",
+        "population": 0,
+        "language": "Various",
+        "currency": "Various",
+        "continent": "Antarctica",
+        "region": "The Arctic and Antarctica",
+        "timezone": "UTC-03:00 to UTC+12:00",
+        "capital": "None",
+        "funfacts": [
+        "Antarctica is the coldest, driest, windiest, and highest continent on Earth, with an average elevation of over 2,500 meters.",
+        "The Antarctic Treaty System regulates international relations in Antarctica, focusing on scientific research and environmental protection.",
+        "Despite its harsh conditions, Antarctica supports a variety of life, including unique species adapted to extreme cold."
+        ],
+        "gallery": []
+    }
+]
+  

@@ -1,5 +1,5 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const config = require('../config/config');
+const config = require('../../../config/config');
 
 const genAI = new GoogleGenerativeAI(config.googleApiKey);
 
