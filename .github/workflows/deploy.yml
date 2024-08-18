@@ -23,18 +23,13 @@ jobs:
           cd backend_node
           npm install
 
-      # Remove the build step since it's not needed
-      # - name: Run build (if needed)
-      #   run: |
-      #     cd backend_node
-      #     npm run build
-
       - name: Install Railway CLI
         run: npm install -g @railway/cli
 
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
         run: |
           cd backend_node
           railway up
