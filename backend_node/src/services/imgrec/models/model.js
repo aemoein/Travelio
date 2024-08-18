@@ -11,7 +11,7 @@ let model;
 
 const loadModel = async () => {
   if (!model) {
-    model = await tf.loadLayersModel('file://./model_architecture/model.json');
+    model = await tf.loadLayersModel('file://./src/services/imgrec/model_architecture/model.json');
   }
   return model;
 };
