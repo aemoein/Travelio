@@ -13,25 +13,25 @@ const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
 
 //Routes
-const authRoutes = require('./routes/authRoutes');
-const profileRoutes = require('./routes/profileRoutes');
+const authRoutes = require('./src/services/users/routes/authRoutes');
+const profileRoutes = require('./src/services/users/routes/profileRoutes');
 
-const socialRoutes = require('./routes/socialRoutes');
-const postRoutes = require('./routes/postRoutes');
-const timelineRoutes = require('./routes/timelineRoutes');
-const createRoutes = require('./routes/createRoutes');
+const socialRoutes = require('./src/services/social/routes/socialRoutes');
+const postRoutes = require('./src/services/social/routes/postRoutes');
+const timelineRoutes = require('./src/services/social/routes/timelineRoutes');
+const createRoutes = require('./src/services/social/routes/createRoutes');
 
-const cityRoutes = require('./src/routes/cityRoutes')
-const config = require('./src/config/config');
-const weatherRoutes = require('./src/routes/weatherRoutes');
+const cityRoutes = require('./src/services/destinations/routes/cityRoutes')
+const destinationRoutes = require('./src/services/destinations/routes/destinationRoutes');
+const weatherRoutes = require('./src/services/destinations/routes/weatherRoutes');
 
-const tripRoutes = require('./src/routes/tripRoutes');
-const paymentRoutes = require('./src/routes/paymentRoutes');
+const tripRoutes = require('./src/services/trip/routes/tripRoutes');
+const paymentRoutes = require('./src/services/payment/routes/paymentRoutes');
 
-const challengeRoutes = require('./src/routes/challengeRoutes');
-const profileRoutes = require('./src/routes/profileRoutes');
+const challengeRoutes = require('./src/services/challenges/routes/challengeRoutes');
+const profileRoutes = require('./src/services/challenges/routes/profileRoutes');
 
-const imageRoutes = require('./routes/imageRoutes');
+const imageRoutes = require('./src/services/imgrec/routes/imageRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -55,6 +55,8 @@ app.use(errorMiddleware);
 mongoose.connect(config.mongoURI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
+
+////// ROUTES ///////
 
 //user routes
 app.use('/users/auth', authRoutes);
