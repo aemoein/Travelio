@@ -24,7 +24,7 @@ const ReviewPage = () => {
             const token = localStorage.getItem('token');
             const searchParams = new URLSearchParams(location.search);
             const fetchedTripId = searchParams.get('tripId');
-            const url = `http://localhost:3003/api/trip?tripId=${fetchedTripId}`;
+            const url = `http://localhost:7777/trip/trip?tripId=${fetchedTripId}`;
 
             try {
                 const response = await fetch(url, {
@@ -63,7 +63,7 @@ const ReviewPage = () => {
             totalPrice: tripData.totalPrice
         });
 
-        const url = 'http://localhost:3005/payment';
+        const url = 'http://localhost:7777/payment';
 
         try {
             const response = await fetch(url, {

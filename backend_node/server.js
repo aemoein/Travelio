@@ -70,7 +70,7 @@ app.use('/users/profile', authMiddleware, profileRoutes);
 
 //social routes
 app.use('/social/create', createRoutes);
-app.use('/social/', authMiddleware, socialRoutes);
+app.use('/social', authMiddleware, socialRoutes);
 app.use('/social/posts', authMiddleware, postRoutes);
 app.use('/social/timeline', authMiddleware, timelineRoutes);
 

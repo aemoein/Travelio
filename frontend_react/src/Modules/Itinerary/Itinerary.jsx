@@ -15,10 +15,10 @@ const Itinerary = () => {
     useEffect(() => {
         const fetchItinerary = async () => {
             const token = localStorage.getItem('token');
-            const url = 'http://localhost:3003/api/itineraries';
+            const url = 'http://localhost:7777/trip/itineraries';
 
             try {
-                const response = await fetch('http://localhost:3001/profile/preferences', {
+                const response = await fetch('http://localhost:7777/users/profile/preferences', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -76,7 +76,7 @@ const Itinerary = () => {
     const handleSave = async () => {
         const token = localStorage.getItem('token');
         const tripId = location.state.tripId;
-        const url = 'http://localhost:3003/api/itineraries/save';
+        const url = 'http://localhost:7777/trip/itineraries/save';
     
         try {
             const response = await fetch(url, {

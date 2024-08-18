@@ -36,7 +36,7 @@ const HotelsPage = () => {
     useEffect(() => {
         const fetchHotels = async () => {
             try {
-                const response = await fetch(`http://localhost:3003/api/hotels?adults=${adults}&roomQuantity=1&checkOutDate=${departureDate}&checkInDate=${arrivalDate}&cityCode=${cityCode}`);
+                const response = await fetch(`http://localhost:7777/trip/hotels?adults=${adults}&roomQuantity=1&checkOutDate=${departureDate}&checkInDate=${arrivalDate}&cityCode=${cityCode}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch hotels');
                 }

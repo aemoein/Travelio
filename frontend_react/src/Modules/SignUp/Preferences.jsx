@@ -35,7 +35,7 @@ const PreferencePage = () => {
     }
   
     try {
-      const response = await axios.post(`http://localhost:3001/auth/setUserPreferences`, {
+      const response = await axios.post(`http://localhost:7777/users/auth/setUserPreferences`, {
         preferences: selectedGenres
       }, {
         withCredentials: true,

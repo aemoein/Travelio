@@ -49,7 +49,7 @@ const Create = () => {
       try {
         setLoading(true);
 
-        const response = await axios.post('http://localhost:3004/posts/create', formData, {
+        const response = await axios.post('http://localhost:7777/social/posts/create', formData, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data',

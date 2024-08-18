@@ -42,7 +42,7 @@ function SignUpPage() {
     setLoading(true);
     try {
         console.log('Starting signup process...');
-        const response = await axios.post('http://localhost:3001/auth/signup', formData, {
+        const response = await axios.post('http://localhost:7777/users/auth/signup', formData, {
             withCredentials: true,
             headers: {
                 'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ function SignUpPage() {
         const { username } = formData;
 
         console.log('Sending create request to /create endpoint with userId:', userId);
-        const createResponse = await axios.post('http://localhost:3004/create', { userId }, {
+        const createResponse = await axios.post('http://localhost:7777/social/create', { userId }, {
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -72,7 +72,7 @@ function SignUpPage() {
 
         // Send challenge profile creation request with username as a URL parameter
         console.log('Sending create request to /api/challengeProfile/new with username:', username);
-        const challengeResponse = await axios.post(`http://localhost:3009/api/challengeProfile/new?username=${encodeURIComponent(username)}`);
+        const challengeResponse = await axios.post(`http://localhost:7777/challenges/profiles/new?username=${encodeURIComponent(username)}`);
 
         console.log('Challenge profile creation successful, response data:', challengeResponse.data);
         

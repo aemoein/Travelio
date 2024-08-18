@@ -40,7 +40,7 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
 
     const handleBookHotel = async () => {
         const token = localStorage.getItem('token');
-        const url = 'http://localhost:3003/api/hotels';
+        const url = 'http://localhost:7777/trip/hotels';
 
         try {
             const response = await fetch(url, {

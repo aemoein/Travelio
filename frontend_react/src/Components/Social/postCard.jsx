@@ -21,7 +21,7 @@ const PostCard = ({ post, socialId }) => {
 
   const handleLike = async () => {
     try {
-      const endpoint = liked ? `http://localhost:3004/posts/unlike/${post._id}` : `http://localhost:3004/posts/like/${post._id}`;
+      const endpoint = liked ? `http://localhost:7777/social/posts/unlike/${post._id}` : `http://localhost:7777/social/posts/like/${post._id}`;
       const response = await axios.post(endpoint, null, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -46,7 +46,7 @@ const PostCard = ({ post, socialId }) => {
   const handleAddComment = async () => {
     try {
       const response = await axios.post(
-        `http://localhost:3004/posts/comment/${post._id}`,
+        `http://localhost:7777/social/posts/comment/${post._id}`,
         { content: newComment },
         {
           headers: {
@@ -65,7 +65,7 @@ const PostCard = ({ post, socialId }) => {
 
   const handleRemoveComment = async (commentId) => {
     try {
-      const response = await axios.delete(`http://localhost:3004/posts/uncomment`, {
+      const response = await axios.delete(`http://localhost:7777/social/posts/uncomment`, {
         data: {
           postId: post._id,
           commentId: commentId,

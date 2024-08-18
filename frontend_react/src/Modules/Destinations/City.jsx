@@ -31,7 +31,7 @@ const City = () => {
   useEffect(() => {
     const fetchCity = async () => {
       try {
-        const response = await axios.get(`http://localhost:3002/city/cities/${id}`);
+        const response = await axios.get(`http://localhost:7777/destinations/city/cities/${id}`);
         // Format population number
         const formattedPopulation = response.data.population.toLocaleString();
         // Update city object with formatted population

@@ -25,7 +25,7 @@ const RecommendedPreference = () => {
     const handleSavePreferences = async () => {
         try {
             const response = await axios.post(
-                `http://localhost:3001/auth/setUserPreferences`,
+                `http://localhost:7777/users/auth/setUserPreferences`,
                 { preferences: responseData },
                 { withCredentials: true }
             );

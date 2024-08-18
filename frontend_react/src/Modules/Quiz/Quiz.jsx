@@ -27,7 +27,7 @@ const Quiz = () => {
 
     const handleFinish = () => {
         setUserAnswers(answers);
-        axios.post('http://localhost:3001/auth/quiz', { answers: answers }, { withCredentials: true })
+        axios.post('http://localhost:7777/users/auth/quiz', { answers: answers }, { withCredentials: true })
         .then(response => {
             console.log('Quiz submitted successfully:', response.data);
             navigate(`/preferences/recommended`, { state: response.data });

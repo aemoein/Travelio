@@ -15,7 +15,7 @@ const Search = () => {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const response = await axios.get('http://localhost:3004/social/profiles', {
+        const response = await axios.get('http://localhost:7777/social/profiles', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -31,7 +31,7 @@ const Search = () => {
 
     const fetchCurrentUser = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/profile', {
+        const response = await axios.get('http://localhost:7777/users/profile', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,7 +44,7 @@ const Search = () => {
 
     const fetchFollowings = async () => {
       try {
-        const response = await axios.get('http://localhost:3004/social/followings', {
+        const response = await axios.get('http://localhost:7777/social/followings', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -21,7 +21,7 @@ export default function AdventureCard({ city, user }) {
     const fetchProfile = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3100/profiles/getprofile?username=${user}`
+          `http://localhost:7777/challenges/profiles/getprofile?username=${user}`
         );
 
         if (!response.ok) {

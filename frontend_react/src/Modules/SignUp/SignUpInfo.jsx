@@ -75,7 +75,7 @@ function SignUpInfo() {
         formDataToSend.append(key, formData[key]);
       }
       console.log("Request being sent:", formDataToSend);
-      const response = await axios.post('http://localhost:3001/auth/userInfoSignUp', formDataToSend, {
+      const response = await axios.post('http://localhost:7777/users/auth/userInfoSignUp', formDataToSend, {
         withCredentials: true,
         headers: {
           'Content-Type': 'multipart/form-data'

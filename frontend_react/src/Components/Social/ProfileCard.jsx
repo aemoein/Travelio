@@ -15,7 +15,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     useEffect(() => {
         const fetchProfileData = async () => {
         try {
-            const response = await axios.get(`http://localhost:3001/profile/data/${profile.userId}`, {
+            const response = await axios.get(`http://localhost:7777/users/profile/data/${profile.userId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -35,7 +35,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     const handleFollow = async () => {
         try {
         const response = await axios.post(
-            'http://localhost:3004/social/follow',
+            'http://localhost:7777/social/follow',
             { targetUserProfileId: profile._id },
             {
             headers: {
@@ -54,7 +54,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     const handleUnfollow = async () => {
         try {
         const response = await axios.post(
-            'http://localhost:3004/social/unfollow',
+            'http://localhost:7777/social/unfollow',
             { targetUserProfileId: profile._id },
             {
             headers: {

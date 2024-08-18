@@ -29,7 +29,7 @@ const UserIcon = ({ profilePic, username, firstName }) => {
 
   const signOut = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/auth/logout', null, { withCredentials: true });
+      const response = await axios.post('http://localhost:7777/users/auth/logout', null, { withCredentials: true });
       if (response.data.message === "Logout successful") {
         localStorage.removeItem('token');
         localStorage.removeItem('username');

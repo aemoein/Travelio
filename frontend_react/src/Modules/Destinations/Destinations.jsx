@@ -26,8 +26,8 @@ const Destinations = () => {
     useEffect(() => {
         const fetchDestinations = async () => {
             try {
-                const responseCountries = await axios.get('http://localhost:3002/destinations');
-                const responseCities = await axios.get('http://localhost:3002/city/cities');
+                const responseCountries = await axios.get('http://localhost:7777/destinations');
+                const responseCities = await axios.get('http://localhost:7777/destinations/city/cities');
                 //const responseNatural = await axios.get('http://localhost:3002/natural');
 
                 console.log('Countries Response:', responseCountries.data);
