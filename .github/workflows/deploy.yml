@@ -16,17 +16,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Specify your Node.js version
+          node-version: '20'  # Specify your Node.js version
 
       - name: Install dependencies
         run: |
           cd backend_node
           npm install
 
-      - name: Run build (if needed)
-        run: |
-          cd backend_node
-          npm run build
+      # Remove the build step since it's not needed
+      # - name: Run build (if needed)
+      #   run: |
+      #     cd backend_node
+      #     npm run build
 
       - name: Install Railway CLI
         run: npm install -g railway
