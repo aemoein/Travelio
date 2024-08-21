@@ -24,7 +24,7 @@ const fetchAccessToken = async () => {
 
     if (response.status === 200 && response.data && response.data.access_token) {
       const accessToken = response.data.access_token;
-      config.accessToken = accessToken; // Update the accessToken in config.js
+      config.accessToken = accessToken;
       fs.writeFileSync('./config.js', `module.exports = ${JSON.stringify(config, null, 2)};`, 'utf-8');
       console.log('Access token refreshed:', accessToken);
     } else {
