@@ -15,10 +15,10 @@ const Itinerary = () => {
     useEffect(() => {
         const fetchItinerary = async () => {
             const token = localStorage.getItem('token');
-            const url = 'https://travelio-production.up.railway.app/trip/itineraries';
+            const url = `${apiUrl}/trip/itineraries`;
 
             try {
-                const response = await fetch('https://travelio-production.up.railway.app/users/profile/preferences', {
+                const response = await fetch(`${apiUrl}/users/profile/preferences`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -76,7 +76,7 @@ const Itinerary = () => {
     const handleSave = async () => {
         const token = localStorage.getItem('token');
         const tripId = location.state.tripId;
-        const url = 'https://travelio-production.up.railway.app/trip/itineraries/save';
+        const url = `${apiUrl}/trip/itineraries/save`;
     
         try {
             const response = await fetch(url, {

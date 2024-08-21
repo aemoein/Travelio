@@ -21,7 +21,7 @@ const FlightCard = ({ flight, cityName, arrivalDate, departureDate, adults }) =>
                 return;
             }
 
-            const response = await fetch('https://travelio-production.up.railway.app/trip/flights', {
+            const response = await fetch(`${apiUrl}/trip/flights`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

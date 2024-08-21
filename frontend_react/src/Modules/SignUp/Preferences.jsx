@@ -8,6 +8,7 @@ import categoriesData from '../../Components/Data/categories.json';
 import GenreCard from '../../Components/Card/GenreCard';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
+import apiUrl from '../../Config/config';
 
 const PreferencePage = () => {
   const [selectedGenres, setSelectedGenres] = useState([]);
@@ -35,7 +36,7 @@ const PreferencePage = () => {
     }
   
     try {
-      const response = await axios.post(`https://travelio-production.up.railway.app/users/auth/setUserPreferences`, {
+      const response = await axios.post(`${apiUrl}/users/auth/setUserPreferences`, {
         preferences: selectedGenres
       }, {
         withCredentials: true,

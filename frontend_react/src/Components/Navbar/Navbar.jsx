@@ -21,6 +21,7 @@ import ArticleCard from '../Card/ArticleCard';
 import TextTitle from '../Text/TextTitle';
 import UserIcon from './UserIcon';
 import MenuIcon from '@mui/icons-material/Menu'; // Import the Menu icon
+import apiUrl from '../../Config/config';
 
 const articles = [
   // Sample articles data
@@ -68,7 +69,7 @@ const Navbar = () => {
       if (!token) {
         return;
       }
-      const response = await axios.get('https://travelio-production.up.railway.app/users/profile/checkLoggedIn', {
+      const response = await axios.get(`${apiUrl}/users/profile/checkLoggedIn`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

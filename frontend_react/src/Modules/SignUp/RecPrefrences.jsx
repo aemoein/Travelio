@@ -7,6 +7,7 @@ import GenreCard from '../../Components/Card/GenreCard2';
 import categoriesData from '../../Components/Data/categories.json';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
+import apiUrl from '../../Config/config';
 
 const RecommendedPreference = () => {
     const [error, setError] = useState('');
@@ -25,7 +26,7 @@ const RecommendedPreference = () => {
     const handleSavePreferences = async () => {
         try {
             const response = await axios.post(
-                `https://travelio-production.up.railway.app/users/auth/setUserPreferences`,
+                `${apiUrl}/users/auth/setUserPreferences`,
                 { preferences: responseData },
                 { withCredentials: true }
             );

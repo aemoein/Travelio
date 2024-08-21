@@ -21,6 +21,7 @@ import ItemCard from '../../Components/Card/ItemCard';
 import ItemCardLg from '../../Components/Card/ItemsCardLg';
 import Footer from '../../Components/Footer/Footer';
 import Gallery from '../../Components/Gallery/Gallery';
+import apiUrl from '../../Config/config';
 
 const City = () => {
   const { id } = useParams();
@@ -31,7 +32,7 @@ const City = () => {
   useEffect(() => {
     const fetchCity = async () => {
       try {
-        const response = await axios.get(`https://travelio-production.up.railway.app/destinations/city/cities/${id}`);
+        const response = await axios.get(`${apiUrl}/destinations/city/cities/${id}`);
         // Format population number
         const formattedPopulation = response.data.population.toLocaleString();
         // Update city object with formatted population

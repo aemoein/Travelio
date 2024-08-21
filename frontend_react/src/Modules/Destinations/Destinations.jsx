@@ -10,6 +10,7 @@ import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutl
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import KeyboardDoubleArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardDoubleArrowLeftOutlined';
 import Footer from '../../Components/Footer/Footer';
+import apiUrl from '../../Config/config';
 
 const Destinations = () => {
     const [countries, setCountries] = useState([]);
@@ -26,9 +27,9 @@ const Destinations = () => {
     useEffect(() => {
         const fetchDestinations = async () => {
             try {
-                const responseCountries = await axios.get('https://travelio-production.up.railway.app/destinations');
-                const responseCities = await axios.get('https://travelio-production.up.railway.app/destinations/city/cities');
-                //const responseNatural = await axios.get('http://localhost:3002/natural');
+                const responseCountries = await axios.get(`${apiUrl}/destinations`);
+                const responseCities = await axios.get(`${apiUrl}/destinations/city/cities`);
+                //const responseNatural = await axios.get(`http://localhost:3002/natural`);
 
                 console.log('Countries Response:', responseCountries.data);
                 console.log('Cities Response:', responseCities.data);

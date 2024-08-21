@@ -4,6 +4,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 import ProfileCard from '../../Components/Social/ProfileCard';
 import axios from 'axios';
 import Sidebar from '../../Components/Social/sidebar';
+import apiUrl from '../../Config/config';
 
 const Search = () => {
   const [profiles, setProfiles] = useState([]);
@@ -15,7 +16,7 @@ const Search = () => {
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const response = await axios.get('https://travelio-production.up.railway.app/social/profiles', {
+        const response = await axios.get(`${apiUrl}/social/profiles`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -31,7 +32,7 @@ const Search = () => {
 
     const fetchCurrentUser = async () => {
       try {
-        const response = await axios.get('https://travelio-production.up.railway.app/users/profile', {
+        const response = await axios.get(`${apiUrl}/users/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -44,7 +45,7 @@ const Search = () => {
 
     const fetchFollowings = async () => {
       try {
-        const response = await axios.get('https://travelio-production.up.railway.app/social/main/followings', {
+        const response = await axios.get(`${apiUrl}/social/main/followings`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

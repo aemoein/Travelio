@@ -4,6 +4,7 @@ import { Typography, Container, Box, TextField, Button, Select, MenuItem, Grid, 
 import axios from 'axios';
 import GradientText from '../../Components/Text/GradientText';
 import CountriesData from '../../Components/Data/countries.json';
+import apiUrl from '../../Config/config';
 
 function SignUpInfo() {
   const [formData, setFormData] = useState({
@@ -75,7 +76,7 @@ function SignUpInfo() {
         formDataToSend.append(key, formData[key]);
       }
       console.log("Request being sent:", formDataToSend);
-      const response = await axios.post('https://travelio-production.up.railway.app/users/auth/userInfoSignUp', formDataToSend, {
+      const response = await axios.post(`${apiUrl}/users/auth/userInfoSignUp`, formDataToSend, {
         withCredentials: true,
         headers: {
           'Content-Type': 'multipart/form-data'

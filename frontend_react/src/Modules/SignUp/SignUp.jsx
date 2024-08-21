@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import GradientText from '../../Components/Text/GradientText';
+import apiUrl from '../../Config/config';
 
 const theme = createTheme({
   palette: {
@@ -42,7 +43,7 @@ function SignUpPage() {
     setLoading(true);
     try {
         console.log('Starting signup process...');
-        const response = await axios.post('https://travelio-production.up.railway.app/users/auth/signup', formData, {
+        const response = await axios.post(`${apiUrl}/users/auth/signup`, formData, {
             withCredentials: true,
             headers: {
                 'Content-Type': 'application/json',
@@ -58,7 +59,7 @@ function SignUpPage() {
         const { username } = formData;
 
         console.log('Sending create request to /create endpoint with userId:', userId);
-        const createResponse = await axios.post('https://travelio-production.up.railway.app/social/create', { userId }, {
+        const createResponse = await axios.post(`${apiUrl}/social/create`, { userId }, {
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -73,7 +74,7 @@ function SignUpPage() {
         // Send challenge profile creation request with username as a URL parameter
         console.log('Sending create request to /api/challengeProfile/new with username:', username);
 
-        const challengeResponse = await axios.post('https://travelio-production.up.railway.app/challenges/profiles', {
+        const challengeResponse = await axios.post(`${apiUrl}/challenges/profiles`, {
           username: username
         });
 

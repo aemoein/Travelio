@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Padding } from '@mui/icons-material';
+import apiUrl from '../../Config/config';
 
 const UserIcon = ({ profilePic, username, firstName }) => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -29,7 +29,7 @@ const UserIcon = ({ profilePic, username, firstName }) => {
 
   const signOut = async () => {
     try {
-      const response = await axios.post('https://travelio-production.up.railway.app/users/auth/logout', null, { withCredentials: true });
+      const response = await axios.post(`${apiUrl}/users/auth/logout`, null, { withCredentials: true });
       if (response.data.message === "Logout successful") {
         localStorage.removeItem('token');
         localStorage.removeItem('username');

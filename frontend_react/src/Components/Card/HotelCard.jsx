@@ -4,7 +4,8 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
+import apiUrl from '../../Config/config';
 
 const customMarkerIcon = L.divIcon({
     html: '<div><svg width="25" height="41" viewBox="0 0 25 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 0C5.59678 0 0 5.59678 0 12.5C0 18.5941 3.71992 25.3982 9.05714 33.1947C10.4573 34.961 12.1152 36.9579 12.5 37.4991C12.8848 36.9579 14.5427 34.961 15.9429 33.1947C21.2801 25.3982 25 18.5941 25 12.5C25 5.59678 19.4032 0 12.5 0ZM12.5 18C10.0147 18 8 15.9853 8 13.5C8 11.0147 10.0147 9 12.5 9C14.9853 9 17 11.0147 17 13.5C17 15.9853 14.9853 18 12.5 18Z" fill="#1976D2"/></svg></div>',
@@ -16,8 +17,7 @@ const customMarkerIcon = L.divIcon({
 const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults }) => {
     const [open, setOpen] = useState(false);
     const [address, setAddress] = useState('');
-    const navigate = useNavigate(); // Initialize useNavigate hook
-
+    const navigate = useNavigate();
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
@@ -40,7 +40,7 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
 
     const handleBookHotel = async () => {
         const token = localStorage.getItem('token');
-        const url = 'https://travelio-production.up.railway.app/trip/hotels';
+        const url = `${apiUrl}/trip/hotels`;
 
         try {
             const response = await fetch(url, {
@@ -59,7 +59,6 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
                 console.log('Hotel booked successfully!');
                 alert('Hotel booked successfully!');
                 
-                // Redirect to itinerary planning page and pass data
                 navigate('/planning/itinerary', {
                     state: {
                         bookedHotel: {

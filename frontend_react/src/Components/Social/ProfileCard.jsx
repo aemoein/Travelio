@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, Typography, Button, Box, Avatar} from '@mui/material';
 import axios from 'axios';
+import apiUrl from '../../Config/config';
 
 const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
         
@@ -15,7 +16,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     useEffect(() => {
         const fetchProfileData = async () => {
         try {
-            const response = await axios.get(`https://travelio-production.up.railway.app/users/profile/data/${profile.userId}`, {
+            const response = await axios.get(`${apiUrl}/users/profile/data/${profile.userId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -35,7 +36,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     const handleFollow = async () => {
         try {
         const response = await axios.post(
-            'https://travelio-production.up.railway.app/social/main/follow',
+            `${apiUrl}/social/main/follow`,
             { targetUserProfileId: profile._id },
             {
             headers: {
@@ -54,7 +55,7 @@ const ProfileCard = ({ profile, currentUser, followings, onFollowChange }) => {
     const handleUnfollow = async () => {
         try {
         const response = await axios.post(
-            'https://travelio-production.up.railway.app/social/main/unfollow',
+            `${apiUrl}/social/main/unfollow`,
             { targetUserProfileId: profile._id },
             {
             headers: {

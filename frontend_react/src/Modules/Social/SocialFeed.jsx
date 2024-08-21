@@ -4,6 +4,7 @@ import Sidebar from '../../Components/Social/sidebar';
 import PostCard from '../../Components/Social/postCard';
 import Navbar from '../../Components/Navbar/Navbar';
 import axios from 'axios';
+import apiUrl from '../../Config/config';
 
 const SocialFeed = () => {
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,7 @@ const SocialFeed = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('https://travelio-production.up.railway.app/social/timeline/', {
+        const response = await axios.get(`${apiUrl}/social/timeline/`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

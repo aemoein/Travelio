@@ -6,6 +6,7 @@ import axios from 'axios';
 import countriesData from '../../Components/Data/countries.json';
 import PostsGalleryCard from '../../Components/Social/PostsGalleryCard';
 import Footer from '../../Components/Footer/Footer';
+import apiUrl from '../../Config/config';
 
 const Profile = () => {
   const coverPhotoStyle = {
@@ -36,7 +37,7 @@ const Profile = () => {
         return;
       }
 
-      const response = await axios.get('https://travelio-production.up.railway.app/users/profile/checkLoggedIn', {
+      const response = await axios.get(`${apiUrl}/users/profile/checkLoggedIn`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -59,7 +60,7 @@ const Profile = () => {
 
   const fetchSocialData = async (token) => {
     try {
-      const response = await axios.get('https://travelio-production.up.railway.app/social/profile', {
+      const response = await axios.get(`${apiUrl}/social/profile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -77,7 +78,7 @@ const Profile = () => {
 
   const fetchPosts = async (token) => {
     try {
-      const response = await axios.get('https://travelio-production.up.railway.app/social/posts', {
+      const response = await axios.get(`${apiUrl}/social/posts`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -127,7 +128,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        'https://travelio-production.up.railway.app/users/profile/update',
+        `${apiUrl}/users/profile/update`,
         editData,
         {
           headers: {

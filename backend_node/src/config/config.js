@@ -29,4 +29,7 @@ module.exports = {
 
     // Google API Key
     googleApiKey: process.env.GOOGLE_API_KEY,
+
+    host: process.env.HOST,
+    frontend: process.env.FRONTEND,
 };

@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Navbar from '../../Components/Navbar/Navbar';
+import apiUrl from '../../Config/config';
 
 const HotelsPage = () => {
     const location = useLocation();
@@ -36,7 +37,7 @@ const HotelsPage = () => {
     useEffect(() => {
         const fetchHotels = async () => {
             try {
-                const response = await fetch(`https://travelio-production.up.railway.app/trip/hotels?adults=${adults}&roomQuantity=1&checkOutDate=${departureDate}&checkInDate=${arrivalDate}&cityCode=${cityCode}`);
+                const response = await fetch(`${apiUrl}/trip/hotels?adults=${adults}&roomQuantity=1&checkOutDate=${departureDate}&checkInDate=${arrivalDate}&cityCode=${cityCode}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch hotels');
                 }

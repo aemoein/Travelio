@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import GradientText from '../../Components/Text/GradientText';
 import axios from 'axios';
+import apiUrl from '../../Config/config';
 
 const theme = createTheme({
   palette: {
@@ -35,7 +36,7 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post('https://travelio-production.up.railway.app/users/auth/login', formData, {
+        const response = await axios.post(`${apiUrl}/users/auth/login`, formData, {
             withCredentials: true
         });
         console.log(response.data.message);

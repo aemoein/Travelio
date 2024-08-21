@@ -6,6 +6,7 @@ import AvatarEditor from 'react-avatar-editor';
 import axios from 'axios';
 import Navbar from '../../Components/Navbar/Navbar';
 import Sidebar from '../../Components/Social/sidebar';
+import apiUrl from '../../Config/config';
 
 const Create = () => {
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ const Create = () => {
       try {
         setLoading(true);
 
-        const response = await axios.post('https://travelio-production.up.railway.app/social/posts/create', formData, {
+        const response = await axios.post(`${apiUrl}/social/posts/create`, formData, {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'multipart/form-data',

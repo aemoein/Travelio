@@ -2,6 +2,7 @@ const stripe = require('stripe')(require('../utils/stripe').stripeSecretKey);
 const catchAsync = require('../utils/catchAsync');
 const axios = require('axios');
 const Payment = require('../models/paymentModel');
+const config = require('../../../config/config');
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     try {
@@ -13,8 +14,8 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
         console.log("totalPrice: " + totalPrice);
         console.log("userId: " + userId);
 
-        const successUrl = `https://travelio-production.up.railway.app/payment/success?tripId=${tripId}&destination=${encodeURIComponent(destination)}&totalPrice=${totalPrice}&userId=${userId}`;
-        const cancelUrl = `https://travelio-gold.vercel.app/planning/review?tripId=${tripId}&destination=${encodeURIComponent(destination)}`;
+        const successUrl = `${config.host}/payment/success?tripId=${tripId}&destination=${encodeURIComponent(destination)}&totalPrice=${totalPrice}&userId=${userId}`;
+        const cancelUrl = `${config.frontend}/planning/review?tripId=${tripId}&destination=${encodeURIComponent(destination)}`;
 
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],

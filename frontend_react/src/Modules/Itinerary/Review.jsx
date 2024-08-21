@@ -6,6 +6,7 @@ import HotelCard from '../../Components/Card/ReviewHotelCard';
 import ActivityCard from '../../Components/Card/ActivityCard';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
+import apiUrl from '../../Config/config';
 
 const ReviewPage = () => {
     const location = useLocation();
@@ -24,7 +25,7 @@ const ReviewPage = () => {
             const token = localStorage.getItem('token');
             const searchParams = new URLSearchParams(location.search);
             const fetchedTripId = searchParams.get('tripId');
-            const url = `https://travelio-production.up.railway.app/trip/trip?tripId=${fetchedTripId}`;
+            const url = `${apiUrl}/trip/trip?tripId=${fetchedTripId}`;
 
             try {
                 const response = await fetch(url, {
@@ -63,7 +64,7 @@ const ReviewPage = () => {
             totalPrice: tripData.totalPrice
         });
 
-        const url = 'https://travelio-production.up.railway.app/payment';
+        const url = `${apiUrl}/payment`;
 
         try {
             const response = await fetch(url, {

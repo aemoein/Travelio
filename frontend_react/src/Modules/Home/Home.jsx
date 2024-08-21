@@ -10,6 +10,7 @@ import ArticleView from '../../Components/Card/ArticleView';
 import ArticleView2 from '../../Components/Card/ArticleView2';
 import ArticleCard from '../../Components/Card/ArticleCard';
 import ArticleCard2 from '../../Components/Card/ArticleCard2';
+import apiUrl from '../../Config/config';
 
 const Home = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,7 +24,7 @@ const Home = () => {
                 return;
             }
     
-            const response = await axios.get('https://travelio-production.up.railway.app/users/profile/checkLoggedIn', {
+            const response = await axios.get(`${apiUrl}/users/profile/checkLoggedIn`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 },

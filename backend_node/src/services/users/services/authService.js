@@ -41,7 +41,7 @@ async function loginUser(username, password) {
         }
 
         // Request the social profile
-        const socialProfileResponse = await axios.get(`https://travelio-production.up.railway.app/social/create/socialbyuser/${user._id}`);
+        const socialProfileResponse = await axios.get(`${config.host}/social/create/socialbyuser/${user._id}`);
         if (socialProfileResponse.status !== 200) {
             return { status: 500, message: 'Failed to retrieve social profile' };
         }

@@ -12,6 +12,7 @@ import {
   ListItem,
   ListItemText,
 } from "@mui/material";
+import apiUrl from '../../Config/config';
 
 export default function AdventureCard({ city, user }) {
   const [profile, setProfile] = useState(null);
@@ -21,7 +22,7 @@ export default function AdventureCard({ city, user }) {
     const fetchProfile = async () => {
       try {
         const response = await fetch(
-          `https://travelio-production.up.railway.app/challenges/profiles/getprofile?username=${user}`
+          `${apiUrl}/challenges/profiles/getprofile?username=${user}`
         );
 
         if (!response.ok) {

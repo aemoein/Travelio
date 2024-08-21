@@ -3,6 +3,7 @@ import { Box, Container, Typography, FormControl, RadioGroup, FormControlLabel, 
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import quizData from '../../Components/Data/quiz.json';
+import apiUrl from '../../Config/config';
 
 const Quiz = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -27,7 +28,7 @@ const Quiz = () => {
 
     const handleFinish = () => {
         setUserAnswers(answers);
-        axios.post('https://travelio-production.up.railway.app/users/auth/quiz', { answers: answers }, { withCredentials: true })
+        axios.post(`${apiUrl}/users/auth/quiz`, { answers: answers }, { withCredentials: true })
         .then(response => {
             console.log('Quiz submitted successfully:', response.data);
             navigate(`/preferences/recommended`, { state: response.data });

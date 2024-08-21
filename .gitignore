@@ -10,3 +10,4 @@ backend/Challenge/MLmodel
 backend_node/.env
 backend_node/node_modules
 
+backend_node/config.js

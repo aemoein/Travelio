@@ -5,6 +5,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CommentIcon from '@mui/icons-material/Comment';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
+import apiUrl from '../../Config/config';
 
 const PostCard = ({ post, socialId }) => {
   const [liked, setLiked] = useState(false);
@@ -21,7 +22,7 @@ const PostCard = ({ post, socialId }) => {
 
   const handleLike = async () => {
     try {
-      const endpoint = liked ? `https://travelio-production.up.railway.app/social/posts/unlike/${post._id}` : `https://travelio-production.up.railway.app/social/posts/like/${post._id}`;
+      const endpoint = liked ? `${apiUrl}/social/posts/unlike/${post._id}` : `${apiUrl}/social/posts/like/${post._id}`;
       const response = await axios.post(endpoint, null, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -46,7 +47,7 @@ const PostCard = ({ post, socialId }) => {
   const handleAddComment = async () => {
     try {
       const response = await axios.post(
-        `https://travelio-production.up.railway.app/social/posts/comment/${post._id}`,
+        `${apiUrl}/social/posts/comment/${post._id}`,
         { content: newComment },
         {
           headers: {
@@ -65,7 +66,7 @@ const PostCard = ({ post, socialId }) => {
 
   const handleRemoveComment = async (commentId) => {
     try {
-      const response = await axios.delete(`https://travelio-production.up.railway.app/social/posts/uncomment`, {
+      const response = await axios.delete(`${apiUrl}/social/posts/uncomment`, {
         data: {
           postId: post._id,
           commentId: commentId,

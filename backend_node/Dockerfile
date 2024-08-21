@@ -26,6 +26,8 @@ ENV ACCESS_TOKEN=qvsnlN7n2OT1ooFBMtS0vz1wq3nb
 ENV CLIENT_ID=KJcf4aGewF0G3fF32fRIrGNWVVFRL20z
 ENV CLIENT_SECRET=qgXGYxrthINKKz83
 ENV GOOGLE_API_KEY=AIzaSyA92-YGwUSmDHFjldbLlXysT0F2VAhEzOI
+ENV HOST=https://travelio-production.up.railway.app
+ENV FRONTEND=https://travelio-gold.vercel.app
 
 # Expose the port your app runs on.
 EXPOSE 8080
