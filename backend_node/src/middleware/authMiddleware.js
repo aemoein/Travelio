@@ -12,6 +12,7 @@ const authMiddleware = (req, res, next) => {
       const decoded = jwt.verify(token,  config.jwtSecret);
       req.user = decoded;
       
+      /*
       console.log('Token:', token);
       console.log('decoded:', decoded);
       console.log('User ID:', req.user.id);
@@ -19,6 +20,7 @@ const authMiddleware = (req, res, next) => {
       console.log('username:', req.user.username);
       console.log('profilePic:', req.user.profilePic);
       console.log('socialProfileId:', req.user.socialProfileId);
+      */
 
       next();
   } catch (error) {

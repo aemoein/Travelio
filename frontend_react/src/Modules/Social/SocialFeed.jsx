@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, CircularProgress } from '@mui/material';
+import { Box, Typography, CircularProgress, useMediaQuery, useTheme } from '@mui/material';
 import Sidebar from '../../Components/Social/sidebar';
+import BottomBar from '../../Components/Social/BottomBar';
 import PostCard from '../../Components/Social/postCard';
 import Navbar from '../../Components/Navbar/Navbar';
 import axios from 'axios';
@@ -9,8 +10,10 @@ import apiUrl from '../../Config/config';
 const SocialFeed = () => {
   const [posts, setPosts] = useState([]);
   const [socialId, setSocialId] = useState("");
-  const [loading, setLoading] = useState(true); // Loading state
+  const [loading, setLoading] = useState(true);
   const token = localStorage.getItem('token');
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -28,7 +31,7 @@ const SocialFeed = () => {
       } catch (error) {
         console.error('Error fetching posts:', error);
       } finally {
-        setLoading(false); // Set loading to false after posts are fetched
+        setLoading(false);
       }
     };
 
@@ -38,14 +41,17 @@ const SocialFeed = () => {
   return (
     <>
       <Navbar />
-      <Box sx={{ display: 'flex', fontFamily: 'Poppins, sans-serif', mt: 6 }}>
-        <Sidebar />
+      <Box sx={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', fontFamily: 'Poppins, sans-serif', mt: 6 }}>
+        {!isMobile && <Sidebar />}
         <Box
           sx={{
-            mt: 4,
-            width: { sm: '50vw', md: '45vw', lg: '35vw' },
-            mr: { sm: '15vw', md: '17.5vw', lg: '22.5vw' },
-            ml: { sm: '35vw', md: '37.5vw', lg: '42.5vw' },
+            flex: 1,
+            mt: 6,
+            ml: { xs: '10vw', sm: '35vw', md: '37.5', lg: '42.5vw' },
+            mr: { xs: '10vw', sm: '15vw', md: '17.5vw', lg: '22.5vw' },
+            width: { xs: '80vw', sm: '50vw', md: '45vw', lg: '35vw' },
+            maxWidth: '1200px',
+            //margin: '0 auto', 
           }}
         >
           {loading ? (
@@ -63,6 +69,7 @@ const SocialFeed = () => {
           )}
         </Box>
       </Box>
+      {isMobile && <BottomBar />}
     </>
   );
 };

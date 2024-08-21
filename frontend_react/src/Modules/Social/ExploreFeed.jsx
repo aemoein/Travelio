@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, CircularProgress } from '@mui/material';
+import { Box, Typography, CircularProgress, useMediaQuery, useTheme} from '@mui/material';
 import Sidebar from '../../Components/Social/sidebar';
 import PostCard from '../../Components/Social/postCard';
 import Navbar from '../../Components/Navbar/Navbar';
 import axios from 'axios';
 import apiUrl from '../../Config/config';
+import BottomBar from '../../Components/Social/BottomBar';
 
 const ExploreFeed = () => {
   const [posts, setPosts] = useState([]);
   const [socialId, setSocialId] = useState("");
   const [loading, setLoading] = useState(true);
   const token = localStorage.getItem('token');
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -39,13 +42,14 @@ const ExploreFeed = () => {
     <>
       <Navbar />
       <Box sx={{ display: 'flex', fontFamily: 'Poppins, sans-serif', mt: 6 }}>
-        <Sidebar />
+        {!isMobile && <Sidebar />}
         <Box
           sx={{
             mt: 4,
-            width: { sm: '50vw', md: '45vw', lg: '35vw' },
-            mr: { sm: '15vw', md: '17.5vw', lg: '22.5vw' },
-            ml: { sm: '35vw', md: '37.5vw', lg: '42.5vw' },
+            ml: { xs: '10vw', sm: '35vw', md: '37.5', lg: '42.5vw' },
+            mr: { xs: '10vw', sm: '15vw', md: '17.5vw', lg: '22.5vw' },
+            width: { xs: '80vw', sm: '50vw', md: '45vw', lg: '35vw' },
+            maxWidth: '1200px',
           }}
         >
           {loading ? (
@@ -62,6 +66,7 @@ const ExploreFeed = () => {
             </>
           )}
         </Box>
+        {isMobile && <BottomBar />}
       </Box>
     </>
   );

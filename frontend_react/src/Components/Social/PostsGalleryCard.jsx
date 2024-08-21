@@ -43,7 +43,7 @@ const PostsGalleryCard = ({ post, socialId }) => {
 
   return (
     <>
-      <CardContainer sx={{ height: '300px', m: 1 }} onClick={handleOpen}>
+      <CardContainer sx={{ height: { xs: '220px', sm: '200px', md: '300px', lg: '350px' }, m: 0, borderRadius: 0,}} onClick={handleOpen}>
         <Image src={post.mediaUrl} alt="Post" />
         <Overlay className="overlay">
           <Box sx={{ display: 'flex', alignItems: 'center' }}>

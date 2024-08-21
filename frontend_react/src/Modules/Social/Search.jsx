@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, Container, CircularProgress } from '@mui/material';
+import { Box, Typography, Container, CircularProgress, useMediaQuery, useTheme} from '@mui/material';
 import Navbar from '../../Components/Navbar/Navbar';
 import ProfileCard from '../../Components/Social/ProfileCard';
 import axios from 'axios';
 import Sidebar from '../../Components/Social/sidebar';
 import apiUrl from '../../Config/config';
+import BottomBar from '../../Components/Social/BottomBar';
 
 const Search = () => {
   const [profiles, setProfiles] = useState([]);
@@ -12,11 +13,13 @@ const Search = () => {
   const [followings, setFollowings] = useState([]);
   const [loading, setLoading] = useState(true); // New loading state
   const token = localStorage.getItem('token');
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
     const fetchProfiles = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/social/profiles`, {
+        const response = await axios.get(`${apiUrl}/social/main/profiles`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -26,7 +29,7 @@ const Search = () => {
       } catch (error) {
         console.error('Error fetching profiles:', error);
       } finally {
-        setLoading(false); // Set loading to false after profiles are fetched
+        setLoading(false);
       }
     };
 
@@ -50,7 +53,6 @@ const Search = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-        //console.log('Followings:', response.data.data);
         setFollowings(response.data.data.map(following => following));
         console.log('Followings:', followings);
       } catch (error) {
@@ -66,14 +68,14 @@ const Search = () => {
   return (
     <>
         <Navbar />
-        <Sidebar />
+        {!isMobile && <Sidebar />}
         <Box sx={{
             mt: 10,
-            width: { sm: '50vw', md: '45vw', lg: '45vw' },
-            mr: { sm: '15vw', md: '17.5vw', lg: '17.5vw' },
-            ml: { sm: '35vw', md: '37.5vw', lg: '37.5vw' },
-            mr: '17.5vw',
-            ml: '37.5vw',
+            ml: { xs: '10vw', sm: '35vw', md: '37.5', lg: '42.5vw' },
+            mr: { xs: '10vw', sm: '15vw', md: '17.5vw', lg: '22.5vw' },
+            width: { xs: '80vw', sm: '50vw', md: '45vw', lg: '35vw' },
+            maxWidth: '1200px',
+            mb: 10,
           }}
         >
             <Box sx={{ mt: 2, display: 'flex', flexWrap: 'wrap', gap: 0, justifyContent: 'center' }}>
@@ -90,6 +92,7 @@ const Search = () => {
                 )}
             </Box>
       </Box>
+      {isMobile && <BottomBar />}
     </>
   );
 };

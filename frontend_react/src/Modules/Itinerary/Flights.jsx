@@ -96,7 +96,7 @@ const FlightSearchForm = () => {
                     <Grid item xs={12}>
                         <form onSubmit={handleSubmit}>
                             <Grid container spacing={2}>
-                                <Grid item xs={6}>
+                                <Grid item xs={12}>
                                 <Autocomplete
                                     fullWidth
                                     options={citiesData}
@@ -114,7 +114,7 @@ const FlightSearchForm = () => {
                                     getOptionSelected={(option, value) => option.city === value.city}
                                 />
                                 </Grid>
-                                <Grid item xs={6}>
+                                <Grid item xs={12}>
                                 <Autocomplete
                                     fullWidth
                                     options={citiesData}
