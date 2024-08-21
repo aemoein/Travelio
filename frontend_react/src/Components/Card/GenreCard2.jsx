@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 
-const GenreCard = ({ genre, description, imageUrl, destinations, width }) => {
+const GenreCard = ({ genre, description, imageUrl, destinations }) => {
   return (
     <Box
       sx={{
         position: 'relative',
-        width: width ? width : '47vw',
-        height: '27vw',
-        marginBottom: '20px',
+        height: { xs: '220px', sm: '200px', md: '300px', lg: '350px' },
         borderRadius: '10px',
         overflow: 'hidden',
       }}
@@ -44,7 +42,7 @@ const GenreCard = ({ genre, description, imageUrl, destinations, width }) => {
             fontFamily: 'Poppins',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '3vw',
+            fontSize: { xs: '28px', sm: '28px', md: '32px', lg: '38px' },
           }}
         >
           {genre}
@@ -52,10 +50,9 @@ const GenreCard = ({ genre, description, imageUrl, destinations, width }) => {
         <Typography
           sx={{ 
             fontFamily: 'Poppins',
-            fontWeight: '400',
-            width: 'fit-content',
-            fontSize: '1.0vw',
-            maxWidth: '25vw'
+            fontWeight: '600',
+            width: '90%',
+            fontSize: { xs: '14px', sm: '16px', md: '18px', lg: '22px' },
           }}
         >
           {description}
@@ -65,7 +62,7 @@ const GenreCard = ({ genre, description, imageUrl, destinations, width }) => {
             fontFamily: 'Poppins',
             fontWeight: '900',
             width: 'fit-content',
-            fontSize: '1.4vw',
+            fontSize: { xs: '12px', sm: '16px', md: '18px', lg: '22px' },
             marginTop: '10px'
           }}
         >
@@ -78,8 +75,7 @@ const GenreCard = ({ genre, description, imageUrl, destinations, width }) => {
               sx={{ 
                 fontFamily: 'Poppins',
                 fontWeight: '400',
-                fontSize: '1.2vw',
-                maxWidth: '25vw',
+                fontSize: { xs: '12px', sm: '16px', md: '18px', lg: '22px' },
                 marginRight: '10px',
                 marginTop: '5px'
               }}

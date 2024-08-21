@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Button, TextField, Typography, Container, CssBaseline, Box, Link } from '@mui/material';
+import { Button, TextField, Typography, Container, CssBaseline, Box, Link, IconButton, InputAdornment } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import GradientText from '../../Components/Text/GradientText';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import apiUrl from '../../Config/config';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 const theme = createTheme({
   palette: {
@@ -14,150 +18,151 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      'Roboto Condensed',
+      'Poppins',
       'Arial',
       'sans-serif',
     ].join(','),
   },
 });
 
+const validationSchema = Yup.object({
+  username: Yup.string()
+    .required('Username is required'),
+  password: Yup.string()
+    .required('Password is required'),
+});
+
 function LoginPage() {
-  const [formData, setFormData] = useState({
-    username: '',
-    password: ''
-  });
-
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleSubmit = async (values, { setSubmitting, setErrors }) => {
+    try {
+      const response = await axios.post(`${apiUrl}/users/auth/login`, values, {
+        withCredentials: true
+      });
+
+      if (response.status === 200 && response.data.token) {
+        // Save the token in local storage
+        localStorage.setItem('token', response.data.token);
+        localStorage.setItem('username', response.data.username);
+        localStorage.setItem('loggedin', 'true');
+        navigate(`/`);
+      }
+    } catch (error) {
+      setErrors({ general: error.response?.data?.message || 'An unexpected error occurred' });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-        const response = await axios.post(`${apiUrl}/users/auth/login`, formData, {
-            withCredentials: true
-        });
-        console.log(response.data.message);
-
-        if (response.status === 200 && response.data.token) {
-            // Save the token in local storage
-            localStorage.setItem('token', response.data.token);
-
-            console.log('username: ' + response.data.username);
-            localStorage.setItem('username', response.data.username);
-            
-
-            // Set loggedin flag to true
-            localStorage.setItem('loggedin', 'true');
-
-            // Redirect to the home page
-            navigate(`/`);
-        }
-    } catch (error) {
-        console.error('Error:', error.response.data.message); 
-        alert('Error: username or password wrong');
-    }
-};
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Helmet>
+        <title>Login</title>
+        <meta name="description" content="Login page for the application" />
+      </Helmet>
       <Box
         sx={{
-          backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(https://efirq7mmtwd.exactdn.com/wp-content/uploads/2023/06/sunset-nature-landscape-2232548205.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          height: '100vh',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
+          minHeight: '100vh',
+          background: 'linear-gradient(to right, #a2c2e4, #f2a5b0)', // Gradient background
+          padding: 2,
+          position: 'relative',
         }}
       >
-        <Box sx={{ paddingLeft: '15vw', }}>
-          <GradientText text='TRVLO' />
-          <Typography align="left" sx={{
-            display: 'inline-block',
-            fontSize: '5vw',
-            fontWeight: '900',
-            fontFamily: 'Poppins',
-            textTransform: 'uppercase',
-            letterSpacing: 'wider',
-            color: '#fff',
-            lineHeight: '1.0',
-            width: '40vw',
-          }}>
-            The Sky is Your limit
-          </Typography>
-        </Box>
-        <Box sx={{
-          minWidth: '40vw',
-          paddingRight: '15vw',
+        <Container component="main" maxWidth="xs" sx={{
+          backgroundColor: 'white',
+          borderRadius: 5,
+          boxShadow: 3,
+          padding: 4,
+          textAlign: 'center',
         }}>
-          <Container component="main" maxWidth="xs" sx={{
-            backgroundColor: 'white',
-            borderRadius: 2,
-            boxShadow: 3,
-            padding: 3,
-            textAlign: 'center',
-          }}>
-            <Box>
-              <Typography variant="h4" component="h1" sx={{ fontFamily: 'Poppins', fontWeight: 'bold' }}>
-                Welcome To TRVLO
-              </Typography>
-              <Typography component="h2" variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: 'bold', marginBottom: 4 }}>
-                Log in
-              </Typography>
-              <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-                <TextField
+          <Typography variant="h4" component="h1" sx={{ fontFamily: 'Poppins', fontWeight: 'bold' }}>
+            Log in to see more
+          </Typography>
+          <Typography component="h2" variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: 'bold', marginBottom: 4 }}>
+            Welcome Back!
+          </Typography>
+          <Formik
+            initialValues={{ username: '', password: '' }}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
+          >
+            {({ isSubmitting, errors }) => (
+              <Form>
+                <Field
+                  as={TextField}
                   margin="normal"
                   required
                   fullWidth
                   id="username"
-                  label="Username"
                   name="username"
+                  label="Username"
                   autoComplete="username"
                   autoFocus
-                  value={formData.username}
-                  onChange={handleChange}
+                  helperText={<ErrorMessage name="username" />}
+                  error={!!errors.username}
+                  sx={{ mb: 2 }}
                 />
-                <TextField
+                <Field
+                  as={TextField}
                   margin="normal"
                   required
                   fullWidth
                   name="password"
                   label="Password"
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   id="password"
                   autoComplete="current-password"
-                  value={formData.password}
-                  onChange={handleChange}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={handleClickShowPassword}
+                          edge="end"
+                        >
+                          {showPassword ? <Visibility /> : <VisibilityOff />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                  helperText={<ErrorMessage name="password" />}
+                  error={!!errors.password}
+                  sx={{ mb: 2 }}
                 />
                 <Button
                   type="submit"
                   fullWidth
                   variant="contained"
-                  sx={{ mt: 3, mb: 2, fontFamily: 'Poppins', fontWeight: 'bold', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' }}
+                  disabled={isSubmitting}
+                  sx={{ mt: 2, borderRadius: 10, fontFamily: 'Poppins', fontWeight: 'bold', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' }}
                 >
                   Log In
                 </Button>
-              </Box>
-              <Typography>
-                <Link component={RouterLink} to="/signup" variant="body2"
-                  sx={{
-                    textTransform: 'none',
-                    fontFamily: 'Poppins', fontWeight: 'bold',
-                    backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
-                    WebkitBackgroundClip: 'text',
-                    color: 'transparent',
-                  }}>
-                  Don't have an account? Sign Up
-                </Link>
-              </Typography>
-            </Box>
-          </Container>
-        </Box>
+                <Typography variant="body2" sx={{ mt: 2 }}>
+                  <Link component={RouterLink} to="/signup" variant="body2"
+                    sx={{
+                      textTransform: 'none',
+                      fontFamily: 'Poppins', fontWeight: 'bold',
+                      backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)',
+                      WebkitBackgroundClip: 'text',
+                      color: 'transparent',
+                    }}>
+                    Don't have an account? Sign Up
+                  </Link>
+                </Typography>
+              </Form>
+            )}
+          </Formik>
+        </Container>
       </Box>
     </ThemeProvider>
   );

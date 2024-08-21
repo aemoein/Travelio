@@ -50,6 +50,7 @@ const Quiz = () => {
                 boxShadow: 3,
                 padding: 3,
                 height: 'fit-content',
+                width: '90%',
             }}>
                 <Typography sx={{ fontFamily: 'Poppins', fontWeight: '900', fontSize: '30px'}}>{currentQuestion.category}</Typography>
                 <Typography sx={{ fontFamily: 'Poppins', fontWeight: '400', fontSize: '22px' }}>{currentQuestion.question}</Typography>
