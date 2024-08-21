@@ -4,8 +4,9 @@ import FlightCard from '../../Components/Card/FlightCard';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import { Box, Button, TextField, Select, MenuItem, FormControl, InputLabel, Grid, Typography, Checkbox, FormControlLabel } from '@mui/material';
-import Autocomplete from '@mui/material/Autocomplete'; // Import Autocomplete component
-import citiesData from '../../Components/Data/airports.json'; // Replace with your JSON file path for city data
+import Autocomplete from '@mui/material/Autocomplete';
+import citiesData from '../../Components/Data/airports.json';
+import apiUrl from '../../Config/config';
 
 const FlightSearchForm = () => {
     const [formData, setFormData] = useState({

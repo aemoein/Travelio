@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import ActivityCard from '../../Components/Card/ActivityCard';
+import apiUrl from '../../Config/config';
 
 const Itinerary = () => {
     const location = useLocation();

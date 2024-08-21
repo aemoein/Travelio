@@ -4,6 +4,7 @@ import { Card, CardContent, Typography, Button, Grid, Modal, Box } from '@mui/ma
 import FlightIcon from '@mui/icons-material/Flight';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { format } from 'date-fns';
+import apiUrl from '../../Config/config';
 
 const FlightCard = ({ flight, cityName, arrivalDate, departureDate, adults }) => {
     const [open, setOpen] = useState(false);
