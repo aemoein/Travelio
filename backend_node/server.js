@@ -67,26 +67,6 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
-// Create Redis client using the URL from the .env file
-const redisClient = redis.createClient({
-  url: process.env.REDIS_URL // Use environment variable for Redis URL
-});
-
-redisClient.on('error', (err) => console.error('Redis error:', err));
-
-// Configure session to use RedisStore
-app.use(session({
-  store: new RedisStore({ client: redisClient }), // Use RedisStore for session storage
-  secret: config.jwtSecret,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    secure: process.env.NODE_ENV === 'production',
-    httpOnly: true,
-    maxAge: 30 * 60 * 1000
-  }
-}));
-
 app.use(extractToken);
 app.use(errorMiddleware);
 
@@ -118,7 +98,36 @@ app.use('/challenges/profiles', challengeProfileRoutes);
 app.use('/image', imageRoutes);
 
 // Start the server
-const PORT = config.port;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+(async () => {
+  try {
+    const redisClient = redis.createClient({
+      url: process.env.REDIS_URL
+    });
+
+    redisClient.on('error', (err) => console.error('Redis error:', err));
+    
+    // Connect to Redis server
+    await redisClient.connect();
+    console.log('Connected to Redis');
+
+    // Configure session to use RedisStore
+    app.use(session({
+      store: new RedisStore({ client: redisClient }),
+      resave: false,
+      saveUninitialized: false,
+      cookie: {
+        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true,
+        maxAge: 30 * 60 * 1000
+      }
+    }));
+
+    // Start the server after Redis connection is established
+    const PORT = config.port;
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error('Could not connect to Redis:', err);
+  }
+})();
