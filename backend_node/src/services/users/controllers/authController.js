@@ -22,6 +22,8 @@ async function login(req, res) {
   try {
       const result = await authService.loginUser(username, password);
 
+      console.log('Result: ' + result);
+
       if (result.status === 200) {
           req.session.userId = result.userId;
       
