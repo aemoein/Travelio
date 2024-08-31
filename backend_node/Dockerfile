@@ -28,6 +28,8 @@ ENV CLIENT_SECRET=qgXGYxrthINKKz83
 ENV GOOGLE_API_KEY=AIzaSyA92-YGwUSmDHFjldbLlXysT0F2VAhEzOI
 ENV HOST=https://travelio-production.up.railway.app
 ENV FRONTEND=https://travelio-gold.vercel.app
+ENV REDIS_URL=redis://default:g2lMmUnz0QSbLWRAABsBiEGSaQvVLg9Z@redis-18691.c339.eu-west-3-1.ec2.redns.redis-cloud.com:18691
+ENV NODE_ENV=production
 
 # Expose the port your app runs on.
 EXPOSE 8080

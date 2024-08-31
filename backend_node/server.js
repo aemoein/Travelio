@@ -5,6 +5,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const session = require('express-session');
+const RedisStore = require('connect-redis').default;
+const redis = require('redis');
 const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
 const extractToken = require('./src/middleware/extractToken');
@@ -36,6 +38,7 @@ const app = express();
 // Middleware
 const allowedOrigins = [
   'http://localhost:3000',
+  'http://localhost:8080',
   'https://travelio-production.up.railway.app',
   'https://travelio-gold.vercel.app'
 ];
@@ -63,12 +66,26 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+
+// Create Redis client using the URL from the .env file
+const redisClient = redis.createClient({
+  url: process.env.REDIS_URL // Use environment variable for Redis URL
+});
+
+redisClient.on('error', (err) => console.error('Redis error:', err));
+
+// Configure session to use RedisStore
 app.use(session({
+  store: new RedisStore({ client: redisClient }), // Use RedisStore for session storage
   secret: config.jwtSecret,
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false } // Use secure: true in production with HTTPS
+  saveUninitialized: false,
+  cookie: {
+    secure: false, // Use secure: true in production with HTTPS
+    maxAge: 30 * 60 * 1000 // Session expiration time set to 30 minutes
+  }
 }));
+
 app.use(extractToken);
 app.use(errorMiddleware);
 
