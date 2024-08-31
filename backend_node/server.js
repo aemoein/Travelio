@@ -81,8 +81,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: false, // Use secure: true in production with HTTPS
-    maxAge: 30 * 60 * 1000 // Session expiration time set to 30 minutes
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    maxAge: 30 * 60 * 1000
   }
 }));
 
