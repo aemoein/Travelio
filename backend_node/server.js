@@ -113,6 +113,7 @@ app.use('/image', imageRoutes);
     // Configure session to use RedisStore
     app.use(session({
       store: new RedisStore({ client: redisClient }),
+      secret: config.jwtSecret,
       resave: false,
       saveUninitialized: false,
       cookie: {

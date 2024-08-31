@@ -24,7 +24,7 @@ module.exports = {
 
     // Amadeus credentials
     accessToken: '',
-    clientId: process.env.CLIENT_ID,  
+    clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
 
     // Google API Key
