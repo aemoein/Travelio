@@ -38,15 +38,25 @@ function LoginPage() {
 
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     try {
-      const response = await axios.post(`${apiUrl}/users/auth/login`, values, {
+      // First, log in the user
+      const loginResponse = await axios.post(`${apiUrl}/users/auth/login`, values, {
         withCredentials: true
       });
-
-      if (response.status === 200 && response.data.token) {
+  
+      if (loginResponse.status === 200 && loginResponse.data.token) {
         // Save the token in local storage
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('username', response.data.username);
+        localStorage.setItem('token', loginResponse.data.token);
+        localStorage.setItem('username', loginResponse.data.username);
         localStorage.setItem('loggedin', 'true');
+  
+        // Optionally, set a cookie manually
+        // You may want to do this in a different context or only if necessary
+        // For demonstration, let's use the '/set-cookie' route
+        await axios.get(`${apiUrl}/set-cookie`, {
+          withCredentials: true
+        });
+  
+        // Redirect or update the UI as needed
         navigate(`/`);
       }
     } catch (error) {
@@ -54,7 +64,7 @@ function LoginPage() {
     } finally {
       setSubmitting(false);
     }
-  };
+  };  
 
   const handleClickShowPassword = () => setShowPassword(!showPassword);
 

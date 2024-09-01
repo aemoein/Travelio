@@ -89,9 +89,9 @@ app.use(morgan('dev'));
       resave: false,
       saveUninitialized: false,
       cookie: {
-        secure: true,//process.env.NODE_ENV === 'production',
+        secure: process.env.NODE_ENV === 'production', // Ensure this is true if using HTTPS
         httpOnly: true,
-        maxAge: 30 * 60 * 1000,
+        maxAge: 30 * 60 * 1000, // 30 minutes
         sameSite: 'None',
       }
     }));
@@ -108,6 +108,17 @@ app.use(morgan('dev'));
 
     cron.schedule('*/15 * * * *', () => {
       fetchAccessToken();
+    });
+
+    // Example of setting a cookie manually
+    app.get('/set-cookie', (req, res) => {
+      res.cookie('exampleCookie', 'cookieValue', {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'None',
+        maxAge: 30 * 60 * 1000 // 30 minutes
+      });
+      res.send('Cookie has been set');
     });
 
     // ROUTES
