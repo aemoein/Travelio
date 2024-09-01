@@ -19,14 +19,13 @@ async function registerUser(userInfo) {
         const user = await User.findOne({ username });
 
         const token = jwt.sign(
-            { id: user._id, email: user.email, username: user.username, profilePic: user.profilePic, socialProfileId },
+            { id: user._id, email: user.email, username: user.username, profilePic: user.profilePic },
             config.jwtSecret
         );
     
         return {
             status: 201, message: 'User registered successfully',
-            token: token,
-            userId: user._id, username: user.username
+            token: token, userId: user._id, username: user.username
         };
     } catch (error) {
         console.error(error);
@@ -71,6 +70,7 @@ async function loginUser(username, password) {
 
 async function userInformation(userId, userInfo) {
     try {
+
         const user = await User.findById(userId);
         if (!user) {
             return { status: 404, message: 'User not found' };
