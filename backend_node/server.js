@@ -87,10 +87,10 @@ app.use(morgan('dev'));
       store: new RedisStore({ client: redisClient }),
       secret: config.jwtSecret,
       resave: false,
-      saveUninitialized: false,
+      saveUninitialized: true,
       cookie: {
-        //secure: process.env.NODE_ENV === 'production',
-        //httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        //httpOnly: false,
         maxAge: 30 * 60 * 1000,
         sameSite: 'None',
       }
