@@ -25,6 +25,7 @@ async function login(req, res) {
       console.log('Result: ' + result.userId);
 
       if (result.status === 200) {
+          console.log('Result: ' + result.userId);
           req.session.userId = result.userId;
       
           console.log('SessionId: ' + req.sessionID);

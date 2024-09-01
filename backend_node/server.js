@@ -67,36 +67,6 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
-app.use(extractToken);
-app.use(errorMiddleware);
-
-// Connect to MongoDB
-mongoose.connect(config.mongoURI)
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
-
-fetchAccessToken();
-
-cron.schedule('*/15 * * * *', () => {
-  fetchAccessToken();
-});
-
-// ROUTES
-app.use('/users/auth', authRoutes);
-app.use('/users/profile', authMiddleware, profileRoutes);
-app.use('/social/create', createRoutes);
-app.use('/social/main', authMiddleware, socialRoutes);
-app.use('/social/posts', authMiddleware, postRoutes);
-app.use('/social/timeline', authMiddleware, timelineRoutes);
-app.use('/destinations', destinationRoutes);
-app.use('/destinations/city', cityRoutes);
-app.use('/destinations/weather', weatherRoutes);
-app.use('/trip', tripRoutes);
-app.use('/payment', paymentRoutes);
-app.use('/challenges', challengeRoutes);
-app.use('/challenges/profiles', challengeProfileRoutes);
-app.use('/image', imageRoutes);
-
 // Start the server
 (async () => {
   try {
@@ -122,6 +92,36 @@ app.use('/image', imageRoutes);
         maxAge: 30 * 60 * 1000
       }
     }));
+
+    app.use(extractToken);
+    app.use(errorMiddleware);
+
+    // Connect to MongoDB
+    mongoose.connect(config.mongoURI)
+      .then(() => console.log('MongoDB connected'))
+      .catch(err => console.log(err));
+
+    fetchAccessToken();
+
+    cron.schedule('*/15 * * * *', () => {
+      fetchAccessToken();
+    });
+
+    // ROUTES
+    app.use('/users/auth', authRoutes);
+    app.use('/users/profile', authMiddleware, profileRoutes);
+    app.use('/social/create', createRoutes);
+    app.use('/social/main', authMiddleware, socialRoutes);
+    app.use('/social/posts', authMiddleware, postRoutes);
+    app.use('/social/timeline', authMiddleware, timelineRoutes);
+    app.use('/destinations', destinationRoutes);
+    app.use('/destinations/city', cityRoutes);
+    app.use('/destinations/weather', weatherRoutes);
+    app.use('/trip', tripRoutes);
+    app.use('/payment', paymentRoutes);
+    app.use('/challenges', challengeRoutes);
+    app.use('/challenges/profiles', challengeProfileRoutes);
+    app.use('/image', imageRoutes);
 
     // Start the server after Redis connection is established
     const PORT = config.port;
