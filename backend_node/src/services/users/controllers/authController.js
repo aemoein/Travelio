@@ -7,6 +7,8 @@ async function signup(req, res) {
 
     console.log(userInfo);
     const result = await authService.registerUser(userInfo);
+
+    console.log(result);
   
     if (result.status === 201) {
       req.session.userId = result.userId;
