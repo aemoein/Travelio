@@ -61,8 +61,6 @@ app.options('*', cors());
 // Log the origin of each request
 app.use((req, res, next) => {
   console.log(`Request Origin: ${req.headers.origin}`);
-  console.log('Session ID:', req.sessionID);
-  console.log('Session Data:', req.session);
   next();
 });
 
@@ -87,11 +85,11 @@ app.use(morgan('dev'));
       secret: config.jwtSecret,
       resave: false,
       proxy: true,
-      saveUninitialized: false,
+      saveUninitialized: true,
       cookie: {
-        secure: process.env.NODE_ENV === 'production', // Ensure this is true if using HTTPS
+        secure: process.env.NODE_ENV === 'production',
         httpOnly: true,
-        maxAge: 30 * 60 * 1000, // 30 minutes
+        maxAge: 30 * 60 * 1000,
         sameSite: 'none',
       }
     }));
