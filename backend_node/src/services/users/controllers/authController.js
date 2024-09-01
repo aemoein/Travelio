@@ -4,6 +4,8 @@ const cloudinary = require('cloudinary').v2;
 async function signup(req, res) {
     const { username, firstName, lastName, email, password } = req.body;
     const userInfo = { username, firstName, lastName, email, password };
+
+    console.log(userInfo);
     const result = await authService.registerUser(userInfo);
   
     if (result.status === 201) {
