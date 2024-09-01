@@ -44,7 +44,7 @@ const FactText = ({ city, population }) => {
     return (
         <Box>
             <div ref={ref}>
-                <Typography variant="body1" component="div" sx={{ fontFamily: 'Poppins', fontSize: '3vw', fontWeight: "700" }}>
+                <Typography variant="body1" component="div" sx={{ fontFamily: 'Poppins', fontSize: { xs: '14px', sm: '16px', md: '18px', lg: '20px' }, fontWeight: "700" }}>
                     Did You know ?!{'     '}<br />
                     <span style={{ position: 'relative', display: 'inline-block' }}>
                         <motion.span

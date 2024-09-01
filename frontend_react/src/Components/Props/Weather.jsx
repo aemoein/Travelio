@@ -35,9 +35,7 @@ const WeatherComponent = ({ cityName }) => {
     padding: '20px',
     textAlign: 'left',
     borderRadius: '10px',
-    maxWidth: '33%',
-    width: '33%',
-    marginRight: '3.5%'
+    height: { xs: '150px', sm: '150px', md: '200px', lg: '200px' },
   };
 
   // Function to round temperature to integers
@@ -46,34 +44,69 @@ const WeatherComponent = ({ cityName }) => {
   };
 
   return (
+    <>
     <Box sx={boxStyle}>
-      <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '4vw', lineHeight:1.0 }}>{weatherData.name}</Typography>
-      <Box sx={{ display: 'flex', ml: -2.0 }}>
-        <img
-          src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
-          alt={weatherData.weather[0].description}
-          width="30%"
-        />
-        <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '6vw', mt: '8px', lineHeight: 1.0 }}>
-          {roundTemperature(weatherData.main.temp)}°C
-        </Typography>
+      <Typography sx={{ fontFamily: 'Poppins', textAlign: 'center', fontWeight: 700, fontSize: { xs: '28px', sm: '32px', md: '38px', lg: '42px' }, mb: 0.5, lineHeight:1.0 }}>{weatherData.name}</Typography>
+      <Box 
+        sx={{
+          display: 'flex',
+          gap: 2,
+        }}
+      >
+       <Box 
+          sx={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            width: '50%', 
+            mx: 'auto'
+          }}
+        >
+          <Box
+            component="img"
+            src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
+            alt={weatherData.weather[0].description}
+            sx={{
+              width: { xs: '80px', sm: '150px', md: '100px', lg: '150px' },
+              height: { xs: '80px', sm: '150px', md: '100px', lg: '150px' },
+              mb: -1,
+              mt: -1,
+            }}
+          />
+          <Typography 
+            sx={{ 
+              fontFamily: 'Poppins', 
+              fontWeight: 700, 
+              fontSize: { xs: '32px', sm: '48px', md: '54px', lg: '62px' }, 
+              lineHeight: 1.0, 
+              textAlign: 'center',
+              ml: 2,
+            }}
+          >
+            {roundTemperature(weatherData.main.temp)}°
+          </Typography>
+          <Typography sx={{ fontFamily: 'Poppins', fontWeight: 900, fontSize: { xs: '12px', sm: '22px', md: '28px', lg: '32px' }, }}>
+            {weatherData.weather[0].main} - {weatherData.weather[0].description}
+          </Typography>
+        </Box>
+        <Box sx={{mt:1 , pl: 2}}>
+          <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: { xs: '16px', sm: '22px', md: '28px', lg: '32px' }, }}>
+            Feels like: {roundTemperature(weatherData.main.feels_like)}°C
+          </Typography>
+          <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: { xs: '16px', sm: '22px', md: '28px', lg: '32px' }, }}>
+            Low: {roundTemperature(weatherData.main.temp_min)}°C - High: {roundTemperature(weatherData.main.temp_max)}°C
+          </Typography>
+          <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: { xs: '16px', sm: '22px', md: '28px', lg: '32px' }, }}>
+            Humidity: {weatherData.main.humidity}%
+          </Typography>
+          <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: { xs: '16px', sm: '22px', md: '28px', lg: '32px' }, }}>
+            Wind: {weatherData.wind.speed} m/s
+          </Typography>
+        </Box>
       </Box>
-      <Typography sx={{ fontFamily: 'Poppins', fontWeight: 900, fontSize: '1.5vw' }}>
-        {weatherData.weather[0].main} - {weatherData.weather[0].description}
-      </Typography>
-      <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '1.8vw' }}>
-        Feels like: {roundTemperature(weatherData.main.feels_like)}°C
-      </Typography>
-      <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '1.8vw' }}>
-        Low: {roundTemperature(weatherData.main.temp_min)}°C - High: {roundTemperature(weatherData.main.temp_max)}°C
-      </Typography>
-      <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '1.8vw' }}>
-        Humidity: {weatherData.main.humidity}%
-      </Typography>
-      <Typography sx={{ fontFamily: 'Poppins', fontWeight: 700, fontSize: '1.8vw' }}>
-        Wind: {weatherData.wind.speed} m/s
-      </Typography>
     </Box>
+    </>
   );
 };
 

@@ -60,160 +60,138 @@ const City = () => {
 const CityPage = ({ city }) => {
     return (
       <>
-      <Navbar/>
-      <Box sx={{ height: '64px' }} />
-      <Box
-            sx={{
-                backgroundImage: `url(${city.hero})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                height: 'calc(100vh - 64px)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center',
-                color: 'white',
-            }}
-        />
-        <Box maxWidth="100vw" sx={{pl: "10vw", pr: "10vw"}}>
-            <Box>
-                <Typography sx={{fontFamily: "Poppins", fontWeight: "700", fontSize: '7vw',lineHeight: '1.0', mt: 2,}}>
-                    {city.name}
-                </Typography>
-                <Typography gutterBottom sx={{fontFamily: "Poppins", fontWeight: "700", fontSize: '3vw', lineHeight: '1.0'}}>
-                    {city.region}, {city.country}
-                </Typography>
-                <Typography paragraph mt={2} sx={{fontFamily: "Poppins", fontWeight: "400", fontSize: '2vw' }}>
-                    {city.description}
-                </Typography>
-            </Box>
-            <Box sx={{padding: 2, border: 'solid 2px #333333', borderRadius: '10px' }}>
-                <FactText city={city.name} population={city.population} />
-            </Box>
-            <Box mt={4} sx={{ display: 'flex'}}>
-                <Clock city={city.name} country={city.country}/>
-                <Weather cityName={city.name}/>
-                <GeneralInfo language={city.language} currency={city.currency}/>
-            </Box>
-  
-            <Box sx={{maxWidth: '82vw', mt: 4}}>
-                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
-                    Famous Foods
-                </Typography>
-                <Grid container spacing={4} sx={{maxWidth: '82vw'}}>
-                    {city.foods.map((food) => (
-                        <Grid item key={food._id} xs={12} sm={6} md={4} lg={3}>
-                            {window.innerWidth >= 1280 ? ( 
-                                <ItemCardLg
-                                    imageUrl={food.picture}
-                                    title={food.name}
-                                    description={food.description}
-                                    link={food.link}
-                                />  
-                            ):(
-                                <ItemCard
-                                    imageUrl={food.picture}
-                                    title={food.name}
-                                    description={food.description}
-                                    link={food.link}
-                                />
-                            )}
+        <Navbar/>
+        <Box sx={{ height: '64px' }} />
+            <Box
+                sx={{
+                    backgroundImage: `url(${city.hero})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    height: 'calc(100vh - 64px)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    color: 'white',
+                }}
+            />
+            <Box maxWidth="100vw" sx={{pl: "10vw", pr: "10vw"}}>
+                <Box>
+                    <Typography sx={{fontFamily: "Poppins", fontWeight: "700", fontSize: { xs: '32px', sm: '38px', md: '42px', lg: '48px' }, lineHeight: '1.0', mt: 2}}>
+                        {city.name}
+                    </Typography>
+                    <Typography gutterBottom sx={{fontFamily: "Poppins", fontWeight: "700", fontSize: { xs: '16px', sm: '20px', md: '24px', lg: '28px' }, lineHeight: '1.0'}}>
+                        {city.region}, {city.country}
+                    </Typography>
+                    <Typography paragraph mt={2} sx={{fontFamily: "Poppins", fontWeight: "400", fontSize: { xs: '14px', sm: '16px', md: '18px', lg: '20px' }, }}>
+                        {city.description}
+                    </Typography>
+                </Box>
+                <Box sx={{padding: 2, border: 'solid 2px #333333', borderRadius: '10px' }}>
+                    <FactText city={city.name} population={city.population} />
+                </Box>
+                <Box mt={4}>
+                    <Grid container spacing={1}>
+                        {/* Clock Component */}
+                        <Grid item xs={6} sm={4}>
+                        <Clock city={city.name} country={city.country} />
                         </Grid>
-                    ))}
-                </Grid>
-            </Box>
 
-            <Box sx={{maxWidth: '82vw', mt: 4}}>
-                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
-                    Top Restaurants
-                </Typography>
-                <Grid container spacing={4} sx={{maxWidth: '82vw'}}>
-                    {city.restaurants.map((restaurant) => (
-                        <Grid item key={restaurant._id} xs={12} sm={6} md={4} lg={3}>
-                            {window.innerWidth >= 1280 ? ( 
-                                <ItemCardLg
-                                    imageUrl={restaurant.picture}
-                                    title={restaurant.name}
-                                    description={restaurant.description}
-                                    link={restaurant.link}
-                                />  
-                            ):(
+                        {/* GeneralInfo Component */}
+                        <Grid item xs={6} sm={4}>
+                        <GeneralInfo language={city.language} currency={city.currency} region={city.region}/>
+                        </Grid>
+
+                        {/* Weather Component */}
+                        <Grid item xs={12} sm={4}>
+                        <Weather cityName={city.name} />
+                        </Grid>
+                    </Grid>
+                </Box>
+
+    
+                <Box sx={{maxWidth: '82vw', mt: 4}}>
+                    <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '36px' },}}>
+                        Famous Foods
+                    </Typography>
+                    <Grid container spacing={1} sx={{maxWidth: '82vw'}}>
+                        {city.foods.map((food) => (
+                            <Grid item key={food._id} xs={6} sm={6} md={4} lg={3}>
+                                    <ItemCard
+                                        imageUrl={food.picture}
+                                        title={food.name}
+                                        description={food.description}
+                                        link={food.link}
+                                    />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
+
+                <Box sx={{maxWidth: '82vw', mt: 4}}>
+                    <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '36px' },}}>
+                        Top Restaurants
+                    </Typography>
+                    <Grid container spacing={1} sx={{maxWidth: '82vw'}}>
+                        {city.restaurants.map((restaurant) => (
+                            <Grid item key={restaurant._id} xs={6} sm={6} md={4} lg={3}>
                                 <ItemCard
                                     imageUrl={restaurant.picture}
                                     title={restaurant.name}
                                     description={restaurant.description}
                                     link={restaurant.link}
                                 />
-                            )}
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
 
-            <Box sx={{maxWidth: '82vw', mt: 4}}>
-                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
-                    Best Hotels
-                </Typography>
-                <Grid container spacing={4} sx={{maxWidth: '82vw'}}>
-                    {city.hotels.map((hotel) => (
-                        <Grid item key={hotel._id} xs={12} sm={6} md={4} lg={3}>
-                            {window.innerWidth >= 1280 ? ( 
-                                <ItemCardLg
-                                    imageUrl={hotel.picture}
-                                    title={hotel.name}
-                                    description={hotel.description}
-                                    link={hotel.link}
-                                />  
-                            ):(
+                <Box sx={{maxWidth: '82vw', mt: 4}}>
+                    <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '36px' },}}>
+                        Best Hotels
+                    </Typography>
+                    <Grid container spacing={1} sx={{maxWidth: '82vw'}}>
+                        {city.hotels.map((hotel) => (
+                            <Grid item key={hotel._id} xs={6} sm={6} md={4} lg={3}>
                                 <ItemCard
                                     imageUrl={hotel.picture}
                                     title={hotel.name}
                                     description={hotel.description}
                                     link={hotel.link}
                                 />
-                            )}
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
 
-            <Box sx={{maxWidth: '82vw', mt: 4}}>
-                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
-                    Transportation
-                </Typography>
-                <Grid container spacing={4} sx={{maxWidth: '82vw'}}>
-                    {city.transportation.map((transport) => (
-                        <Grid item key={transport._id} xs={12} sm={6} md={4} lg={3}>
-                            {window.innerWidth >= 1280 ? ( 
-                                <ItemCardLg
-                                    imageUrl={transport.picture}
-                                    title={transport.name}
-                                    description={transport.description}
-                                    link={transport.link}
-                                />  
-                            ):(
-                                <ItemCard
-                                    imageUrl={transport.picture}
-                                    title={transport.name}
-                                    description={transport.description}
-                                    link={transport.link}
-                                />
-                            )}
-                        </Grid>
-                    ))}
-                </Grid>
+                <Box sx={{maxWidth: '82vw', mt: 4}}>
+                    <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '36px' },}}>
+                        Transportation
+                    </Typography>
+                    <Grid container spacing={1} sx={{maxWidth: '82vw'}}>
+                        {city.transportation.map((transport) => (
+                            <Grid item key={transport._id} xs={6} sm={6} md={4} lg={3}>
+                                    <ItemCard
+                                        imageUrl={transport.picture}
+                                        title={transport.name}
+                                        description={transport.description}
+                                        link={transport.link}
+                                    />
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
+    
+                <Box sx={{mt: 4, mb: 4}}>
+                    <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '36px' },}}>
+                        Gallery
+                    </Typography>
+                    <Gallery images={city.gallery} />
+                </Box>
             </Box>
-  
-            <Box sx={{mt: 4, mb: 4}}>
-                <Typography sx={{fontFamily: 'Poppins', fontWeight: '700', fontSize: '4vw'}}>
-                    Gallery
-                </Typography>
-                <Gallery images={city.gallery} />
-            </Box>
-      </Box>
-      <Footer/>
-      </>
+            <Footer/>
+        </>
     );
   };
 

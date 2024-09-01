@@ -26,6 +26,8 @@ const BottomBar = () => {
   ];
 
   return (
+    <>
+    <Box sx={{height: 70}}/>
     <Box
       sx={{
         display: { xs: 'block', sm: 'none' }, // Show only on mobile
@@ -55,6 +57,7 @@ const BottomBar = () => {
         ))}
       </BottomNavigation>
     </Box>
+    </>
   );
 };
 

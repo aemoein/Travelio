@@ -89,7 +89,7 @@ const FlightSearchForm = () => {
             <Box sx={{ width: '80vw', ml: '10vw', mr: '10vw', mt: 10, minHeight: '100vh'}}>
                 <Grid container justifyContent="center" spacing={2}>
                     <Grid item xs={12}>
-                        <Typography align="left" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '50px'}}>
+                        <Typography align="left" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '40px', sm: '45px', md: '50px', lg: '55px' },}}>
                             Flight Search
                         </Typography>
                     </Grid>

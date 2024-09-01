@@ -49,7 +49,12 @@ const UserIcon = ({ profilePic, username, firstName }) => {
 
   return (
     <div>
-      <Avatar alt={username} src={profilePic} onClick={handleClick} />
+      <Avatar alt={username} src={profilePic} onClick={handleClick} 
+        sx={{
+          width: { xs: '70px', sm: '40px', md: '40px', lg: '40px' },
+          height: { xs: '70px', sm: '40px', md: '40px', lg: '40px' },
+        }}
+      />
       <Popover
         id={id}
         open={open}

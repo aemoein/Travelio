@@ -2,15 +2,14 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { Link } from 'react-router-dom'; // Replace with your routing library if using something else
 
-const ItemCard = ({ imageUrl, title, description, link, width, height }) => {
+const ItemCard = ({ imageUrl, title, description, link}) => {
   return (
     <Link to={link} style={{ textDecoration: 'none' }}>
       <Box
         component="div"
         sx={{
           position: 'relative',
-          width: width ? width : '26vw',
-          height: height ? height : '26vw',
+          height: { xs: '200px', sm: '200px', md: '300px', lg: '350px' },
           borderRadius: '10px',
           overflow: 'hidden',
           boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
@@ -49,8 +48,8 @@ const ItemCard = ({ imageUrl, title, description, link, width, height }) => {
               fontFamily: 'Poppins',
               fontWeight: '900',
               width: 'fit-content',
-              fontSize: '3vw',
-              maxWidth: '24vw',
+              fontSize: { xs: '18px', sm: '18px', md: '24px', lg: '32px' },
+              maxWidth: '90%',
               lineHeight: '1.0',
             }}>
             {title}
@@ -59,9 +58,9 @@ const ItemCard = ({ imageUrl, title, description, link, width, height }) => {
               fontFamily: 'Poppins',
               fontWeight: '400',
               width: 'fit-content',
-              fontSize: '1.5vw',
+              fontSize: { xs: '12px', sm: '14px', md: '18px', lg: '21px' },
               lineHeight: '1.0',
-              maxWidth: '25vw'
+              maxWidth: '90%'
             }}>
             {description}
           </Typography>
