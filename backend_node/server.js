@@ -5,7 +5,11 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const config = require('./src/config/config');
+const authMiddleware = require('./src/middleware/authMiddleware');
+const errorMiddleware = require('./src/middleware/errorMiddleware');
+const extractToken = require('./src/middleware/extractToken');
 const cron = require('node-cron');
 const { fetchAccessToken } = require('./src/middleware/accessTokenMiddleware');
 
@@ -39,7 +43,7 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -66,11 +70,21 @@ app.use(morgan('dev'));
 // Start the server
 (async () => {
   try {
-    // Configure session without Redis for testing
+    // Connect to MongoDB
+    mongoose.connect(config.mongoURI)
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.log(err));
+
+    // Configure session to use MongoStore
     app.use(session({
+      store: MongoStore.create({
+        mongoUrl: config.mongoURI,
+        collectionName: 'sessions',
+        ttl: 30 * 60 // 30 minutes
+      }),
       secret: config.jwtSecret,
       resave: false,
-      saveUninitialized: true,
+      saveUninitialized: false,
       cookie: {
         secure: process.env.NODE_ENV === 'production', // Ensure this is true if using HTTPS
         httpOnly: true,
@@ -79,10 +93,8 @@ app.use(morgan('dev'));
       }
     }));
 
-    // Connect to MongoDB
-    mongoose.connect(config.mongoURI)
-      .then(() => console.log('MongoDB connected'))
-      .catch(err => console.log(err));
+    app.use(extractToken);
+    app.use(errorMiddleware);
 
     fetchAccessToken();
 
