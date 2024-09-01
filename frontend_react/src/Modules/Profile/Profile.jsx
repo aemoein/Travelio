@@ -118,14 +118,14 @@ const Profile = () => {
 
   return (
     <>
-      <div style={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }}>
         <Navbar isLoggedIn={isLoggedIn} sx={{ position: 'fixed', width: '100%', zIndex: 1000 }} />
-        <Box sx={{ position: 'relative', width: '100vw', height: '33vw', overflow: 'hidden', mb: 2 }}>
+        <Box sx={{ position: 'relative', width: '100vw', height: { xs: '250px', sm: '310px', md: '370px', lg: '430px' }, overflow: 'hidden', mb: 2 }}>
           <Box
-            style={{
+            sx={{
               backgroundImage: 'url(https://pbs.twimg.com/profile_banners/1387553922152386562/1659343923/1500x500)',
               width: '100%',
-              height: '25vw',
+              height: { xs: '200px', sm: '250px', md: '300px', lg: '350px' },
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               zIndex: 1,
@@ -136,9 +136,9 @@ const Profile = () => {
             src={userData.profilePicUrl}
             sx={{
               position: 'absolute',
-              width: '14vw',
-              height: '14vw',
-              top: '75.75%',
+              width: { xs: '100px', sm: '120px', md: '140px', lg: '160px' },
+              height: { xs: '100px', sm: '120px', md: '140px', lg: '160px' },
+              top: '80%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
               zIndex: 2,
@@ -259,8 +259,8 @@ const Profile = () => {
             </Typography>
           </Box>
         )}
-        <Box sx={{px: '0vw'}}>
-          <Grid container spacing={0} sx={{width: '100vw'}}>
+        <Box sx={{px: '0vw', mx: 0.2}}>
+          <Grid container spacing={0.2}>
             {posts.map((post, index) => (
               <Grid item key={index} xs={4} sm={4} md={4} lg={3}>
                 <PostsGalleryCard post={post} socialId={socialData._id}/>
@@ -268,7 +268,7 @@ const Profile = () => {
             ))}
           </Grid>
         </Box>
-      </div>
+      </Box>
       <Footer/>
       <EditProfileModal
         open={isEditing}

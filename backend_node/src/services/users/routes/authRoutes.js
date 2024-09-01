@@ -10,7 +10,7 @@ router.post('/login', authController.login);
 router.post('/signup', authController.signup);
 router.post('/logout', authController.logout);
 router.post('/userInfoSignUp', authMiddleware, upload.single('profilePic'), authController.userInfoSignUp);
-router.post('/quiz', authMiddleware, preferencesController.quiz);
+router.post('/quiz', preferencesController.quiz);
 router.post('/setUserPreferences', authMiddleware, preferencesController.setUserPreferences);
 
 module.exports = router;
