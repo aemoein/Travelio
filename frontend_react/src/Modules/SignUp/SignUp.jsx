@@ -63,12 +63,14 @@ function SignUpPage() {
 
       const { userId } = response.data;
       await axios.post(`${apiUrl}/social/create`, { userId }, {
+        withCredentials: true,
         headers: {
           'Content-Type': 'application/json',
         },
       });
 
       await axios.post(`${apiUrl}/challenges/profiles`, {
+        withCredentials: true,
         username: values.username,
       });
 

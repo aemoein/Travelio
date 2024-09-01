@@ -61,6 +61,8 @@ app.options('*', cors());
 // Log the origin of each request
 app.use((req, res, next) => {
   console.log(`Request Origin: ${req.headers.origin}`);
+  console.log('Session ID:', req.sessionID);
+  console.log('Session Data:', req.session);
   next();
 });
 
