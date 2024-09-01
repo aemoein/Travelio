@@ -88,7 +88,6 @@ app.use(morgan('dev'));
       resave: false,
       proxy: true,
       saveUninitialized: false,
-      name: 'session-cookie',
       cookie: {
         secure: process.env.NODE_ENV === 'production', // Ensure this is true if using HTTPS
         httpOnly: true,
