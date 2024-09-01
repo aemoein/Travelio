@@ -9,11 +9,9 @@ async function quiz(req, res) {
 
 async function setUserPreferences(req, res) {
     const { preferences } = req.body;
-    const result = await preferencesService.setUserPreferences(req.session.userId, preferences);
+    const result = await preferencesService.setUserPreferences(req.user.id, preferences);
   
     res.status(result.status).json({ message: result.message });
 }
 
-
-  
 module.exports = { quiz, setUserPreferences};

@@ -17,9 +17,15 @@ async function registerUser(userInfo) {
         const newUser = new User({ username, firstName, lastName, email, password: hashedPassword });
         await newUser.save();
         const user = await User.findOne({ username });
+
+        const token = jwt.sign(
+            { id: user._id, email: user.email, username: user.username, profilePic: user.profilePic, socialProfileId },
+            config.jwtSecret
+        );
     
         return {
             status: 201, message: 'User registered successfully',
+            token: token,
             userId: user._id, username: user.username
         };
     } catch (error) {

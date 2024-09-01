@@ -34,12 +34,17 @@ const PreferencePage = () => {
       setError('Please select at least one preference.');
       return;
     }
+
+    const token = localStorage.getItem('signUpToken');
   
     try {
       const response = await axios.post(`${apiUrl}/users/auth/setUserPreferences`, {
         preferences: selectedGenres
       }, {
         withCredentials: true,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
       });
   
       console.log(response.data);

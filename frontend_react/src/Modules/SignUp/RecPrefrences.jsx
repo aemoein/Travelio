@@ -21,11 +21,15 @@ const RecommendedPreference = () => {
 
     // Handle saving preferences to the server
     const handleSavePreferences = async () => {
+        const token = localStorage.getItem('signUpToken');
         try {
             const response = await axios.post(
-                `${apiUrl}/users/auth/setUserPreferences`,
-                { preferences: responseData },
-                { withCredentials: true }
+                `${apiUrl}/users/auth/setUserPreferences`, { preferences: responseData }, { 
+                    withCredentials: true, 
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    }
+                }
             );
             if (response.data.message === 'User preferences updated successfully') {
                 alert("User preferences updated successfully");

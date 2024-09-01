@@ -36,9 +36,11 @@ function SignUpInfo() {
       for (const key in values) {
         formDataToSend.append(key, values[key]);
       }
+      const token = localStorage.getItem('signUpToken');
       const response = await axios.post(`${apiUrl}/users/auth/userInfoSignUp`, formDataToSend, {
         withCredentials: true,
         headers: {
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
         }
       });

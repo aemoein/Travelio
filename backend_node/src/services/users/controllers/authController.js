@@ -12,9 +12,10 @@ async function signup(req, res) {
   
       console.log('SessionId: ' + req.sessionID);
       console.log('UserId: ' + req.session.userId);
+      console.log('token: ' + result.token);
     }
   
-    res.status(result.status).json({ message: result.message, userId: result.userId});
+    res.status(result.status).json({ message: result.message, token: result.token, userId: result.userId});
 }
 
 async function login(req, res) {
@@ -65,7 +66,7 @@ async function userInfoSignUp(req, res) {
       profilePicUrl: result.secure_url
     };
 
-    const updateResult = await authService.userInformation(req.session.userId, userInfo);
+    const updateResult = await authService.userInformation(req.user.id, userInfo);
 
     res.status(updateResult.status).json({ message: updateResult.message });
   } catch (error) {

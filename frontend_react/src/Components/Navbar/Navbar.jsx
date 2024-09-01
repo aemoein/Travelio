@@ -20,11 +20,10 @@ import axios from 'axios';
 import ArticleCard from '../Card/ArticleCard';
 import TextTitle from '../Text/TextTitle';
 import UserIcon from './UserIcon';
-import MenuIcon from '@mui/icons-material/Menu'; // Import the Menu icon
+import MenuIcon from '@mui/icons-material/Menu';
 import apiUrl from '../../Config/config';
 
 const articles = [
-  // Sample articles data
   {
     imageUrl: 'https://example.com/image1.jpg',
     category: 'Travel',
@@ -166,11 +165,10 @@ const Navbar = () => {
             edge="end" 
             color="black" 
             onClick={handleDrawerToggle} 
-            sx={{ display: { xs: 'block', sm: 'none' } }} // Show only on small screens
+            sx={{ display: { xs: 'block', sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
-          {/* Normal buttons for larger screens */}
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             <Button color="inherit" onClick={handleMenuOpen} sx={buttonStyles}>
               Articles

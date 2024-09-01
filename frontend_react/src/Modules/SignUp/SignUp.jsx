@@ -62,6 +62,9 @@ function SignUpPage() {
       }
 
       const { userId } = response.data;
+
+      localStorage.setItem('signUpToken', response.data.token);
+
       await axios.post(`${apiUrl}/social/create`, { userId }, {
         withCredentials: true,
         headers: {
