@@ -34,6 +34,8 @@ dotenv.config();
 
 const app = express();
 
+app.set("trust proxy", 1);
+
 // Middleware
 const allowedOrigins = [
   'http://localhost:3000',
@@ -84,12 +86,14 @@ app.use(morgan('dev'));
       }),
       secret: config.jwtSecret,
       resave: false,
+      proxy: true,
       saveUninitialized: false,
+      name: 'session-cookie',
       cookie: {
         secure: process.env.NODE_ENV === 'production', // Ensure this is true if using HTTPS
         httpOnly: true,
         maxAge: 30 * 60 * 1000, // 30 minutes
-        sameSite: 'None',
+        sameSite: 'none',
       }
     }));
 
