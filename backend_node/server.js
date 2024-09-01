@@ -52,7 +52,6 @@ app.use(cors({
     }
   },
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Handle OPTIONS requests
@@ -108,17 +107,6 @@ app.use(morgan('dev'));
 
     cron.schedule('*/15 * * * *', () => {
       fetchAccessToken();
-    });
-
-    // Example of setting a cookie manually
-    app.get('/set-cookie', (req, res) => {
-      res.cookie('exampleCookie', 'cookieValue', {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'None',
-        maxAge: 30 * 60 * 1000 // 30 minutes
-      });
-      res.send('Cookie has been set');
     });
 
     // ROUTES
