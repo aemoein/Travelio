@@ -33,6 +33,7 @@ const RecommendedPreference = () => {
             );
             if (response.data.message === 'User preferences updated successfully') {
                 alert("User preferences updated successfully");
+                localStorage.removeItem('signUpToken');
                 navigate(`/signin`);
             }
             setError('');

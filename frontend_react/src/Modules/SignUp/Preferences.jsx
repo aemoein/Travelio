@@ -50,6 +50,7 @@ const PreferencePage = () => {
       console.log(response.data);
   
       if (response.data.message === 'User preferences updated successfully') {
+        localStorage.removeItem('signUpToken');
         navigate(`/signin`);
       }
   
