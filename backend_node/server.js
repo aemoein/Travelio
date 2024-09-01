@@ -5,11 +5,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const session = require('express-session');
-const RedisStore = require('connect-redis').default;
-const redis = require('redis');
-const authMiddleware = require('./src/middleware/authMiddleware');
-const errorMiddleware = require('./src/middleware/errorMiddleware');
-const extractToken = require('./src/middleware/extractToken');
 const config = require('./src/config/config');
 const cron = require('node-cron');
 const { fetchAccessToken } = require('./src/middleware/accessTokenMiddleware');
@@ -71,19 +66,8 @@ app.use(morgan('dev'));
 // Start the server
 (async () => {
   try {
-    const redisClient = redis.createClient({
-      url: process.env.REDIS_URL
-    });
-
-    redisClient.on('error', (err) => console.error('Redis error:', err));
-    
-    // Connect to Redis server
-    await redisClient.connect();
-    console.log('Connected to Redis');
-
-    // Configure session to use RedisStore
+    // Configure session without Redis for testing
     app.use(session({
-      store: new RedisStore({ client: redisClient }),
       secret: config.jwtSecret,
       resave: false,
       saveUninitialized: true,
@@ -94,9 +78,6 @@ app.use(morgan('dev'));
         sameSite: 'None',
       }
     }));
-
-    app.use(extractToken);
-    app.use(errorMiddleware);
 
     // Connect to MongoDB
     mongoose.connect(config.mongoURI)
@@ -125,12 +106,12 @@ app.use(morgan('dev'));
     app.use('/challenges/profiles', challengeProfileRoutes);
     app.use('/image', imageRoutes);
 
-    // Start the server after Redis connection is established
+    // Start the server
     const PORT = config.port;
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
     });
   } catch (err) {
-    console.error('Could not connect to Redis:', err);
+    console.error('Error starting the server:', err);
   }
 })();
