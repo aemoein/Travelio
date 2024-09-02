@@ -7,17 +7,6 @@ async function signup(req, res) {
 
     console.log(userInfo);
     const result = await authService.registerUser(userInfo);
-
-    console.log(result);
-  
-    if (result.status === 201) {
-      req.session.userId = result.userId;
-      req.session.username = result.username;
-  
-      console.log('SessionId: ' + req.sessionID);
-      console.log('UserId: ' + req.session.userId);
-      console.log('token: ' + result.token);
-    }
   
     res.status(result.status).json({ message: result.message, token: result.token, userId: result.userId});
 }
@@ -30,12 +19,7 @@ async function login(req, res) {
       console.log('Result: ' + result.userId);
 
       if (result.status === 200) {
-          console.log('Result: ' + result.userId);
-          req.session.userId = result.userId;
-      
-          console.log('SessionId: ' + req.sessionID);
-          console.log('UserId: ' + req.session.userId);
-          return res.status(200).json({ token: result.token, username: result.username});
+        return res.status(200).json({ token: result.token, username: result.username});
       }
 
       return res.status(result.status).json({ message: result.message });
@@ -51,9 +35,6 @@ async function userInfoSignUp(req, res) {
   if (!req.file || !req.file.path) {
     return res.status(400).json({ error: 'Profile picture is required.' });
   }
-
-  console.log('SessionId info: ' + req.sessionID);
-  console.log('UserId info: ' + req.session.userId);
 
   try {
     // Upload file to Cloudinary with folder specified

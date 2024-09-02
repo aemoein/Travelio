@@ -1,0 +1,2240 @@
+{
+    "data": {
+        "context": {
+            "status": "incomplete",
+            "sessionId": "ClQIARJQCk4KJDZiYmU5ODRjLWJmNTEtNGJhOS04NDU2LTJmYjViOGYxNTgxNhACGiRmMWU2ZTEyMy1mMzQwLTRkNTItYjNhMi01Mjg2NThhNDc4ZmMSKHVzc183M2I4YjM1ZC1lOTNjLTRkYzUtOTZjZC04NDY1Mjk2MDUwZmE=",
+            "totalResults": 10,
+            "filterTotalResults": 10
+        },
+        "itineraries": [
+            {
+                "id": "12234-2411011710--32573-0-12712-2411011715|12712-2411051000--32573-0-12234-2411061435",
+                "price": {
+                    "raw": 721.0,
+                    "formatted": "$721",
+                    "pricingOptionId": "TJeOCqLKOCIv"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011710--32573-0-12712-2411011715",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 785,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T17:10:00",
+                        "arrival": "2024-11-01T17:15:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011710-2411011715--32573",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T17:10:00",
+                                "arrival": "2024-11-01T17:15:00",
+                                "durationInMinutes": 785,
+                                "flightNumber": "168",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411051000--32573-0-12234-2411061435",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 875,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T10:00:00",
+                        "arrival": "2024-11-06T14:35:00",
+                        "timeDeltaInDays": 1,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-12234-2411051000-2411061435--32573",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-05T10:00:00",
+                                "arrival": "2024-11-06T14:35:00",
+                                "durationInMinutes": 875,
+                                "flightNumber": "167",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "eco": {
+                    "ecoContenderDelta": 17.056322
+                },
+                "fareAttributes": {},
+                "tags": [
+                    "cheapest",
+                    "third_shortest"
+                ],
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.999
+            },
+            {
+                "id": "12234-2411011710--32573-0-12712-2411011715|12712-2411051630--32573-1-12234-2411070505",
+                "price": {
+                    "raw": 725.5,
+                    "formatted": "$726",
+                    "pricingOptionId": "5H7BvHi8PP9A"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011710--32573-0-12712-2411011715",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 785,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T17:10:00",
+                        "arrival": "2024-11-01T17:15:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011710-2411011715--32573",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T17:10:00",
+                                "arrival": "2024-11-01T17:15:00",
+                                "durationInMinutes": 785,
+                                "flightNumber": "168",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411051630--32573-1-12234-2411070505",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 1355,
+                        "stopCount": 1,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T16:30:00",
+                        "arrival": "2024-11-07T05:05:00",
+                        "timeDeltaInDays": 2,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-13416-2411051630-2411051950--32573",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "LAX",
+                                    "displayCode": "LAX",
+                                    "parent": {
+                                        "flightPlaceId": "LAXA",
+                                        "displayCode": "LAX",
+                                        "name": "Los Angeles",
+                                        "type": "City"
+                                    },
+                                    "name": "Los Angeles International",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-05T16:30:00",
+                                "arrival": "2024-11-05T19:50:00",
+                                "durationInMinutes": 380,
+                                "flightNumber": "306",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            },
+                            {
+                                "id": "13416-12234-2411052350-2411070505--32573",
+                                "origin": {
+                                    "flightPlaceId": "LAX",
+                                    "displayCode": "LAX",
+                                    "parent": {
+                                        "flightPlaceId": "LAXA",
+                                        "displayCode": "LAX",
+                                        "name": "Los Angeles",
+                                        "type": "City"
+                                    },
+                                    "name": "Los Angeles International",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-05T23:50:00",
+                                "arrival": "2024-11-07T05:05:00",
+                                "durationInMinutes": 735,
+                                "flightNumber": "169",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "fareAttributes": {},
+                "tags": [
+                    "second_cheapest"
+                ],
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.73136
+            },
+            {
+                "id": "12234-2411011945--32184-0-12712-2411011930|12712-2411051000--32184-0-12234-2411061435",
+                "price": {
+                    "raw": 1323.9,
+                    "formatted": "$1,324",
+                    "pricingOptionId": "FxuHHbEUSSq2"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011945--32184-0-12712-2411011930",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 765,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T19:45:00",
+                        "arrival": "2024-11-01T19:30:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011945-2411011930--32184",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T19:45:00",
+                                "arrival": "2024-11-01T19:30:00",
+                                "durationInMinutes": 765,
+                                "flightNumber": "4",
+                                "marketingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411051000--32184-0-12234-2411061435",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 875,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T10:00:00",
+                        "arrival": "2024-11-06T14:35:00",
+                        "timeDeltaInDays": 1,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operating": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "not_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-12234-2411051000-2411061435--32184",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-05T10:00:00",
+                                "arrival": "2024-11-06T14:35:00",
+                                "durationInMinutes": 875,
+                                "flightNumber": "7009",
+                                "marketingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "eco": {
+                    "ecoContenderDelta": 12.796104
+                },
+                "fareAttributes": {},
+                "tags": [
+                    "shortest"
+                ],
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.67144
+            },
+            {
+                "id": "12234-2411011710--32573-0-12712-2411011715|12712-2411051534--32573-1-12234-2411070505",
+                "price": {
+                    "raw": 725.5,
+                    "formatted": "$726",
+                    "pricingOptionId": "aTHQh9Trvr19"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011710--32573-0-12712-2411011715",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 785,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T17:10:00",
+                        "arrival": "2024-11-01T17:15:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011710-2411011715--32573",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T17:10:00",
+                                "arrival": "2024-11-01T17:15:00",
+                                "durationInMinutes": 785,
+                                "flightNumber": "168",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411051534--32573-1-12234-2411070505",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 1411,
+                        "stopCount": 1,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T15:34:00",
+                        "arrival": "2024-11-07T05:05:00",
+                        "timeDeltaInDays": 2,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-13416-2411051534-2411051854--32573",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "LAX",
+                                    "displayCode": "LAX",
+                                    "parent": {
+                                        "flightPlaceId": "LAXA",
+                                        "displayCode": "LAX",
+                                        "name": "Los Angeles",
+                                        "type": "City"
+                                    },
+                                    "name": "Los Angeles International",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-05T15:34:00",
+                                "arrival": "2024-11-05T18:54:00",
+                                "durationInMinutes": 380,
+                                "flightNumber": "341",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            },
+                            {
+                                "id": "13416-12234-2411052350-2411070505--32573",
+                                "origin": {
+                                    "flightPlaceId": "LAX",
+                                    "displayCode": "LAX",
+                                    "parent": {
+                                        "flightPlaceId": "LAXA",
+                                        "displayCode": "LAX",
+                                        "name": "Los Angeles",
+                                        "type": "City"
+                                    },
+                                    "name": "Los Angeles International",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-05T23:50:00",
+                                "arrival": "2024-11-07T05:05:00",
+                                "durationInMinutes": 735,
+                                "flightNumber": "169",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "fareAttributes": {},
+                "tags": [
+                    "third_cheapest"
+                ],
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.59531
+            },
+            {
+                "id": "12234-2411011710--32184-0-12712-2411011715|12712-2411051000--32184-0-12234-2411061435",
+                "price": {
+                    "raw": 1323.9,
+                    "formatted": "$1,324",
+                    "pricingOptionId": "zL0WKYfqlHS-"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011710--32184-0-12712-2411011715",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 785,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T17:10:00",
+                        "arrival": "2024-11-01T17:15:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operating": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "not_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011710-2411011715--32184",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T17:10:00",
+                                "arrival": "2024-11-01T17:15:00",
+                                "durationInMinutes": 785,
+                                "flightNumber": "7010",
+                                "marketingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411051000--32184-0-12234-2411061435",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 875,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T10:00:00",
+                        "arrival": "2024-11-06T14:35:00",
+                        "timeDeltaInDays": 1,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operating": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "not_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-12234-2411051000-2411061435--32184",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-05T10:00:00",
+                                "arrival": "2024-11-06T14:35:00",
+                                "durationInMinutes": 875,
+                                "flightNumber": "7009",
+                                "marketingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "eco": {
+                    "ecoContenderDelta": 17.056322
+                },
+                "fareAttributes": {},
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.571373
+            },
+            {
+                "id": "12234-2411011710--32184-0-12712-2411011715|12712-2411051240--32184-0-12234-2411061715",
+                "price": {
+                    "raw": 1385.9,
+                    "formatted": "$1,386",
+                    "pricingOptionId": "Ve7nAfqdbRAL"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011710--32184-0-12712-2411011715",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 785,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T17:10:00",
+                        "arrival": "2024-11-01T17:15:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operating": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "not_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011710-2411011715--32184",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T17:10:00",
+                                "arrival": "2024-11-01T17:15:00",
+                                "durationInMinutes": 785,
+                                "flightNumber": "7010",
+                                "marketingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411051240--32184-0-12234-2411061715",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 875,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T12:40:00",
+                        "arrival": "2024-11-06T17:15:00",
+                        "timeDeltaInDays": 1,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-12234-2411051240-2411061715--32184",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-05T12:40:00",
+                                "arrival": "2024-11-06T17:15:00",
+                                "durationInMinutes": 875,
+                                "flightNumber": "5",
+                                "marketingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "eco": {
+                    "ecoContenderDelta": 16.485668
+                },
+                "fareAttributes": {},
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.567561
+            },
+            {
+                "id": "12234-2411011710--32184-0-12712-2411011715|12712-2411050035--32184-0-12234-2411060510",
+                "price": {
+                    "raw": 1385.9,
+                    "formatted": "$1,386",
+                    "pricingOptionId": "kOBu0J24ct6b"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011710--32184-0-12712-2411011715",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 785,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T17:10:00",
+                        "arrival": "2024-11-01T17:15:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operating": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "not_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011710-2411011715--32184",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T17:10:00",
+                                "arrival": "2024-11-01T17:15:00",
+                                "durationInMinutes": 785,
+                                "flightNumber": "7010",
+                                "marketingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411050035--32184-0-12234-2411060510",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 875,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T00:35:00",
+                        "arrival": "2024-11-06T05:10:00",
+                        "timeDeltaInDays": 1,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-12234-2411050035-2411060510--32184",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-05T00:35:00",
+                                "arrival": "2024-11-06T05:10:00",
+                                "durationInMinutes": 875,
+                                "flightNumber": "3",
+                                "marketingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "eco": {
+                    "ecoContenderDelta": 16.485668
+                },
+                "fareAttributes": {},
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.562542
+            },
+            {
+                "id": "12234-2411011945--32573-0-12712-2411011930|12712-2411051000--32573-0-12234-2411061435",
+                "price": {
+                    "raw": 1357.0,
+                    "formatted": "$1,357",
+                    "pricingOptionId": "WwuzGT7Mgq4F"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011945--32573-0-12712-2411011930",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 765,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T19:45:00",
+                        "arrival": "2024-11-01T19:30:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operating": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operationType": "not_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011945-2411011930--32573",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T19:45:00",
+                                "arrival": "2024-11-01T19:30:00",
+                                "durationInMinutes": 765,
+                                "flightNumber": "8496",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411051000--32573-0-12234-2411061435",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 875,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T10:00:00",
+                        "arrival": "2024-11-06T14:35:00",
+                        "timeDeltaInDays": 1,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-12234-2411051000-2411061435--32573",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-05T10:00:00",
+                                "arrival": "2024-11-06T14:35:00",
+                                "durationInMinutes": 875,
+                                "flightNumber": "167",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "eco": {
+                    "ecoContenderDelta": 12.796104
+                },
+                "fareAttributes": {},
+                "tags": [
+                    "second_shortest"
+                ],
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.555175
+            },
+            {
+                "id": "12234-2411011710--32573-0-12712-2411011715|12712-2411052121--32573-1-12234-2411071505",
+                "price": {
+                    "raw": 725.5,
+                    "formatted": "$726",
+                    "pricingOptionId": "cxJ-YdFlmYaG"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011710--32573-0-12712-2411011715",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 785,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T17:10:00",
+                        "arrival": "2024-11-01T17:15:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011710-2411011715--32573",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T17:10:00",
+                                "arrival": "2024-11-01T17:15:00",
+                                "durationInMinutes": 785,
+                                "flightNumber": "168",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411052121--32573-1-12234-2411071505",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 1664,
+                        "stopCount": 1,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T21:21:00",
+                        "arrival": "2024-11-07T15:05:00",
+                        "timeDeltaInDays": 2,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-13416-2411052121-2411060049--32573",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "LAX",
+                                    "displayCode": "LAX",
+                                    "parent": {
+                                        "flightPlaceId": "LAXA",
+                                        "displayCode": "LAX",
+                                        "name": "Los Angeles",
+                                        "type": "City"
+                                    },
+                                    "name": "Los Angeles International",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-05T21:21:00",
+                                "arrival": "2024-11-06T00:49:00",
+                                "durationInMinutes": 388,
+                                "flightNumber": "300",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            },
+                            {
+                                "id": "13416-12234-2411060950-2411071505--32573",
+                                "origin": {
+                                    "flightPlaceId": "LAX",
+                                    "displayCode": "LAX",
+                                    "parent": {
+                                        "flightPlaceId": "LAXA",
+                                        "displayCode": "LAX",
+                                        "name": "Los Angeles",
+                                        "type": "City"
+                                    },
+                                    "name": "Los Angeles International",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-06T09:50:00",
+                                "arrival": "2024-11-07T15:05:00",
+                                "durationInMinutes": 735,
+                                "flightNumber": "27",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "fareAttributes": {},
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.552267
+            },
+            {
+                "id": "12234-2411011710--32573-0-12712-2411011715|12712-2411051240--32573-0-12234-2411061715",
+                "price": {
+                    "raw": 1357.0,
+                    "formatted": "$1,357",
+                    "pricingOptionId": "F7Z5B2YlI8ki"
+                },
+                "legs": [
+                    {
+                        "id": "12234-2411011710--32573-0-12712-2411011715",
+                        "origin": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 785,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-01T17:10:00",
+                        "arrival": "2024-11-01T17:15:00",
+                        "timeDeltaInDays": 0,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operationType": "fully_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12234-12712-2411011710-2411011715--32573",
+                                "origin": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "departure": "2024-11-01T17:10:00",
+                                "arrival": "2024-11-01T17:15:00",
+                                "durationInMinutes": 785,
+                                "flightNumber": "168",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "12712-2411051240--32573-0-12234-2411061715",
+                        "origin": {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy",
+                            "displayCode": "JFK",
+                            "city": "New York",
+                            "country": "United States",
+                            "isHighlighted": false
+                        },
+                        "destination": {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda",
+                            "displayCode": "HND",
+                            "city": "Tokyo",
+                            "country": "Japan",
+                            "isHighlighted": false
+                        },
+                        "durationInMinutes": 875,
+                        "stopCount": 0,
+                        "isSmallestStops": false,
+                        "departure": "2024-11-05T12:40:00",
+                        "arrival": "2024-11-06T17:15:00",
+                        "timeDeltaInDays": 1,
+                        "carriers": {
+                            "marketing": [
+                                {
+                                    "id": -32573,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                                    "name": "American Airlines"
+                                }
+                            ],
+                            "operating": [
+                                {
+                                    "id": -32184,
+                                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                                    "name": "Japan Airlines"
+                                }
+                            ],
+                            "operationType": "not_operated"
+                        },
+                        "segments": [
+                            {
+                                "id": "12712-12234-2411051240-2411061715--32573",
+                                "origin": {
+                                    "flightPlaceId": "JFK",
+                                    "displayCode": "JFK",
+                                    "parent": {
+                                        "flightPlaceId": "NYCA",
+                                        "displayCode": "NYC",
+                                        "name": "New York",
+                                        "type": "City"
+                                    },
+                                    "name": "New York John F. Kennedy",
+                                    "type": "Airport",
+                                    "country": "United States"
+                                },
+                                "destination": {
+                                    "flightPlaceId": "HND",
+                                    "displayCode": "HND",
+                                    "parent": {
+                                        "flightPlaceId": "TYOA",
+                                        "displayCode": "TYO",
+                                        "name": "Tokyo",
+                                        "type": "City"
+                                    },
+                                    "name": "Tokyo Haneda",
+                                    "type": "Airport",
+                                    "country": "Japan"
+                                },
+                                "departure": "2024-11-05T12:40:00",
+                                "arrival": "2024-11-06T17:15:00",
+                                "durationInMinutes": 875,
+                                "flightNumber": "8402",
+                                "marketingCarrier": {
+                                    "id": -32573,
+                                    "name": "American Airlines",
+                                    "alternateId": "AA",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                },
+                                "operatingCarrier": {
+                                    "id": -32184,
+                                    "name": "Japan Airlines",
+                                    "alternateId": "JL",
+                                    "allianceId": 0,
+                                    "displayCode": ""
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "isSelfTransfer": false,
+                "isProtectedSelfTransfer": false,
+                "farePolicy": {
+                    "isChangeAllowed": false,
+                    "isPartiallyChangeable": false,
+                    "isCancellationAllowed": false,
+                    "isPartiallyRefundable": false
+                },
+                "eco": {
+                    "ecoContenderDelta": 16.485668
+                },
+                "fareAttributes": {},
+                "isMashUp": false,
+                "hasFlexibleOptions": false,
+                "score": 0.544366
+            }
+        ],
+        "messages": [],
+        "filterStats": {
+            "duration": {
+                "min": 875,
+                "max": 1664,
+                "multiCityMin": 1640,
+                "multiCityMax": 2449
+            },
+            "airports": [
+                {
+                    "city": "New York",
+                    "airports": [
+                        {
+                            "id": "JFK",
+                            "entityId": "95565058",
+                            "name": "New York John F. Kennedy"
+                        }
+                    ]
+                },
+                {
+                    "city": "Tokyo",
+                    "airports": [
+                        {
+                            "id": "HND",
+                            "entityId": "128667143",
+                            "name": "Tokyo Haneda"
+                        }
+                    ]
+                }
+            ],
+            "carriers": [
+                {
+                    "id": -32573,
+                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/AA.png",
+                    "name": "American Airlines"
+                },
+                {
+                    "id": -32184,
+                    "logoUrl": "https://logos.skyscnr.com/images/airlines/favicon/JL.png",
+                    "name": "Japan Airlines"
+                }
+            ],
+            "stopPrices": {
+                "direct": {
+                    "isPresent": true,
+                    "formattedPrice": "$721"
+                },
+                "one": {
+                    "isPresent": true,
+                    "formattedPrice": "$726"
+                },
+                "twoOrMore": {
+                    "isPresent": false
+                }
+            }
+        },
+        "flightsSessionId": "6bbe984c-bf51-4ba9-8456-2fb5b8f15816",
+        "destinationImageUrl": "https://content.skyscnr.com/m/3719e8f4a5daf43d/original/Flights-Placeholder.jpg",
+        "token": "eyJhIjoxLCJjIjowLCJpIjowLCJjYyI6ImVjb25vbXkiLCJvIjoiSE5EIiwiZCI6IkpGSyIsImQxIjoiMjAyNC0xMS0wMSIsImQyIjoiMjAyNC0xMS0wNSJ9"
+    },
+    "status": true,
+    "message": "Successful"
+}
