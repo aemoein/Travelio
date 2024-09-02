@@ -28,8 +28,6 @@ async function checkLoggedIn(req) {
       return { status: 404, message: 'User not found' };
     }
 
-    req.session.isLoggedIn = true;
-
     let profilePicUrl = '';
     if (user.profilePic) {
       profilePicUrl = user.profilePic;

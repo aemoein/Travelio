@@ -8,7 +8,6 @@ async function getProfile(req, res) {
 
 async function checkLoggedIn(req, res) {
   const result = await profileService.checkLoggedIn(req);
-  console.log("Session Id", req.session);
   res.status(result.status).json(result.user);
 }
 
