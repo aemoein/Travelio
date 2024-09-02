@@ -94,17 +94,17 @@ const CityPage = ({ city }) => {
                 <Box mt={4}>
                     <Grid container spacing={1}>
                         {/* Clock Component */}
-                        <Grid item xs={6} sm={4}>
-                        <Clock city={city.name} country={city.country} />
+                        <Grid item xs={6} sm={6} md={6} lg={4}>
+                            <Clock city={city.name} country={city.country} />
                         </Grid>
 
                         {/* GeneralInfo Component */}
-                        <Grid item xs={6} sm={4}>
+                        <Grid item xs={6} sm={6} md={6} lg={4}>
                         <GeneralInfo language={city.language} currency={city.currency} region={city.region}/>
                         </Grid>
 
                         {/* Weather Component */}
-                        <Grid item xs={12} sm={4}>
+                        <Grid item xs={12} sm={12} md={12} lg={4}>
                         <Weather cityName={city.name} />
                         </Grid>
                     </Grid>
@@ -117,7 +117,7 @@ const CityPage = ({ city }) => {
                     </Typography>
                     <Grid container spacing={1} sx={{maxWidth: '82vw'}}>
                         {city.foods.map((food) => (
-                            <Grid item key={food._id} xs={6} sm={6} md={4} lg={3}>
+                            <Grid item key={food._id} xs={6} sm={6} md={4} lg={4}>
                                     <ItemCard
                                         imageUrl={food.picture}
                                         title={food.name}
@@ -135,7 +135,7 @@ const CityPage = ({ city }) => {
                     </Typography>
                     <Grid container spacing={1} sx={{maxWidth: '82vw'}}>
                         {city.restaurants.map((restaurant) => (
-                            <Grid item key={restaurant._id} xs={6} sm={6} md={4} lg={3}>
+                            <Grid item key={restaurant._id} xs={6} sm={6} md={4} lg={4}>
                                 <ItemCard
                                     imageUrl={restaurant.picture}
                                     title={restaurant.name}
@@ -153,7 +153,7 @@ const CityPage = ({ city }) => {
                     </Typography>
                     <Grid container spacing={1} sx={{maxWidth: '82vw'}}>
                         {city.hotels.map((hotel) => (
-                            <Grid item key={hotel._id} xs={6} sm={6} md={4} lg={3}>
+                            <Grid item key={hotel._id} xs={6} sm={6} md={4} lg={4}>
                                 <ItemCard
                                     imageUrl={hotel.picture}
                                     title={hotel.name}
@@ -171,7 +171,7 @@ const CityPage = ({ city }) => {
                     </Typography>
                     <Grid container spacing={1} sx={{maxWidth: '82vw'}}>
                         {city.transportation.map((transport) => (
-                            <Grid item key={transport._id} xs={6} sm={6} md={4} lg={3}>
+                            <Grid item key={transport._id} xs={6} sm={6} md={4} lg={4}>
                                     <ItemCard
                                         imageUrl={transport.picture}
                                         title={transport.name}

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Typography from '@mui/material/Typography';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
 
 const FactText = ({ city, population }) => {
     const ref = useRef(null);
@@ -44,7 +44,7 @@ const FactText = ({ city, population }) => {
     return (
         <Box>
             <div ref={ref}>
-                <Typography variant="body1" component="div" sx={{ fontFamily: 'Poppins', fontSize: { xs: '14px', sm: '16px', md: '18px', lg: '20px' }, fontWeight: "700" }}>
+                <Typography variant="body1" component="div" sx={{ fontFamily: 'Poppins', fontSize: { xs: '15px', sm: '22px', md: '32px', lg: '48px' }, fontWeight: "700" }}>
                     Did You know ?!{'     '}<br />
                     <span style={{ position: 'relative', display: 'inline-block' }}>
                         <motion.span

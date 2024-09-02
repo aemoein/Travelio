@@ -26,7 +26,6 @@ const FlightSearchForm = () => {
     const handleChange = (e, value, name) => {
         console.log(`handleChange called with name: ${name}, value:`, value);
         if (value) {
-            // Find the city object in citiesData that matches the selected value
             const selectedCity = citiesData.find(city => city.city === value.city);
     
             if (selectedCity) {
@@ -38,7 +37,6 @@ const FlightSearchForm = () => {
             }
         } else {
             console.log(`Clearing ${name} field`);
-            // Clear the field if value is null (e.g., user clears selection)
             setFormData(prevState => ({
                 ...prevState,
                 [name]: ''
