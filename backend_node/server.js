@@ -4,8 +4,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
 const config = require('./src/config/config');
 const authMiddleware = require('./src/middleware/authMiddleware');
 const errorMiddleware = require('./src/middleware/errorMiddleware');
@@ -27,7 +25,7 @@ const tripRoutes = require('./src/services/trip/routes/tripRoutes');
 const paymentRoutes = require('./src/services/payment/routes/paymentRoutes');
 const challengeRoutes = require('./src/services/challenges/routes/challengeRoutes');
 const challengeProfileRoutes = require('./src/services/challenges/routes/profileRoutes');
-const imageRoutes = require('./src/services/imgrec/routes/imageRoutes');
+//const imageRoutes = require('./src/services/imgrec/routes/imageRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -67,64 +65,38 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 
+// Connect to MongoDB
+mongoose.connect(config.mongoURI)
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.log(err));
+
+app.use(extractToken);
+app.use(errorMiddleware);
+
+fetchAccessToken();
+
+cron.schedule('*/15 * * * *', () => {
+  fetchAccessToken();
+});
+
+// ROUTES
+app.use('/users/auth', authRoutes);
+app.use('/users/profile', authMiddleware, profileRoutes);
+app.use('/social/create', createRoutes);
+app.use('/social/main', authMiddleware, socialRoutes);
+app.use('/social/posts', authMiddleware, postRoutes);
+app.use('/social/timeline', authMiddleware, timelineRoutes);
+app.use('/destinations', destinationRoutes);
+app.use('/destinations/city', cityRoutes);
+app.use('/destinations/weather', weatherRoutes);
+app.use('/trip', tripRoutes);
+app.use('/payment', paymentRoutes);
+app.use('/challenges', challengeRoutes);
+app.use('/challenges/profiles', challengeProfileRoutes);
+//app.use('/image', imageRoutes);
+
 // Start the server
-(async () => {
-  try {
-    // Connect to MongoDB
-    mongoose.connect(config.mongoURI)
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.log(err));
-
-    // Configure session to use MongoStore
-    app.use(session({
-      store: MongoStore.create({
-        mongoUrl: config.mongoURI,
-        collectionName: 'sessions',
-        ttl: 30 * 60 // 30 minutes
-      }),
-      secret: config.jwtSecret,
-      resave: false,
-      proxy: true,
-      saveUninitialized: true,
-      cookie: {
-        secure: process.env.NODE_ENV === 'production',
-        httpOnly: true,
-        maxAge: 30 * 60 * 1000,
-        sameSite: 'none',
-      }
-    }));
-
-    app.use(extractToken);
-    app.use(errorMiddleware);
-
-    fetchAccessToken();
-
-    cron.schedule('*/15 * * * *', () => {
-      fetchAccessToken();
-    });
-
-    // ROUTES
-    app.use('/users/auth', authRoutes);
-    app.use('/users/profile', authMiddleware, profileRoutes);
-    app.use('/social/create', createRoutes);
-    app.use('/social/main', authMiddleware, socialRoutes);
-    app.use('/social/posts', authMiddleware, postRoutes);
-    app.use('/social/timeline', authMiddleware, timelineRoutes);
-    app.use('/destinations', destinationRoutes);
-    app.use('/destinations/city', cityRoutes);
-    app.use('/destinations/weather', weatherRoutes);
-    app.use('/trip', tripRoutes);
-    app.use('/payment', paymentRoutes);
-    app.use('/challenges', challengeRoutes);
-    app.use('/challenges/profiles', challengeProfileRoutes);
-    app.use('/image', imageRoutes);
-
-    // Start the server
-    const PORT = config.port;
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-  } catch (err) {
-    console.error('Error starting the server:', err);
-  }
-})();
+const PORT = config.port;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
