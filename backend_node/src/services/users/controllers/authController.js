@@ -60,9 +60,4 @@ async function userInfoSignUp(req, res) {
   }
 }
 
-async function logout(req, res) {
-    const result = await authService.logout(req);
-    res.status(result.status).json({ message: result.message });
-}
-
-module.exports = { signup, login, userInfoSignUp, logout };
+module.exports = { signup, login, userInfoSignUp };

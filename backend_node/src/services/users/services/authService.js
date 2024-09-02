@@ -92,14 +92,4 @@ async function userInformation(userId, userInfo) {
     }
 }
 
-async function logout(req) {
-    try {
-        req.session.destroy();
-        return { status: 200, message: 'Logout successful' };
-    } catch (error) {
-        console.error(error);
-        return { status: 500, message: 'Internal server error' };
-    }
-}
-
-module.exports = { registerUser, loginUser, userInformation, logout };
+module.exports = { registerUser, loginUser, userInformation };

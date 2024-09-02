@@ -29,16 +29,11 @@ const UserIcon = ({ profilePic, username, firstName }) => {
 
   const signOut = async () => {
     try {
-      const response = await axios.post(`${apiUrl}/users/auth/logout`, null, { withCredentials: true });
-      if (response.data.message === "Logout successful") {
-        localStorage.removeItem('token');
-        localStorage.removeItem('username');
-        localStorage.setItem('loggedin', 'false');
-        navigate(`/`);
-        window.location.reload();
-      } else {
-        console.log("Logout failed");
-      }
+      localStorage.removeItem('token');
+      localStorage.removeItem('username');
+      localStorage.setItem('loggedin', 'false');
+      navigate(`/`);
+      window.location.reload();
     } catch (error) {
       console.error("Error while signing out:", error);
     }
