@@ -12,6 +12,7 @@ async function getFlights(params) {
     const url = 'https://test.api.amadeus.com/v2/shopping/flight-offers';
     const headers = {
         'Authorization': `Bearer ${config.accessToken}`,
+        'Content-Type': 'application/json'
     };
     const updatedParams = {
         ...params,
@@ -22,7 +23,7 @@ async function getFlights(params) {
     console.log(`Requesting flights with parameters: ${JSON.stringify(updatedParams)}`);
 
     try {
-        const response = await axios.get(url, { headers, params: updatedParams, httpsAgent: agent });
+        const response = await axios.post(url, updatedParams, { headers, httpsAgent: agent });
 
         console.log(`API Response Status: ${response.status}`);
         console.log(`API Response Data: ${JSON.stringify(response.data)}`);
