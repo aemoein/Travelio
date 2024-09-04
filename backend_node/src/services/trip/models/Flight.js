@@ -1,40 +1,80 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
 
-const segmentSchema = new Schema({
-    departure: {
-        airportCode: String,
-        terminal: String,
-        time: Date
-    },
-    arrival: {
-        airportCode: String,
-        terminal: String,
-        time: Date
-    },
-    carrier: {
-        code: String,
-        name: String
-    },
-    flightNumber: String,
-    aircraft: String,
-    baggage: {
-        description: String,
-        quantity: Number
-    }
+const SegmentSchema = new mongoose.Schema({
+  id: String,
+  origin: {
+    flightPlaceId: String,
+    displayCode: String,
+    name: String,
+    country: String,
+  },
+  destination: {
+    flightPlaceId: String,
+    displayCode: String,
+    name: String,
+    country: String,
+  },
+  departure: Date,
+  arrival: Date,
+  durationInMinutes: Number,
+  flightNumber: String,
+  marketingCarrier: {
+    id: Number,
+    name: String,
+    alternateId: String,
+  },
+  operatingCarrier: {
+    id: Number,
+    name: String,
+    alternateId: String,
+  },
 });
 
-const itinerarySchema = new Schema({
-    segments: [segmentSchema]
-});
-
-const flightSchema = new Schema({
+const LegSchema = new mongoose.Schema({
+  id: String,
+  origin: {
     id: String,
-    price: {
-        currency: String,
-        total: Number
-    },
-    itineraries: [itinerarySchema]
+    name: String,
+    city: String,
+    country: String,
+  },
+  destination: {
+    id: String,
+    name: String,
+    city: String,
+    country: String,
+  },
+  durationInMinutes: Number,
+  stopCount: Number,
+  departure: Date,
+  arrival: Date,
+  carriers: {
+    marketing: [
+      {
+        id: Number,
+        logoUrl: String,
+        name: String,
+      },
+    ],
+  },
+  segments: [SegmentSchema],
+});
+
+const flightSchema = new mongoose.Schema({
+  id: String,
+  price: {
+    raw: Number,
+    formatted: String,
+    pricingOptionId: String,
+  },
+  legs: [LegSchema],
+  isSelfTransfer: Boolean,
+  farePolicy: {
+    isChangeAllowed: Boolean,
+    isCancellationAllowed: Boolean,
+  },
+  tags: [String],
+  score: Number,
 });
 
 const Flight = mongoose.model('Flight', flightSchema);
