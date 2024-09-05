@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Card, CardContent, Typography, Button, Grid, Modal, Box } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
@@ -17,10 +18,12 @@ const customMarkerIcon = L.divIcon({
 const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults }) => {
     const [open, setOpen] = useState(false);
     const [address, setAddress] = useState('');
+    const [convertedPrice, setConvertedPrice] = useState(null);
     const navigate = useNavigate();
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
 
+    console.log('hotel: ', hotel)
+
+    // Move hook calls outside of conditionals
     useEffect(() => {
         const fetchAddress = async () => {
             const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${hotel.latitude}&lon=${hotel.longitude}`;
@@ -38,6 +41,31 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
         fetchAddress();
     }, [hotel.latitude, hotel.longitude]);
 
+    useEffect(() => {
+        const convertCurrency = async () => {
+            const currency = hotel.offers[0]?.price.currency;
+            const price = hotel.offers[0]?.price.base;
+
+            if (currency && currency !== 'USD' && price) {
+                try {
+                    const response = await axios.get(`https://api.exchangerate-api.com/v4/latest/${currency}`);
+                    const rate = response.data.rates.USD;
+                    const converted = (price * rate).toFixed(2);
+                    setConvertedPrice(converted);
+                } catch (error) {
+                    console.error('Error converting currency:', error);
+                }
+            } else if (currency === 'USD') {
+                setConvertedPrice(price);
+            }
+        };
+
+        convertCurrency();
+    }, [hotel.offers]);
+
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     const handleBookHotel = async () => {
         const token = localStorage.getItem('token');
         const url = `${apiUrl}/trip/hotels`;
@@ -50,7 +78,19 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
                     'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
-                    hotel,
+                    hotel: {
+                        ...hotel,
+                        offers: [
+                            {
+                                ...hotel.offers[0],
+                                price: {
+                                    ...hotel.offers[0].price,
+                                    base: convertedPrice,
+                                    currency: 'USD'
+                                }
+                            }
+                        ]
+                    },
                     tripId
                 })
             });
@@ -66,7 +106,8 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
                             cityName,
                             arrivalDate,
                             departureDate,
-                            adults
+                            adults,
+                            price: convertedPrice
                         },
                         tripId: tripId
                     }
@@ -87,7 +128,7 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
         <>
             <Card sx={{ minWidth: 275, mb: 2, px: 1, border: '1px solid #ccc', borderRadius: '10px' }}>
                 <CardContent>
-                    <Typography variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '28px' }, }}>
+                    <Typography variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '20px', sm: '24x', md: '28px', lg: '28px' }, }}>
                         {hotel.name}
                     </Typography>
                     <Grid container alignItems="center" sx={{ mt: 2 }}>
@@ -112,16 +153,16 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
                         <Typography variant="body2" sx={{ mt: 0.5, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '22px', sm: '26px', md: '30px', lg: '26px' } }}>
-                            {`${hotel.offers[0]?.price.base || 'N/A'} ${hotel.offers[0]?.price.currency || ''}`}
+                            {convertedPrice ? `$${convertedPrice} USD` : `${hotel.offers[0]?.price.base || 'N/A'} ${hotel.offers[0]?.price.currency || ''}`}
                         </Typography>
-                        <Button variant="outlined" onClick={handleOpen} sx={{ mt: 0, fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '12px', sm: '16px', md: '20px', lg: '16px' } }}>
+                        <Button variant="outlined" onClick={handleOpen} sx={{ mt: 0, borderRadius: 5, fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '12px', sm: '16px', md: '20px', lg: '16px' } }}>
                             More Info
                         </Button>
                     </Box>
                     <Button variant="contained" onClick={handleBookHotel} 
                         sx={{ 
                             mt: 2, width: '100%', fontFamily: 'Poppins', 
-                            fontWeight: '900', fontSize: { xs: '18px', sm: '22px', md: '26px', lg: '22px' }, 
+                            fontWeight: '900', fontSize: { xs: '18px', sm: '22px', md: '26px', lg: '22px' },
                             borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' 
                         }}
                     >

@@ -26,9 +26,9 @@ const ActivityCard = ({ activity }) => {
 
     return (
         <>
-            <Card sx={{ minWidth: 275, mb: 2, pl: 3, pr: 3, border: '1px solid #ccc', borderRadius: '10px' }}>
+            <Card sx={{ minWidth: 275, mb: 1, p: 1, border: '1px solid #ccc', borderRadius: '10px' }}>
                 <CardContent>
-                    <Typography variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '30px' }}>
+                    <Typography variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '18px', sm: '20px', md: '22px', lg: '20px' }, }}>
                         {activity.name}
                     </Typography>
                     <Grid container alignItems="center" sx={{ mt: 2 }}>
@@ -36,7 +36,7 @@ const ActivityCard = ({ activity }) => {
                             <LocationOnIcon />
                         </Grid>
                         <Grid item xs={11}>
-                            <Typography sx={{ fontFamily: 'Poppins', fontWeight: '500' }}>
+                            <Typography sx={{ fontFamily: 'Poppins', fontWeight: '500', fontSize: { xs: '14px', sm: '16px', md: '18px', lg: '16px' }, ml: 1, mt: -0.5 }}>
                                 {activity.location}
                             </Typography>
                         </Grid>
@@ -52,10 +52,10 @@ const ActivityCard = ({ activity }) => {
                         </MapContainer>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-                        <Typography variant="body2" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '30px' }}>
-                            {`Time: ${activity.time}`}
+                        <Typography variant="body2" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '22px', sm: '26px', md: '30px', lg: '26px' }, mt: 0.5 }}>
+                            {`${activity.time}`}
                         </Typography>
-                        <Button variant="outlined" onClick={handleOpen} sx={{ mt: 0 }}>
+                        <Button variant="outlined" onClick={handleOpen} sx={{ mt: 0, borderRadius: 5, fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '12px', sm: '16px', md: '20px', lg: '16px' } }}>
                             More Info
                         </Button>
                     </Box>

@@ -112,12 +112,12 @@ const ReviewPage = () => {
         <Navbar />
         <Box>
             {tripData && (
-                <Box sx={{ mt: 10, maxWidth: '70vw', mx: '15vw'}}>
-                    <Typography variant="h4" sx={{ mb: 3, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'center' }}>
+                <Box sx={{ mt: 10, maxWidth: '80vw', mx: '10vw'}}>
+                    <Typography variant="h4" sx={{ mb: 3, fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '28px' }, width: '100%', textAlign: 'center' }}>
                         Review Trip Details
                     </Typography>
 
-                    <Typography variant="h4" sx={{ mb: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content', }}>
+                    <Typography variant="h4" sx={{ mb: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '28px', sm: '32px', md: '36px', lg: '32px' }, width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content', }}>
                         Flight
                     </Typography>
                     {tripData.flights && tripData.flights.length > 0 && (
@@ -136,7 +136,7 @@ const ReviewPage = () => {
                         </Grid>
                     )}
 
-                    <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
+                    <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '28px', sm: '32px', md: '36px', lg: '32px' }, width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
                         Hotel
                     </Typography>
                     {tripData.hotels && tripData.hotels.length > 0 && (
@@ -145,7 +145,7 @@ const ReviewPage = () => {
                                 <Grid item xs={12} sm={12} key={index}>
                                     <HotelCard
                                         hotel={hotel}
-                                        tripId={tripId} // Pass tripId as prop to HotelCard
+                                        tripId={tripId}
                                         cityName={hotel.name}
                                         arrivalDate={tripData.departureDate}
                                         departureDate={tripData.returnDate}
@@ -156,13 +156,16 @@ const ReviewPage = () => {
                         </Grid>
                     )}
 
-                    <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
+                    <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '28px', sm: '32px', md: '36px', lg: '32px' }, width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
                         Itinerary
                     </Typography>
                     {tripData.itinerary[0].itinerary && tripData.itinerary[0].itinerary.length > 0 ? (
                         tripData.itinerary[0].itinerary.map((day, index) => (
                             <Box key={index} sx={{ mb: 4 }}>
-                                <Typography sx={{ mb: 3, width: '100%', textAlign: 'center', fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px' }}>
+                                <Typography sx={{ mb: 3, width: '100%', textAlign: 'center', 
+                                fontFamily: 'Poppins',  fontWeight: '700', 
+                                fontSize: { xs: '14px', sm: '16px', md: '18px', lg: '22px' },
+                                }}>
                                     Day {index + 1} - {day.description}
                                 </Typography>
                                 <Grid container spacing={3}>
@@ -177,14 +180,14 @@ const ReviewPage = () => {
                     ) : (
                         <Typography variant="body1">No itinerary found.</Typography>
                     )}
-                    <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
+                    <Typography variant="h4" sx={{ my: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '36px' }, width: '100%', textAlign: 'left', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)', WebkitBackgroundClip: 'text', color: 'transparent', maxWidth: 'fit-content',  }}>
                         Total Price: {tripData.totalPrice.toFixed(2)} USD
                     </Typography>
                     <Box sx={{ textAlign: 'center', mt: 4, width: '100%', mb: 3 }}>
-                        <Button variant="contained" color="primary" onClick={handlePayNow} sx={{ mr: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '25px', borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)'}}>
+                        <Button variant="contained" color="primary" onClick={handlePayNow} sx={{ m:  1, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '18px', sm: '22px', md: '26px', lg: '22px' }, borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)'}}>
                             Pay Now
                         </Button>
-                        <Button variant="contained" color="primary" onClick={handleSaveAndPayLater} sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '25px', borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' }}>
+                        <Button variant="contained" color="primary" onClick={handleSaveAndPayLater} sx={{ m:1, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '18px', sm: '22px', md: '26px', lg: '22px' },  borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' }}>
                             Save and Pay Later
                         </Button>
                     </Box>

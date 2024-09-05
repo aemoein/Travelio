@@ -11,66 +11,80 @@ const Itinerary = () => {
     const navigate = useNavigate();
     const [itinerary, setItinerary] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
     const fetchCalledRef = useRef(false);
 
-    useEffect(() => {
-        const fetchItinerary = async () => {
-            const token = localStorage.getItem('token');
-            const url = `${apiUrl}/trip/itineraries`;
+    const fetchItineraryWithRetry = async (retryCount = 0) => {
+        const maxRetries = 5;
+        const token = localStorage.getItem('token');
+        const url = `${apiUrl}/trip/itineraries`;
 
-            try {
-                const response = await fetch(`${apiUrl}/users/profile/preferences`, {
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    }
-                });
+        try {
+            const response = await fetch(`${apiUrl}/users/profile/preferences`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    
-                    if (location.state && location.state.bookedHotel) {
-                        try {
-                            const itineraryResponse = await fetch(url, {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'Authorization': `Bearer ${token}`
-                                },
-                                body: JSON.stringify({
-                                    destination: location.state.bookedHotel.cityName,
-                                    start_date: location.state.bookedHotel.arrivalDate,
-                                    end_date: location.state.bookedHotel.departureDate,
-                                    interests: data,
-                                    adults: location.state.bookedHotel.adults,
-                                    hotel: location.state.bookedHotel.name
-                                })
-                            });
+            if (response.ok) {
+                const data = await response.json();
+                
+                if (location.state && location.state.bookedHotel) {
+                    try {
+                        const itineraryResponse = await fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`
+                            },
+                            body: JSON.stringify({
+                                destination: location.state.bookedHotel.cityName,
+                                start_date: location.state.bookedHotel.arrivalDate,
+                                end_date: location.state.bookedHotel.departureDate,
+                                interests: data,
+                                adults: location.state.bookedHotel.adults,
+                                hotel: location.state.bookedHotel.name
+                            })
+                        });
 
-                            if (itineraryResponse.ok) {
-                                const itineraryData = await itineraryResponse.json();
+                        if (itineraryResponse.ok) {
+                            const itineraryData = await itineraryResponse.json();
+                            if (itineraryData.itinerary.length > 0) {
                                 setItinerary(itineraryData.itinerary);
+                                setError(false);
+                                setLoading(false); // Stop loading when valid data is received
                             } else {
-                                throw new Error('Failed to fetch itinerary');
+                                throw new Error('No itinerary found');
                             }
-                        } catch (error) {
-                            console.error('Error fetching itinerary:', error);
-                        } finally {
-                            setLoading(false);
+                        } else {
+                            throw new Error('Failed to fetch itinerary');
                         }
-                    } else {
-                        setLoading(false);
+                    } catch (error) {
+                        console.error('Error fetching itinerary:', error);
+                        if (retryCount < maxRetries) {
+                            setTimeout(() => fetchItineraryWithRetry(retryCount + 1), 1000); // Retry after 2 seconds
+                        } else {
+                            setError(true);
+                            setLoading(false); // Stop loading when retries are exhausted
+                        }
                     }
                 } else {
-                    throw new Error('Failed to fetch user preferences');
+                    setLoading(false);
                 }
-            } catch (error) {
-                console.error('Error fetching user preferences:', error);
+            } else {
+                throw new Error('Failed to fetch user preferences');
             }
-        };
+        } catch (error) {
+            console.error('Error fetching user preferences:', error);
+            setLoading(false); // Stop loading if there's an error in fetching user preferences
+            setError(true);
+        }
+    };
 
+    useEffect(() => {
         if (!fetchCalledRef.current) {
             fetchCalledRef.current = true;
-            fetchItinerary();
+            fetchItineraryWithRetry();
         }
     }, [location.state]);
 
@@ -119,14 +133,27 @@ const Itinerary = () => {
         <>
             <Navbar />
             <Box sx={{ mt: 10, maxWidth: '80vw', ml: '10vw', mr: '10vw'}}>
-                <Typography variant="h4" sx={{ mb: 3, fontFamily: 'Poppins',  fontWeight: '700', fontSize: '40px', width: '100%', textAlign: 'center' }}>
+                <Typography variant="h4" 
+                    sx={{ 
+                        mb: 3, fontFamily: 'Poppins',  
+                        fontWeight: '700', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '28px' },
+                        width: '100%', textAlign: 'center' 
+                    }}
+                >
                     Itinerary for {location.state.bookedHotel.cityName}
                 </Typography>
 
-                {itinerary.length > 0 ? (
+                {error ? (
+                    <Typography variant="body1">Unable to fetch itinerary. Please try again later.</Typography>
+                ) : itinerary.length > 0 ? (
                     itinerary.map((day, index) => (
                         <Box key={index} sx={{ mb: 4 }}>
-                            <Typography sx={{ mb: 3, width: '100%', textAlign: 'center', fontFamily: 'Poppins',  fontWeight: '700', fontSize: '40px'}}>
+                            <Typography 
+                                sx={{ mb: 3, width: '100%', textAlign: 'center', 
+                                fontFamily: 'Poppins',  fontWeight: '700', 
+                                fontSize: { xs: '14px', sm: '16px', md: '18px', lg: '22px' },
+                                }}
+                            >
                                 Day {index + 1} - {day.description}
                             </Typography>
                             <Grid container spacing={3}>
@@ -143,7 +170,7 @@ const Itinerary = () => {
                 )}
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'center', my: 4, width: '80vw' , mx: '10vw'}}>
-                <Button variant="contained" color="primary" onClick={handleSave} sx={{width: '100%', fontFamily: 'Poppins', fontWeight: '700', fontSize:'20px', borderRadius: '15px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)'}}>
+                <Button variant="contained" color="primary" onClick={handleSave} sx={{width: '100%', fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '16px', sm: '20px', md: '24px', lg: '20px' }, borderRadius: '15px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)'}}>
                     Save
                 </Button>
             </Box>

@@ -48,7 +48,16 @@ const HotelsPage = () => {
                 }
                 const data = await response.json();
                 console.log('Fetched hotels:', data);
-                setHotels(data || []);
+
+                // Filter out hotels with missing latitude, longitude, or offers
+                const filteredHotels = data.filter(hotel => 
+                    hotel.latitude &&
+                    hotel.longitude &&
+                    hotel.offers && 
+                    hotel.offers.length > 0
+                );
+
+                setHotels(filteredHotels);
                 setError(false);
             } catch (error) {
                 console.error('Error fetching hotels:', error.message);
@@ -99,7 +108,7 @@ const HotelsPage = () => {
                 </Typography>
                 <Grid container spacing={3} justifyContent="center">
                     {loading ? (
-                        <CircularProgress />
+                        <CircularProgress sx={{mt: 10}}/>
                     ) : error ? (
                         <>
                             <Typography variant="h6" color="error">

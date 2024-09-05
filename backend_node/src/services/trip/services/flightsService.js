@@ -43,7 +43,7 @@ async function getFlights(params) {
                 fareOptions: ['STANDARD']
             }
         ],
-        max: params.max || 10,
+        max: '10',
         travelClass: params.travelClass || 'ECONOMY',
         nonStop: params.nonStop || false
     };
