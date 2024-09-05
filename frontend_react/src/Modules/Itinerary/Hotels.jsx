@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import HotelCard from '../../Components/Card/HotelCard';
 import airports from '../../Components/Data/airports.json';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -7,12 +7,17 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Navbar from '../../Components/Navbar/Navbar';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import apiUrl from '../../Config/config';
 
 const HotelsPage = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const [hotels, setHotels] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const [hotelName, setHotelName] = useState('');
 
     const query = new URLSearchParams(location.search);
     const cityName = query.get('cityName');
@@ -44,9 +49,11 @@ const HotelsPage = () => {
                 const data = await response.json();
                 console.log('Fetched hotels:', data);
                 setHotels(data || []);
+                setError(false);
             } catch (error) {
                 console.error('Error fetching hotels:', error.message);
                 setHotels([]);
+                setError(true);
             } finally {
                 setLoading(false);
             }
@@ -56,20 +63,61 @@ const HotelsPage = () => {
             fetchHotels();
         } else {
             setLoading(false);
+            setError(true);
             console.error('City code not found for:', cityName);
         }
     }, [cityCode, arrivalDate, departureDate, adults]);
+
+    const handleBookingRedirect = () => {
+        const bookingUrl = `https://www.booking.com/searchresults.en-gb.html?ss=${encodeURIComponent(cityName)}&ssne=${encodeURIComponent(cityName)}&dest_type=city&checkin=${arrivalDate}&checkout=${departureDate}&group_adults=${adults}&no_rooms=1&group_children=0`;
+        window.open(bookingUrl, '_blank');
+    };
+
+    const handleHotelSelection = () => {
+        if (hotelName.trim() !== '') {
+            navigate('/planning/itinerary', {
+                state: {
+                    bookedHotel: {
+                        name: hotelName,
+                        cityName,
+                        arrivalDate,
+                        departureDate,
+                        adults
+                    },
+                    tripId: tripId
+                }
+            });
+        }
+    };
 
     return (
         <>
             <Navbar />
             <Box sx={{ mt: 10, width: '80vw', mr: '10vw', ml: '10vw' }}>
-                <Typography align="left" sx={{ mb: 1, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px' }}>
+                <Typography align="left" sx={{ mb: 1, fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '24px', sm: '32px', md: '36px', lg: '42px' },}}>
                     Hotel Results in {name}:
                 </Typography>
                 <Grid container spacing={3} justifyContent="center">
                     {loading ? (
                         <CircularProgress />
+                    ) : error ? (
+                        <>
+                            <Typography variant="h6" color="error">
+                                No hotels found for the specified city and dates. Please try another service.
+                            </Typography>
+                            <Button onClick={handleBookingRedirect} variant="contained" color="primary" sx={{ mt: 2 }}>
+                                Search on Booking.com
+                            </Button>
+                            <TextField
+                                label="Enter Hotel Name"
+                                value={hotelName}
+                                onChange={(e) => setHotelName(e.target.value)}
+                                sx={{ mt: 2 }}
+                            />
+                            <Button onClick={handleHotelSelection} variant="contained" color="primary" sx={{ mt: 2 }}>
+                                Confirm Hotel Booking
+                            </Button>
+                        </>
                     ) : (
                         hotels.length > 0 ? (
                             hotels.map((hotel, index) => (

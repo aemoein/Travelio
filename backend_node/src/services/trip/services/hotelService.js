@@ -35,7 +35,7 @@ const parseHotelOffers = (offers) => {
     });
 };
 
-const getHotelsByCity = async (cityCode) => {
+const getHotelsByCity = async (cityCode, currency = 'USD') => {
     try {
         const chainCodes = ['AC', 'HH', 'MC', 'HY', 'IC', 'BW', 'RD', 'SI', 'HI', 'NO', 'IB', 'WS', 'FS', 'RC', 'WY', 'CP'];
 
@@ -46,6 +46,7 @@ const getHotelsByCity = async (cityCode) => {
             params: {
                 cityCode,
                 chainCodes: chainCodes.join(','),
+                currency,
             },
             httpsAgent: agent
         });

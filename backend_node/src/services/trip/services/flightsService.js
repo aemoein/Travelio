@@ -14,26 +14,54 @@ async function getFlights(params) {
         'Authorization': `Bearer ${config.accessToken}`,
         'Content-Type': 'application/json'
     };
-    const updatedParams = {
-        ...params,
-        max: 10,
-        currencyCode: 'USD'
+
+    const requestBody = {
+        currencyCode: params.currencyCode || 'USD',
+        sources: ['GDS'],
+        originDestinations: [
+            {
+                id: '1',
+                originLocationCode: params.originLocationCode,
+                destinationLocationCode: params.destinationLocationCode,
+                departureDateTimeRange: {
+                    date: params.departureDate
+                }
+            },
+            {
+                id: '2',
+                originLocationCode: params.destinationLocationCode,
+                destinationLocationCode: params.originLocationCode,
+                departureDateTimeRange: {
+                    date: params.returnDate
+                }
+            }
+        ],
+        travelers: [
+            {
+                id: '1',
+                travelerType: 'ADULT',
+                fareOptions: ['STANDARD']
+            }
+        ],
+        max: params.max || 10,
+        travelClass: params.travelClass || 'ECONOMY',
+        nonStop: params.nonStop || false
     };
 
-    console.log(`Requesting flights with parameters: ${JSON.stringify(updatedParams)}`);
+    console.log(`Requesting flights with parameters: ${JSON.stringify(requestBody)}`);
 
     try {
-        const response = await axios.post(url, updatedParams, { headers, httpsAgent: agent });
+        const response = await axios.post(url, requestBody, { headers, httpsAgent: agent });
 
         console.log(`API Response Status: ${response.status}`);
-        console.log(`API Response Data: ${JSON.stringify(response.data)}`);
+        //console.log(`API Response Data: ${JSON.stringify(response.data)}`);
 
         if (response.status !== 200) {
             throw new Error(`Unexpected response status: ${response.status}`);
         }
 
         const parsedData = parseFlightData(response.data);
-        console.log(`Parsed Flight Data: ${JSON.stringify(parsedData)}`);
+        //console.log(`Parsed Flight Data: ${JSON.stringify(parsedData)}`);
 
         return parsedData;
     } catch (error) {
@@ -110,13 +138,10 @@ function parseFlightData(data) {
 async function createFlight(flightData, userId) {
     let createdFlight;
     try {
-        // Create the flight
         createdFlight = await Flight.create(flightData);
 
-        // Calculate total price of the trip
         const totalPrice = flightData.price.total;
 
-        // Create a new trip object
         const tripData = {
             flights: [createdFlight._id],
             userId: userId,

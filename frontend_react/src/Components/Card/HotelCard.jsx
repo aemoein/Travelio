@@ -85,17 +85,17 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
 
     return (
         <>
-            <Card sx={{ minWidth: 275, mb: 2, pl: 3, pr: 3, border: '1px solid #ccc', borderRadius: '10px' }}>
+            <Card sx={{ minWidth: 275, mb: 2, px: 1, border: '1px solid #ccc', borderRadius: '10px' }}>
                 <CardContent>
-                    <Typography variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '30px' }}>
+                    <Typography variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '24px', sm: '28px', md: '32px', lg: '28px' }, }}>
                         {hotel.name}
                     </Typography>
                     <Grid container alignItems="center" sx={{ mt: 2 }}>
                         <Grid item xs={1}>
-                            <LocationOnIcon />
+                            <LocationOnIcon sx={{ml: -0.5}}/>
                         </Grid>
                         <Grid item xs={11}>
-                            <Typography sx={{ fontFamily: 'Poppins', fontWeight: '500' }}>
+                            <Typography sx={{ fontFamily: 'Poppins', fontWeight: '500', fontSize: { xs: '10px', sm: '14px', md: '16px', lg: '14px' } }}>
                                 {address || 'Address Not Found'}
                             </Typography>
                         </Grid>
@@ -111,14 +111,20 @@ const HotelCard = ({ hotel, tripId, cityName, arrivalDate, departureDate, adults
                         </MapContainer>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-                        <Typography variant="body2" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '30px' }}>
-                            {`Price: ${hotel.offers[0]?.price.base || 'N/A'} ${hotel.offers[0]?.price.currency || ''}`}
+                        <Typography variant="body2" sx={{ mt: 0.5, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '22px', sm: '26px', md: '30px', lg: '26px' } }}>
+                            {`${hotel.offers[0]?.price.base || 'N/A'} ${hotel.offers[0]?.price.currency || ''}`}
                         </Typography>
-                        <Button variant="outlined" onClick={handleOpen} sx={{ mt: 0 }}>
+                        <Button variant="outlined" onClick={handleOpen} sx={{ mt: 0, fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '12px', sm: '16px', md: '20px', lg: '16px' } }}>
                             More Info
                         </Button>
                     </Box>
-                    <Button variant="contained" onClick={handleBookHotel} sx={{ mt: 2, width: '100%', fontFamily: 'Poppins', fontWeight: '700', fontSize:'25px', borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' }}>
+                    <Button variant="contained" onClick={handleBookHotel} 
+                        sx={{ 
+                            mt: 2, width: '100%', fontFamily: 'Poppins', 
+                            fontWeight: '900', fontSize: { xs: '18px', sm: '22px', md: '26px', lg: '22px' }, 
+                            borderRadius: '20px', backgroundImage: 'linear-gradient(to right, #6b778d, #ff6b6b)' 
+                        }}
+                    >
                         Book
                     </Button>
                 </CardContent>

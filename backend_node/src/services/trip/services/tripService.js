@@ -1,5 +1,5 @@
 const Trip = require('../models/Trip');
-const Flight = require('../models/Flight');
+const Flight = require('../legacy/Flight');
 const Hotel = require('../models/Hotel');
 const Itinerary = require('../models/Itinerary');
 

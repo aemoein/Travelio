@@ -2,7 +2,7 @@
     {
         "city": "Paris",
         "cityCode": "PAR",
-        "region": "",
+        "region": "Île-de-France",
         "country": "France",
         "countryCode": "FR",
         "Airport": "CDG"
@@ -10,7 +10,7 @@
     {
       "city": "Dubai",
       "cityCode": "DXB",
-      "region": "",
+      "region": "Dubai",
       "country": "United Arab Emirates",
       "countryCode": "AE",
       "Airport": "DXB"
@@ -18,7 +18,7 @@
     {
       "city": "Madrid",
       "cityCode": "MAD",
-      "region": "",
+      "region": "Madrid",
       "country": "Spain",
       "countryCode": "ES",
       "Airport": "MAD"
@@ -26,7 +26,7 @@
     {
       "city": "Tokyo",
       "cityCode": "TYO",
-      "region": "",
+      "region": "Tokyo",
       "country": "Japan",
       "countryCode": "JP",
       "Airport": "HND"
@@ -34,7 +34,7 @@
     {
       "city": "Amsterdam",
       "cityCode": "AMS",
-      "region": "",
+      "region": "North Holland",
       "country": "Netherlands",
       "countryCode": "NL",
       "Airport": "AMS"
@@ -42,7 +42,7 @@
     {
       "city": "Berlin",
       "cityCode": "BER",
-      "region": "",
+      "region": "Berlin",
       "country": "Germany",
       "countryCode": "DE",
       "Airport": "TXL"
@@ -50,7 +50,7 @@
     {
       "city": "Rome",
       "cityCode": "ROM",
-      "region": "",
+      "region": "Lazio",
       "country": "Italy",
       "countryCode": "IT",
       "Airport": "FCO"
@@ -66,7 +66,7 @@
     {
       "city": "Barcelona",
       "cityCode": "BCN",
-      "region": "",
+      "region": "Catalonia",
       "country": "Spain",
       "countryCode": "ES",
       "Airport": "BCN"
@@ -74,7 +74,7 @@
     {
       "city": "London",
       "cityCode": "LON",
-      "region": "",
+      "region": "London",
       "country": "United Kingdom",
       "countryCode": "GB",
       "Airport": "LHR"
@@ -82,7 +82,7 @@
     {
       "city": "Singapore",
       "cityCode": "SGP",
-      "region": "",
+      "region": "Singapore",
       "country": "Singapore",
       "countryCode": "SG",
       "Airport": "SIN"
@@ -90,7 +90,7 @@
     {
       "city": "Munich",
       "cityCode": "MUC",
-      "region": "",
+      "region": "Bavaria",
       "country": "Germany",
       "countryCode": "DE",
       "Airport": "MUC"
@@ -98,7 +98,7 @@
     {
       "city": "Milan",
       "cityCode": "MIL",
-      "region": "",
+      "region": "Lombardy",
       "country": "Italy",
       "countryCode": "IT",
       "Airport": "MXP"
@@ -106,7 +106,7 @@
     {
       "city": "Seoul",
       "cityCode": "SEL",
-      "region": "",
+      "region": "Seoul",
       "country": "South Korea",
       "countryCode": "KR",
       "Airport": "ICN"
@@ -114,7 +114,7 @@
     {
       "city": "Osaka",
       "cityCode": "OSA",
-      "region": "",
+      "region": "Osaka",
       "country": "Japan",
       "countryCode": "JP",
       "Airport": "KIX"
@@ -130,7 +130,7 @@
     {
       "city": "Vienna",
       "cityCode": "VIE",
-      "region": "",
+      "region": "Bezirk Wien",
       "country": "Austria",
       "countryCode": "AT",
       "Airport": "VIE"
@@ -170,7 +170,7 @@
     {
       "city": "Sydney",
       "cityCode": "SYD",
-      "region": "",
+      "region": "New South Wales",
       "country": "Australia",
       "countryCode": "AU",
       "Airport": "SYD"
@@ -202,7 +202,7 @@
     {
       "city": "Prague",
       "cityCode": "PRG",
-      "region": "",
+      "region": "Praha",
       "country": "Czech Republic",
       "countryCode": "CZ",
       "Airport": "PRG"
@@ -258,7 +258,7 @@
     {
       "city": "Cape Town",
       "cityCode": "CPT",
-      "region": "",
+      "region": "Western Cape",
       "country": "South Africa",
       "countryCode": "ZA",
       "Airport": "CPT"
@@ -274,7 +274,7 @@
     {
       "city": "Krakow",
       "cityCode": "KRK",
-      "region": "",
+      "region": "Powiat krakowski",
       "country": "Poland",
       "countryCode": "PL",
       "Airport": "KRK"
@@ -298,7 +298,7 @@
     {
       "city": "Florence",
       "cityCode": "FLR",
-      "region": "",
+      "region": "Tuscany",
       "country": "Italy",
       "countryCode": "IT",
       "Airport": "FLR"
@@ -318,14 +318,6 @@
       "country": "Russia",
       "countryCode": "RU",
       "Airport": "SVO"
-    },
-    {
-      "city": "St. Petersburg",
-      "cityCode": "LED",
-      "region": "",
-      "country": "Russia",
-      "countryCode": "RU",
-      "Airport": "LED"
     },
     {
       "city": "Lima",
@@ -362,7 +354,7 @@
     {
       "city": "Hanoi",
       "cityCode": "HAN",
-      "region": "",
+      "region": "Red River Delta",
       "country": "Vietnam",
       "countryCode": "VN",
       "Airport": "HAN"
@@ -450,7 +442,7 @@
     {
         "city": "Luxor",
         "cityCode": "LXR",
-        "region": "",
+        "region": "Qena",
         "country": "Egypt",
         "countryCode": "EG",
         "Airport": "LXR"
@@ -458,7 +450,7 @@
     {
         "city": "Sharm El Sheikh",
         "cityCode": "SSH",
-        "region": "",
+        "region": "South Sinai",
         "country": "Egypt",
         "countryCode": "EG",
         "Airport": "SSH"
@@ -466,7 +458,7 @@
     {
         "city": "Hurghada",
         "cityCode": "HRG",
-        "region": "",
+        "region": "Red Sea",
         "country": "Egypt",
         "countryCode": "EG",
         "Airport": "HRG"
@@ -494,6 +486,94 @@
         "country": "Egypt",
         "countryCode": "EG",
         "Airport": "SSH"
+    },
+    {
+      "city": "Beijing",
+      "cityCode": "BJS",
+      "region": "Beijing",
+      "country": "China",
+      "countryCode": "CN",
+      "Airport": "PEK"
+    },
+    {
+      "city": "Istanbul",
+      "cityCode": "IST",
+      "region": "Istanbul",
+      "country": "Turkey",
+      "countryCode": "TR",
+      "Airport": "IST"
+    },
+    {
+      "city": "Chicago",
+      "cityCode": "CHI",
+      "region": "Illinois",
+      "country": "United States",
+      "countryCode": "US",
+      "Airport": "ORD"
+    },
+    {
+      "city": "Mumbai",
+      "cityCode": "BOM",
+      "region": "Maharashtra",
+      "country": "India",
+      "countryCode": "IN",
+      "Airport": "BOM"
+    },
+    {
+      "city": "Copenhagen",
+      "cityCode": "CPH",
+      "region": "Capital Region",
+      "country": "Denmark",
+      "countryCode": "DK",
+      "Airport": "CPH"
+    },
+    {
+      "city": "Stockholm",
+      "cityCode": "STO",
+      "region": "Stockholm County",
+      "country": "Sweden",
+      "countryCode": "SE",
+      "Airport": "ARN"
+    },
+    {
+      "city": "Zurich",
+      "cityCode": "ZRH",
+      "region": "Zurich",
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "Airport": "ZRH"
+    },
+    {
+      "city": "Frankfurt",
+      "cityCode": "FRA",
+      "region": "Hesse",
+      "country": "Germany",
+      "countryCode": "DE",
+      "Airport": "FRA"
+    },
+    {
+      "city": "Melbourne",
+      "cityCode": "MEL",
+      "region": "Victoria",
+      "country": "Australia",
+      "countryCode": "AU",
+      "Airport": "MEL"
+    },
+    {
+      "city": "Miami",
+      "cityCode": "MIA",
+      "region": "Florida",
+      "country": "United States",
+      "countryCode": "US",
+      "Airport": "MIA"
+    },
+    {
+      "city": "Las Vegas",
+      "cityCode": "LAS",
+      "region": "Nevada",
+      "country": "United States",
+      "countryCode": "US",
+      "Airport": "LAS"
     }
 ]
   

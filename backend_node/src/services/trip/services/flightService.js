@@ -1,5 +1,5 @@
 const axios = require('axios');
-const Flight = require('../models/Flight');
+const Flight = require('../legacy/Flight');
 const Trip = require('../models/Trip');
 
 const searchFlights = async (params) => {
@@ -20,7 +20,7 @@ const searchFlights = async (params) => {
       toEntityId: destinationLocationCode,
       departDate: departureDate,
       returnDate: returnDate,
-      stops: nonStop === 'false' ? '1stop,2stops' : 'direct',
+      stops: nonStop === 'false' ? 'direct,1stop,2stops' : 'direct',
       adults: parseInt(adults, 10),
       cabinClass: travelClass.toLowerCase()
     };
@@ -34,6 +34,7 @@ const searchFlights = async (params) => {
     });
 
     formattedResponse = formatFlightData(response.data.data.itineraries);
+    console.log(formattedResponse);
 
     return formattedResponse;
   } catch (error) {
@@ -128,9 +129,8 @@ async function createFlight(flightData, userId) {
       createdFlight = await Flight.create(flightData);
 
       // Calculate total price of the trip
-      const totalPrice = flightData.price.total;
+      const totalPrice = flightData.price.raw;
 
-      // Create a new trip object
       const tripData = {
           flights: [createdFlight._id],
           userId: userId,
