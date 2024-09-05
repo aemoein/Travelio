@@ -1,6 +1,7 @@
 const SocialProfile = require('../models/socialProfileModel');
 const Post = require('../models/postModel');
 
+// after fetching the posts check if the user is followed. 
 exports.postsTimeline = async (req, res) => {
     try {
         const currentUser = await SocialProfile.findById(req.user.socialProfileId);
@@ -13,6 +14,7 @@ exports.postsTimeline = async (req, res) => {
 
         const userPosts = await Post.find({ author: req.user.socialProfileId });
         
+        //edit here
         const followingPostsPromises = currentUser.followings.map((friendId) => {
             return Post.find({ author: friendId });
         });
@@ -20,6 +22,7 @@ exports.postsTimeline = async (req, res) => {
         const followingPosts = await Promise.all(followingPostsPromises);
 
         const mergedPosts = userPosts.concat(...followingPosts);
+        //sort after merging by createdAt
 
         return res.status(200).json({
             status: 'success',
