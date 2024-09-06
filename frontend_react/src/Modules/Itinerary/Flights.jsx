@@ -249,7 +249,7 @@ const FlightSearchForm = () => {
                             <Typography align="left" sx={{ mb: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: '40px'}}>
                                 Flight Results:
                             </Typography>
-                            <Grid container spacing={0}>
+                            <Grid container spacing={1}>
                                 {flights.map((flight, index) => (
                                     <Grid item xs={12} sm={12} md={12} lg={6} xl={6} key={index}>
                                         <FlightCard
