@@ -6,7 +6,7 @@ module.exports = {
   "cloudinaryApiKey": "446117655322995",
   "cloudinaryApiSecret": "3Z4XHUqy7rbKdCXFkMVu7ai49u0",
   "cloudinaryCloudName": "dkabonlzl",
-  "accessToken": "51MwequKXYTPDLxGimPHqwekwycf",
+  "accessToken": "oIjHLXvK3OUU1HBGbiYUAFWbUomI",
   "clientId": "KJcf4aGewF0G3fF32fRIrGNWVVFRL20z",
   "clientSecret": "qgXGYxrthINKKz83",
   "googleApiKey": "AIzaSyA92-YGwUSmDHFjldbLlXysT0F2VAhEzOI",

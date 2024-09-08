@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Box, Typography, Grid } from '@mui/material';
 import DestinationCard from './DestinationCard';
 import GradientButton from '../Buttons/GradientButton';
 
+// Memoize GradientButton since it won't change often
+const MemoizedGradientButton = React.memo(GradientButton);
+
 const DesView = ({ destinations }) => {
-  // Slice the first 2 destinations for xs screens
-  const limitedDestinations = destinations.slice(0, 2);
+  // Limit destinations for xs screens using useMemo
+  const limitedDestinations = useMemo(() => destinations.slice(0, 2), [destinations]);
+
+  // Determine whether to show limited or full destinations using useMemo
+  const isSmallScreen = window.innerWidth <= 600;
+  const displayedDestinations = useMemo(
+    () => (isSmallScreen ? limitedDestinations : destinations),
+    [isSmallScreen, limitedDestinations, destinations]
+  );
 
   return (
-    <Box 
-      sx={{ 
-        marginLeft: { xs: '3vw', sm: '4vw', md: '5vw', lg: '7.5' }, 
-        marginRight: { xs: '3vw', sm: '4vw', md: '5vw', lg: '7.5' }, 
-        padding: '20px', marginTop: '10px', 
-        maxWidth: { xs: '94vw', sm: '92vw', md: '90vw', lg: '85vw' } 
+    <Box
+      sx={{
+        marginLeft: { xs: '3vw', sm: '4vw', md: '5vw', lg: '7.5' },
+        marginRight: { xs: '3vw', sm: '4vw', md: '5vw', lg: '7.5' },
+        padding: '20px',
+        marginTop: '10px',
+        maxWidth: { xs: '94vw', sm: '92vw', md: '90vw', lg: '85vw' },
       }}
     >
       <Box>
@@ -48,19 +59,14 @@ const DesView = ({ destinations }) => {
           >
             Your Next Adventure!
           </Typography>
-          <GradientButton text={"View More"} path="/destinations"/>
+          <MemoizedGradientButton text={"View More"} path="/destinations" />
         </Box>
       </Box>
 
       <Box>
         <Grid container spacing={0.5} sx={{ marginTop: '0px' }}>
-          {(window.innerWidth <= 600 ? limitedDestinations : destinations).map((destination, index) => (
-            <Grid 
-              item 
-              xs={6}
-              sm={4}
-              key={index}
-            >
+          {displayedDestinations.map((destination, index) => (
+            <Grid item xs={6} sm={4} key={index}>
               <DestinationCard
                 country={destination.country}
                 city={destination.city}

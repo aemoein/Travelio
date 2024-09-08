@@ -24,7 +24,7 @@ async function getFlights(params) {
                 originLocationCode: params.originLocationCode,
                 destinationLocationCode: params.destinationLocationCode,
                 departureDateTimeRange: {
-                    date: params.departureDate
+                    date: params.departureDate,
                 }
             },
             {
@@ -32,7 +32,7 @@ async function getFlights(params) {
                 originLocationCode: params.destinationLocationCode,
                 destinationLocationCode: params.originLocationCode,
                 departureDateTimeRange: {
-                    date: params.returnDate
+                    date: params.returnDate,
                 }
             }
         ],
@@ -43,10 +43,22 @@ async function getFlights(params) {
                 fareOptions: ['STANDARD']
             }
         ],
-        max: '10',
-        travelClass: params.travelClass || 'ECONOMY',
-        nonStop: params.nonStop || false
-    };
+        searchCriteria: {
+            maxFlightOffers: 10,
+            flightFilters: {
+                cabinRestrictions: [
+                    {
+                        cabin: params.travelClass || 'ECONOMY',
+                        coverage: 'MOST_SEGMENTS',
+                        originDestinationIds: ['1', '2']
+                    }
+                ],
+                connectionRestriction: {
+                    nonStopPreferred: params.nonStop || false
+                }
+            }
+        }
+    };    
 
     console.log(`Requesting flights with parameters: ${JSON.stringify(requestBody)}`);
 
@@ -54,14 +66,12 @@ async function getFlights(params) {
         const response = await axios.post(url, requestBody, { headers, httpsAgent: agent });
 
         console.log(`API Response Status: ${response.status}`);
-        //console.log(`API Response Data: ${JSON.stringify(response.data)}`);
 
         if (response.status !== 200) {
             throw new Error(`Unexpected response status: ${response.status}`);
         }
 
         const parsedData = parseFlightData(response.data);
-        //console.log(`Parsed Flight Data: ${JSON.stringify(parsedData)}`);
 
         return parsedData;
     } catch (error) {

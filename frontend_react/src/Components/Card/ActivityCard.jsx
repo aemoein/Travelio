@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { Card, CardContent, Typography, Button, Grid, Modal, Box } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import InfoIcon from '@mui/icons-material/Info';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -14,48 +13,46 @@ const customMarkerIcon = L.divIcon({
     iconAnchor: [12, 41],
 });
 
-const ActivityCard = ({ activity }) => {
-    const [open, setOpen] = React.useState(false);
+const ActivityCard = React.memo(({ activity }) => {
+    const [open, setOpen] = useState(false);
     const navigate = useNavigate();
 
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const handleOpen = useCallback(() => setOpen(true), []);
+    const handleClose = useCallback(() => setOpen(false), []);
 
     const latitude = parseFloat(activity.latitude);
     const longitude = parseFloat(activity.longitude);
 
     return (
         <>
-            <Card sx={{ minWidth: 275, mb: 1, p: 1, border: '1px solid #ccc', borderRadius: '10px' }}>
+            <Card sx={styles.card}>
                 <CardContent>
-                    <Typography variant="h5" sx={{ fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '18px', sm: '20px', md: '22px', lg: '20px' }, }}>
+                    <Typography variant="h5" sx={styles.title}>
                         {activity.name}
                     </Typography>
-                    <Grid container alignItems="center" sx={{ mt: 2 }}>
+                    <Grid container alignItems="center" sx={styles.locationContainer}>
                         <Grid item xs={1}>
-                            <LocationOnIcon />
+                            <LocationOnIcon sx={styles.icon} />
                         </Grid>
                         <Grid item xs={11}>
-                            <Typography sx={{ fontFamily: 'Poppins', fontWeight: '500', fontSize: { xs: '14px', sm: '16px', md: '18px', lg: '16px' }, ml: 1, mt: -0.5 }}>
+                            <Typography sx={styles.location}>
                                 {activity.location}
                             </Typography>
                         </Grid>
                     </Grid>
-                    <Box sx={{ height: '300px', mt: 2 }}>
+                    <Box sx={styles.mapContainer}>
                         <MapContainer center={[latitude, longitude]} zoom={13} style={{ width: '100%', height: '100%' }}>
-                            <TileLayer
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
+                            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                             <Marker position={[latitude, longitude]} icon={customMarkerIcon}>
                                 <Popup>{activity.name}</Popup>
                             </Marker>
                         </MapContainer>
                     </Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
-                        <Typography variant="body2" sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '22px', sm: '26px', md: '30px', lg: '26px' }, mt: 0.5 }}>
-                            {`${activity.time}`}
+                    <Box sx={styles.actionsContainer}>
+                        <Typography variant="body2" sx={styles.time}>
+                            {activity.time}
                         </Typography>
-                        <Button variant="outlined" onClick={handleOpen} sx={{ mt: 0, borderRadius: 5, fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '12px', sm: '16px', md: '20px', lg: '16px' } }}>
+                        <Button variant="outlined" onClick={handleOpen} sx={styles.infoButton}>
                             More Info
                         </Button>
                     </Box>
@@ -63,23 +60,98 @@ const ActivityCard = ({ activity }) => {
             </Card>
 
             <Modal open={open} onClose={handleClose}>
-                <Box sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 400, bgcolor: 'background.paper', boxShadow: 24, p: 4 }}>
-                    <Typography sx={{ fontFamily: 'Poppins', fontWeight: '700', fontSize: '24px'}}>
+                <Box sx={styles.modal}>
+                    <Typography variant="h6" sx={styles.modalTitle}>
                         Activity Details
                     </Typography>
-                    <Typography sx={{ mt: 2, fontFamily: 'Poppins', fontWeight: '400', fontSize: '20px' }}>
+                    <Typography sx={styles.modalText}>
                         {`Type: ${activity.type}`}
                     </Typography>
-                    <Typography sx={{ mt: 2 , fontFamily: 'Poppins', fontWeight: '400', fontSize: '20px'}}>
+                    <Typography sx={styles.modalText}>
                         {`Details: ${activity.details}`}
                     </Typography>
-                    <Button onClick={handleClose} sx={{ mt: 2, ml: -1.0 }}>
+                    <Button onClick={handleClose} sx={styles.closeButton}>
                         Close
                     </Button>
                 </Box>
             </Modal>
         </>
     );
+});
+
+const styles = {
+    card: {
+        minWidth: 275,
+        mb: 1,
+        p: 1,
+        border: '1px solid #ccc',
+        borderRadius: '10px',
+    },
+    title: {
+        fontFamily: 'Poppins',
+        fontWeight: '900',
+        fontSize: { xs: '18px', sm: '20px', md: '22px', lg: '20px' },
+    },
+    locationContainer: {
+        mt: 2,
+    },
+    icon: {
+        ml: -0.5,
+    },
+    location: {
+        fontFamily: 'Poppins',
+        fontWeight: '500',
+        fontSize: { xs: '14px', sm: '16px', md: '18px', lg: '16px' },
+        ml: 1,
+        mt: -0.5,
+    },
+    mapContainer: {
+        height: '300px',
+        mt: 2,
+    },
+    actionsContainer: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        mt: 2,
+    },
+    time: {
+        fontFamily: 'Poppins',
+        fontWeight: '700',
+        fontSize: { xs: '22px', sm: '26px', md: '30px', lg: '26px' },
+        mt: 0.5,
+    },
+    infoButton: {
+        mt: 0,
+        borderRadius: 5,
+        fontFamily: 'Poppins',
+        fontWeight: '900',
+        fontSize: { xs: '12px', sm: '16px', md: '20px', lg: '16px' },
+    },
+    modal: {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'background.paper',
+        boxShadow: 24,
+        p: 4,
+    },
+    modalTitle: {
+        fontFamily: 'Poppins',
+        fontWeight: '700',
+        fontSize: '24px',
+    },
+    modalText: {
+        mt: 2,
+        fontFamily: 'Poppins',
+        fontWeight: '400',
+        fontSize: '20px',
+    },
+    closeButton: {
+        mt: 2,
+        ml: -1.0,
+    },
 };
 
 export default ActivityCard;
