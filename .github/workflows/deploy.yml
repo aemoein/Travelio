@@ -27,7 +27,23 @@ jobs:
           cd backend_node
           npm install
 
-      - name: Print environment variables
+      - name: Unmask environment variables for debugging
+        run: |
+          echo "::add-mask::${{ secrets.MONGO_URI_REMOTE }}"
+          echo "::add-mask::${{ secrets.JWT_SECRET }}"
+          echo "::add-mask::${{ secrets.STRIPE_SECRET_KEY }}"
+          echo "::add-mask::${{ secrets.CLOUDINARY_API_KEY }}"
+          echo "::add-mask::${{ secrets.CLOUDINARY_API_SECRET }}"
+          echo "::add-mask::${{ secrets.CLOUDINARY_CLOUD_NAME }}"
+          echo "::add-mask::${{ secrets.ACCESS_TOKEN }}"
+          echo "::add-mask::${{ secrets.CLIENT_ID }}"
+          echo "::add-mask::${{ secrets.CLIENT_SECRET }}"
+          echo "::add-mask::${{ secrets.GOOGLE_API_KEY }}"
+          echo "::add-mask::${{ secrets.HOST }}"
+          echo "::add-mask::${{ secrets.FRONTEND }}"
+          echo "::add-mask::${{ secrets.REDIS_URL }}"
+
+      - name: Print environment variables (for debugging only)
         run: |
           echo "MONGO_URI_REMOTE=${{ secrets.MONGO_URI_REMOTE }}"
           echo "JWT_SECRET=${{ secrets.JWT_SECRET }}"
