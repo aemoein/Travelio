@@ -27,6 +27,22 @@ jobs:
           cd backend_node
           npm install
 
+      - name: Print environment variables
+        run: |
+          echo "MONGO_URI_REMOTE=${{ secrets.MONGO_URI_REMOTE }}"
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}"
+          echo "STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}"
+          echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"
+          echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"
+          echo "CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}"
+          echo "ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}"
+          echo "CLIENT_ID=${{ secrets.CLIENT_ID }}"
+          echo "CLIENT_SECRET=${{ secrets.CLIENT_SECRET }}"
+          echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}"
+          echo "HOST=${{ secrets.HOST }}"
+          echo "FRONTEND=${{ secrets.FRONTEND }}"
+          echo "REDIS_URL=${{ secrets.REDIS_URL }}"
+
       - name: Build Docker image
         env:
           MONGO_URI_REMOTE: ${{ secrets.MONGO_URI_REMOTE }}
