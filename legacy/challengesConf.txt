@@ -1,0 +1,445 @@
+Challenge port 33507
+
+ChallengableCities port 5005
+
+ChallengeProfile port 11169
+
+challnege_logs port 9000
+
+ML Challenge port 5555
+
+Notification port 8080
+
+Reward port 11177
+
+PointsManagement port 11130
+
+Achievements port 9090
+
+======================================================
+
+FastAPI Application ML Endpoints
+Base URL: /api
+
+    1. Predict Attraction
+    Endpoint: POST /api/predict/
+    Description: Predicts the class of an uploaded image.
+    Request Body:
+        file (UploadFile): The image file to be uploaded.
+    Response:
+        predicted_class (String): The predicted class label of the image.
+
+    2. Test Connection
+    Endpoint: GET /api/test/
+        Description: Tests if the connection to the API is successful.
+    Response:
+        "Connection is established successfully!" (String)
+
+======================================================
+
+AchievementController Endpoints 9090
+Base URL: /api/achievements
+
+    1. Get All Achievements
+    Endpoint: GET /api/achievements
+    Description: Retrieves a list of all achievements.
+    Response: List<Achievement>
+
+    2. Get Achievement by ID
+    Endpoint: GET /api/achievements/{id}
+    Description: Retrieves an achievement by its ID.
+    Path Variables:
+        id (String): The ID of the achievement.
+    Response: Achievement
+
+    3. Get Achievements by Category
+    Endpoint: GET /api/achievements/category/{category}
+    Description: Retrieves a list of achievements filtered by category.
+    Path Variables:
+        category (String): The category of achievements.
+    Response: List<Achievement>
+
+    4. Get Achievements by Difficulty
+    Endpoint: GET /api/achievements/difficulty/{difficulty}
+    Description: Retrieves a list of achievements filtered by difficulty.
+    Path Variables:
+        difficulty (String): The difficulty level of achievements.
+    Response: List<Achievement>
+
+    5. Create Achievement
+    Endpoint: POST /api/achievements
+    Description: Creates a new achievement.
+    Request Body: Achievement object
+    Response: Achievement
+
+    6. Update Achievement
+    Endpoint: PUT /api/achievements/{id}
+    Description: Updates an existing achievement by its ID.
+    Path Variables:
+        id (String): The ID of the achievement to update.
+    Request Body: Achievement object
+    Response: Achievement
+
+    7. Delete Achievement
+    Endpoint: DELETE /api/achievements/{id}
+    Description: Deletes an achievement by its ID.
+    Path Variables:
+        id (String): The ID of the achievement to delete.
+    Response: void
+
+    8. Unlock Achievement for User
+    Endpoint: PUT /api/achievements/unlock/{username}/{achievementId}
+    Description: Unlocks an achievement for a user.
+    Path Variables:
+        username (String): The username of the user.
+        achievementId (String): The ID of the achievement to unlock.
+    Response: Achievement
+
+    9. Get Achievements by User ID
+    Endpoint: GET /api/achievements/user/{username}
+    Description: Retrieves a list of achievements unlocked by a specific user.
+    Path Variables:
+        username (String): The username of the user.
+    Response: List<Achievement>
+
+    10. Create Profile for User
+    Endpoint: POST /api/achievements/profile/{username}
+    Description: Creates a profile for a user.
+    Path Variables:
+        username (String): The username of the user.
+    Response: String
+
+======================================================
+
+CCController Endpoints (challengablecities)
+Base URL: /api/cc
+
+    1. Get All Cities
+    Endpoint: GET /api/cc
+    Description: Retrieves a list of all challengable cities.
+    Response: List<ChallengableCity>
+
+    2. Get All Dare Cities
+    Endpoint: GET /api/cc/dare
+    Description: Retrieves a list of all challengable cities with dare challenges.
+    Response: List<ChallengableCity>
+
+    3. Get All Photo Cities
+    Endpoint: GET /api/cc/photo
+    Description: Retrieves a list of all challengable cities with photo challenges.
+    Response: List<ChallengableCity>
+
+    4. Get All Puzzle Cities
+    Endpoint: GET /api/cc/puzzle
+    Description: Retrieves a list of all challengable cities with puzzle challenges.
+    Response: List<ChallengableCity>
+
+    5. Create New City
+    Endpoint: POST /api/cc/new
+    Description: Creates a new challengable city.
+    Request Body: ChallengableCity object
+    Response: ChallengableCity
+
+    6. Edit City
+    Endpoint: PUT /api/cc/edit
+    Description: Edits an existing challengable city.
+    Request Body: ChallengableCity object
+    Response: String
+
+    7. Delete City
+    Endpoint: DELETE /api/cc/delete
+    Description: Deletes a challengable city by its ID.
+    Request Param:
+        id (String): The ID of the city to delete.
+    Response: String
+
+======================================================
+
+ChallengeController Endpoints
+Base URL: /api/Challenge
+
+    1. Get Local Puzzle Challenge
+    Endpoint: GET /api/Challenge/local/puzzle
+    Description: Retrieves a local huntman puzzle challenge for a specific city.
+    Request Param:
+        city (String): The name of the city.
+    Response: Challenge
+
+    2. Get Global Puzzle Challenge
+    Endpoint: GET /api/Challenge/global/puzzle
+    Description: Retrieves a global huntman puzzle challenge for a specific city.
+    Request Param:
+        city (String): The name of the city.
+    Response: Challenge
+
+    3. Get Local Photo Challenge
+    Endpoint: GET /api/Challenge/local/photochallenge
+    Description: Retrieves a local photo challenge for a specific city.
+    Request Param:
+        city (String): The name of the city.
+    Response: Challenge
+
+    4. Get Local Dare Challenge
+    Endpoint: GET /api/Challenge/local/darechallenge
+    Description: Retrieves a local dare challenge for a specific city.
+    Request Param:
+        city (String): The name of the city.
+    Response: Challenge
+
+    5. Get Global Photo Challenge
+    Endpoint: GET /api/Challenge/global/photochallenge
+    Description: Retrieves a global photo challenge for a specific city.
+    Request Param:
+        city (String): The name of the city.
+    Response: Challenge
+
+    6. Get Global Dare Challenge
+    Endpoint: GET /api/Challenge/global/darechallenge
+    Description: Retrieves a global dare challenge for a specific city.
+    Request Param:
+        city (String): The name of the city.
+    Response: Challenge
+
+    7. Post New Challenge
+    Endpoint: POST /api/Challenge/new
+    Description: Creates a new challenge.
+    Request Body: Challenge object
+    Response: String ("New Challenge Added")
+
+    8. Delete Challenge
+    Endpoint: DELETE /api/Challenge/delete
+    Description: Deletes a challenge by its ID.
+    Request Param:
+        id (String): The ID of the challenge to delete.
+    Response: String
+
+======================================================
+
+ChallengeProfileController Endpoints
+Base URL: /api/challengeProfile
+
+    1. Get All Challenge Profiles
+    Endpoint: GET /api/challengeProfile/getall
+    Description: Retrieves a list of all challenge profiles.
+    Response: List<ChallengeProfile>
+
+    2. Get Challenge Profile by Username
+    Endpoint: GET /api/challengeProfile/getprofile
+    Description: Retrieves a challenge profile for a specific user.
+    Request Param:
+     username (String): The username of the challenge profile to retrieve.
+    Response: ChallengeProfile
+
+    3. Create New Challenge Profile
+    Endpoint: POST /api/challengeProfile/new
+    Description: Creates a new challenge profile for a specific user.
+    Request Param:
+        username (String): The username for the new challenge profile.
+    Response: String ("Challenge profile created")
+
+    4. Delete Challenge Profile
+    Endpoint: DELETE /api/challengeProfile/delete
+    Description: Deletes a challenge profile for a specific user.
+    Request Param:
+    username (String): The username of the challenge profile to delete.
+    Response: String ("Challenge profile deleted")
+
+    5. Add Challenge Profile Points
+    Endpoint: PUT /api/challengeProfile/points
+    Description: Adds points to a challenge profile.
+    Request Params:
+        username (String): The username of the challenge profile.
+        points (int): The number of points to add.
+    Response: String ("Challenge profile updated")
+
+    6. Remove Challenge Profile Points
+    Endpoint: PUT /api/challengeProfile/change/points
+    Description: Removes points from a challenge profile.
+    Request Params:
+        username (String): The username of the challenge profile.
+        points (int): The number of points to remove.
+    Response: String ("Challenge profile updated")
+    7. Add Challenge Profile Title
+    Endpoint: PUT /api/challengeProfile/titles
+    Description: Adds a title to a challenge profile.
+    Request Param:
+        username (String): The username of the challenge profile.
+        title (String): The title to add.
+    Response: String ("Challenge profile title updated")
+
+    8. Add Solved Challenge to Profile
+    Endpoint: PUT /api/challengeProfile/solved
+    Description: Increments the count of solved challenges for a challenge profile.
+    Request Param:
+        username (String): The username of the challenge profile.
+    Response: String ("Challenge profile has solved a new challenge")
+
+    9. Get Rank Image
+    Endpoint: GET /api/challengeProfile/image/{rank}
+    Description: Retrieves the image for a specific rank.
+        Path Variable:
+        rank (String): The rank to get the image for.
+    Response: ResponseEntity<Resource>
+
+======================================================
+
+SCFUcontroller Endpoints
+Base URL: /api/logs
+
+    1. Record Solved Challenge
+    Endpoint: POST /api/logs/record/{username}/{challengeid}/{next}
+    Description: Records a solved challenge for a user.
+    Path Variables:
+        username (String): The username of the user who solved the challenge.
+        challengeid (String): The ID of the solved challenge.
+        next (long): The time for the next challenge.
+    Response: String
+
+    2. Solve Challenge
+    Endpoint: POST /api/logs/solve
+    Description: Attempts to solve a challenge for a user, with a check for cooldown period.
+    Request Params:
+        challengeId (String): The ID of the challenge to solve.
+        username (String): The username of the user solving the challenge.
+        nextChallengeDurMillis (long): The duration in milliseconds for the next challenge.
+    Response: ResponseEntity<String>
+        200 OK: "Challenge solved!"
+        425 TOO_EARLY: "You need to wait before solving this challenge again."
+
+    3. Get Next Challenge Time
+    Endpoint: GET /api/logs/nextchallenge
+    Description: Retrieves the time when the user can solve the next challenge.
+    Request Param:
+        username (String): The username of the user.
+    Response: LocalDateTime
+
+======================================================
+
+NotificationController Endpoints
+Base URL: /api/notifications
+
+    1. Get Notifications by User ID
+    Endpoint: GET /api/notifications/{userId}
+    Description: Retrieves all notifications for a specific user.
+    Path Variables:
+        userId (String): The ID of the user to retrieve notifications for.
+    Response: List<Notification>
+
+    2. Send Reward Notification
+    Endpoint: POST /api/notifications/reward
+    Description: Sends a reward notification to a user.
+    Request Params:
+        name (String): The name of the reward.
+        userName (String): The username of the user to send the notification to.
+    Response: Notification
+
+    3. Send Achievement Notification
+    Endpoint: POST /api/notifications/achievement
+    Description: Sends an achievement notification to a user.
+    Request Params:
+        name (String): The name of the achievement.
+        userName (String): The username of the user to send the notification to.
+    Response: Notification
+
+======================================================
+
+PointsManagementController Endpoints
+Base URL: /api/points-management
+
+    1. Get All Points
+    Endpoint: GET /api/points-management
+    Description: Retrieves a list of all points management records.
+    Response: List<PointsManagement>
+
+    2. Get Points by ID
+    Endpoint: GET /api/points-management/{id}
+    Description: Retrieves points management details for a specific ID.
+    Path Variables:
+        id (String): The ID of the points management record to retrieve.
+    Response: PointsManagement
+
+    3. Create Points Management Record
+    Endpoint: POST /api/points-management
+    Description: Creates a new points management record.
+    Request Body: PointsManagement
+    Response: PointsManagement
+
+    4. Update Points Management Record
+    Endpoint: PUT /api/points-management/{id}
+    Description: Updates an existing points management record.
+    Path Variables:
+        id (String): The ID of the points management record to update.
+    Request Body: PointsManagement
+    Response: PointsManagement
+
+    5. Delete Points Management Record
+    Endpoint: DELETE /api/points-management/{id}
+    Description: Deletes a points management record by ID.
+    Path Variables:
+        id (String): The ID of the points management record to delete.
+    Response: void
+
+    6. Get Date of Birth by ID
+    Endpoint: GET /api/points-management/{id}/dateOfBirth
+    Description: Retrieves the date of birth for a specific points management record by ID.
+    Path Variables:
+        id (String): The ID of the points management record to retrieve the date of birth for.
+    Response: LocalDate
+
+======================================================
+
+RewardController Endpoints
+Base URL: /api/rewards
+
+    1. Get All Rewards
+    Endpoint: GET /api/rewards
+    Description: Retrieves a list of all rewards.
+    Response: List<Reward>
+
+    2. Get Rewards by User
+    Endpoint: GET /api/rewards/user/{username}
+    Description: Retrieves rewards associated with a specific user.
+    Path Variables:
+        username (String): The username of the user whose rewards are to be retrieved.
+    Response: List<Reward>
+
+    3. Add Reward
+    Endpoint: POST /api/rewards
+    Description: Adds a new reward.
+    Request Body: Reward
+    Response: void
+
+    4. Redeem Reward with Points
+    Endpoint: POST /api/rewards/redeem/{rewardId}/{username}
+    Description: Redeems a reward using points.
+    Path Variables:
+        rewardId (String): The ID of the reward to be redeemed.
+        username (String): The username of the user redeeming the reward.
+    Request Parameters:
+        points (int): The points used to redeem the reward.
+    Response: Reward
+
+    5. Redeem Reward with Challenge Points
+    Endpoint: PUT /api/rewards/redeem/challenge/{rewardId}
+    Description: Redeems a reward using challenge points.
+    Path Variables:
+        rewardId (String): The ID of the reward to be redeemed.
+    Request Parameters:
+        challengePoints (int): The challenge points used to redeem the reward.
+        username (String): The username of the user redeeming the reward.
+    Response: Reward
+
+    6. Provide Birthday Reward
+    Endpoint: POST /api/rewards/birthday-reward
+    Description: Provides a birthday reward to a user.
+    Request Parameters:
+        userId (String): The ID of the user.
+        birthDate (String): The birth date of the user in YYYY-MM-DD format.
+    Response: Reward
+
+    7. Provide Profile Reward
+    Endpoint: POST /api/rewards/profile/{username}
+    Description: Provides a profile reward to a user.
+    Path Variables:
+        username (String): The username of the user to provide the reward to.
+    Response: String
