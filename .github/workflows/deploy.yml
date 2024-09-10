@@ -29,6 +29,20 @@ jobs:
           npm install
 
       - name: Build Docker image
+        env: # Set environment variables from GitHub Secrets
+          MONGO_URI_REMOTE: ${{ secrets.MONGO_URI_REMOTE }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          HOST: ${{ secrets.HOST }}
+          FRONTEND: ${{ secrets.FRONTEND }}
+          REDIS_URL: ${{ secrets.REDIS_URL }}
         run: |
           docker build -t your-image-name:latest -f backend_node/Dockerfile backend_node
 

@@ -3,8 +3,6 @@ const extractToken = (req, res, next) => {
     if (authHeader && authHeader.startsWith('Bearer ')) {
         const token = authHeader.split(' ')[1];
 
-        //console.log('Token extracted:', token);
-
         req.token = token;
     }
     next();

@@ -37,7 +37,7 @@ const parseHotelOffers = (offers) => {
 
 const getHotelsByCity = async (cityCode, currency = 'USD') => {
     try {
-        //const chainCodes = ['AC', 'HH', 'MC', 'HY', 'IC', 'BW', 'RD', 'SI', 'HI', 'NO', 'IB', 'WS', 'FS', 'RC', 'WY', 'CP'];
+        //const chainCodes = ['AC', 'HH', 'MC', 'HY', 'IC', 'BW', 'RD', 'SI', 'HI', 'NO', 'IB', 'WS', 'RC', 'WY', 'CP'];
 
         const response = await axios.get('https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city', {
             headers: {

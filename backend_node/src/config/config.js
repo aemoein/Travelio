@@ -1,11 +1,6 @@
 // config.js
 require('dotenv').config();
 
-console.log('MONGO_URI_LOCAL:', process.env.MONGO_URI_LOCAL);
-console.log('MONGO_URI_REMOTE:', process.env.MONGO_URI_REMOTE);
-console.log('PORT:', process.env.PORT);
-console.log('JWT_SECRET:', process.env.JWT_SECRET);
-
 module.exports = {
     // MongoDB connection URLs
     mongoURIS: process.env.MONGO_URI_LOCAL,
@@ -23,7 +18,7 @@ module.exports = {
     cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
 
     // Amadeus credentials
-    accessToken: '',
+    accessToken: 'giYBImlXAyvg5KGy8MJoB62IAYRM',
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
 

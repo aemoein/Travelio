@@ -9,6 +9,7 @@ const agent = new https.Agent({
 });
 
 async function getFlights(params) {
+    console.log('flightAT:', config.accessToken)
     const url = 'https://test.api.amadeus.com/v2/shopping/flight-offers';
     const headers = {
         'Authorization': `Bearer ${config.accessToken}`,
