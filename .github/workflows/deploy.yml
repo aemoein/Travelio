@@ -61,7 +61,6 @@ jobs:
             -f backend_node/Dockerfile \
             backend_node
 
-
       - name: Install Railway CLI
         run: npm install -g @railway/cli
 
@@ -69,5 +68,4 @@ jobs:
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
-          cd backend_node
           railway up --service Travelio
