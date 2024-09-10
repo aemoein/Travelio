@@ -1,6 +1,7 @@
 # Directories
 /backend/
 /assets/
+/legacy/
 
 # Specific files
 /backend/Challenge/MLmodel

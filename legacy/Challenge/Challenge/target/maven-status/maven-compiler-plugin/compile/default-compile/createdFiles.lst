@@ -1,8 +1,0 @@
-com/example/challenge/service/ChallengeService.class
-com/example/challenge/entity/ChallengeType.class
-com/example/challenge/service/GetChallengeStrategy.class
-com/example/challenge/repository/ChallengeRepository.class
-com/example/challenge/controller/ChallengeController.class
-com/example/challenge/entity/Challenge.class
-com/example/challenge/entity/LocationType.class
-com/example/challenge/ChallengeApplication.class
