@@ -17,8 +17,7 @@ jobs:
       - name: Cache Node.js dependencies
         uses: actions/cache@v3
         with:
-          path: |
-            backend_node/node_modules
+          path: backend_node/node_modules
           key: node-${{ hashFiles('backend_node/package-lock.json') }}
           restore-keys: |
             node-
@@ -59,14 +58,13 @@ jobs:
             --build-arg FRONTEND=${{ secrets.FRONTEND }} \
             --build-arg REDIS_URL=${{ secrets.REDIS_URL }} \
             -t your-image-name:latest -f backend_node/Dockerfile backend_node
-    
 
       - name: Install Railway CLI
         run: npm install -g @railway/cli
 
       - name: Deploy to Railway
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_PROJECT_ID }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
         run: |
           cd backend_node
           railway up --service Travelio
