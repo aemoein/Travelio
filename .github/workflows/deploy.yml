@@ -29,7 +29,7 @@ jobs:
           npm install
 
       - name: Build Docker image
-        env: # Set environment variables from GitHub Secrets
+        env:
           MONGO_URI_REMOTE: ${{ secrets.MONGO_URI_REMOTE }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
@@ -44,7 +44,22 @@ jobs:
           FRONTEND: ${{ secrets.FRONTEND }}
           REDIS_URL: ${{ secrets.REDIS_URL }}
         run: |
-          docker build -t your-image-name:latest -f backend_node/Dockerfile backend_node
+          docker build \
+            --build-arg MONGO_URI_REMOTE=${{ secrets.MONGO_URI_REMOTE }} \
+            --build-arg JWT_SECRET=${{ secrets.JWT_SECRET }} \
+            --build-arg STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }} \
+            --build-arg CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }} \
+            --build-arg CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }} \
+            --build-arg CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }} \
+            --build-arg ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }} \
+            --build-arg CLIENT_ID=${{ secrets.CLIENT_ID }} \
+            --build-arg CLIENT_SECRET=${{ secrets.CLIENT_SECRET }} \
+            --build-arg GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }} \
+            --build-arg HOST=${{ secrets.HOST }} \
+            --build-arg FRONTEND=${{ secrets.FRONTEND }} \
+            --build-arg REDIS_URL=${{ secrets.REDIS_URL }} \
+            -t your-image-name:latest -f backend_node/Dockerfile backend_node
+    
 
       - name: Install Railway CLI
         run: npm install -g @railway/cli
