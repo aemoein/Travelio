@@ -43,7 +43,7 @@ jobs:
           FRONTEND: ${{ secrets.FRONTEND }}
           REDIS_URL: ${{ secrets.REDIS_URL }}
         run: |
-          docker build \
+          docker buildx build \
             --build-arg MONGO_URI_REMOTE=${{ secrets.MONGO_URI_REMOTE }} \
             --build-arg JWT_SECRET=${{ secrets.JWT_SECRET }} \
             --build-arg STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }} \
@@ -57,7 +57,10 @@ jobs:
             --build-arg HOST=${{ secrets.HOST }} \
             --build-arg FRONTEND=${{ secrets.FRONTEND }} \
             --build-arg REDIS_URL=${{ secrets.REDIS_URL }} \
-            -t your-image-name:latest -f backend_node/Dockerfile backend_node
+            -t your-image-name:latest \
+            -f backend_node/Dockerfile \
+            backend_node
+
 
       - name: Install Railway CLI
         run: npm install -g @railway/cli
