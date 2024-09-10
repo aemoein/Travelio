@@ -1,11 +1,17 @@
+# Directories
 /backend/
 /assets/
-backend/Challenge/MLmodel
+
+# Specific files
+/backend/Challenge/MLmodel
 /backend/Challenge/ML model
+
+# Image files
 *.jpg
-*.jpg
-/backend/Challenge/ML model
-/backend/ImageModel/node_modules
+
+# Node modules
+**/node_modules/
+
+# Environment files
 .env
 /backend_node/.env
-/backend_node/node_modules
