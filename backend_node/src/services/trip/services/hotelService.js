@@ -35,7 +35,7 @@ const parseHotelOffers = (offers) => {
     });
 };
 
-const getHotelsByCity = async (cityCode, currency = 'USD') => {
+const getHotelsByCity = async (cityCode) => {
     try {
         //const chainCodes = ['AC', 'HH', 'MC', 'HY', 'IC', 'BW', 'RD', 'SI', 'HI', 'NO', 'IB', 'WS', 'RC', 'WY', 'CP'];
 

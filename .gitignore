@@ -1,5 +1,5 @@
-backend/
-assets/
+/backend/
+/assets/
 backend/Challenge/MLmodel
 /backend/Challenge/ML model
 *.jpg
@@ -7,5 +7,5 @@ backend/Challenge/MLmodel
 /backend/Challenge/ML model
 /backend/ImageModel/node_modules
 .env
-backend_node/.env
-backend_node/node_modules
+/backend_node/.env
+/backend_node/node_modules
