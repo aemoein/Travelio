@@ -17,8 +17,7 @@ jobs:
       - name: Cache Node.js dependencies
         uses: actions/cache@v3
         with:
-          path: |
-            backend_node/node_modules
+          path: backend_node/node_modules
           key: node-${{ hashFiles('backend_node/package-lock.json') }}
           restore-keys: |
             node-
@@ -28,9 +27,71 @@ jobs:
           cd backend_node
           npm install
 
-      - name: Build Docker image
+      - name: Unmask environment variables for debugging
         run: |
-          docker build -t your-image-name:latest -f backend_node/Dockerfile backend_node
+          echo "::add-mask::${{ secrets.MONGO_URI_REMOTE }}"
+          echo "::add-mask::${{ secrets.JWT_SECRET }}"
+          echo "::add-mask::${{ secrets.STRIPE_SECRET_KEY }}"
+          echo "::add-mask::${{ secrets.CLOUDINARY_API_KEY }}"
+          echo "::add-mask::${{ secrets.CLOUDINARY_API_SECRET }}"
+          echo "::add-mask::${{ secrets.CLOUDINARY_CLOUD_NAME }}"
+          echo "::add-mask::${{ secrets.ACCESS_TOKEN }}"
+          echo "::add-mask::${{ secrets.CLIENT_ID }}"
+          echo "::add-mask::${{ secrets.CLIENT_SECRET }}"
+          echo "::add-mask::${{ secrets.GOOGLE_API_KEY }}"
+          echo "::add-mask::${{ secrets.HOST }}"
+          echo "::add-mask::${{ secrets.FRONTEND }}"
+          echo "::add-mask::${{ secrets.REDIS_URL }}"
+
+      - name: Print environment variables (for debugging only)
+        run: |
+          echo "MONGO_URI_REMOTE=${{ secrets.MONGO_URI_REMOTE }}"
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}"
+          echo "STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}"
+          echo "CLOUDINARY_API_KEY=${{ secrets.CLOUDINARY_API_KEY }}"
+          echo "CLOUDINARY_API_SECRET=${{ secrets.CLOUDINARY_API_SECRET }}"
+          echo "CLOUDINARY_CLOUD_NAME=${{ secrets.CLOUDINARY_CLOUD_NAME }}"
+          echo "ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }}"
+          echo "CLIENT_ID=${{ secrets.CLIENT_ID }}"
+          echo "CLIENT_SECRET=${{ secrets.CLIENT_SECRET }}"
+          echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}"
+          echo "HOST=${{ secrets.HOST }}"
+          echo "FRONTEND=${{ secrets.FRONTEND }}"
+          echo "REDIS_URL=${{ secrets.REDIS_URL }}"
+
+      - name: Build Docker image
+        env:
+          MONGO_URI_REMOTE: ${{ secrets.MONGO_URI_REMOTE }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          HOST: ${{ secrets.HOST }}
+          FRONTEND: ${{ secrets.FRONTEND }}
+          REDIS_URL: ${{ secrets.REDIS_URL }}
+        run: |
+          docker buildx build \
+            --build-arg MONGO_URI_REMOTE=${MONGO_URI_REMOTE} \
+            --build-arg JWT_SECRET=${JWT_SECRET} \
+            --build-arg STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY} \
+            --build-arg CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY} \
+            --build-arg CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET} \
+            --build-arg CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME} \
+            --build-arg ACCESS_TOKEN=${ACCESS_TOKEN} \
+            --build-arg CLIENT_ID=${CLIENT_ID} \
+            --build-arg CLIENT_SECRET=${CLIENT_SECRET} \
+            --build-arg GOOGLE_API_KEY=${GOOGLE_API_KEY} \
+            --build-arg HOST=${HOST} \
+            --build-arg FRONTEND=${FRONTEND} \
+            --build-arg REDIS_URL=${REDIS_URL} \
+            -t your-image-name:latest \
+            -f backend_node/Dockerfile \
+            backend_node
 
       - name: Install Railway CLI
         run: npm install -g @railway/cli

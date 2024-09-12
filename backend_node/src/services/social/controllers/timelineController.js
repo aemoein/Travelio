@@ -1,7 +1,6 @@
 const SocialProfile = require('../models/socialProfileModel');
 const Post = require('../models/postModel');
 
-// after fetching the posts check if the user is followed. 
 exports.postsTimeline = async (req, res) => {
     try {
         const currentUser = await SocialProfile.findById(req.user.socialProfileId);
@@ -13,8 +12,7 @@ exports.postsTimeline = async (req, res) => {
         }
 
         const userPosts = await Post.find({ author: req.user.socialProfileId });
-        
-        //edit here
+
         const followingPostsPromises = currentUser.followings.map((friendId) => {
             return Post.find({ author: friendId });
         });
@@ -54,8 +52,6 @@ exports.exploreTimeline = async (req, res) => {
         }
 
         const userFollowings = currentUser.followings;
-
-        // Find all posts by users not followed by the current user
         const explorePosts = await Post.find({ author: { $nin: [...userFollowings, req.user.socialProfileId] } });
 
         return res.status(200).json({

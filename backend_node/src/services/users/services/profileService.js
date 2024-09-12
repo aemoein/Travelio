@@ -33,8 +33,6 @@ async function checkLoggedIn(req) {
       profilePicUrl = user.profilePic;
     }
 
-    console.log(profilePicUrl)
-
     return { status: 200, user: { ...user.toObject(), profilePicUrl } };
   } catch (error) {
     console.error(error);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Box, Grid, Typography, TextField, Select, MenuItem } from '@mui/material';
-import Pagination from '@mui/material/Pagination'; // Import Pagination component
+import Pagination from '@mui/material/Pagination';
 import DesCard from '../../Components/Card/DesCard';
 import DestinationHero from '../../Components/Hero/DestinationHero';
 import Navbar from '../../Components/Navbar/Navbar';
@@ -24,11 +24,10 @@ const Destinations = () => {
     useEffect(() => {
         const fetchDestinations = async () => {
             try {
-                const responseCountries = await axios.get(`${apiUrl}/destinations`);
-                const responseCities = await axios.get(`${apiUrl}/destinations/city/cities`);
-
-                console.log('Countries Response:', responseCountries.data);
-                console.log('Cities Response:', responseCities.data);
+                const [responseCountries, responseCities] = await Promise.all([
+                    axios.get(`${apiUrl}/destinations`),
+                    axios.get(`${apiUrl}/destinations/city/cities`)
+                ]);
 
                 setCountries(responseCountries.data);
                 setCities(responseCities.data);
@@ -40,19 +39,16 @@ const Destinations = () => {
         fetchDestinations();
     }, []);
 
-    let filteredDestinations = [];
-    if (selectedCategory === 'countries') {
-        filteredDestinations = countries.filter(country =>
+    const filteredDestinations = selectedCategory === 'countries'
+        ? countries.filter(country =>
             country.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
             (selectedRegion === '' || country.region === selectedRegion) &&
             (selectedContinent === '' || country.continent === selectedContinent)
-        );
-    } else if (selectedCategory === 'cities') {
-        filteredDestinations = cities.filter(city =>
+        )
+        : cities.filter(city =>
             city.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
             (selectedRegion === '' || city.region === selectedRegion)
         );
-    }
 
     const indexOfLastDestination = currentPage * destinationsPerPage;
     const indexOfFirstDestination = indexOfLastDestination - destinationsPerPage;
@@ -60,9 +56,7 @@ const Destinations = () => {
 
     const totalPages = Math.ceil(filteredDestinations.length / destinationsPerPage);
 
-    const handlePageChange = (event, pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
+    const handlePageChange = (event, pageNumber) => setCurrentPage(pageNumber);
 
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
@@ -91,9 +85,8 @@ const Destinations = () => {
         borderRadius: 10,
         fontWeight: '900',
         fontSize: { xs: '10px', sm: '12px', md: '14px', lg: '16px' },
-        textTransform: 'uppercase',
-        fontFamily: 'Poppins',
         textTransform: 'capitalize',
+        fontFamily: 'Poppins',
         backgroundColor: '#ffffff',
         color: '#aaaaaa',
         border: '1px solid #bbbbbb',
@@ -119,11 +112,7 @@ const Destinations = () => {
     };
 
     const handleCardClick = (id, type) => {
-        if (type === 'country') {
-            navigate(`/country/${id}`);
-        } else if (type === 'city') {
-            navigate(`/city/${id}`);
-        }
+        navigate(type === 'country' ? `/country/${id}` : `/city/${id}`);
     };
 
     return (
@@ -131,7 +120,7 @@ const Destinations = () => {
             <Navbar />
             <Box sx={{ height: 50 }} />
             <DestinationHero />
-            <Box sx={{ maxWidth: { xs: '90vw', sm: '80vw', md: '80vw', lg: '80vw' }, margin: 'auto', justifyContent: 'center', display: 'flex', alignItems: 'center'}}>
+            <Box sx={{ maxWidth: '80vw', margin: 'auto', display: 'flex', justifyContent: 'center' }}>
                 <Box sx={{ pt: 4 }}>
                     <ExploreSection
                         selectedCategory={selectedCategory}
@@ -145,13 +134,8 @@ const Destinations = () => {
                         selectedContinent={selectedContinent}
                         handleContinentChange={handleContinentChange}
                     />
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                        }}
-                    >
-                        <Grid container justifyContent="center" spacing={1} sx={{ width: { xs: '90vw', sm: '80vw', md: '80vw', lg: '80vw' },  mx: { xs: '5vw', sm: '10vw', md: '10vw', lg: '10vw'},}}>
+                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                        <Grid container justifyContent="center" spacing={1} sx={{ width: '80vw', mx: '10vw' }}>
                             {currentDestinations.map((destination, index) => (
                                 <Grid item xs={6} sm={4} md={4} lg={3} key={index}>
                                     <DesCard
@@ -164,13 +148,7 @@ const Destinations = () => {
                             ))}
                         </Grid>
                     </Box>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            marginTop: 4,
-                        }}
-                    >
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
                         <Pagination
                             count={totalPages}
                             page={currentPage}

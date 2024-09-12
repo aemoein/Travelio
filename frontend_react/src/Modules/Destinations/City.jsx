@@ -18,7 +18,6 @@ import Weather from '../../Components/Props/Weather';
 import FactText from '../../Components/Text/FactText';
 import GeneralInfo from '../../Components/Props/GeneralInfo';
 import ItemCard from '../../Components/Card/ItemCard';
-import ItemCardLg from '../../Components/Card/ItemsCardLg';
 import Footer from '../../Components/Footer/Footer';
 import Gallery from '../../Components/Gallery/Gallery';
 import apiUrl from '../../Config/config';

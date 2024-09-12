@@ -24,7 +24,7 @@ const SocialFeed = () => {
           },
         });
         // Reverse the array of posts
-        setPosts(response.data.data.reverse());
+        setPosts(response.data.data);
         setSocialId(response.data.socialId);
         console.log('Posts:', response.data.data);
         console.log('response:', response.data.socialId);
@@ -51,7 +51,6 @@ const SocialFeed = () => {
             mr: { xs: '10vw', sm: '15vw', md: '17.5vw', lg: '22.5vw' },
             width: { xs: '80vw', sm: '50vw', md: '45vw', lg: '35vw' },
             maxWidth: '1200px',
-            //margin: '0 auto', 
           }}
         >
           {loading ? (

@@ -6,11 +6,9 @@ let destinations = [];
 
 // Function to load destinations from JSON file
 const loadDestinations = () => {
-    console.log('Loading destinations from JSON file...');
     try {
         const data = fs.readFileSync(filePath, 'utf-8');
         destinations = JSON.parse(data);
-        console.log(`Loaded ${destinations.length} destinations`);
     } catch (error) {
         console.error('Error reading or parsing JSON file:', error);
     }

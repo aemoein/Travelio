@@ -1,6 +1,0 @@
-com/example/challengablecities/ChallengableCitiesApplication.class
-com/example/challengablecities/controller/CCController.class
-com/example/challengablecities/repository/CCRepository.class
-com/example/challengablecities/model/ChallengeType.class
-com/example/challengablecities/model/ChallengableCity.class
-com/example/challengablecities/service/CCservice.class

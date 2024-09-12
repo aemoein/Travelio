@@ -106,7 +106,7 @@ const FlightCard = ({ flight, cityName, arrivalDate, departureDate, adults }) =>
                         <Typography>No itineraries available</Typography>
                     )}
                     <Box sx={{ display: 'flex', justifyContent: 'space-between'}}>
-                        <Typography variant="body2" sx={{ mt: 2, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '22px', sm: '26px', md: '32px', lg: '26px' } }}>
+                        <Typography variant="body2" sx={{ mt: 0.5, fontFamily: 'Poppins', fontWeight: '700', fontSize: { xs: '22px', sm: '26px', md: '30px', lg: '26px' } }}>
                             {`${flight.price?.total || 'N/A'} ${flight.price?.currency || ''}`}
                         </Typography>
                         <Button variant="outlined" onClick={handleOpen} sx={{ mt: 0, borderRadius: 5, fontFamily: 'Poppins', fontWeight: '900', fontSize: { xs: '12px', sm: '16px', md: '20px', lg: '16px' } }}>
