@@ -20,15 +20,11 @@ exports.postsTimeline = async (req, res) => {
         const followingPosts = await Promise.all(followingPostsPromises);
 
         const mergedPosts = userPosts.concat(...followingPosts);
-        //sort after merging by createdAt to show the posts from the newest posts to the oldest
-        const sortedPosts = mergedPosts.sort((a, b) => {
-            return new Date(b.createdAt) - new Date(a.createdAt);
-        });
-        
+        //sort after merging by createdAt
 
         return res.status(200).json({
             status: 'success',
-            data: sortedPosts,
+            data: mergedPosts,
             socialId: req.user.socialProfileId
         });
 
