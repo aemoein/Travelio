@@ -18,7 +18,7 @@ const config = {
     cloudinaryCloudName: process.env.CLOUDINARY_CLOUD_NAME,
 
     // Amadeus credentials
-    accessToken: 'giYBImlXAyvg5KGy8MJoB62IAYRM', // Replace with env variable if it's sensitive
+    accessToken: process.env.ACCESS_TOKEN,
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
 

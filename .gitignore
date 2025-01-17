@@ -16,3 +16,4 @@
 # Environment files
 .env
 /backend_node/.env
+.DS_Store
