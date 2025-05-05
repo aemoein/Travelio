@@ -27,25 +27,19 @@ jobs:
           cd backend_node
           npm install
 
-      - name: Build Docker image
+      - name: Build Docker image (optional if Railway handles build)
         run: |
           docker buildx build \
-            -t your-image-name:latest \
+            -t travelio-backend:latest \
             -f backend_node/Dockerfile \
             backend_node
 
       - name: Install Railway CLI
         run: npm install -g @railway/cli
 
-      - name: Setup Railway environment
+      - name: Setup Railway project and environment variables
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-        run: |
-          echo "$RAILWAY_TOKEN" | railway login
-          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
-
-      - name: Deploy to Railway
-        env:
           MONGO_URI_REMOTE: ${{ secrets.MONGO_URI_REMOTE }}
           JWT_SECRET: ${{ secrets.JWT_SECRET }}
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
@@ -60,19 +54,29 @@ jobs:
           FRONTEND: ${{ secrets.FRONTEND }}
           REDIS_URL: ${{ secrets.REDIS_URL }}
         run: |
+          export RAILWAY_TOKEN=${RAILWAY_TOKEN}
+          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
+
+          # Set environment variables before deploying
+          railway variables set \
+            MONGO_URI_REMOTE=$MONGO_URI_REMOTE \
+            JWT_SECRET=$JWT_SECRET \
+            STRIPE_SECRET_KEY=$STRIPE_SECRET_KEY \
+            CLOUDINARY_API_KEY=$CLOUDINARY_API_KEY \
+            CLOUDINARY_API_SECRET=$CLOUDINARY_API_SECRET \
+            CLOUDINARY_CLOUD_NAME=$CLOUDINARY_CLOUD_NAME \
+            ACCESS_TOKEN=$ACCESS_TOKEN \
+            CLIENT_ID=$CLIENT_ID \
+            CLIENT_SECRET=$CLIENT_SECRET \
+            GOOGLE_API_KEY=$GOOGLE_API_KEY \
+            HOST=$HOST \
+            FRONTEND=$FRONTEND \
+            REDIS_URL=$REDIS_URL
+
+      - name: Deploy to Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          export RAILWAY_TOKEN=${RAILWAY_TOKEN}
           cd backend_node
           railway up --service Travelio --detach
-          railway variables set \
-            MONGO_URI_REMOTE=${MONGO_URI_REMOTE} \
-            JWT_SECRET=${JWT_SECRET} \
-            STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY} \
-            CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY} \
-            CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET} \
-            CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME} \
-            ACCESS_TOKEN=${ACCESS_TOKEN} \
-            CLIENT_ID=${CLIENT_ID} \
-            CLIENT_SECRET=${CLIENT_SECRET} \
-            GOOGLE_API_KEY=${GOOGLE_API_KEY} \
-            HOST=${HOST} \
-            FRONTEND=${FRONTEND} \
-            REDIS_URL=${REDIS_URL}
