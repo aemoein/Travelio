@@ -37,7 +37,7 @@ jobs:
       - name: Install Railway CLI
         run: npm install -g @railway/cli
 
-      - name: Setup Railway project and environment variables
+      - name: Setup Railway environment variables
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           MONGO_URI_REMOTE: ${{ secrets.MONGO_URI_REMOTE }}
@@ -55,9 +55,7 @@ jobs:
           REDIS_URL: ${{ secrets.REDIS_URL }}
         run: |
           export RAILWAY_TOKEN=${RAILWAY_TOKEN}
-          railway link ${{ secrets.RAILWAY_PROJECT_ID }}
-
-          # Set environment variables before deploying
+      
           railway variables set \
             MONGO_URI_REMOTE=$MONGO_URI_REMOTE \
             JWT_SECRET=$JWT_SECRET \
@@ -72,7 +70,7 @@ jobs:
             HOST=$HOST \
             FRONTEND=$FRONTEND \
             REDIS_URL=$REDIS_URL
-
+      
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
