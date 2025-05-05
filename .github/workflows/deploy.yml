@@ -55,22 +55,21 @@ jobs:
           REDIS_URL: ${{ secrets.REDIS_URL }}
         run: |
           export RAILWAY_TOKEN=${RAILWAY_TOKEN}
-      
-          railway variables set \
-            MONGO_URI_REMOTE=$MONGO_URI_REMOTE \
-            JWT_SECRET=$JWT_SECRET \
-            STRIPE_SECRET_KEY=$STRIPE_SECRET_KEY \
-            CLOUDINARY_API_KEY=$CLOUDINARY_API_KEY \
-            CLOUDINARY_API_SECRET=$CLOUDINARY_API_SECRET \
-            CLOUDINARY_CLOUD_NAME=$CLOUDINARY_CLOUD_NAME \
-            ACCESS_TOKEN=$ACCESS_TOKEN \
-            CLIENT_ID=$CLIENT_ID \
-            CLIENT_SECRET=$CLIENT_SECRET \
-            GOOGLE_API_KEY=$GOOGLE_API_KEY \
-            HOST=$HOST \
-            FRONTEND=$FRONTEND \
-            REDIS_URL=$REDIS_URL
-      
+
+          railway variables set MONGO_URI_REMOTE=$MONGO_URI_REMOTE
+          railway variables set JWT_SECRET=$JWT_SECRET
+          railway variables set STRIPE_SECRET_KEY=$STRIPE_SECRET_KEY
+          railway variables set CLOUDINARY_API_KEY=$CLOUDINARY_API_KEY
+          railway variables set CLOUDINARY_API_SECRET=$CLOUDINARY_API_SECRET
+          railway variables set CLOUDINARY_CLOUD_NAME=$CLOUDINARY_CLOUD_NAME
+          railway variables set ACCESS_TOKEN=$ACCESS_TOKEN
+          railway variables set CLIENT_ID=$CLIENT_ID
+          railway variables set CLIENT_SECRET=$CLIENT_SECRET
+          railway variables set GOOGLE_API_KEY=$GOOGLE_API_KEY
+          railway variables set HOST=$HOST
+          railway variables set FRONTEND=$FRONTEND
+          railway variables set REDIS_URL=$REDIS_URL
+
       - name: Deploy to Railway
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
