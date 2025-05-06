@@ -49,7 +49,9 @@ const Itinerary = () => {
 
                 const itineraryData = await itineraryResponse.json();
                 console.log("data: ", itineraryData)
-                if (itineraryData.length > 0) {
+                console.log("data leng: ", itineraryData.length)
+                console.log("data 0: ", itineraryData[0])
+                if (itineraryData && itineraryData.length > 0) {
                     setItinerary(itineraryData);
                     setError(false);
                 } else {
