@@ -97,7 +97,7 @@ ${JSON.stringify(requestData, null, 2)}
             text = text.replace(/```(?:json)?\n?/, '').replace(/```$/, '');
         }
 
-        console.log("Raw Gemini output:", text.slice(0, 500), "...");
+        //console.log("Raw Gemini output:", text.slice(0, 500), "...");
 
         // Try parsing JSON
         let itinerary;
@@ -114,6 +114,8 @@ ${JSON.stringify(requestData, null, 2)}
             console.error("Failed to parse JSON:", parseError.message);
             throw new Error('Generated response was not valid JSON.');
         }
+
+        console.log("iten", itinerary);
 
         // Validate structure
         if (!validateItinerary(itinerary)) {

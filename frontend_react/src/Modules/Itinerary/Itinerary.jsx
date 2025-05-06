@@ -48,6 +48,7 @@ const Itinerary = () => {
                 if (!itineraryResponse.ok) throw new Error('Failed to fetch itinerary');
 
                 const itineraryData = await itineraryResponse.json();
+                console.log("data: ", itineraryData)
                 if (itineraryData.itinerary.length > 0) {
                     setItinerary(itineraryData.itinerary);
                     setError(false);
