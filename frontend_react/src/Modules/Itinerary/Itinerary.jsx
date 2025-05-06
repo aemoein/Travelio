@@ -49,8 +49,8 @@ const Itinerary = () => {
 
                 const itineraryData = await itineraryResponse.json();
                 console.log("data: ", itineraryData)
-                if (itineraryData.itinerary.length > 0) {
-                    setItinerary(itineraryData.itinerary);
+                if (itineraryData.length > 0) {
+                    setItinerary(itineraryData);
                     setError(false);
                 } else {
                     throw new Error('No itinerary found');
