@@ -99,11 +99,20 @@ ${JSON.stringify(requestData, null, 2)}
         // Try parsing JSON
         let itinerary;
         try {
-            itinerary = JSON.parse(text);
+            // Match the first JSON array in the response
+            const match = text.match(/\[\s*{[\s\S]*?}\s*\]/);
+            if (!match) {
+                throw new Error('No valid JSON array found in response.');
+            }
+
+            itinerary = JSON.parse(match[0]);
         } catch (parseError) {
             console.error("Failed to parse JSON:", parseError.message);
             throw new Error('Generated response was not valid JSON.');
         }
+
+        console.log("Raw Gemini output:", text.slice(0, 500), "...");
+
 
         // Validate structure
         if (!validateItinerary(itinerary)) {
