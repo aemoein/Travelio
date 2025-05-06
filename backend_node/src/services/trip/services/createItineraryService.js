@@ -5,11 +5,12 @@ const createItinerary = async (itineraryData, tripId) => {
     let createdItinerary;
 
     try {
-        for (let i = 0; i < itineraryData.itinerary.length; i++) {
-            itineraryData.itinerary[i].day = i + 1;
+        console.log("data: ", itineraryData)
+        for (let i = 0; i < itineraryData.length; i++) {
+            itineraryData[i].day = i + 1;
         }
 
-        console.log('Creating itinerary with data:', itineraryData.itinerary);
+        console.log('Creating itinerary with data:', itineraryData);
 
         createdItinerary = await Itinerary.create(itineraryData);
 
