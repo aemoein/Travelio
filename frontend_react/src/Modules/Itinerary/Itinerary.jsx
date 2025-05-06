@@ -80,6 +80,9 @@ const Itinerary = () => {
     const handleSave = async () => {
         const token = localStorage.getItem('token');
         const tripId = location.state.tripId;
+
+        console.log("tripid: ", tripId)
+        console.log("itinerary: ",itinerary )
         const url = `${apiUrl}/trip/itineraries/save`;
         
         try {
