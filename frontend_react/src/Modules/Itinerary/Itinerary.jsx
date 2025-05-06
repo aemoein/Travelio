@@ -82,7 +82,7 @@ const Itinerary = () => {
         const tripId = location.state.tripId;
 
         console.log("tripid: ", tripId)
-        console.log("itinerary: ",itinerary )
+        console.log("itinerary: ", itinerary )
         const url = `${apiUrl}/trip/itineraries/save`;
         
         try {

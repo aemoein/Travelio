@@ -20,14 +20,14 @@ async function create(req, res) {
 
 async function saveItinerary(req, res) { 
     try {
-        const { itineraryData, tripId } = req.body; // Destructure body for readability
+        const { itinerary, tripId } = req.body; // Destructure body for readability
 
-        if (!itineraryData || !tripId) {
+        if (!itinerary || !tripId) {
             return res.status(400).json({ error: "Missing required fields: itineraryData or tripId" });
         }
 
         // Save the itinerary via service
-        const createdTripId = await createItineraryService.createItinerary(itineraryData, tripId);
+        const createdTripId = await createItineraryService.createItinerary(itinerary, tripId);
         res.status(201).json({ tripId: createdTripId });
     } catch (error) {
         console.error("Error saving itinerary:", error);
