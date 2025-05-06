@@ -15,34 +15,53 @@ async function generateItinerary(request) {
         hotel
     };
 
-    const activity = {
-        name: { type: String, required: true },
-        type: { type: String, required: true },
-        details: { type: String, required: true },
-        time: { type: String, required: true },
-        location: { type: String, required: true },
-        latitude: { type: Number, required: true },
-        longitude: { type: Number, required: true }
+    // Define proper JSON schema
+    const schema = {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "definitions": {
+            "activity": {
+                "type": "object",
+                "properties": {
+                    "name": { "type": "string" },
+                    "type": { "type": "string" },
+                    "details": { "type": "string" },
+                    "time": { "type": "string" },
+                    "location": { "type": "string" },
+                    "latitude": { "type": "number" },
+                    "longitude": { "type": "number" }
+                },
+                "required": ["name", "type", "details", "time", "location", "latitude", "longitude"]
+            }
+        },
+        "itinerary": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "day": { "type": "string" },
+                    "description": { "type": "string" },
+                    "activities": {
+                        "type": "array",
+                        "items": { "$ref": "#/definitions/activity" }
+                    }
+                },
+                "required": ["day", "description", "activities"]
+            }
+        }
     };
 
-    const itinerary = {
-        day: { type: String, required: true },
-        description: { type: String, required: true },
-        activities: [activity] 
-    };
+    const prompt = `Generate a detailed travel itinerary in valid JSON format strictly following this schema:
+${JSON.stringify(schema, null, 2)}
 
-    const schema = JSON.stringify({
-        activity,
-        itinerary
-    });
+Travel Request Details:
+${JSON.stringify(requestData, null, 2)}
 
-    const prompt = JSON.stringify({
-        request: "Please generate a trip itinerary for the following data:",
-        restaurants: "use real world restaurants to the best of your abilities and suggest foods",
-        constraints: "return the itinerary as JSON and follow the schema provided",
-        schema,
-        requestData
-    });
+Important Instructions:
+- Use real-world restaurants and suggest specific menu items
+- Include exact timings for each activity
+- Provide precise geo-coordinates (latitude/longitude) for each location
+- Return ONLY the JSON output with no additional text or markdown formatting
+- Ensure the JSON is syntactically perfect and parseable`;
 
     try {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -50,21 +69,56 @@ async function generateItinerary(request) {
         const response = await result.response;
         let text = await response.text();
 
-        // Remove the first 7 characters and the last 3 characters
-        text = text.substring(7, text.length - 3);
+        // Clean the response text
+        text = cleanJsonResponse(text);
 
-        // Replace specific characters or patterns as needed
-        text = text.replace(/[*#]/g, '');
-        text = text.replace(/##?\s*/g, '');
-
-        //console.log(text);
-
-        const itinerary = JSON.parse(text);
-
+        // Parse and validate the JSON
+        const itinerary = parseAndValidateItinerary(text, schema);
         return itinerary;
     } catch (error) {
         console.error('Error generating itinerary:', error);
-        throw new Error('Failed to generate itinerary');
+        throw new Error(`Failed to generate itinerary: ${error.message}`);
+    }
+}
+
+function cleanJsonResponse(text) {
+    // Remove markdown code blocks if present
+    const jsonMatch = text.match(/```(?:json)?\n([\s\S]*?)\n```/);
+    if (jsonMatch) {
+        text = jsonMatch[1];
+    }
+
+    // Remove common problematic characters
+    text = text.replace(/[*#`"']/g, '').trim();
+
+    // Handle cases where response might be double-encoded
+    if (text.startsWith('"') && text.endsWith('"')) {
+        text = text.slice(1, -1).replace(/\\"/g, '"');
+    }
+
+    // Remove any trailing commas that might break JSON parsing
+    text = text.replace(/,\s*([}\]])/g, '$1');
+
+    return text;
+}
+
+function parseAndValidateItinerary(jsonString, schema) {
+    try {
+        const parsed = JSON.parse(jsonString);
+
+        // Basic validation against schema structure
+        if (!parsed.itinerary || !Array.isArray(parsed.itinerary)) {
+            throw new Error("Invalid itinerary structure - missing required fields");
+        }
+
+        // Additional validation can be added here
+        // Consider using a proper JSON schema validator library for production
+
+        return parsed;
+    } catch (parseError) {
+        console.error('Failed to parse itinerary JSON:', parseError);
+        console.error('Original text:', jsonString);
+        throw new Error(`Invalid JSON response from AI: ${parseError.message}`);
     }
 }
 
