@@ -1,4 +1,5 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const { jsonrepair } = require('jsonrepair');
 const config = require('../../../config/config');
 
 const genAI = new GoogleGenerativeAI(config.googleApiKey);
@@ -96,23 +97,23 @@ ${JSON.stringify(requestData, null, 2)}
             text = text.replace(/```(?:json)?\n?/, '').replace(/```$/, '');
         }
 
+        console.log("Raw Gemini output:", text.slice(0, 500), "...");
+
         // Try parsing JSON
         let itinerary;
         try {
-            // Match the first JSON array in the response
+            // Extract JSON array from Gemini response
             const match = text.match(/\[\s*{[\s\S]*?}\s*\]/);
             if (!match) {
                 throw new Error('No valid JSON array found in response.');
             }
 
-            itinerary = JSON.parse(match[0]);
+            const repairedJson = jsonrepair(match[0]);
+            itinerary = JSON.parse(repairedJson);
         } catch (parseError) {
             console.error("Failed to parse JSON:", parseError.message);
             throw new Error('Generated response was not valid JSON.');
         }
-
-        console.log("Raw Gemini output:", text.slice(0, 500), "...");
-
 
         // Validate structure
         if (!validateItinerary(itinerary)) {
