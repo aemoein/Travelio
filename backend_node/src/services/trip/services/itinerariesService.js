@@ -3,6 +3,26 @@ const config = require('../../../config/config');
 
 const genAI = new GoogleGenerativeAI(config.googleApiKey);
 
+// Basic validator to check if structure roughly matches expected format
+function validateItinerary(itinerary) {
+    if (!Array.isArray(itinerary)) return false;
+
+    return itinerary.every(day =>
+        typeof day.day === 'string' &&
+        typeof day.description === 'string' &&
+        Array.isArray(day.activities) &&
+        day.activities.every(activity =>
+            typeof activity.name === 'string' &&
+            typeof activity.type === 'string' &&
+            typeof activity.details === 'string' &&
+            typeof activity.time === 'string' &&
+            typeof activity.location === 'string' &&
+            typeof activity.latitude === 'number' &&
+            typeof activity.longitude === 'number'
+        )
+    );
+}
+
 async function generateItinerary(request) {
     const { destination, start_date, end_date, interests, adults, hotel } = request;
 
@@ -15,53 +35,55 @@ async function generateItinerary(request) {
         hotel
     };
 
-    // Define proper JSON schema
-    const schema = {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "definitions": {
-            "activity": {
-                "type": "object",
-                "properties": {
-                    "name": { "type": "string" },
-                    "type": { "type": "string" },
-                    "details": { "type": "string" },
-                    "time": { "type": "string" },
-                    "location": { "type": "string" },
-                    "latitude": { "type": "number" },
-                    "longitude": { "type": "number" }
+    // EXAMPLE of the desired response format
+    const exampleSchema = [
+        {
+            day: "Monday",
+            description: "Explore historical landmarks in Rome.",
+            activities: [
+                {
+                    name: "Colosseum Tour",
+                    type: "Historical",
+                    details: "A guided tour of the Colosseum.",
+                    time: "10:00 AM",
+                    location: "Colosseum, Rome",
+                    latitude: 41.8902,
+                    longitude: 12.4922
                 },
-                "required": ["name", "type", "details", "time", "location", "latitude", "longitude"]
-            }
-        },
-        "itinerary": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "day": { "type": "string" },
-                    "description": { "type": "string" },
-                    "activities": {
-                        "type": "array",
-                        "items": { "$ref": "#/definitions/activity" }
-                    }
-                },
-                "required": ["day", "description", "activities"]
-            }
+                {
+                    name: "Lunch at Roscioli",
+                    type: "Restaurant",
+                    details: "Try carbonara at this authentic Roman restaurant.",
+                    time: "1:00 PM",
+                    location: "Via dei Giubbonari 21, Rome",
+                    latitude: 41.8947,
+                    longitude: 12.4751
+                }
+            ]
         }
-    };
+    ];
 
-    const prompt = `Generate a detailed travel itinerary in valid JSON format strictly following this schema:
-${JSON.stringify(schema, null, 2)}
+    const prompt = `
+You are a travel assistant. Please generate a multi-day travel itinerary in valid JSON format only.
 
-Travel Request Details:
+## Constraints:
+- Use real restaurants and suggest foods where possible.
+- Ensure each day has a 'day', a 'description', and a list of 'activities'.
+- Each activity must include:
+  - name (string)
+  - type (string)
+  - details (string)
+  - time (string)
+  - location (string)
+  - latitude (number)
+  - longitude (number)
+- Return ONLY JSON, and match this structure:
+
+${JSON.stringify(exampleSchema, null, 2)}
+
+## Input data:
 ${JSON.stringify(requestData, null, 2)}
-
-Important Instructions:
-- Use real-world restaurants and suggest specific menu items
-- Include exact timings for each activity
-- Provide precise geo-coordinates (latitude/longitude) for each location
-- Return ONLY the JSON output with no additional text or markdown formatting
-- Ensure the JSON is syntactically perfect and parseable`;
+`;
 
     try {
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
@@ -69,56 +91,30 @@ Important Instructions:
         const response = await result.response;
         let text = await response.text();
 
-        // Clean the response text
-        text = cleanJsonResponse(text);
-
-        // Parse and validate the JSON
-        const itinerary = parseAndValidateItinerary(text, schema);
-        return itinerary;
-    } catch (error) {
-        console.error('Error generating itinerary:', error);
-        throw new Error(`Failed to generate itinerary: ${error.message}`);
-    }
-}
-
-function cleanJsonResponse(text) {
-    // Remove markdown code blocks if present
-    const jsonMatch = text.match(/```(?:json)?\n([\s\S]*?)\n```/);
-    if (jsonMatch) {
-        text = jsonMatch[1];
-    }
-
-    // Remove common problematic characters
-    text = text.replace(/[*#`"']/g, '').trim();
-
-    // Handle cases where response might be double-encoded
-    if (text.startsWith('"') && text.endsWith('"')) {
-        text = text.slice(1, -1).replace(/\\"/g, '"');
-    }
-
-    // Remove any trailing commas that might break JSON parsing
-    text = text.replace(/,\s*([}\]])/g, '$1');
-
-    return text;
-}
-
-function parseAndValidateItinerary(jsonString, schema) {
-    try {
-        const parsed = JSON.parse(jsonString);
-
-        // Basic validation against schema structure
-        if (!parsed.itinerary || !Array.isArray(parsed.itinerary)) {
-            throw new Error("Invalid itinerary structure - missing required fields");
+        // Clean up markdown code block if present
+        if (text.startsWith("```")) {
+            text = text.replace(/```(?:json)?\n?/, '').replace(/```$/, '');
         }
 
-        // Additional validation can be added here
-        // Consider using a proper JSON schema validator library for production
+        // Try parsing JSON
+        let itinerary;
+        try {
+            itinerary = JSON.parse(text);
+        } catch (parseError) {
+            console.error("Failed to parse JSON:", parseError.message);
+            throw new Error('Generated response was not valid JSON.');
+        }
 
-        return parsed;
-    } catch (parseError) {
-        console.error('Failed to parse itinerary JSON:', parseError);
-        console.error('Original text:', jsonString);
-        throw new Error(`Invalid JSON response from AI: ${parseError.message}`);
+        // Validate structure
+        if (!validateItinerary(itinerary)) {
+            console.error("JSON structure does not match expected format.");
+            throw new Error('Generated JSON does not match expected itinerary format.');
+        }
+
+        return itinerary;
+    } catch (error) {
+        console.error('Error generating itinerary:', error.message);
+        throw new Error('Failed to generate itinerary');
     }
 }
 
